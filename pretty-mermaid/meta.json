@@ -1,4 +1,4 @@
 {
   "name": "pretty-mermaid",
-  "description": "|"
+  "description": "Render beautiful Mermaid diagrams as SVG or ASCII art using the beautiful-mermaid library. Supports 15+ themes, 5 diagram types (flowchart, sequence, state, class, ER), and ultra-fast rendering. Use this skill when: rendering a mermaid diagram or processing .mmd files; creating a flowchart, sequence, state, class, or ER diagram; applying a theme or beautifying a diagram; batch processing multiple diagrams; producing ASCII / terminal-friendly diagrams; or visualizing architecture, workflows, or data models."
 }
