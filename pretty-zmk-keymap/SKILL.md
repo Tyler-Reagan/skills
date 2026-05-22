@@ -1,6 +1,6 @@
 ---
 name: pretty-zmk-keymap
-description: Use when creating or updating the ASCII art comment diagrams embedded in ZMK .keymap files. Generates the box-drawing character tables that document physical key layout above each layer's bindings block. Works with any key count — 34-key Urchin, 38-key Totem, and other split layouts. Always pairs with zmk-keymap for behavior correctness.
+description: Use when creating or updating the ASCII art comment diagrams embedded in ZMK .keymap files. Generates the box-drawing character tables that document physical key layout above each layer's bindings block. Works with any key count and split layout configuration. Always pairs with zmk-keymap for behavior correctness.
 license: MIT
 metadata:
   author: tylerreagan98@gmail.com
@@ -43,49 +43,27 @@ All patterns are derived from real-world keymaps validated against ZMK v0.3 conv
 
 ## Two Layout Styles
 
-### Style A — Urchin / No-Extra-Column (34-key, 5×3+2 per side)
+### Style A — 5-column (34-key, 5×3+2 per side)
 
-Used in `urchin.keymap`. The outer columns are standard — no extra pinky column. Thumb clusters have 2 keys per side.
-
-```
-//  ┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓   ┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
-//  ┃ Q             ┃ W             ┃ E             ┃ R             ┃ T             ┃   ┃ Y             ┃ U             ┃ I             ┃ O             ┃ P             ┃
-//  ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫   ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
-//  ┃ A             ┃ S             ┃ D             ┃ F             ┃ G             ┃   ┃ H             ┃ J             ┃ K             ┃ L             ┃ ;             ┃
-//  ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫   ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
-//  ┃ Z             ┃ X             ┃ C             ┃ V             ┃ B             ┃   ┃ N             ┃ M             ┃ ,             ┃ .             ┃ /             ┃
-//  ┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫   ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛
-//                                                  ┃ SYS+TAB       ┃ DEV+SPACE     ┃   ┃ BSPC          ┃ NUM+RET       ┃
-//                                                  ┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛
-```
+No extra pinky column. Thumb clusters have 2 keys per side. The outer main-row edges use `┗`/`┛` corners; the interior connections where the thumb row breaks away use `┻`.
 
 - Each key cell is exactly 15 characters wide (including the leading `┃` and 1 trailing space before next `┃`)
 - 5 columns per half, separated by 3-space gap (`   `)
 - Thumb row: 2 keys each side, indented to align with columns 4–5 on each half
-- Bottom-left and bottom-right corners of main rows use `┗`/`┛` for the outer edges; interior connections use `┻` (up+horizontal) where thumbs break away
 - Combo annotations go on a separate `//` line below the thumb row
 
-### Style B — Totem / Extra-Pinky-Column (38-key, 6×3+3 per side)
+See [`references/layout-34key-5col.md`](references/layout-34key-5col.md) for a fully-rendered QWERTY example.
 
-Used in `totem.keymap`. Adds one extra column on each outer edge (pinky stagger key) and 3 thumb keys per side. All rows use fully closed boxes — the pinky column cells are blank on rows 0 and 1 where those physical keys don't exist, but the border is always closed.
+### Style B — 6-column (38-key, 6×3+3 per side)
 
-```
-// ┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓   ┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
-// ┃               ┃ Q             ┃ W             ┃ E             ┃ R             ┃ T             ┃   ┃ Y             ┃ U             ┃ I             ┃ O             ┃ P             ┃               ┃
-// ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫   ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
-// ┃               ┃ A             ┃ S             ┃ D             ┃ F             ┃ G             ┃   ┃ H             ┃ J             ┃ K             ┃ L             ┃ ;             ┃               ┃
-// ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫   ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
-// ┃ HYPER         ┃ Z             ┃ X             ┃ C             ┃ V             ┃ B             ┃   ┃ N             ┃ M             ┃ ,             ┃ .             ┃ /             ┃ '             ┃
-// ┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫   ┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛
-//                                                 ┃ ESC           ┃ SYS+TAB       ┃ DEV+SPACE     ┃   ┃ BSPC          ┃ NUM+RET       ┃ FUN+DEL       ┃
-//                                                 ┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛
-```
+Adds one extra column on each outer edge (pinky stagger key) and 3 thumb keys per side. All rows use fully closed boxes — the pinky column cells are blank on rows 0 and 1 where those physical keys don't exist, but the border is always closed.
 
-Key differences from Style A:
 - All 3 main rows span the full 6-column width with closed `┃` borders on both sides
 - Pinky column cells on rows 0 and 1 are blank (no physical key there) but the box is closed
-- Row 2 (bottom) fills the pinky cells with their actual bindings (e.g. `HYPER`, `'`)
+- Row 2 (bottom) fills the pinky cells with their actual bindings
 - 3 thumb keys per side vs. 2; thumb row indented to align under columns 4–6
+
+See [`references/layout-38key-6col.md`](references/layout-38key-6col.md) for a fully-rendered QWERTY example.
 
 ### Binding Alignment Row (optional)
 
@@ -161,7 +139,7 @@ The diagram cell width and binding column width must be equal. If extra spacing 
 
 When asked to diagram a layer:
 
-1. **Identify the board style** — count key positions in `bindings = <` to determine layout (34 = Urchin/Style A, 38 = Totem/Style B, etc.)
+1. **Identify the layout style** — count key positions in `bindings = <` to determine layout (34 = Style A / 5-column, 38 = Style B / 6-column, etc.)
 2. **Measure binding indentation** — find the actual column where binding values start; the diagram lead must produce matching column alignment
 3. **Map positions to labels** — translate each binding to a human-readable label per the rules above; blanks for `&none` / `&trans`
 4. **Render main rows** — 3 rows of 5+5 (or 6+6) cells with box-drawing separators
@@ -179,7 +157,7 @@ When asked to diagram a layer:
 
 ---
 
-## Full Layer Template — Style A (Urchin, 34-key)
+## Full Layer Template — Style A (5-column, 34-key)
 
 ```
 //  ┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓   ┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
@@ -193,7 +171,7 @@ When asked to diagram a layer:
 //                                                  ┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛
 ```
 
-## Full Layer Template — Style B (Totem, 38-key)
+## Full Layer Template — Style B (6-column, 38-key)
 
 ```
 // ┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓   ┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓

@@ -152,16 +152,16 @@ CONFIG_NICE_VIEW_GEM_ANIMATION=y                # enable gem spinning animation 
 
 ```yaml
 include:
-  - board: nice_nano/nrf52840/zmk
-    shield: urchin_left nice_view_adapter nice_view_gem
-    artifact-name: urchin_left
-  - board: nice_nano/nrf52840/zmk
-    shield: urchin_right nice_view_adapter nice_view_gem
-    artifact-name: urchin_right
+  - board: <board>/<soc>/zmk
+    shield: <keyboard_shield>_left nice_view_adapter nice_view_gem
+    artifact-name: <keyboard_shield>_left
+  - board: <board>/<soc>/zmk
+    shield: <keyboard_shield>_right nice_view_adapter nice_view_gem
+    artifact-name: <keyboard_shield>_right
 ```
 
 Shield order matters:
-1. Keyboard shield (`urchin_left`) — defines the key matrix
+1. Keyboard shield (`<keyboard_shield>_left`) — defines the key matrix
 2. Adapter shield (`nice_view_adapter`) — wires the display to the MCU's SPI pins
 3. Display module (`nice_view_gem`) — provides the custom status screen implementation
 
@@ -169,13 +169,13 @@ Shield order matters:
 
 ```yaml
 include:
-  - board: nice_nano/nrf52840/zmk
+  - board: <board>/<soc>/zmk
     shield: my_dongle my_dongle_display
     artifact-name: dongle
-  - board: nice_nano/nrf52840/zmk
+  - board: <board>/<soc>/zmk
     shield: my_keyboard_left
     artifact-name: keyboard_left
-  - board: nice_nano/nrf52840/zmk
+  - board: <board>/<soc>/zmk
     shield: my_keyboard_right
     artifact-name: keyboard_right
 ```
@@ -205,7 +205,7 @@ projects:
 
 Then reference the desired shield in `build.yaml`:
 ```yaml
-shield: urchin_left nice_view_adapter <shield-name-from-collection>
+shield: <keyboard_shield>_left nice_view_adapter <shield-name-from-collection>
 ```
 
 ### nice-view-gem (M165437)

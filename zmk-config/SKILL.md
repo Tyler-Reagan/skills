@@ -142,29 +142,29 @@ Controls what firmware artifacts the CI workflow builds. Lives at the repo root.
 ```yaml
 # ZMK v0.3 (Zephyr 3.5) — flat board identifier
 include:
-  - board: nice_nano_v2
-    shield: urchin_left nice_view_adapter nice_view_gem
+  - board: <board_name>
+    shield: <keyboard_shield>_left nice_view_adapter nice_view_gem
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: urchin_left
-  - board: nice_nano_v2
-    shield: urchin_right nice_view_adapter nice_view_gem
-    artifact-name: urchin_right
-  - board: nice_nano_v2
+    artifact-name: <keyboard_shield>_left
+  - board: <board_name>
+    shield: <keyboard_shield>_right nice_view_adapter nice_view_gem
+    artifact-name: <keyboard_shield>_right
+  - board: <board_name>
     shield: settings_reset
     artifact-name: settings_reset
 
 # ZMK main / "v0.4" (Zephyr 4.1) — qualified board identifier
 include:
-  - board: nice_nano/nrf52840/zmk
-    shield: urchin_left nice_view_adapter nice_view_gem
+  - board: <board>/<soc>/zmk
+    shield: <keyboard_shield>_left nice_view_adapter nice_view_gem
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: urchin_left
-  - board: nice_nano/nrf52840/zmk
-    shield: urchin_right nice_view_adapter nice_view_gem
-    artifact-name: urchin_right
-  - board: nice_nano/nrf52840/zmk
+    artifact-name: <keyboard_shield>_left
+  - board: <board>/<soc>/zmk
+    shield: <keyboard_shield>_right nice_view_adapter nice_view_gem
+    artifact-name: <keyboard_shield>_right
+  - board: <board>/<soc>/zmk
     shield: settings_reset
     artifact-name: settings_reset
 ```
