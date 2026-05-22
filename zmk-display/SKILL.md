@@ -15,11 +15,13 @@ metadata:
 
 # ZMK Display Engineer
 
-Expert in ZMK v0.3 display subsystem: supported hardware, Kconfig, LVGL v8 widget authoring, and community module integration. All options validated against https://v0-3-branch.zmk.dev/docs/config/displays.
+Expert in ZMK display subsystem across both release lines: supported hardware, Kconfig, LVGL widget authoring, and community module integration. All v0.3 options validated against https://v0-3-branch.zmk.dev/docs/config/displays.
 
-**Scope: ZMK v0.3 only.** ZMK `main` uses Zephyr 4.1 and LVGL v9. Community display modules targeting v0.3 will produce compile errors on ZMK main. Do not apply this skill to ZMK `main` builds without first auditing module compatibility.
+**Scope: ZMK v0.3 and ZMK main.** Always detect the active ZMK version first (via the zmk-config skill) — the two lines use different LVGL APIs and community modules must be audited for compatibility before assuming they work.
 
-**Critical version constraint:** ZMK v0.3 uses **LVGL v8**. The `main` branch switched to LVGL v9 around Dec 9 2025, breaking all drawing APIs. All widget code in this skill targets the v8 API. Do not use v9 APIs when pinned to v0.3.
+**Version alias recognition.** ZMK main, Zephyr 4.1, and the community term "v0.4" all refer to the same stack. When any of these appear in user messages, module READMEs, or GitHub issues, treat them as synonymous: ZMK main branch, Zephyr 4.1, LVGL v9.
+
+**Critical version constraint:** ZMK v0.3 uses **LVGL v8**. ZMK main (Zephyr 4.1 / "v0.4") uses **LVGL v9**. The switch occurred around Dec 9 2025, breaking all v8 drawing APIs. Widget code and community modules must match the LVGL generation of the active ZMK version — cross-generation combinations produce compile errors.
 
 ---
 
@@ -29,10 +31,10 @@ This section handles the display-layer consequences of ZMK version. The **zmk-co
 
 ### Identify the LVGL version in use
 
-| ZMK version | LVGL version | Canvas API | Draw API |
-|-------------|-------------|------------|---------|
-| v0.3 (Zephyr 3.5) | **v8** | `lv_canvas_create`, `lv_canvas_set_buffer`, `lv_canvas_draw_*` | `lv_draw_rect_dsc_t`, `lv_draw_line_dsc_t` |
-| main (Zephyr 4.1) | **v9** | `lv_canvas_create` (same), but draw calls use layer contexts | `lv_draw_*` with `lv_layer_t *` parameter |
+| ZMK version | Community alias | LVGL version | Canvas API | Draw API |
+|-------------|----------------|-------------|------------|---------|
+| v0.3 (Zephyr 3.5) | "v0.3" | **v8** | `lv_canvas_create`, `lv_canvas_set_buffer`, `lv_canvas_draw_*` | `lv_draw_rect_dsc_t`, `lv_draw_line_dsc_t` |
+| main (Zephyr 4.1) | "v0.4" | **v9** | `lv_canvas_create` (same), but draw calls use layer contexts | `lv_draw_*` with `lv_layer_t *` parameter |
 
 The clearest API-level signal: if a display module's source uses `lv_canvas_draw_rect(canvas, ...)` or `lv_canvas_draw_line(canvas, ...)` directly, it is LVGL v8. If it uses `lv_draw_*` with a layer context (`lv_layer_t`), it is LVGL v9.
 
@@ -220,7 +222,7 @@ Enable animation in `.conf`:
 CONFIG_NICE_VIEW_GEM_ANIMATION=y
 ```
 
-**Note:** All nice-view community modules require ZMK pinned to `v0.3`. They are not compatible with ZMK `main` (LVGL v9).
+**Note:** nice-view-gem `main` migrated to LVGL v9 at commit `522bbf4903e3` (Jan 25 2026) and is compatible with ZMK main ("v0.4"). The last LVGL v8 commit is `3f38221c61ec` — use this SHA when pinned to ZMK v0.3. Always pin to a SHA rather than a branch name to prevent silent breakage on upstream pushes.
 
 ---
 

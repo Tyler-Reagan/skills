@@ -15,9 +15,9 @@ metadata:
 
 # ZMK Config Engineer
 
-**Scope: ZMK v0.3 only.** This skill targets the v0.3 release branch. ZMK `main` has significant breaking changes — Zephyr 4.1 (vs 3.5 in v0.3), new board qualifier format (`nice_nano/nrf52840/zmk` vs `nice_nano_v2`), LVGL v9 (vs v8), and an updated CI workflow that checks for explicit ZMK board variants. Community display modules (nice-view-gem, nice-shield-collection) are v0.3 / LVGL v8 only. Do not apply this skill's guidance to ZMK `main` builds without verifying each option.
+**Scope: ZMK v0.3 and ZMK main (Zephyr 4.1).** This skill covers both release lines. Always detect the active version from `west.yml` first — the two lines diverge on board identifier format, CI workflow ref, and display module compatibility. See the Version State section before making any config changes.
 
-Expert in ZMK v0.3 project configuration: west manifests, GitHub Actions build targets, and Kconfig. All options validated against https://v0-3-branch.zmk.dev/docs/config and https://v0-3-branch.zmk.dev/docs/customization.
+Expert in ZMK project configuration: west manifests, GitHub Actions build targets, and Kconfig. v0.3 options validated against https://v0-3-branch.zmk.dev/docs/config; ZMK main follows the same Kconfig surface with Zephyr 4.1 underneath.
 
 ---
 
@@ -32,13 +32,19 @@ Read `revision:` on the `zmk` project in `config/west.yml`:
 | Revision value | ZMK version | Zephyr | Board identifier style |
 |---------------|-------------|--------|----------------------|
 | `v0.3` or `v0.3.0` | **v0.3** | 3.5 | flat name (e.g. `board_name_v2`) |
-| `main` | **main — unstable** | 4.1 | qualified (`board/soc/zmk`) |
-| commit SHA | unknown — inspect against ZMK history | varies | varies |
+| `main` | **ZMK main** (Zephyr 4.1 / LVGL v9; community alias: "v0.4" — not yet formally tagged) | 4.1 | qualified (`board/soc/zmk`) |
+| commit SHA | determine era by cross-referencing ZMK git history | varies | varies |
 | absent (no zmk project) | implicit main | 4.1 | qualified |
+
+**Alias recognition — ZMK main / Zephyr 4.1 / "v0.4" are all the same thing.** ZMK has not cut a formal v0.4 release tag, but the community, module maintainers, and contributors use these terms interchangeably for the current `main` branch. "ZMK main" is the only formally correct term (it's the branch name); "Zephyr 4.1" is the precise underlying RTOS version; "v0.4" is community shorthand for the anticipated next release. When any of these appear — in user messages, module READMEs, GitHub issues, or PR titles — treat them as referring to the same stack: ZMK main, Zephyr 4.1, LVGL v9, qualified board format.
+
+**Preferred pattern: SHA pin.** A branch name (`main`, `v0.3`) floats — upstream pushes silently change what your build fetches. Use a full commit SHA instead and annotate with the date: `revision: abc123...  # main @ YYYY-MM-DD`. Advance the pin deliberately when you want upstream changes.
+
+**`defaults: revision:` is a hidden float trap.** Any project entry in `west.yml` that omits its own `revision:` silently inherits the value from `defaults: revision:`. If that default is `main`, those modules are unpinned even if you didn't intend it. Always set an explicit `revision:` on every project, and keep `defaults: revision:` only as a last-resort fallback.
 
 For a commit SHA, determine whether it predates or postdates the Dec 9 2025 LVGL v9 switch by checking ZMK's git log. When in doubt, treat it as main-era and flag it explicitly.
 
-If a stable ZMK release newer than v0.3 exists (check ZMK's GitHub releases), surface it. This skill's guidance only covers v0.3 — do not silently apply it to a newer version.
+If a stable ZMK release newer than v0.3 exists (check ZMK's GitHub releases), surface it to the user.
 
 ### Signal 2 — Board identifier format
 
@@ -53,6 +59,7 @@ Read the `uses:` line in `.github/workflows/*.yml`:
 
 - `zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3` → correct for v0.3
 - `...@main` → correct for ZMK main, but will fail on v0.3 source with `KeyError: 'qualifiers'`
+- `...@<full-SHA>` → preferred for reproducibility; GitHub Actions reusable workflows support SHA refs the same way `west.yml` does. Use the same SHA as the ZMK firmware pin so the build tooling and firmware source are locked to the same commit.
 
 ### Consistency check
 
@@ -131,19 +138,32 @@ No `import:` needed for shield/display modules — they register themselves via 
 Controls what firmware artifacts the CI workflow builds. Lives at the repo root.
 
 ```yaml
+# ZMK v0.3 (Zephyr 3.5) — flat board identifier
 include:
-  - board: nice_nano_v2   # board identifier (ZMK v0.3 format)
-    shield: urchin_left nice_view_adapter nice_view_gem   # space-separated shields
-    snippet: studio-rpc-usb-uart    # optional: enables ZMK Studio transport
+  - board: nice_nano_v2
+    shield: urchin_left nice_view_adapter nice_view_gem
+    snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: urchin_left      # name of the downloaded .uf2 artifact
+    artifact-name: urchin_left
+  - board: nice_nano_v2
+    shield: urchin_right nice_view_adapter nice_view_gem
+    artifact-name: urchin_right
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: settings_reset
 
+# ZMK main / "v0.4" (Zephyr 4.1) — qualified board identifier
+include:
+  - board: nice_nano/nrf52840/zmk
+    shield: urchin_left nice_view_adapter nice_view_gem
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: urchin_left
   - board: nice_nano/nrf52840/zmk
     shield: urchin_right nice_view_adapter nice_view_gem
     artifact-name: urchin_right
-
   - board: nice_nano/nrf52840/zmk
-    shield: settings_reset          # utility firmware to clear flash settings
+    shield: settings_reset
     artifact-name: settings_reset
 ```
 
