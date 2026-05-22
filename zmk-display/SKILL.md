@@ -17,7 +17,57 @@ metadata:
 
 Expert in ZMK v0.3 display subsystem: supported hardware, Kconfig, LVGL v8 widget authoring, and community module integration. All options validated against https://v0-3-branch.zmk.dev/docs/config/displays.
 
+**Scope: ZMK v0.3 only.** ZMK `main` uses Zephyr 4.1 and LVGL v9. Community display modules targeting v0.3 will produce compile errors on ZMK main. Do not apply this skill to ZMK `main` builds without first auditing module compatibility.
+
 **Critical version constraint:** ZMK v0.3 uses **LVGL v8**. The `main` branch switched to LVGL v9 around Dec 9 2025, breaking all drawing APIs. All widget code in this skill targets the v8 API. Do not use v9 APIs when pinned to v0.3.
+
+---
+
+## Display Version State — Detect, Surface, Resolve
+
+This section handles the display-layer consequences of ZMK version. The **zmk-config** skill determines the active ZMK version from `west.yml` — use that as the input here.
+
+### Identify the LVGL version in use
+
+| ZMK version | LVGL version | Canvas API | Draw API |
+|-------------|-------------|------------|---------|
+| v0.3 (Zephyr 3.5) | **v8** | `lv_canvas_create`, `lv_canvas_set_buffer`, `lv_canvas_draw_*` | `lv_draw_rect_dsc_t`, `lv_draw_line_dsc_t` |
+| main (Zephyr 4.1) | **v9** | `lv_canvas_create` (same), but draw calls use layer contexts | `lv_draw_*` with `lv_layer_t *` parameter |
+
+The clearest API-level signal: if a display module's source uses `lv_canvas_draw_rect(canvas, ...)` or `lv_canvas_draw_line(canvas, ...)` directly, it is LVGL v8. If it uses `lv_draw_*` with a layer context (`lv_layer_t`), it is LVGL v9.
+
+### Audit community display modules for compatibility
+
+When a repo includes community display modules, check each module's widget source for API generation:
+
+1. Look at the module's canvas/draw calls in `.c` widget source files
+2. Match against the LVGL version table above
+3. Cross-reference with the active ZMK version to determine if they align
+
+If the ZMK version and the module's LVGL API generation do not match, surface the incompatibility explicitly:
+
+| ZMK version | Module LVGL generation | Result |
+|-------------|----------------------|--------|
+| v0.3 (LVGL v8) | v8 APIs | ✅ Compatible — proceed |
+| v0.3 (LVGL v8) | v9 APIs | ❌ Compile errors — module targets ZMK main; pin ZMK to v0.3 or find a v8-compatible module version |
+| main (LVGL v9) | v8 APIs | ❌ Compile errors — module not yet updated for ZMK main; wait for upstream update or pin ZMK to v0.3 |
+| main (LVGL v9) | v9 APIs | ✅ Compatible — proceed (but this skill's guidance may not fully apply) |
+
+### Resolution paths
+
+**If on ZMK v0.3 with a v8-compatible module:** no display version action needed.
+
+**If on ZMK v0.3 with a module using v9 APIs:** the module has been updated for ZMK main. Options:
+- Pin the module to an older commit (before the v9 migration) via a SHA in `west.yml`
+- Switch ZMK to main (accepting that other v8 modules will break)
+- Find an alternative module that still supports v8
+
+**If on ZMK main with a module using v8 APIs:** the module hasn't been updated yet. Options:
+- Pin ZMK back to `v0.3` (recommended if display modules are critical)
+- Remove the display module and use the built-in screen
+- Wait for the module maintainer to add v9 support — check the module's GitHub issues/PRs for status
+
+**If a newer ZMK stable release exists beyond v0.3:** surface it to the user and note that display module compatibility for that version is outside this skill's tested scope.
 
 ---
 
@@ -129,6 +179,8 @@ The dongle acts as central and renders display; keyboard halves are peripherals 
 ---
 
 ## nice-view Ecosystem
+
+**Upstream reference, never copy.** All community display modules must be consumed via `west.yml` remote + project entries and referenced as shields in `build.yaml`. Never copy a module's source into your config repo — doing so creates a hidden fork, misses upstream fixes, and bypasses the module's `zephyr/module.yml` self-registration that ZMK's build system depends on.
 
 ### Official modules (whoop-t / nice-shield-collection)
 Repo: `https://github.com/whoop-t/nice-shield-collection`
@@ -320,6 +372,7 @@ CONFIG_ZMK_DISPLAY_DEDICATED_THREAD_PRIORITY=5
 
 ## Constraints
 
+- **Never copy community module source into your config repo** — reference upstream via `west.yml` + shield in `build.yaml`. Copying creates a hidden fork and breaks the build system's module self-registration.
 - **LVGL v8 only** when ZMK is pinned to v0.3. All community display modules (nice-view-gem, nice-shield-collection) depend on this. Using v9 APIs will cause compile errors.
 - `CONFIG_ZMK_DISPLAY_INVERT=y` is **incompatible** with custom status screens — only use with the built-in screen.
 - Display modules must be listed **after** the keyboard shield and adapter in `build.yaml` shield order.

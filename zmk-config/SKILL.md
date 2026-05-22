@@ -15,7 +15,59 @@ metadata:
 
 # ZMK Config Engineer
 
+**Scope: ZMK v0.3 only.** This skill targets the v0.3 release branch. ZMK `main` has significant breaking changes — Zephyr 4.1 (vs 3.5 in v0.3), new board qualifier format (`nice_nano/nrf52840/zmk` vs `nice_nano_v2`), LVGL v9 (vs v8), and an updated CI workflow that checks for explicit ZMK board variants. Community display modules (nice-view-gem, nice-shield-collection) are v0.3 / LVGL v8 only. Do not apply this skill's guidance to ZMK `main` builds without verifying each option.
+
 Expert in ZMK v0.3 project configuration: west manifests, GitHub Actions build targets, and Kconfig. All options validated against https://v0-3-branch.zmk.dev/docs/config and https://v0-3-branch.zmk.dev/docs/customization.
+
+---
+
+## Version State — Detect, Surface, Resolve
+
+Before making any config changes, audit the repo's version state. Read all three signals, identify the version, check consistency, and surface any violations to the user before suggesting fixes.
+
+### Signal 1 — ZMK revision (source of truth)
+
+Read `revision:` on the `zmk` project in `config/west.yml`:
+
+| Revision value | ZMK version | Zephyr | Board identifier style |
+|---------------|-------------|--------|----------------------|
+| `v0.3` or `v0.3.0` | **v0.3** | 3.5 | flat name (e.g. `board_name_v2`) |
+| `main` | **main — unstable** | 4.1 | qualified (`board/soc/zmk`) |
+| commit SHA | unknown — inspect against ZMK history | varies | varies |
+| absent (no zmk project) | implicit main | 4.1 | qualified |
+
+For a commit SHA, determine whether it predates or postdates the Dec 9 2025 LVGL v9 switch by checking ZMK's git log. When in doubt, treat it as main-era and flag it explicitly.
+
+If a stable ZMK release newer than v0.3 exists (check ZMK's GitHub releases), surface it. This skill's guidance only covers v0.3 — do not silently apply it to a newer version.
+
+### Signal 2 — Board identifier format
+
+Read each `board:` entry in `build.yaml`. The format alone reveals the target ZMK era without needing to know the specific board name:
+
+- **Flat format** (`some_board_v2`, `board_name`) → ZMK v0.3 era. Board definitions live under `zmk/app/boards/arm/<name>/` using Zephyr 3.x YAML format.
+- **Qualified format** (`board/soc_variant/zmk`) → ZMK main era. Board definitions use the Zephyr 4.x directory structure with a `zmk` qualifier.
+
+### Signal 3 — CI workflow ref
+
+Read the `uses:` line in `.github/workflows/*.yml`:
+
+- `zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3` → correct for v0.3
+- `...@main` → correct for ZMK main, but will fail on v0.3 source with `KeyError: 'qualifiers'`
+
+### Consistency check
+
+All three signals must agree. Report every mismatch before proposing a fix:
+
+| Symptom / error | Cause | Fix |
+|----------------|-------|-----|
+| `KeyError: 'qualifiers'` in CI | Workflow `@main` runs `west boards --format "{qualifiers}"` — a check added for the Zephyr 4.x board variant system that Zephyr 3.5 boards don't expose | Pin workflow to `@v0.3` |
+| `Invalid BOARD; see above` in CMake | Qualified board format used with ZMK v0.3; v0.3 CMake board search doesn't resolve the qualifier structure | Change to flat board name |
+| `<board_name> not found` with flat format | ZMK main CMake expects qualified format; flat names not resolved | Change to qualified format `board/soc/zmk` |
+| west update module not found | A module's `revision:` tag or branch doesn't exist on its remote | Verify on the remote; fall back to `main` or a known-good SHA |
+
+### Display module compatibility
+
+If the repo includes community display modules in `west.yml`, the detected ZMK version determines their LVGL compatibility. Flag this and defer to the **zmk-display** skill — display module version resolution is in its domain, not here.
 
 ---
 
@@ -56,6 +108,8 @@ manifest:
 
 ### Adding a Module
 
+**Always reference external modules upstream — never copy their code into your config repo.** The correct pattern is a `west.yml` remote + project entry (which fetches the module at build time) combined with a shield reference in `build.yaml`. Copying a module's files into your repo creates a hidden fork: you stop receiving upstream fixes, the module's own `zephyr/module.yml` self-registration is bypassed, and the source of truth becomes ambiguous.
+
 ```yaml
 remotes:
   - name: author
@@ -65,6 +119,8 @@ projects:
     remote: author
     revision: main
 ```
+
+Then reference the shield in `build.yaml` — no code from the module lives in your config repo.
 
 No `import:` needed for shield/display modules — they register themselves via `zephyr/module.yml`.
 
@@ -76,7 +132,7 @@ Controls what firmware artifacts the CI workflow builds. Lives at the repo root.
 
 ```yaml
 include:
-  - board: nice_nano/nrf52840/zmk   # board identifier
+  - board: nice_nano_v2   # board identifier (ZMK v0.3 format)
     shield: urchin_left nice_view_adapter nice_view_gem   # space-separated shields
     snippet: studio-rpc-usb-uart    # optional: enables ZMK Studio transport
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
@@ -95,7 +151,7 @@ include:
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `board` | Yes | Board identifier string. For nice!nano v2: `nice_nano/nrf52840/zmk` or `nice_nano_v2` |
+| `board` | Yes | Board identifier string. For nice!nano v2 on ZMK v0.3: `nice_nano_v2`. The `nice_nano/nrf52840/zmk` qualifier format is ZMK `main` only and will fail on v0.3. |
 | `shield` | Usually | Space-separated shield names applied to the board. Order matters for multi-shield builds (adapter before display module) |
 | `snippet` | No | Applies a named Zephyr snippet. Use `studio-rpc-usb-uart` for ZMK Studio |
 | `cmake-args` | No | Space-separated `-DCONFIG_*=value` overrides. Applied at build time only, not written to .conf |
@@ -303,6 +359,7 @@ The `name` field in the module's `zephyr/module.yml` uses the convention `zmk-ke
 
 ## Constraints
 
+- **Never copy external module code into your config repo** — always reference upstream via `west.yml` remote + project + shield in `build.yaml`. Copying creates a hidden fork that misses upstream fixes and breaks the module's self-registration.
 - **Never use `revision: main` for ZMK itself** — always pin to `v0.3` until LVGL v9 compatibility is resolved across the module ecosystem
 - `cmake-args` in `build.yaml` override `.conf` settings — don't duplicate the same option in both
 - `CONFIG_ZMK_DISPLAY_INVERT` is incompatible with custom status screens
