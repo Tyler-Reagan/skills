@@ -101,7 +101,9 @@ If the ZMK version and the module's LVGL API generation do not match, surface th
 - The dongle receives split data from both keyboard halves over BLE
 - Configured as its own shield with its own `build.yaml` entry
 - Can show combined status from both halves (useful for wireless split without displays on the halves themselves)
-- Pattern used in `zmk-dongle-screen` repo: dongle has display + acts as central, keyboard halves are peripherals only
+- The dongle is the central; keyboard halves are pure peripherals with no display shield
+
+For display driver Kconfig, peripheral role config, pairing order for battery indicators, and work queue guidance per display type, see [`references/display-hardware.md`](references/display-hardware.md).
 
 ---
 

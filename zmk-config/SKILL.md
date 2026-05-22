@@ -50,7 +50,7 @@ If a stable ZMK release newer than v0.3 exists (check ZMK's GitHub releases), su
 
 ### Signal 2 — Board identifier format
 
-Read each `board:` entry in `build.yaml`. The format alone reveals the target ZMK era without needing to know the specific board name:
+Read each `board:` entry in `build.yaml`. The format alone reveals the target ZMK era without needing to know the specific board name. For a list of common boards and how to find any board's exact identifier, see [`references/boards.md`](references/boards.md).
 
 - **Flat format** (`some_board_v2`, `board_name`) → ZMK v0.3 era. Board definitions live under `zmk/app/boards/arm/<name>/` using Zephyr 3.x YAML format.
 - **Qualified format** (`board/soc_variant/zmk`) → ZMK main era. Board definitions use the Zephyr 4.x directory structure with a `zmk` qualifier.
@@ -173,17 +173,17 @@ include:
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `board` | Yes | Board identifier string. For nice!nano v2 on ZMK v0.3: `nice_nano_v2`. The `nice_nano/nrf52840/zmk` qualifier format is ZMK `main` only and will fail on v0.3. |
-| `shield` | Usually | Space-separated shield names applied to the board. Order matters for multi-shield builds (adapter before display module) |
+| `board` | Yes | Board identifier string. Format depends on ZMK version — flat (`board_name`) for v0.3, qualified (`board/soc/zmk`) for ZMK main. See [`references/boards.md`](references/boards.md). |
+| `shield` | Usually | Space-separated shield names applied to the board. Order matters for multi-shield builds (adapter before display module). See [`references/shields.md`](references/shields.md). |
 | `snippet` | No | Applies a named Zephyr snippet. Use `studio-rpc-usb-uart` for ZMK Studio |
 | `cmake-args` | No | Space-separated `-DCONFIG_*=value` overrides. Applied at build time only, not written to .conf |
 | `artifact-name` | No | Names the downloaded artifact. Defaults to shield name if omitted |
 
 ### Rules
 
-- ZMK Studio (`snippet: studio-rpc-usb-uart` + `cmake-args: -DCONFIG_ZMK_STUDIO=y`) belongs on the **central/left half only** — the peripheral doesn't need it
+- ZMK Studio (`snippet: studio-rpc-usb-uart` + `cmake-args: -DCONFIG_ZMK_STUDIO=y`) belongs on the **central** only — the central is whichever half (or dongle) manages the USB HID and BLE host connection. The peripheral doesn't need it.
 - `settings_reset` is a special ZMK shield for clearing all persisted settings (BT bonds, layer state). Always include it as a build target
-- Multiple shields in one entry stack in order — e.g. `urchin_left nice_view_adapter nice_view_gem` applies the keyboard shield, then the display adapter, then the display module
+- Multiple shields in one entry stack in order — keyboard shield first, then hardware adapters, then display modules
 - `cmake-args` overrides take precedence over `.conf` file settings
 
 ---
@@ -356,35 +356,106 @@ Flash `settings_reset.uf2` to clear all bonded hosts and persisted keymap state.
 
 ## Split Keyboard Patterns
 
-- The **central** (left) half manages BLE host connections and runs ZMK Studio
-- The **peripheral** (right) half connects to central over BLE split transport
+### Standard two-piece split
+
+- The **central** half (often the left by convention, but configurable) manages BLE host connections and runs ZMK Studio
+- The **peripheral** half connects to central over BLE split transport
 - ZMK Studio snippet and `CONFIG_ZMK_STUDIO=y` go on central **only**
 - `CONFIG_ZMK_SLEEP`, `CONFIG_BT_CTLR_TX_PWR_PLUS_8`, display config apply to **both** halves via per-side `.conf` files
 - `reset` and `bootloader` behaviors in keymaps only affect the half they're on
 - A `settings_reset` build target should be included for clearing split pairing state
 
----
+### Dongle setup (three-piece split)
 
-## zephyr/module.yml
-
-Every ZMK module repo must include this file to be recognized by west:
+In a dongle setup a dedicated USB MCU acts as the BLE central. Both keyboard halves become pure peripherals — they have no USB HID role and cannot run ZMK Studio.
 
 ```yaml
+include:
+  - board: <dongle_board>/<soc>/zmk
+    shield: my_dongle my_dongle_screen    # dongle is central + display
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: dongle
+  - board: <keyboard_board>/<soc>/zmk
+    shield: my_keyboard_left             # peripheral only — no studio snippet
+    artifact-name: keyboard_left
+  - board: <keyboard_board>/<soc>/zmk
+    shield: my_keyboard_right            # peripheral only
+    artifact-name: keyboard_right
+  - board: <keyboard_board>/<soc>/zmk
+    shield: settings_reset
+    artifact-name: settings_reset
+```
+
+Key differences from a standard split:
+- **ZMK Studio goes on the dongle**, not the left half — the dongle is the central
+- Keyboard halves need no `snippet:` or `cmake-args:` for Studio
+- The dongle's display shield is stacked after the keyboard dongle shield, same order rule as nice!view adapters
+- Pairing order matters for multi-peripheral battery widgets: pair left half first, then right, after flashing the dongle — otherwise battery indicators may be swapped. A full `settings_reset` on the dongle is required to fix a swapped pairing.
+
+---
+
+## zephyr/module.yml — Module-as-Repo vs Config-Consuming-Module
+
+There are two distinct patterns. Confusing them leads to broken builds or invisible forks.
+
+### Pattern A — Repo IS the module (upstream)
+
+A repo like `zmk-dongle-screen` (main branch) or `nice-view-gem` is itself a ZMK module. It contains:
+- `zephyr/module.yml` — the self-registration file that tells west's build system this is a module
+- `boards/shields/` — shield overlay files
+- `src/` — widget C source and headers
+- `CMakeLists.txt`, `Kconfig` — build integration
+
+Other repos consume this module by adding it to their `west.yml` as a `projects:` entry. The module's `zephyr/module.yml` fires during west's module scan and registers the shield/source automatically — no extra steps in the consuming repo.
+
+```yaml
+# zephyr/module.yml (inside the module repo itself)
 build:
   cmake: .
   kconfig: Kconfig
 ```
 
-The `name` field in the module's `zephyr/module.yml` uses the convention `zmk-keyboard-<name>` for keyboard shields.
+The `name` field convention for keyboard shields: `zmk-keyboard-<name>`.
+
+**Never copy a module repo's files into your config repo.** The module's `zephyr/module.yml` must be present at its original repo root for self-registration to work. A copy without this context breaks the registration silently.
+
+### Pattern B — Repo CONSUMES modules (user config)
+
+A user config repo contains no `zephyr/module.yml`. It references external modules via `west.yml`:
+
+```yaml
+projects:
+  - name: some-display-module     # e.g. nice-view-gem, or any other community module
+    remote: module-author
+    revision: abc123...  # main @ YYYY-MM-DD
+```
+
+And uses them in `build.yaml` by shield name:
+```yaml
+shield: my_keyboard_left my_display_module   # shield names from whatever modules you consume
+```
+
+The consuming repo itself is NOT a ZMK module — it is a west workspace config. `self: path: config` in west.yml marks the directory, not a module.
+
+### Distinguishing them in the wild
+
+| Signal | IS a module | CONSUMES modules |
+|--------|------------|-----------------|
+| Has `zephyr/module.yml` | Yes | No |
+| Has `src/` with widget `.c` files | Often | No |
+| Has `build.yaml` referencing its own shields | Sometimes | Yes |
+| Has `config/west.yml` with `self: path: config` | No | Yes |
+| Other repos list it as a `projects:` entry | Yes | No |
 
 ---
 
 ## Constraints
 
 - **Never copy external module code into your config repo** — always reference upstream via `west.yml` remote + project + shield in `build.yaml`. Copying creates a hidden fork that misses upstream fixes and breaks the module's self-registration.
-- **Never use `revision: main` for ZMK itself** — always pin to `v0.3` until LVGL v9 compatibility is resolved across the module ecosystem
+- **Always pin ZMK and all modules to a SHA** — branch names (`main`, `v0.3`) float silently. Annotate with date: `revision: abc123  # main @ YYYY-MM-DD`. See Version State section.
 - `cmake-args` in `build.yaml` override `.conf` settings — don't duplicate the same option in both
 - `CONFIG_ZMK_DISPLAY_INVERT` is incompatible with custom status screens
-- ZMK Studio only works on the central half; applying its snippet to the peripheral wastes flash and RAM
+- **ZMK Studio belongs on the central — which in a dongle setup is the dongle, not the left keyboard half.** In a standard two-piece split the left half is central; in a three-piece dongle split the dongle MCU is central. Apply `snippet: studio-rpc-usb-uart` and `CONFIG_ZMK_STUDIO=y` to whichever build target is the central. Applying it to a peripheral wastes flash and RAM without effect.
 - `CONFIG_ZMK_KEYBOARD_NAME` max 16 characters — longer strings are silently truncated
 - `CONFIG_ZMK_SETTINGS_RESET_ON_START=y` wipes BT bonds on every boot — only use temporarily for debugging

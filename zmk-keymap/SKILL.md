@@ -76,6 +76,8 @@ Modifier prefixes: `L`/`R` + `A` (Alt), `C` (Ctrl), `G` (GUI), `S` (Shift).
 
 Common aliases: `N0`–`N9` (number row), `F1`–`F24`, `LEFT`/`RIGHT`/`UP`/`DOWN`, `BSPC`, `DEL`, `RET`, `TAB`, `ESC`, `SPACE`, `SQT`, `SEMI`, `COMMA`, `DOT`, `FSLH`, `BSLH`, `GRAVE`, `LBKT`, `RBKT`, `MINUS`, `EQUAL`, `C_VOL_UP`, `C_VOL_DN`, `C_MUTE`, `C_PP`, `C_NEXT`, `C_PREV`.
 
+For a full keycode table, shifted-symbol mappings, and modifier wrapping examples, see [`references/keycodes.md`](references/keycodes.md).
+
 ---
 
 ### Mod-Tap — `&mt` (hold-tap preset)
