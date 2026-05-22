@@ -38,6 +38,8 @@ This section handles the display-layer consequences of ZMK version. The **zmk-co
 
 The clearest API-level signal: if a display module's source uses `lv_canvas_draw_rect(canvas, ...)` or `lv_canvas_draw_line(canvas, ...)` directly, it is LVGL v8. If it uses `lv_draw_*` with a layer context (`lv_layer_t`), it is LVGL v9.
 
+**Do not trust migration comments in source files.** Developer comments written during a v8→v9 migration are frequently wrong about which version removed or added a given API. Always determine LVGL generation from the actual API call signatures, not from comments. Example of a misleading comment found in the wild: `// lv_canvas_draw_rect doesn't exist in LVGL v8+` — this is backwards; `lv_canvas_draw_rect` existed in v8 and was removed in v9.
+
 ### Audit community display modules for compatibility
 
 When a repo includes community display modules, check each module's widget source for API generation:
