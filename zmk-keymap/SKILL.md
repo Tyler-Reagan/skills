@@ -1,6 +1,6 @@
 ---
 name: zmk-keymap
-description: Use when authoring, editing, or reviewing ZMK keymap files (.keymap). Covers the full ZMK v0.3 behavior library, hold-tap flavors, combos, layer structure, devicetree syntax, and all required headers. Invoke for any task involving ZMK keymap bindings, behaviors, layers, combos, macros, tap-dance, mod-morph, or sensor bindings.
+description: Use when authoring, editing, or reviewing ZMK keymap files (.keymap). Covers the full ZMK behavior library (v0.3 and ZMK main / "v0.4"), hold-tap flavors, combos, layer structure, devicetree syntax, and all required headers. Invoke for any task involving ZMK keymap bindings, behaviors, layers, combos, macros, tap-dance, mod-morph, or sensor bindings.
 license: MIT
 metadata:
   author: tylerreagan98@gmail.com
@@ -15,7 +15,11 @@ metadata:
 
 # ZMK Keymap Engineer
 
-Expert in ZMK firmware keymap authoring for the v0.3 branch. All syntax, behaviors, and properties are validated against https://v0-3-branch.zmk.dev/docs/keymaps.
+**Scope: ZMK v0.3 and ZMK main (Zephyr 4.1).** This skill covers both release lines. Keymap behavior syntax is stable across both — the only point of divergence is the mouse/pointing header. That callout appears at the point of divergence in the File Structure section.
+
+**Version alias recognition.** ZMK main, Zephyr 4.1, and the community term "v0.4" all refer to the same stack. When any of these appear in user messages or module documentation, treat them as synonymous.
+
+Expert in ZMK firmware keymap authoring. v0.3 syntax validated against https://v0-3-branch.zmk.dev/docs/keymaps; ZMK main behavior API is stable relative to v0.3.
 
 ## File Structure
 
@@ -29,8 +33,10 @@ Every `.keymap` file requires:
 Additional headers per feature used:
 - `#include <dt-bindings/zmk/bt.h>` — Bluetooth behaviors
 - `#include <dt-bindings/zmk/outputs.h>` — Output selection
-- `#include <dt-bindings/zmk/mouse.h>` — Mouse emulation (legacy)
-- `#include <dt-bindings/zmk/pointing.h>` — Mouse emulation (v0.3+, requires `CONFIG_ZMK_POINTING=y`)
+- `#include <dt-bindings/zmk/pointing.h>` — Mouse/pointing emulation (current API, both v0.3 and ZMK main; requires `CONFIG_ZMK_POINTING=y`)
+- ~~`#include <dt-bindings/zmk/mouse.h>`~~ — **Legacy, do not use.** Superseded by `pointing.h` in v0.3; may not exist on ZMK main. Remove if present with no corresponding `&mkp`/`&mmv`/`&msc` bindings.
+
+**Header hygiene:** every `#include` must be justified by at least one binding in the file. When reviewing a keymap, audit includes and remove any with no corresponding bindings — they are unused dead weight and will cause confusion or compile errors on ZMK main.
 
 The full keymap nests inside the devicetree root node:
 
@@ -446,6 +452,8 @@ sensor-bindings = <&rot_kp PG_UP PG_DN>;
 
 ### ZMK Studio Unlock — `&studio_unlock`
 No parameters. Enables live keymap editing via ZMK Studio when `CONFIG_ZMK_STUDIO=y`.
+
+**This binding must be reachable in your keymap.** Once ZMK Studio takes control of the keymap, the `.keymap` file is ignored — the only way to re-enable file-based editing is either flashing `settings_reset.uf2` (which wipes all BT bonds and persisted state) or pressing `&studio_unlock`. Place it somewhere accessible — a boot/system layer is the natural home. Omitting it means losing ZMK Studio access requires a full settings reset.
 
 ---
 

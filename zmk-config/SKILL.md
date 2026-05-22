@@ -15,7 +15,9 @@ metadata:
 
 # ZMK Config Engineer
 
-**Scope: ZMK v0.3 and ZMK main (Zephyr 4.1).** This skill covers both release lines. Always detect the active version from `west.yml` first — the two lines diverge on board identifier format, CI workflow ref, and display module compatibility. See the Version State section before making any config changes.
+**Scope: ZMK v0.3 and ZMK main (Zephyr 4.1).** This skill covers both release lines. Where they diverge — board identifier format, CI workflow ref, display module compatibility — callouts appear at the point of divergence. Always detect the active version from `west.yml` before making any changes; see the Version State section.
+
+**Version alias recognition.** ZMK main, Zephyr 4.1, and the community term "v0.4" all refer to the same stack. When any of these appear in user messages, module READMEs, or GitHub issues, treat them as synonymous.
 
 Expert in ZMK project configuration: west manifests, GitHub Actions build targets, and Kconfig. v0.3 options validated against https://v0-3-branch.zmk.dev/docs/config; ZMK main follows the same Kconfig surface with Zephyr 4.1 underneath.
 

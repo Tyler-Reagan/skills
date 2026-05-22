@@ -1,6 +1,6 @@
 ---
 name: zmk-display
-description: Use when working with ZMK display hardware, custom status screens, LVGL widgets, or display module integration. Covers all supported display types (nice!view Sharp Memory, SSD1306 OLED, IL0323 ePaper, dongle screens), Kconfig options, custom status screen authoring, LVGL v8 widget API (v0.3 branch), nice-view ecosystem modules, and dongle display patterns. Invoke for any task involving ZMK display configuration, widget code, or display module setup.
+description: Use when working with ZMK display hardware, custom status screens, LVGL widgets, or display module integration. Covers all supported display types (nice!view Sharp Memory, SSD1306 OLED, IL0323 ePaper, dongle screens), Kconfig options, custom status screen authoring, LVGL v8 (v0.3) and v9 (ZMK main) widget APIs, nice-view ecosystem modules, and dongle display patterns. Invoke for any task involving ZMK display configuration, widget code, or display module setup.
 license: MIT
 metadata:
   author: tylerreagan98@gmail.com
@@ -15,13 +15,13 @@ metadata:
 
 # ZMK Display Engineer
 
-Expert in ZMK display subsystem across both release lines: supported hardware, Kconfig, LVGL widget authoring, and community module integration. All v0.3 options validated against https://v0-3-branch.zmk.dev/docs/config/displays.
+**Scope: ZMK v0.3 and ZMK main (Zephyr 4.1).** This skill covers both release lines. Where they diverge — LVGL API generation, community module compatibility — callouts appear at the point of divergence. Always detect the active ZMK version first (via the zmk-config skill) before advising on display modules or widget code.
 
-**Scope: ZMK v0.3 and ZMK main.** Always detect the active ZMK version first (via the zmk-config skill) — the two lines use different LVGL APIs and community modules must be audited for compatibility before assuming they work.
+**Version alias recognition.** ZMK main, Zephyr 4.1, and the community term "v0.4" all refer to the same stack. When any of these appear in user messages, module READMEs, or GitHub issues, treat them as synonymous.
 
-**Version alias recognition.** ZMK main, Zephyr 4.1, and the community term "v0.4" all refer to the same stack. When any of these appear in user messages, module READMEs, or GitHub issues, treat them as synonymous: ZMK main branch, Zephyr 4.1, LVGL v9.
+**The critical divergence for display work:** v0.3 uses LVGL v8; ZMK main ("v0.4") uses LVGL v9. The switch occurred around Dec 9 2025. Widget drawing APIs changed incompatibly — cross-generation combinations produce compile errors. All LVGL widget code and community modules must match the active version's API generation.
 
-**Critical version constraint:** ZMK v0.3 uses **LVGL v8**. ZMK main (Zephyr 4.1 / "v0.4") uses **LVGL v9**. The switch occurred around Dec 9 2025, breaking all v8 drawing APIs. Widget code and community modules must match the LVGL generation of the active ZMK version — cross-generation combinations produce compile errors.
+Expert in ZMK display subsystem: supported hardware, Kconfig, LVGL widget authoring, and community module integration. v0.3 options validated against https://v0-3-branch.zmk.dev/docs/config/displays.
 
 ---
 
