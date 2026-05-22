@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 2,
-  "exportedAt": "2026-05-21T03:51:15.334Z",
+  "schemaVersion": 3,
+  "exportedAt": "2026-05-21T23:57:54.407Z",
   "sourceBankVersion": "1.5.1",
   "registryRoot": "Tyler-Reagan/skills",
   "skills": [
@@ -18,7 +18,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "add-app-to-server",
@@ -34,7 +35,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "api-page-generator",
@@ -50,7 +52,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "brand-visual-generator",
@@ -66,7 +69,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "branding",
@@ -82,7 +86,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "carousel",
@@ -98,7 +103,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "caveman",
@@ -114,7 +120,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "competitor-research",
@@ -130,7 +137,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "content-optimization",
@@ -146,7 +154,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "content-strategy",
@@ -162,7 +171,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "convert-web-app",
@@ -178,7 +188,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "core-web-vitals",
@@ -194,7 +205,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "create-mcp-app",
@@ -210,7 +222,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "create-readme",
@@ -226,7 +239,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "d3-viz",
@@ -242,7 +256,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "docs-page-generator",
@@ -258,7 +273,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "electron",
@@ -274,7 +290,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "favicon-generator",
@@ -290,7 +307,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "fix-knip-unused-exports",
@@ -306,7 +324,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "footer-generator",
@@ -322,7 +341,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "frontend-design",
@@ -338,7 +358,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "github-actions-docs",
@@ -354,7 +375,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "gitlab-ci-inspector",
@@ -369,7 +391,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "personal"
     },
     {
       "name": "gitlab-ci-patterns",
@@ -385,7 +408,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "gitlab-mr-writing",
@@ -400,7 +424,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "personal"
     },
     {
       "name": "golang-testing",
@@ -416,7 +441,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "grill-me",
@@ -432,7 +458,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "grill-with-docs",
@@ -448,7 +475,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "hero-generator",
@@ -464,7 +492,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "homepage-generator",
@@ -480,7 +509,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "impeccable",
@@ -498,7 +528,8 @@
       ],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "landing-page-generator",
@@ -514,7 +545,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "logo-generator",
@@ -530,7 +562,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "mcp-builder",
@@ -546,7 +579,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "mermaid-diagrams",
@@ -562,7 +596,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "naming-analyzer",
@@ -578,7 +613,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "next-best-practices",
@@ -594,7 +630,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "obsidian-cli",
@@ -610,7 +647,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "pr-description",
@@ -626,7 +664,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "prd-development",
@@ -642,7 +681,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "pretty-mermaid",
@@ -657,7 +697,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "personal"
     },
     {
       "name": "problem-statement",
@@ -673,7 +714,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "python-packaging",
@@ -689,7 +731,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "react-components",
@@ -705,7 +748,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "react-state-management",
@@ -721,7 +765,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "roadmap-planning",
@@ -737,7 +782,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "seo-strategy",
@@ -753,7 +799,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "shadcn",
@@ -769,7 +816,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "specs-code-cleanup",
@@ -785,7 +833,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "terraform-module-library",
@@ -801,7 +850,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "terraform-plan-summary",
@@ -816,7 +866,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "personal"
     },
     {
       "name": "terraform-test",
@@ -832,7 +883,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "theme-factory",
@@ -848,7 +900,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "typescript-react-reviewer",
@@ -864,7 +917,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "ubiquitous-language",
@@ -884,7 +938,8 @@
       ],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "ui-ux-pro-max",
@@ -900,7 +955,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "user-personas",
@@ -916,7 +972,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "user-story",
@@ -932,7 +989,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "user-story-mapping",
@@ -948,7 +1006,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "vite",
@@ -964,7 +1023,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "web-design-guidelines",
@@ -980,7 +1040,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     },
     {
       "name": "zoom-out",
@@ -996,7 +1057,8 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [],
+      "bucket": "vendored"
     }
   ]
 }
