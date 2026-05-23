@@ -1,6 +1,16 @@
 ---
 name: terraform-plan-summary
-description: Parses noisy Terraform or GitLab CI job logs and produces a concise impact summary (add/change/destroy counts, per-resource actions, grouped repetitive changes, key attribute diffs, warnings). Use when summarizing terraform plan output, CI plan jobs, long job logs, or when the user asks what a plan would change.
+description: Parses Terraform plan output or GitLab CI job logs into a concise infrastructure impact summary. Use when the user pastes a terraform plan, shares a CI job log with plan output, asks "what would this change", "summarize the plan", or "what gets destroyed" — strips GitLab runner noise and ANSI escapes automatically.
+license: MIT
+metadata:
+  author: tylerreagan98@gmail.com
+  version: "1.0.0"
+  domain: infrastructure
+  triggers: terraform plan, CI plan job, what would this change, summarize the plan, what gets destroyed, plan output
+  role: specialist
+  scope: analysis
+  output-format: markdown
+  related-skills: gitlab-ci-inspector
 ---
 
 # Terraform plan summary
@@ -115,3 +125,15 @@ Then `rg 'will be (created|destroyed|updated in-place)|must be replaced|^Plan:|N
 ---
 
 Keep the final summary **under ~40 lines** unless the user asks for full resource enumeration.
+
+## Anti-Patterns
+
+**DO NOT** include refresh noise (`Refreshing state...`, `Reading...`, `Read complete after`, provider init) — this is not plan content.
+
+**DO NOT** group destroys or replacements with ordinary changes — always list them explicitly and fully, regardless of count.
+
+**DO NOT** exceed ~40 lines in the output unless the user explicitly asks for full resource enumeration.
+
+**DO NOT** describe what configuration was written — describe what infrastructure will change. Delta, not intent.
+
+**DO NOT** omit section labels when a job runs multiple plans — always head each subsection with its CI echo label so the user can locate it in the original log.

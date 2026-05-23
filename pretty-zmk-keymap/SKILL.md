@@ -1,6 +1,6 @@
 ---
 name: pretty-zmk-keymap
-description: Use when creating or updating the ASCII art comment diagrams embedded in ZMK .keymap files. Generates the box-drawing character tables that document physical key layout above each layer's bindings block. Works with any key count and split layout configuration. Always pairs with zmk-keymap for behavior correctness.
+description: Generates box-drawing ASCII art keymap diagrams embedded as comments in ZMK .keymap files, aligned to each layer's bindings block. Use when the user asks to "add a keymap diagram", "draw the layout", "make the keymap readable", "add ascii art above the layers", or wants a visual representation of their key layout in the .keymap file itself.
 license: MIT
 metadata:
   author: tylerreagan98@gmail.com

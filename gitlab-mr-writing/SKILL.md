@@ -1,6 +1,16 @@
 ---
 name: gitlab-mr-writing
-description: Author GitLab merge request descriptions and technical reviewer guides for large-scale engineering changes. Use when the user asks to write an MR description, merge request body, PR description, technical reviewer summary, or reviewer guide — especially for refactors, architecture changes, or multi-package merges.
+description: Writes calibrated GitLab merge request descriptions and optional technical reviewer guides. Use when the user says "write my MR description", "draft the merge request body", "help me document this change", or asks for a technical reviewer summary — especially for architecture changes, cross-package refactors, or MRs that are too large to read linearly.
+license: MIT
+metadata:
+  author: tylerreagan98@gmail.com
+  version: "1.0.0"
+  domain: developer-workflow
+  triggers: MR description, merge request body, PR description, reviewer guide, technical summary, document this change
+  role: specialist
+  scope: documentation
+  output-format: markdown
+  related-skills: gitlab-ci-inspector
 ---
 
 # GitLab MR Writing
@@ -229,8 +239,32 @@ Map each theme group from Step 2 to a numbered section. Close with 4–6 Reviewe
 
 ### Step 5: Verify specificity
 
-Every bullet should be traceable to a real file or function visible in the script output.
-Remove any bullet that cannot be grounded in the diff.
+Every bullet should be traceable to a real file or function visible in the script output. Remove any bullet that cannot be grounded in the diff.
+
+**Pre-delivery checklist:**
+
+- [ ] Class matches the change — Focused (≤30 lines), Multi-theme (≤80 lines), or Architectural (full structure)
+- [ ] Every bullet is traceable to a real file, function, or module visible in the diff
+- [ ] No "we", "our", passive voice, or "This MR..." opener
+- [ ] Title uses noun phrases only — no verbs
+- [ ] Technical Reviewer Guide produced only if Architectural-class AND the user requested it
+- [ ] Length is within class target; no padding to fill structure
+
+---
+
+## Anti-Patterns
+
+**DO NOT** pad a Focused MR into Architectural shape. If the diff is ≤2 files, no theme-group headers and no reviewer guide.
+
+**DO NOT** describe intermediate commit history or process — only the end-state delta from main matters.
+
+**DO NOT** open with "This MR...", or use "we", "our", or passive voice anywhere in either artifact.
+
+**DO NOT** generate a Technical Reviewer Guide unless the change is Architectural-class and the user explicitly asks for it.
+
+**DO NOT** invent theme group labels to fill structure — if the change doesn't have meaningful groupings, write a flat bullet list.
+
+**DO NOT** restate what the diff already shows line-by-file — the bullet's job is to say what is NOT obvious from reading the diff directly.
 
 ## Additional resources
 

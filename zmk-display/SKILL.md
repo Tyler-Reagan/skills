@@ -1,6 +1,6 @@
 ---
 name: zmk-display
-description: Use when working with ZMK display hardware, custom status screens, LVGL widgets, or display module integration. Covers all supported display types (nice!view Sharp Memory, SSD1306 OLED, IL0323 ePaper, dongle screens), Kconfig options, custom status screen authoring, LVGL v8 (v0.3) and v9 (ZMK main) widget APIs, nice-view ecosystem modules, and dongle display patterns. Invoke for any task involving ZMK display configuration, widget code, or display module setup.
+description: ZMK display subsystem specialist covering nice!view, SSD1306 OLED, IL0323 ePaper, and dongle screens. Use when the user asks about adding a display to a ZMK keyboard, writing a custom status screen, using LVGL widgets, integrating nice-view-gem or other display modules, or configuring CONFIG_ZMK_DISPLAY options.
 license: MIT
 metadata:
   author: tylerreagan98@gmail.com
@@ -22,6 +22,17 @@ metadata:
 **The critical divergence for display work:** v0.3 uses LVGL v8; ZMK main ("v0.4") uses LVGL v9. The switch occurred around Dec 9 2025. Widget drawing APIs changed incompatibly — cross-generation combinations produce compile errors. All LVGL widget code and community modules must match the active version's API generation.
 
 Expert in ZMK display subsystem: supported hardware, Kconfig, LVGL widget authoring, and community module integration. v0.3 options validated against https://v0-3-branch.zmk.dev/docs/config/displays.
+
+## Domain Language
+
+- **central** — The keyboard half (or dongle MCU) that drives the display and manages BLE connections. Displays are configured on the central only in a dongle setup.
+- **peripheral** — A keyboard half that sends state to the central over BLE. Cannot drive its own display in a dongle build.
+- **shield** — A Zephyr abstraction for a display add-on (e.g. `nice_view`, `nice_view_gem`). Stacked after the keyboard and adapter shields in `build.yaml` order.
+- **module** — An external Git repo consumed via `west.yml` that self-registers via `zephyr/module.yml`. Never copy module source; always reference upstream.
+- **LVGL v8** — The widget library used by ZMK v0.3. Canvas draw API: `lv_canvas_draw_rect`, `lv_canvas_draw_line`.
+- **LVGL v9** — The widget library used by ZMK main ("v0.4"). Canvas draw API replaced with layer contexts (`lv_layer_t`). Incompatible with v8 widget code.
+- **v0.3** — Current stable ZMK release (Zephyr 3.5, LVGL v8).
+- **ZMK main** — Development branch (Zephyr 4.1, LVGL v9). Community aliases: "v0.4", "main". Not formally released as of early 2026.
 
 ---
 

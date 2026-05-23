@@ -1,6 +1,16 @@
 ---
 name: gitlab-ci-inspector
-description: Inspect GitLab CI/CD job results, fetch job logs, and diagnose pipeline failures. Use when the user shares a GitLab job URL, pipeline URL, asks about CI/CD job output, wants to check why a pipeline failed, or needs to review build/deploy logs.
+description: Fetches and diagnoses GitLab CI/CD job logs using glab CLI or the REST API. Use when the user shares a gitlab.com job or pipeline URL, asks "why did my pipeline fail", "what does this CI job say", or "check the build logs" — accepts job URLs, pipeline URLs, or project + job name pairs.
+license: MIT
+metadata:
+  author: tylerreagan98@gmail.com
+  version: "1.0.0"
+  domain: infrastructure
+  triggers: GitLab job URL, pipeline URL, CI job, pipeline failed, build logs, glab, GITLAB_TOKEN
+  role: diagnostic
+  scope: troubleshooting
+  output-format: text
+  related-skills: gitlab-mr-writing, terraform-plan-summary
 ---
 
 # GitLab CI Inspector
@@ -120,6 +130,14 @@ Present findings as:
 4. **Errors**: extracted error messages with context
 5. **Root cause hint**: likely explanation based on error patterns
 
+**Pre-delivery checklist:**
+
+- [ ] Job ID confirmed (not a pipeline ID or job name alone)
+- [ ] Status, duration, and branch/ref stated
+- [ ] Error messages quoted verbatim, not paraphrased
+- [ ] Root cause maps to a known error pattern, or explicitly flagged as unknown
+- [ ] Artifacts listed if the job produced any
+
 ## Common Error Patterns
 
 | Log pattern                                       | Likely cause                                            |
@@ -130,6 +148,18 @@ Present findings as:
 | `AccessDeniedException`                           | Wrong IAM role/profile or missing permissions           |
 | `exit code 1` (docker build)                      | Dockerfile build failure — check lines above            |
 | `denied: Your authorization token has expired`    | ECR login expired mid-push                              |
+
+## Anti-Patterns
+
+**DO NOT** attempt log analysis before resolving to a specific job ID — pipeline IDs and job names are not job IDs; resolve first.
+
+**DO NOT** dump raw log output at the user — always structure findings as status → duration → key output → errors → root cause.
+
+**DO NOT** skip glab CLI and jump straight to the REST API — try glab first; it handles auth automatically and is far simpler.
+
+**DO NOT** forget to URL-encode the project path in REST API calls (`group/subgroup/project` → `group%2Fsubgroup%2Fproject`).
+
+**DO NOT** paraphrase error messages — quote them verbatim so the user can grep or search for them.
 
 ## Artifacts
 

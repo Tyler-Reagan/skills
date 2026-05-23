@@ -1,6 +1,6 @@
 ---
 name: zmk-keymap
-description: Use when authoring, editing, or reviewing ZMK keymap files (.keymap). Covers the full ZMK behavior library (v0.3 and ZMK main / "v0.4"), hold-tap flavors, combos, layer structure, devicetree syntax, and all required headers. Invoke for any task involving ZMK keymap bindings, behaviors, layers, combos, macros, tap-dance, mod-morph, or sensor bindings.
+description: ZMK keymap specialist covering the full behavior library across v0.3 and ZMK main. Use when the user is editing a .keymap file, asks about hold-tap flavors, tap-dance, mod-morph, combos, or macros, references &mt, &lt, &mo, &sk, &caps_word, or sensor bindings, or wants to know which header to include for mouse or Bluetooth behaviors.
 license: MIT
 metadata:
   author: tylerreagan98@gmail.com
@@ -20,6 +20,16 @@ metadata:
 **Version alias recognition.** ZMK main, Zephyr 4.1, and the community term "v0.4" all refer to the same stack. When any of these appear in user messages or module documentation, treat them as synonymous.
 
 Expert in ZMK firmware keymap authoring. v0.3 syntax validated against https://v0-3-branch.zmk.dev/docs/keymaps; ZMK main behavior API is stable relative to v0.3.
+
+## Domain Language
+
+- **central** — The keyboard half (or dongle MCU) that manages USB HID and BLE host connections. ZMK Studio runs on the central only. Left half by convention in two-piece splits; the dongle MCU in three-piece setups.
+- **peripheral** — A keyboard half that connects to the central over BLE split transport. Has no USB HID role; cannot run ZMK Studio.
+- **board** — The MCU module (e.g. nice!nano). Identifier format is version-dependent: flat name (`nice_nano_v2`) in v0.3; qualified path (`nice_nano_v2/nrf52840/zmk`) in ZMK main.
+- **shield** — A Zephyr abstraction for a hardware add-on: keyboard PCB layout, display module, or adapter. Multiple shields stack in order within a `build.yaml` entry.
+- **module** — An external Git repo consumed via `west.yml` that self-registers via `zephyr/module.yml`. Never copy module source; always reference upstream.
+- **v0.3** — Current stable ZMK release (Zephyr 3.5, LVGL v8).
+- **ZMK main** — Development branch (Zephyr 4.1, LVGL v9). Community aliases: "v0.4", "main". Not formally released as of early 2026.
 
 ## File Structure
 

@@ -1,6 +1,6 @@
 ---
 name: zmk-config
-description: Use when authoring or editing ZMK project configuration files: west.yml manifests, build.yaml GitHub Actions targets, and .conf Kconfig files. Covers module management, revision pinning, shield/board/snippet syntax, ZMK Studio setup, power management, Bluetooth, HID, split keyboard config, and the UF2 flash workflow. Invoke for any task touching west.yml, build.yaml, *.conf, or the make/flash workflow.
+description: ZMK project configuration specialist for west.yml manifests, build.yaml CI targets, and Kconfig .conf files. Use when the user is setting up or editing a ZMK config repo, asks about module pinning, shield or board identifiers, build targets, ZMK Studio, split keyboard wiring, CONFIG_ZMK_ Kconfig options, or the UF2 flash workflow.
 license: MIT
 metadata:
   author: tylerreagan98@gmail.com
@@ -20,6 +20,17 @@ metadata:
 **Version alias recognition.** ZMK main, Zephyr 4.1, and the community term "v0.4" all refer to the same stack. When any of these appear in user messages, module READMEs, or GitHub issues, treat them as synonymous.
 
 Expert in ZMK project configuration: west manifests, GitHub Actions build targets, and Kconfig. v0.3 options validated against https://v0-3-branch.zmk.dev/docs/config; ZMK main follows the same Kconfig surface with Zephyr 4.1 underneath.
+
+## Domain Language
+
+- **central** — The keyboard half (or dongle MCU) that manages USB HID and BLE host connections. ZMK Studio runs on the central only. Left half by convention in two-piece splits; the dongle MCU in three-piece setups.
+- **peripheral** — A keyboard half that connects to the central over BLE split transport. Has no USB HID role; cannot run ZMK Studio.
+- **board** — The MCU module identifier. Format is version-dependent: flat name (`nice_nano_v2`) in v0.3; qualified path (`nice_nano_v2/nrf52840/zmk`) in ZMK main.
+- **shield** — A Zephyr abstraction for a hardware add-on: keyboard PCB layout, display module, or adapter. Multiple shields stack in order within a `build.yaml` entry.
+- **module** — An external Git repo consumed via `west.yml` that self-registers via `zephyr/module.yml`. Never copy module source into your config repo; always reference upstream.
+- **west manifest** — The `config/west.yml` file that declares which ZMK version and modules the build fetches.
+- **v0.3** — Current stable ZMK release (Zephyr 3.5, LVGL v8).
+- **ZMK main** — Development branch (Zephyr 4.1, LVGL v9). Community aliases: "v0.4", "main". Not formally released as of early 2026.
 
 ---
 
