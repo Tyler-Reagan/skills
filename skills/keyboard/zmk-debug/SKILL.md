@@ -1,6 +1,6 @@
 ---
 name: zmk-debug
-description: Diagnoses and resolves common ZMK firmware failures across five categories: build errors, flash failures, split pairing issues, display problems, and ZMK Studio connection failures. Use when the user reports a build error, CI failure, "board not found", "KeyError qualifiers", keyboard not pairing, display blank or not compiling, or ZMK Studio not connecting.
+description: "Diagnoses and resolves common ZMK firmware failures across five categories: build errors, flash failures, split pairing issues, display problems, and ZMK Studio connection failures. Use when the user reports a build error, CI failure, \"board not found\", \"KeyError qualifiers\", keyboard not pairing, display blank or not compiling, or ZMK Studio not connecting."
 license: MIT
 metadata:
   author: tylerreagan98@gmail.com
