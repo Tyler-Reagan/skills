@@ -12,6 +12,7 @@ ZMK firmware skills covering the full lifecycle of a keyboard project — from i
 | [`zmk-display`](zmk-display/SKILL.md) | Specialist | Adding or customizing a display — nice!view, SSD1306, custom status screens |
 | [`zmk-debug`](zmk-debug/SKILL.md) | Diagnostic | Build errors, flash failures, split pairing issues, Studio problems |
 | [`pretty-zmk-keymap`](pretty-zmk-keymap/SKILL.md) | Formatting | Generating ASCII art diagrams embedded in `.keymap` files |
+| [`zmk-lvgl-migrate`](zmk-lvgl-migrate/SKILL.md) | Specialist | Porting a community display module from LVGL v8 (ZMK v0.3) to LVGL v9 (ZMK main) |
 
 ## Load order
 
