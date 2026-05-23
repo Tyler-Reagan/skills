@@ -6,6 +6,28 @@ This is a [Claude Code skills](https://skills.sh) collection. Skills are loaded 
 
 ---
 
+## Repository Layout
+
+```
+skills/
+├── .claude-plugin/
+│   └── plugin.json           # Explicit skill manifest (all paths declared here)
+├── CLAUDE.md                 # This file
+├── README.md                 # Root index with category tables
+└── skills/
+    ├── keyboard/
+    │   ├── README.md         # Category overview and load-order guidance
+    │   └── <skill-name>/
+    ├── infrastructure/
+    │   ├── README.md
+    │   └── <skill-name>/
+    └── tools/
+        ├── README.md
+        └── <skill-name>/
+```
+
+Every new skill goes into the appropriate category subdirectory under `skills/`. Update `plugin.json` when adding a skill — it is the authoritative list of published skills.
+
 ## Skill Directory Layout
 
 ```

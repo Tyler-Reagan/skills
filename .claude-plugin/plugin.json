@@ -1,0 +1,16 @@
+{
+  "name": "tyler-reagan-skills",
+  "skills": [
+    "./skills/keyboard/zmk-new-config",
+    "./skills/keyboard/zmk-keymap",
+    "./skills/keyboard/zmk-config",
+    "./skills/keyboard/zmk-display",
+    "./skills/keyboard/zmk-debug",
+    "./skills/keyboard/pretty-zmk-keymap",
+    "./skills/infrastructure/gitlab-ci-inspector",
+    "./skills/infrastructure/gitlab-mr-writing",
+    "./skills/infrastructure/terraform-plan-summary",
+    "./skills/tools/gh-cli",
+    "./skills/tools/pretty-mermaid"
+  ]
+}
