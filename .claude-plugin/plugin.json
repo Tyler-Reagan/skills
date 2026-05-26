@@ -11,7 +11,10 @@
     "./skills/keyboard/zmk-keymap",
     "./skills/keyboard/zmk-lvgl-migrate",
     "./skills/keyboard/zmk-new-config",
+    "./skills/tools/eureka",
     "./skills/tools/gh-cli",
-    "./skills/tools/pretty-mermaid"
+    "./skills/tools/pretty-mermaid",
+    "./skills/tools/scatterbrain",
+    "./skills/tools/write-a-skill"
   ]
 }
