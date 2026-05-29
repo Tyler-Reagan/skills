@@ -3,6 +3,7 @@
   "skills": [
     "./skills/infrastructure/gitlab-ci-inspector",
     "./skills/infrastructure/gitlab-mr-writing",
+    "./skills/infrastructure/homebrew-cli-release",
     "./skills/infrastructure/terraform-plan-summary",
     "./skills/keyboard/pretty-zmk-keymap",
     "./skills/keyboard/zmk-config",

@@ -37,6 +37,7 @@ Skills for the full lifecycle of a ZMK keyboard project.
 |---|---|---|
 | [`gitlab-ci-inspector`](skills/infrastructure/gitlab-ci-inspector/SKILL.md) | GitLab job URL, pipeline URL, `why did this pipeline fail` | Fetches and diagnoses GitLab CI/CD job logs via `glab` CLI or REST API |
 | [`gitlab-mr-writing`](skills/infrastructure/gitlab-mr-writing/SKILL.md) | `write MR description`, `merge request body`, `technical reviewer guide` | Produces calibrated MR descriptions (Focused / Multi-theme / Architectural) and optional Technical Reviewer Guides |
+| [`homebrew-cli-release`](skills/infrastructure/homebrew-cli-release/SKILL.md) | `distribute on homebrew`, `brew install my CLI`, `homebrew tap`, `goreleaser`, `invoke via command not go run` | Ships a compiled CLI as a `brew install`-able command via GoReleaser + a personal tap — version injection, cask, cross-repo token, quarantine, license gate, first release |
 | [`terraform-plan-summary`](skills/infrastructure/terraform-plan-summary/SKILL.md) | `terraform plan`, `CI plan job`, `what would this plan change` | Parses noisy CI plan logs into a ≤40-line impact summary with grouped resource actions and attribute diffs |
 
 ---
@@ -67,7 +68,8 @@ Invoke by name in a Claude Code session, or describe what you need in natural la
 /zmk-new-config       /zmk-keymap         /zmk-config
 /zmk-display          /zmk-debug          /zmk-lvgl-migrate
 /pretty-zmk-keymap
-/gitlab-ci-inspector  /gitlab-mr-writing  /terraform-plan-summary
+/gitlab-ci-inspector  /gitlab-mr-writing  /homebrew-cli-release
+/terraform-plan-summary
 /gh-cli               /pretty-mermaid     /eureka
 /scatterbrain         /write-a-skill
 ```

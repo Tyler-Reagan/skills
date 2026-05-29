@@ -1,6 +1,6 @@
 # Infrastructure Skills
 
-Skills for GitLab CI/CD operations, merge request documentation, and Terraform plan analysis. All three are designed to work together on a typical GitLab + Terraform infrastructure workflow.
+Skills for GitLab CI/CD operations, merge request documentation, Terraform plan analysis, and shipping compiled CLIs via Homebrew. The first three are designed to work together on a typical GitLab + Terraform infrastructure workflow; `homebrew-cli-release` is a standalone release-engineering workflow.
 
 ## Skills
 
@@ -8,6 +8,7 @@ Skills for GitLab CI/CD operations, merge request documentation, and Terraform p
 |---|---|---|
 | [`gitlab-ci-inspector`](gitlab-ci-inspector/SKILL.md) | Diagnostic | Fetching and diagnosing GitLab CI/CD job logs from a URL |
 | [`gitlab-mr-writing`](gitlab-mr-writing/SKILL.md) | Specialist | Writing MR descriptions and technical reviewer guides |
+| [`homebrew-cli-release`](homebrew-cli-release/SKILL.md) | Scaffolding | Shipping a compiled CLI as a `brew install`-able command via GoReleaser + a Homebrew tap |
 | [`terraform-plan-summary`](terraform-plan-summary/SKILL.md) | Specialist | Summarizing Terraform plan output from CI logs or pasted output |
 
 ## Typical workflow
