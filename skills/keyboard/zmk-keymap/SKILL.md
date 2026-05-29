@@ -3,7 +3,7 @@ name: zmk-keymap
 description: ZMK keymap specialist covering the full behavior library across v0.3 and ZMK main. Use when the user is editing a .keymap file, asks about hold-tap flavors, tap-dance, mod-morph, combos, or macros, references &mt, &lt, &mo, &sk, &caps_word, or sensor bindings, or wants to know which header to include for mouse or Bluetooth behaviors.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: keyboard-firmware
   triggers: zmk, keymap, .keymap, behaviors, kp, mt, lt, mo, combos, hold-tap, tap-dance, mod-morph, layers, bindings, ZMK keymap
@@ -41,6 +41,7 @@ Every `.keymap` file requires:
 ```
 
 Additional headers per feature used:
+
 - `#include <dt-bindings/zmk/bt.h>` — Bluetooth behaviors
 - `#include <dt-bindings/zmk/outputs.h>` — Output selection
 - `#include <dt-bindings/zmk/pointing.h>` — Mouse/pointing emulation (current API, both v0.3 and ZMK main; requires `CONFIG_ZMK_POINTING=y`)
@@ -76,9 +77,11 @@ The full keymap nests inside the devicetree root node:
 ## Behavior Reference
 
 ### Key Press — `&kp`
+
 ```
 &kp KEYCODE
 ```
+
 Sends a HID keycode on press/release. Keycodes from `dt-bindings/zmk/keys.h`.
 
 **Modifier wrapping:** `LA(X)` = Left Alt+X, `LC(LS(N4))` = Ctrl+Shift+4.
@@ -91,17 +94,21 @@ For a full keycode table, shifted-symbol mappings, and modifier wrapping example
 ---
 
 ### Mod-Tap — `&mt` (hold-tap preset)
+
 ```
 &mt MODIFIER KEYCODE
 ```
+
 Hold → modifier, tap → keycode. Default flavor: `hold-preferred`.
 
 ---
 
 ### Layer-Tap — `&lt` (hold-tap preset)
+
 ```
 &lt LAYER KEYCODE
 ```
+
 Hold → momentary layer, tap → keycode. Default flavor: `tap-preferred`.
 
 ---
@@ -134,6 +141,7 @@ custom_ht: custom_hold_tap {
 | `tap-unless-interrupted` | Only if another key pressed before timeout |
 
 **Properties:**
+
 - `tapping-term-ms` — ms to distinguish tap from hold (default 200)
 - `quick-tap-ms` — within this ms of a prior tap, always taps (0 = disabled)
 - `require-prior-idle-ms` — after any non-modifier key, forces tap if pressed within this window
@@ -143,6 +151,7 @@ custom_ht: custom_hold_tap {
 - `hold-while-undecided` — sends hold immediately, corrects to tap if needed
 
 **Override built-in presets** in the root before the keymap:
+
 ```c
 &mt {
   flavor = "tap-preferred";
@@ -159,52 +168,65 @@ custom_ht: custom_hold_tap {
 ---
 
 ### Momentary Layer — `&mo`
+
 ```
 &mo LAYER
 ```
+
 Activates layer while held; deactivates on release.
 
 ---
 
 ### Layer-Tap — `&lt`
+
 ```
 &lt LAYER KEYCODE
 ```
+
 Hold → momentary layer, tap → keycode. (Hold-tap preset — see hold-tap for config.)
 
 ---
 
 ### To Layer — `&to`
+
 ```
 &to LAYER
 ```
+
 Enables the specified layer and disables all others except the default (layer 0).
 
 ---
 
 ### Toggle Layer — `&tog`
+
 ```
 &tog LAYER
 ```
+
 Enables a layer if currently disabled, or disables it if enabled. Persists until toggled again.
 
 ---
 
 ### Sticky Layer — `&sl`
+
 ```
 &sl LAYER
 ```
+
 Activates a layer until the next non-transparent key press.
 
 ---
 
 ### Sticky Key — `&sk`
+
 ```
 &sk MODIFIER
 ```
+
 Modifier stays active until next key press. Useful for one-shot modifiers.
 
 Custom instance properties:
+
 - `release-after-ms` — how long to stay active with no keypress (default ~1000ms)
 - `quick-release` — deactivates on next key press rather than release
 - `lazy` — activates just before next key press (avoids spurious GUI menu triggers)
@@ -213,38 +235,46 @@ Custom instance properties:
 ---
 
 ### Key Toggle — `&kt`
+
 ```
 &kt KEYCODE
 ```
+
 Toggles the pressed state of a key. Stays held until toggled off. Modifier wrapping is evaluated on the base keycode only.
 
 ---
 
 ### Transparent — `&trans`
+
 Passes the key event to the next active lower layer. Use as a placeholder for unassigned positions on non-base layers.
 
 ---
 
 ### None — `&none`
+
 Swallows the key event entirely. No output, no passthrough.
 
 ---
 
 ### Grave Escape — `&gresc`
+
 No parameters. Sends `ESC` normally; sends `` ` `` when Shift or GUI is held.
 
 ---
 
 ### Caps Word — `&caps_word`
+
 No parameters. Activates smart caps that auto-deactivates when non-continue-list key is pressed.
 
 Custom instance properties:
+
 - `continue-list` — keycodes that keep caps word active (default: alphanumeric, `UNDERSCORE`, `BSPC`, `DEL`)
 - `mods` — modifiers applied to alpha keys (default: `MOD_LSFT`)
 
 ---
 
 ### Key Repeat — `&key_repeat`
+
 No parameters. Re-sends the last HID keycode.
 
 ---
@@ -266,6 +296,7 @@ No parameters. Re-sends the last HID keycode.
 ```
 
 Macro control behaviors:
+
 - `&macro_tap` — press+release each behavior (default)
 - `&macro_press` — press only
 - `&macro_release` — release only
@@ -274,12 +305,14 @@ Macro control behaviors:
 - `&macro_tap_time N` — set tap hold duration to N ms
 
 Parameterized variants:
+
 - `zmk,behavior-macro-one-param` with `#binding-cells = <1>`
 - `zmk,behavior-macro-two-param` with `#binding-cells = <2>`
 
 Use `&macro_param_1to1`, `&macro_param_1to2`, `&macro_param_2to1`, `&macro_param_2to2` to forward parameters to bindings. Use `MACRO_PLACEHOLDER` (= `0`) as the placeholder value.
 
 Convenience helper (zero-param only):
+
 ```c
 ZMK_MACRO(macro_name,
   wait-ms = <30>;
@@ -367,28 +400,30 @@ Modifier masks: `MOD_LSFT`, `MOD_RSFT`, `MOD_LCTL`, `MOD_RCTL`, `MOD_LALT`, `MOD
 ---
 
 ### Bluetooth — `&bt`
+
 Requires `#include <dt-bindings/zmk/bt.h>`
 
-| Binding | Action |
-|---------|--------|
-| `&bt BT_CLR` | Clear bond for current profile |
-| `&bt BT_CLR_ALL` | Clear bonds for all profiles |
-| `&bt BT_NXT` | Next profile (wraps) |
-| `&bt BT_PRV` | Previous profile (wraps) |
-| `&bt BT_SEL N` | Select profile N (0-indexed) |
-| `&bt BT_DISC N` | Disconnect profile N if inactive |
+| Binding          | Action                           |
+| ---------------- | -------------------------------- |
+| `&bt BT_CLR`     | Clear bond for current profile   |
+| `&bt BT_CLR_ALL` | Clear bonds for all profiles     |
+| `&bt BT_NXT`     | Next profile (wraps)             |
+| `&bt BT_PRV`     | Previous profile (wraps)         |
+| `&bt BT_SEL N`   | Select profile N (0-indexed)     |
+| `&bt BT_DISC N`  | Disconnect profile N if inactive |
 
 Default: 5 profiles. Adjust with `CONFIG_BT_MAX_CONN` and `CONFIG_BT_MAX_PAIRED`.
 
 ---
 
 ### Output Selection — `&out`
+
 Requires `#include <dt-bindings/zmk/outputs.h>`
 
-| Binding | Action |
-|---------|--------|
-| `&out OUT_USB` | Prefer USB |
-| `&out OUT_BLE` | Prefer BLE |
+| Binding        | Action         |
+| -------------- | -------------- |
+| `&out OUT_USB` | Prefer USB     |
+| `&out OUT_BLE` | Prefer BLE     |
 | `&out OUT_TOG` | Toggle USB/BLE |
 
 Selection persists to flash (debounced to minimize write cycles).
@@ -396,29 +431,36 @@ Selection persists to flash (debounced to minimize write cycles).
 ---
 
 ### Reset Behaviors
+
 ```
 &sys_reset    // soft reset — re-runs current firmware
 &bootloader   // enter bootloader mode for flashing
 ```
+
 No parameters. On split keyboards, each binding only resets the half it's on. Combo resets always execute on the central side.
 
 ---
 
 ### Soft Off — `&soft_off`
+
 ```
 &soft_off
 ```
+
 Optional configuration:
+
 ```c
 &soft_off {
   hold-time-ms = <5000>; // require 5s hold before power off
 };
 ```
+
 Peripheral half ignores `hold-time-ms` by default; remove `split-peripheral-off-on-press` property to apply hold to both halves.
 
 ---
 
 ### Mouse Emulation (v0.3 / `CONFIG_ZMK_POINTING=y`)
+
 Requires `#include <dt-bindings/zmk/pointing.h>`
 
 ```
@@ -435,6 +477,7 @@ Requires `#include <dt-bindings/zmk/pointing.h>`
 ### Sensor Rotation (Encoders)
 
 Standard (fixed bindings):
+
 ```c
 behaviors {
   vol_enc: volume_encoder {
@@ -448,6 +491,7 @@ sensor-bindings = <&vol_enc>;
 ```
 
 Variable (parameters at bind time):
+
 ```c
 behaviors {
   rot_kp: sensor_rotate_kp {
@@ -463,6 +507,7 @@ sensor-bindings = <&rot_kp PG_UP PG_DN>;
 ---
 
 ### ZMK Studio Unlock — `&studio_unlock`
+
 No parameters. Enables live keymap editing via ZMK Studio when `CONFIG_ZMK_STUDIO=y`.
 
 **This binding must be reachable in your keymap.** Once ZMK Studio takes control of the keymap, the `.keymap` file is ignored — the only way to re-enable file-based editing is either flashing `settings_reset.uf2` (which wipes all BT bonds and persisted state) or pressing `&studio_unlock`. Place it somewhere accessible — a boot/system layer is the natural home. Omitting it means losing ZMK Studio access requires a full settings reset.

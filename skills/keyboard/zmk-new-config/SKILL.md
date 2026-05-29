@@ -3,7 +3,7 @@ name: zmk-new-config
 description: Scaffolds a new ZMK keyboard config repo by generating west.yml, build.yaml, and per-side .conf files from answers to six questions about hardware and features. Use when the user wants to start a new ZMK keyboard project, asks "how do I set up a ZMK config repo", "create my zmk config", or has a new keyboard and no existing config files.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: keyboard-firmware
   triggers: new zmk config, set up zmk, start zmk project, zmk config repo, new keyboard, scaffold zmk, create zmk config
@@ -35,15 +35,18 @@ Most common: `nice_nano_v2`. Others: `pro_micro`, `seeeduino_xiao_ble`, `nrfmicr
 The shield name matches the PCB definition (e.g. `corne`, `kyria`, `totem`, `urchin`, `sweep`). For common shields see [`references/shields.md`](../zmk-config/references/shields.md). If the user is building a custom shield, use a placeholder and note it.
 
 **Q3. ZMK version?**
+
 - **v0.3** (recommended) — stable release, compatible with all community display modules
 - **ZMK main** — latest features, LVGL v9, requires qualified board format
 
 **Q4. Split topology?**
+
 - `unibody` — single PCB, no wireless split
 - `split` — two-piece split (left half = central by convention)
 - `dongle` — three-piece split (dedicated USB dongle MCU = central; both keyboard halves are peripherals)
 
 **Q5. Display?**
+
 - `none`
 - `nice_view` — nice!view with ZMK built-in screen
 - `nice_view_gem` — nice!view with animated gem (requires v0.3; LVGL v8 only)
@@ -76,7 +79,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3   # or main SHA for ZMK main
+      revision: v0.3 # or main SHA for ZMK main
       import: app/west.yml
     # add display module project here if needed
   self:
@@ -94,8 +97,8 @@ manifest:
 include:
   - board: <board>
     shield: <keyboard_shield>_left <adapter_shield> <display_shield>
-    snippet: studio-rpc-usb-uart          # if Studio selected
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n  # if Studio selected
+    snippet: studio-rpc-usb-uart # if Studio selected
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n # if Studio selected
     artifact-name: <keyboard_shield>_left
   - board: <board>
     shield: <keyboard_shield>_right <adapter_shield> <display_shield>
@@ -110,6 +113,7 @@ include:
 Sensible defaults for each topology. Generate separate `_left.conf` and `_right.conf` for splits; a shared `<shield>.conf` for unibody.
 
 Both sides:
+
 ```conf
 CONFIG_ZMK_SLEEP=y
 CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000
@@ -118,6 +122,7 @@ CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
 ```
 
 Display side (add when display selected):
+
 ```conf
 CONFIG_ZMK_DISPLAY=y
 CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM=y   # if using a module like nice_view_gem
@@ -125,6 +130,7 @@ CONFIG_ZMK_DISPLAY_WORK_QUEUE_DEDICATED=y
 ```
 
 For nice-view-gem animation:
+
 ```conf
 CONFIG_NICE_VIEW_GEM_ANIMATION=y
 ```

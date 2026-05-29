@@ -3,7 +3,7 @@ name: zmk-config
 description: ZMK project configuration specialist for west.yml manifests, build.yaml CI targets, and Kconfig .conf files. Use when the user is setting up or editing a ZMK config repo, asks about module pinning, shield or board identifiers, build targets, ZMK Studio, split keyboard wiring, CONFIG_ZMK_ Kconfig options, or the UF2 flash workflow.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: keyboard-firmware
   triggers: west.yml, build.yaml, .conf, Kconfig, shield, board, snippet, zmk-config, module, revision, flash, UF2, ZMK Studio, CONFIG_ZMK
@@ -42,12 +42,12 @@ Before making any config changes, audit the repo's version state. Read all three
 
 Read `revision:` on the `zmk` project in `config/west.yml`:
 
-| Revision value | ZMK version | Zephyr | Board identifier style |
-|---------------|-------------|--------|----------------------|
-| `v0.3` or `v0.3.0` | **v0.3** | 3.5 | flat name (e.g. `board_name_v2`) |
-| `main` | **ZMK main** (Zephyr 4.1 / LVGL v9; community alias: "v0.4" — not yet formally tagged) | 4.1 | qualified (`board/soc/zmk`) |
-| commit SHA | determine era by cross-referencing ZMK git history | varies | varies |
-| absent (no zmk project) | implicit main | 4.1 | qualified |
+| Revision value          | ZMK version                                                                            | Zephyr | Board identifier style           |
+| ----------------------- | -------------------------------------------------------------------------------------- | ------ | -------------------------------- |
+| `v0.3` or `v0.3.0`      | **v0.3**                                                                               | 3.5    | flat name (e.g. `board_name_v2`) |
+| `main`                  | **ZMK main** (Zephyr 4.1 / LVGL v9; community alias: "v0.4" — not yet formally tagged) | 4.1    | qualified (`board/soc/zmk`)      |
+| commit SHA              | determine era by cross-referencing ZMK git history                                     | varies | varies                           |
+| absent (no zmk project) | implicit main                                                                          | 4.1    | qualified                        |
 
 **Alias recognition — ZMK main / Zephyr 4.1 / "v0.4" are all the same thing.** ZMK has not cut a formal v0.4 release tag, but the community, module maintainers, and contributors use these terms interchangeably for the current `main` branch. "ZMK main" is the only formally correct term (it's the branch name); "Zephyr 4.1" is the precise underlying RTOS version; "v0.4" is community shorthand for the anticipated next release. When any of these appear — in user messages, module READMEs, GitHub issues, or PR titles — treat them as referring to the same stack: ZMK main, Zephyr 4.1, LVGL v9, qualified board format.
 
@@ -78,12 +78,12 @@ Read the `uses:` line in `.github/workflows/*.yml`:
 
 All three signals must agree. Report every mismatch before proposing a fix:
 
-| Symptom / error | Cause | Fix |
-|----------------|-------|-----|
-| `KeyError: 'qualifiers'` in CI | Workflow `@main` runs `west boards --format "{qualifiers}"` — a check added for the Zephyr 4.x board variant system that Zephyr 3.5 boards don't expose | Pin workflow to `@v0.3` |
-| `Invalid BOARD; see above` in CMake | Qualified board format used with ZMK v0.3; v0.3 CMake board search doesn't resolve the qualifier structure | Change to flat board name |
-| `<board_name> not found` with flat format | ZMK main CMake expects qualified format; flat names not resolved | Change to qualified format `board/soc/zmk` |
-| west update module not found | A module's `revision:` tag or branch doesn't exist on its remote | Verify on the remote; fall back to `main` or a known-good SHA |
+| Symptom / error                           | Cause                                                                                                                                                   | Fix                                                           |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `KeyError: 'qualifiers'` in CI            | Workflow `@main` runs `west boards --format "{qualifiers}"` — a check added for the Zephyr 4.x board variant system that Zephyr 3.5 boards don't expose | Pin workflow to `@v0.3`                                       |
+| `Invalid BOARD; see above` in CMake       | Qualified board format used with ZMK v0.3; v0.3 CMake board search doesn't resolve the qualifier structure                                              | Change to flat board name                                     |
+| `<board_name> not found` with flat format | ZMK main CMake expects qualified format; flat names not resolved                                                                                        | Change to qualified format `board/soc/zmk`                    |
+| west update module not found              | A module's `revision:` tag or branch doesn't exist on its remote                                                                                        | Verify on the remote; fall back to `main` or a known-good SHA |
 
 ### Display module compatibility
 
@@ -98,7 +98,7 @@ The manifest file lives at `config/west.yml` in your zmk-config repo. It control
 ```yaml
 manifest:
   defaults:
-    revision: main          # fallback revision for any project that doesn't specify one
+    revision: main # fallback revision for any project that doesn't specify one
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -107,13 +107,13 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3        # pin to v0.3 — required to avoid LVGL v9 breaking changes
-      import: app/west.yml  # imports ZMK's own module definitions
+      revision: v0.3 # pin to v0.3 — required to avoid LVGL v9 breaking changes
+      import: app/west.yml # imports ZMK's own module definitions
     - name: my-module
       remote: my-org
-      revision: main        # or a commit SHA for exact pinning
+      revision: main # or a commit SHA for exact pinning
   self:
-    path: config            # the directory this west.yml lives in
+    path: config # the directory this west.yml lives in
 ```
 
 ### Key Rules
@@ -182,13 +182,13 @@ include:
 
 ### Fields
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `board` | Yes | Board identifier string. Format depends on ZMK version — flat (`board_name`) for v0.3, qualified (`board/soc/zmk`) for ZMK main. See [`references/boards.md`](references/boards.md). |
-| `shield` | Usually | Space-separated shield names applied to the board. Order matters for multi-shield builds (adapter before display module). See [`references/shields.md`](references/shields.md). |
-| `snippet` | No | Applies a named Zephyr snippet. Use `studio-rpc-usb-uart` for ZMK Studio |
-| `cmake-args` | No | Space-separated `-DCONFIG_*=value` overrides. Applied at build time only, not written to .conf |
-| `artifact-name` | No | Names the downloaded artifact. Defaults to shield name if omitted |
+| Field           | Required | Description                                                                                                                                                                          |
+| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `board`         | Yes      | Board identifier string. Format depends on ZMK version — flat (`board_name`) for v0.3, qualified (`board/soc/zmk`) for ZMK main. See [`references/boards.md`](references/boards.md). |
+| `shield`        | Usually  | Space-separated shield names applied to the board. Order matters for multi-shield builds (adapter before display module). See [`references/shields.md`](references/shields.md).      |
+| `snippet`       | No       | Applies a named Zephyr snippet. Use `studio-rpc-usb-uart` for ZMK Studio                                                                                                             |
+| `cmake-args`    | No       | Space-separated `-DCONFIG_*=value` overrides. Applied at build time only, not written to .conf                                                                                       |
+| `artifact-name` | No       | Names the downloaded artifact. Defaults to shield name if omitted                                                                                                                    |
 
 ### Rules
 
@@ -204,6 +204,7 @@ include:
 Per-side configuration files live at `config/<shield_name>.conf`. A shared config for both halves can use `config/<keyboard_name>.conf` (without `_left`/`_right`).
 
 **Syntax:**
+
 ```conf
 CONFIG_OPTION=y          # boolean enable
 CONFIG_OPTION=n          # boolean disable
@@ -279,6 +280,7 @@ cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
 ```
 
 If using `.conf` instead:
+
 ```conf
 CONFIG_ZMK_STUDIO=y
 CONFIG_ZMK_STUDIO_LOCKING=n            # disable auto-lock (convenient for development)
@@ -359,6 +361,7 @@ Double-tap the reset button on each half. The MCU mounts as a USB mass storage d
 ### settings_reset
 
 Flash `settings_reset.uf2` to clear all bonded hosts and persisted keymap state. Required when:
+
 - Changing BT profiles causes connection issues
 - ZMK Studio keymap conflicts with `.keymap` file
 - Unexplained pairing failures after firmware changes
@@ -383,15 +386,15 @@ In a dongle setup a dedicated USB MCU acts as the BLE central. Both keyboard hal
 ```yaml
 include:
   - board: <dongle_board>/<soc>/zmk
-    shield: my_dongle my_dongle_screen    # dongle is central + display
+    shield: my_dongle my_dongle_screen # dongle is central + display
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
     artifact-name: dongle
   - board: <keyboard_board>/<soc>/zmk
-    shield: my_keyboard_left             # peripheral only — no studio snippet
+    shield: my_keyboard_left # peripheral only — no studio snippet
     artifact-name: keyboard_left
   - board: <keyboard_board>/<soc>/zmk
-    shield: my_keyboard_right            # peripheral only
+    shield: my_keyboard_right # peripheral only
     artifact-name: keyboard_right
   - board: <keyboard_board>/<soc>/zmk
     shield: settings_reset
@@ -399,6 +402,7 @@ include:
 ```
 
 Key differences from a standard split:
+
 - **ZMK Studio goes on the dongle**, not the left half — the dongle is the central
 - Keyboard halves need no `snippet:` or `cmake-args:` for Studio
 - The dongle's display shield is stacked after the keyboard dongle shield, same order rule as nice!view adapters
@@ -413,6 +417,7 @@ There are two distinct patterns. Confusing them leads to broken builds or invisi
 ### Pattern A — Repo IS the module (upstream)
 
 A repo like `zmk-dongle-screen` (main branch) or `nice-view-gem` is itself a ZMK module. It contains:
+
 - `zephyr/module.yml` — the self-registration file that tells west's build system this is a module
 - `boards/shields/` — shield overlay files
 - `src/` — widget C source and headers
@@ -437,27 +442,28 @@ A user config repo contains no `zephyr/module.yml`. It references external modul
 
 ```yaml
 projects:
-  - name: some-display-module     # e.g. nice-view-gem, or any other community module
+  - name: some-display-module # e.g. nice-view-gem, or any other community module
     remote: module-author
-    revision: abc123...  # main @ YYYY-MM-DD
+    revision: abc123... # main @ YYYY-MM-DD
 ```
 
 And uses them in `build.yaml` by shield name:
+
 ```yaml
-shield: my_keyboard_left my_display_module   # shield names from whatever modules you consume
+shield: my_keyboard_left my_display_module # shield names from whatever modules you consume
 ```
 
 The consuming repo itself is NOT a ZMK module — it is a west workspace config. `self: path: config` in west.yml marks the directory, not a module.
 
 ### Distinguishing them in the wild
 
-| Signal | IS a module | CONSUMES modules |
-|--------|------------|-----------------|
-| Has `zephyr/module.yml` | Yes | No |
-| Has `src/` with widget `.c` files | Often | No |
-| Has `build.yaml` referencing its own shields | Sometimes | Yes |
-| Has `config/west.yml` with `self: path: config` | No | Yes |
-| Other repos list it as a `projects:` entry | Yes | No |
+| Signal                                          | IS a module | CONSUMES modules |
+| ----------------------------------------------- | ----------- | ---------------- |
+| Has `zephyr/module.yml`                         | Yes         | No               |
+| Has `src/` with widget `.c` files               | Often       | No               |
+| Has `build.yaml` referencing its own shields    | Sometimes   | Yes              |
+| Has `config/west.yml` with `self: path: config` | No          | Yes              |
+| Other repos list it as a `projects:` entry      | Yes         | No               |
 
 ---
 

@@ -3,7 +3,7 @@ name: eureka
 description: Turns a raw shower thought or pivot idea into a structured outline ready for Grill-Me. Use when the user says "eureka", has a loose idea they want to develop ("I'm thinking about...", "what if we...", "we should drop X and become Y"), wants to brainstorm a pivot or new direction, or wants to pressure-test a rough concept before committing to a plan. Challenges the idea — pushes on why, what breaks, and what's gained — rather than just expanding it.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: developer-workflow
   triggers: shower thought, pivot idea, brainstorm, rough concept, what if we, I'm thinking about, eureka, new direction

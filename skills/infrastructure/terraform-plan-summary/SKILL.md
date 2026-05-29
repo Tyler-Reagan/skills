@@ -3,7 +3,7 @@ name: terraform-plan-summary
 description: Parses Terraform plan output or GitLab CI job logs into a concise infrastructure impact summary. Use when the user pastes a terraform plan, shares a CI job log with plan output, asks "what would this change", "summarize the plan", or "what gets destroyed" — strips GitLab runner noise and ANSI escapes automatically.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: infrastructure
   triggers: terraform plan, CI plan job, what would this change, summarize the plan, what gets destroyed, plan output

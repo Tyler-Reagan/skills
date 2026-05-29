@@ -3,7 +3,7 @@ name: scatterbrain
 description: Focus-recovery skill for when tangential drill-downs have buried the main conversational thread. Use when the user says "scatterbrain", wants to bookmark the current discussion so they can resurface after a tangent, realizes they've lost the thread of what was being discussed, or wants to identify where a session went sideways. Surfaces the drift point and classifies the tangent as productive or derailing before prompting a return to the main thread.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: developer-workflow
   triggers: scatterbrain, lost the thread, drifted, what was I doing, forgot where I was, set anchor, breadcrumb, focus recovery
@@ -45,6 +45,7 @@ Triggered when the user has drifted and needs to find their thread again.
 ### Step 1: Find the last anchor or stated goal
 
 Scan the session for:
+
 - An explicit anchor (set in anchor mode)
 - The most recent clearly-stated plan, goal, or intention ("I'm going to...", "the goal is...", "let's focus on...")
 - The task or problem that opened the session

@@ -3,7 +3,7 @@ name: write-a-skill
 description: Creates a new skill for this repo following project conventions — full metadata schema, category layout, plugin.json registration, Anti-Patterns section. Use when the user says "write a skill", "create a skill", "new skill", "add a skill", or wants to author a new capability in this skills repo.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: developer-workflow
   triggers: write a skill, create a skill, new skill, add a skill, build a skill
@@ -40,6 +40,7 @@ Search existing skills for similar capabilities before creating. If overlap exis
 Create `skills/<category>/<skill-name>/SKILL.md`. See [REFERENCE.md](REFERENCE.md) for the full frontmatter schema and description format.
 
 Every SKILL.md must include:
+
 - **Quick start** — one concrete example of what using the skill looks like
 - **Workflow or process** — the core of the skill; what it instructs Claude to do
 - **Anti-Patterns / DO NOT** — at least one explicit DO NOT

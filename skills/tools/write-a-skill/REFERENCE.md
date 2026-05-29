@@ -6,13 +6,13 @@ Every SKILL.md must open with this block:
 
 ```yaml
 ---
-name: skill-name               # kebab-case, matches directory name
-description: <see below>       # critical — the skill's entire discoverability
+name: skill-name # kebab-case, matches directory name
+description: <see below> # critical — the skill's entire discoverability
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
-  version: "1.0.0"             # semver; increment on meaningful changes
-  domain: <domain>             # e.g. keyboard-firmware, infrastructure, developer-workflow
+  author: uraniborglabs@gmail.com
+  version: "1.0.0" # semver; increment on meaningful changes
+  domain: <domain> # e.g. keyboard-firmware, infrastructure, developer-workflow
   triggers: comma, separated, trigger, phrases
   role: specialist | scaffolding | diagnostic | formatting | reference
   scope: implementation | troubleshooting | formatting | documentation
@@ -26,25 +26,30 @@ All eight `metadata` fields are required. A skill without `version` will not be 
 ## Description format
 
 The description is the only thing Claude sees when deciding whether to load a skill. It must answer:
+
 1. What capability does this skill provide? (one sentence)
 2. When should it trigger? (specific natural language phrases in quotes)
 
 **Pattern:**
+
 ```
 <What it does>. Use when the user <says/asks/shares> "<exact phrase>", "<exact phrase>", or <describes scenario>.
 ```
 
 **Good:**
+
 ```
 Diagnoses and resolves common ZMK firmware failures across five categories. Use when the user reports a build error, "board not found", "KeyError qualifiers", keyboard not pairing, or ZMK Studio not connecting.
 ```
 
 **Bad:**
+
 ```
 Helps with ZMK keyboard problems.
 ```
 
 Rules:
+
 - Max 1024 characters
 - Third person
 - Quote exact natural language phrases the user would actually type
@@ -74,7 +79,7 @@ Add a utility script when the operation is deterministic, the same code would be
 
 ## Role and scope values
 
-| Field | Allowed values |
-|---|---|
-| `role` | `specialist` — domain expert; `scaffolding` — generates starter code or structure; `diagnostic` — investigates and identifies problems; `formatting` — transforms or renders output; `reference` — provides lookup tables or API docs |
-| `scope` | `implementation` — writes or modifies code; `troubleshooting` — diagnoses and fixes; `formatting` — stylistic transformation; `documentation` — writes prose or docs |
+| Field   | Allowed values                                                                                                                                                                                                                        |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `role`  | `specialist` — domain expert; `scaffolding` — generates starter code or structure; `diagnostic` — investigates and identifies problems; `formatting` — transforms or renders output; `reference` — provides lookup tables or API docs |
+| `scope` | `implementation` — writes or modifies code; `troubleshooting` — diagnoses and fixes; `formatting` — stylistic transformation; `documentation` — writes prose or docs                                                                  |

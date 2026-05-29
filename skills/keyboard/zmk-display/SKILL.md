@@ -3,7 +3,7 @@ name: zmk-display
 description: ZMK display subsystem specialist covering nice!view, SSD1306 OLED, IL0323 ePaper, and dongle screens. Use when the user asks about adding a display to a ZMK keyboard, writing a custom status screen, using LVGL widgets, integrating nice-view-gem or other display modules, or configuring CONFIG_ZMK_DISPLAY options.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: keyboard-firmware
   triggers: display, LVGL, nice!view, SSD1306, OLED, status screen, widget, dongle screen, CONFIG_ZMK_DISPLAY, nice-view-gem, custom screen
@@ -42,10 +42,10 @@ This section handles the display-layer consequences of ZMK version. The **zmk-co
 
 ### Identify the LVGL version in use
 
-| ZMK version | Community alias | LVGL version | Canvas API | Draw API |
-|-------------|----------------|-------------|------------|---------|
-| v0.3 (Zephyr 3.5) | "v0.3" | **v8** | `lv_canvas_create`, `lv_canvas_set_buffer`, `lv_canvas_draw_*` | `lv_draw_rect_dsc_t`, `lv_draw_line_dsc_t` |
-| main (Zephyr 4.1) | "v0.4" | **v9** | `lv_canvas_create` (same), but draw calls use layer contexts | `lv_draw_*` with `lv_layer_t *` parameter |
+| ZMK version       | Community alias | LVGL version | Canvas API                                                     | Draw API                                   |
+| ----------------- | --------------- | ------------ | -------------------------------------------------------------- | ------------------------------------------ |
+| v0.3 (Zephyr 3.5) | "v0.3"          | **v8**       | `lv_canvas_create`, `lv_canvas_set_buffer`, `lv_canvas_draw_*` | `lv_draw_rect_dsc_t`, `lv_draw_line_dsc_t` |
+| main (Zephyr 4.1) | "v0.4"          | **v9**       | `lv_canvas_create` (same), but draw calls use layer contexts   | `lv_draw_*` with `lv_layer_t *` parameter  |
 
 The clearest API-level signal: if a display module's source uses `lv_canvas_draw_rect(canvas, ...)` or `lv_canvas_draw_line(canvas, ...)` directly, it is LVGL v8. If it uses `lv_draw_*` with a layer context (`lv_layer_t`), it is LVGL v9.
 
@@ -61,23 +61,25 @@ When a repo includes community display modules, check each module's widget sourc
 
 If the ZMK version and the module's LVGL API generation do not match, surface the incompatibility explicitly:
 
-| ZMK version | Module LVGL generation | Result |
-|-------------|----------------------|--------|
-| v0.3 (LVGL v8) | v8 APIs | ✅ Compatible — proceed |
-| v0.3 (LVGL v8) | v9 APIs | ❌ Compile errors — module targets ZMK main; pin ZMK to v0.3 or find a v8-compatible module version |
-| main (LVGL v9) | v8 APIs | ❌ Compile errors — module not yet updated for ZMK main; wait for upstream update or pin ZMK to v0.3 |
-| main (LVGL v9) | v9 APIs | ✅ Compatible — proceed (but this skill's guidance may not fully apply) |
+| ZMK version    | Module LVGL generation | Result                                                                                               |
+| -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------- |
+| v0.3 (LVGL v8) | v8 APIs                | ✅ Compatible — proceed                                                                              |
+| v0.3 (LVGL v8) | v9 APIs                | ❌ Compile errors — module targets ZMK main; pin ZMK to v0.3 or find a v8-compatible module version  |
+| main (LVGL v9) | v8 APIs                | ❌ Compile errors — module not yet updated for ZMK main; wait for upstream update or pin ZMK to v0.3 |
+| main (LVGL v9) | v9 APIs                | ✅ Compatible — proceed (but this skill's guidance may not fully apply)                              |
 
 ### Resolution paths
 
 **If on ZMK v0.3 with a v8-compatible module:** no display version action needed.
 
 **If on ZMK v0.3 with a module using v9 APIs:** the module has been updated for ZMK main. Options:
+
 - Pin the module to an older commit (before the v9 migration) via a SHA in `west.yml`
 - Switch ZMK to main (accepting that other v8 modules will break)
 - Find an alternative module that still supports v8
 
 **If on ZMK main with a module using v8 APIs:** the module hasn't been updated yet. Options:
+
 - Pin ZMK back to `v0.3` (recommended if display modules are critical)
 - Remove the display module and use the built-in screen
 - Wait for the module maintainer to add v9 support — check the module's GitHub issues/PRs for status
@@ -89,6 +91,7 @@ If the ZMK version and the module's LVGL API generation do not match, surface th
 ## Supported Display Types
 
 ### nice!view — Sharp Memory Display (168×144)
+
 - Controller: LS013B7DH05 (Sharp)
 - Interface: SPI
 - The dominant display for wireless ZMK keyboards
@@ -97,17 +100,20 @@ If the ZMK version and the module's LVGL API generation do not match, surface th
 - White/black only, low power, no backlight needed
 
 ### SSD1306 — OLED (128×32 or 128×64)
+
 - Interface: I2C or SPI
 - Common in wired/QMK-ported keyboards
 - `CONFIG_ZMK_DISPLAY_BLANK_ON_IDLE=y` is the default for SSD1306
 - Higher power draw than Sharp Memory — consider `CONFIG_ZMK_SLEEP`
 
 ### IL0323 — ePaper
+
 - ZMK includes a native driver
 - Very low power, retains image without refresh
 - Slow refresh rate — not suitable for frequently-updated widgets
 
 ### Dongle Screen
+
 - A dedicated display on a USB dongle that acts as the BLE central
 - The dongle receives split data from both keyboard halves over BLE
 - Configured as its own shield with its own `build.yaml` entry
@@ -151,6 +157,7 @@ CONFIG_ZMK_WIDGET_WPM_STATUS=y                  # show WPM (requires CONFIG_ZMK_
 ### Module-Specific Options
 
 nice-view-gem:
+
 ```conf
 CONFIG_NICE_VIEW_GEM_ANIMATION=y                # enable gem spinning animation (battery impact)
 ```
@@ -172,6 +179,7 @@ include:
 ```
 
 Shield order matters:
+
 1. Keyboard shield (`<keyboard_shield>_left`) — defines the key matrix
 2. Adapter shield (`nice_view_adapter`) — wires the display to the MCU's SPI pins
 3. Display module (`nice_view_gem`) — provides the custom status screen implementation
@@ -200,6 +208,7 @@ The dongle acts as central and renders display; keyboard halves are peripherals 
 **Upstream reference, never copy.** All community display modules must be consumed via `west.yml` remote + project entries and referenced as shields in `build.yaml`. Never copy a module's source into your config repo — doing so creates a hidden fork, misses upstream fixes, and bypasses the module's `zephyr/module.yml` self-registration that ZMK's build system depends on.
 
 ### Official modules (whoop-t / nice-shield-collection)
+
 Repo: `https://github.com/whoop-t/nice-shield-collection`
 
 A curated collection of alternative status screens for the nice!view. Add to `west.yml`:
@@ -215,11 +224,13 @@ projects:
 ```
 
 Then reference the desired shield in `build.yaml`:
+
 ```yaml
 shield: <keyboard_shield>_left nice_view_adapter <shield-name-from-collection>
 ```
 
 ### nice-view-gem (M165437)
+
 The animated gem status screen. Add to `west.yml`:
 
 ```yaml
@@ -233,6 +244,7 @@ projects:
 ```
 
 Enable animation in `.conf`:
+
 ```conf
 CONFIG_NICE_VIEW_GEM_ANIMATION=y
 ```
@@ -369,6 +381,7 @@ lv_anim_start(&anim);
 ```
 
 Enable animation in Kconfig:
+
 ```conf
 CONFIG_LV_USE_ANIMATION=y
 ```

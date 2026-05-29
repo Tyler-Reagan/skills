@@ -3,7 +3,7 @@ name: pretty-zmk-keymap
 description: Generates box-drawing ASCII art keymap diagrams embedded as comments in ZMK .keymap files, aligned to each layer's bindings block. Use when the user asks to "add a keymap diagram", "draw the layout", "make the keymap readable", "add ascii art above the layers", or wants a visual representation of their key layout in the .keymap file itself.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: keyboard-firmware
   triggers: ascii art keymap, keymap diagram, pretty keymap, box drawing, keymap layout, keymap visualization, zmk diagram
@@ -108,12 +108,14 @@ The diagram is not decoration. Its purpose is to visually overlay the `bindings 
 - **Do not choose lead spacing arbitrarily** — measure the file's actual binding indentation and derive the correct lead from it
 
 Example of correct overlay (Urchin — bindings start at column 14 after `//  `):
+
 ```
         //  ┃ Q             ┃ W             ┃
               &kp Q           &kp W
 ```
 
 Example of correct overlay (Totem — bindings start at column 13 after `// `):
+
 ```
         // ┃               ┃ Q             ┃
                              &kp Q
@@ -126,6 +128,7 @@ When editing an existing file, always check the current binding indentation and 
 Binding values across layers of the same map are often padded to a consistent column width — the lowest common denominator that accommodates the longest binding in any layer. The diagram cell width must match this established column width, not a fixed 15-character default.
 
 To find the LCD width for a map:
+
 1. Scan all layers and find the longest binding token (e.g. `&bt BT_CLR_ALL`, `&kp LC(LS(N4))`)
 2. The column width is: length of longest token + minimum 1 space of padding
 3. All binding values are right-padded with spaces to this width; all diagram cells use the same width

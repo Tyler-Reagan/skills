@@ -53,13 +53,13 @@ Every SKILL.md must open with this frontmatter block:
 
 ```yaml
 ---
-name: skill-name               # kebab-case, matches directory name
-description: <see below>       # critical — the skill's entire discoverability
+name: skill-name # kebab-case, matches directory name
+description: <see below> # critical — the skill's entire discoverability
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
-  version: "1.0.0"             # semver string; increment on meaningful changes
-  domain: <domain>             # e.g. keyboard-firmware, infrastructure, developer-workflow
+  author: uraniborglabs@gmail.com
+  version: "1.0.0" # semver string; increment on meaningful changes
+  domain: <domain> # e.g. keyboard-firmware, infrastructure, developer-workflow
   triggers: comma, separated, trigger, phrases
   role: specialist | scaffolding | diagnostic | formatting | reference
   scope: implementation | troubleshooting | formatting | documentation
@@ -75,25 +75,30 @@ Fields `version`, `domain`, `triggers`, `role`, `scope`, `output-format`, and `r
 ## Description Format
 
 The description is **the entire discoverability surface**. It must tell Claude:
+
 1. What capability the skill provides (one sentence)
 2. Exactly when to trigger it — specific natural language patterns in quotes
 
 **Pattern:**
+
 ```
 <What it does, one sentence>. Use when the user <says/asks/shares> "<exact phrase>", "<exact phrase>", or <describes scenario>.
 ```
 
 **Good:**
+
 ```
 Diagnoses and resolves common ZMK firmware failures across five categories. Use when the user reports a build error, "board not found", "KeyError qualifiers", keyboard not pairing, or ZMK Studio not connecting.
 ```
 
 **Bad:**
+
 ```
 Helps with ZMK keyboard problems.
 ```
 
 Rules:
+
 - Max 1024 characters
 - Write in third person
 - Quote exact natural language phrases the user would actually type
@@ -106,15 +111,15 @@ Rules:
 
 These terms are used consistently across all ZMK skills. Never substitute synonyms.
 
-| Term | Meaning | Avoid |
-|------|---------|-------|
-| **central** | The keyboard half (or dongle MCU) managing USB HID and BLE host connections | "master", "left half" (ambiguous) |
-| **peripheral** | A keyboard half connecting to central over BLE split transport | "slave", "right half" (ambiguous) |
-| **board** | The MCU module identifier (e.g. `nice_nano_v2`) | "controller", "microcontroller" |
-| **shield** | A Zephyr abstraction for a hardware add-on (keyboard PCB, display module, adapter) | "overlay", "add-on", "hardware" |
-| **module** | An external Git repo consumed via `west.yml` that self-registers via `zephyr/module.yml` | "plugin", "library", "package" |
-| **v0.3** | Current stable ZMK release (Zephyr 3.5, LVGL v8) | "old ZMK", "stable", "the release" |
-| **ZMK main** | Development branch (Zephyr 4.1, LVGL v9) — community alias "v0.4" | "latest", "new ZMK", "v0.4 only" |
+| Term           | Meaning                                                                                  | Avoid                              |
+| -------------- | ---------------------------------------------------------------------------------------- | ---------------------------------- |
+| **central**    | The keyboard half (or dongle MCU) managing USB HID and BLE host connections              | "master", "left half" (ambiguous)  |
+| **peripheral** | A keyboard half connecting to central over BLE split transport                           | "slave", "right half" (ambiguous)  |
+| **board**      | The MCU module identifier (e.g. `nice_nano_v2`)                                          | "controller", "microcontroller"    |
+| **shield**     | A Zephyr abstraction for a hardware add-on (keyboard PCB, display module, adapter)       | "overlay", "add-on", "hardware"    |
+| **module**     | An external Git repo consumed via `west.yml` that self-registers via `zephyr/module.yml` | "plugin", "library", "package"     |
+| **v0.3**       | Current stable ZMK release (Zephyr 3.5, LVGL v8)                                         | "old ZMK", "stable", "the release" |
+| **ZMK main**   | Development branch (Zephyr 4.1, LVGL v9) — community alias "v0.4"                        | "latest", "new ZMK", "v0.4 only"   |
 
 When writing a new ZMK skill, include a `## Domain Language` section at the top with the terms relevant to that skill's scope.
 

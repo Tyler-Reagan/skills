@@ -3,7 +3,7 @@ name: gitlab-mr-writing
 description: Writes calibrated GitLab merge request descriptions and optional technical reviewer guides. Use when the user says "write my MR description", "draft the merge request body", "help me document this change", or asks for a technical reviewer summary — especially for architecture changes, cross-package refactors, or MRs that are too large to read linearly.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: developer-workflow
   triggers: MR description, merge request body, PR description, reviewer guide, technical summary, document this change
@@ -25,11 +25,11 @@ refactor lands as one merge, etc.).
 
 Calibrate by classifying the change before drafting:
 
-| Class | Examples | Description target |
-|---|---|---|
-| **Focused** | Bug fix, single helper, one-component frontend change, doc-only update | ~20–30 lines. Motivation + headline changes + 1–2 references. No theme-group bullets, no reviewer-focus checklist. |
-| **Multi-theme** | New feature touching 2–3 packages, refactor with cleanup, infra rollout | ~50–80 lines. Theme groups become useful here. Still no reviewer guide unless requested. |
-| **Architectural** | Cross-package convergence, new service, version migration, multi-week deep change | The full structure below — opening framing, theme groups, optional Technical Reviewer Guide. |
+| Class             | Examples                                                                          | Description target                                                                                                 |
+| ----------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Focused**       | Bug fix, single helper, one-component frontend change, doc-only update            | ~20–30 lines. Motivation + headline changes + 1–2 references. No theme-group bullets, no reviewer-focus checklist. |
+| **Multi-theme**   | New feature touching 2–3 packages, refactor with cleanup, infra rollout           | ~50–80 lines. Theme groups become useful here. Still no reviewer guide unless requested.                           |
+| **Architectural** | Cross-package convergence, new service, version migration, multi-week deep change | The full structure below — opening framing, theme groups, optional Technical Reviewer Guide.                       |
 
 When the user gives an explicit length or shape constraint in the prompt
 ("keep under 25 lines", "brief", "just motivation"), that override is

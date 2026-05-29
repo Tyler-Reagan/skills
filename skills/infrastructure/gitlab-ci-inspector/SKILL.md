@@ -3,7 +3,7 @@ name: gitlab-ci-inspector
 description: Fetches and diagnoses GitLab CI/CD job logs using glab CLI or the REST API. Use when the user shares a gitlab.com job or pipeline URL, asks "why did my pipeline fail", "what does this CI job say", or "check the build logs" — accepts job URLs, pipeline URLs, or project + job name pairs.
 license: MIT
 metadata:
-  author: tylerreagan98@gmail.com
+  author: uraniborglabs@gmail.com
   version: "1.0.0"
   domain: infrastructure
   triggers: GitLab job URL, pipeline URL, CI job, pipeline failed, build logs, glab, GITLAB_TOKEN
