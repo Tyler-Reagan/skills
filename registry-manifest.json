@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "exportedAt": "2026-05-29T01:58:56.017Z",
-  "sourceBankVersion": "1.15.0",
+  "exportedAt": "2026-05-29T16:33:51.349Z",
+  "sourceBankVersion": "1.16.0",
   "skills": [
     {
       "name": "404-page-generator",
@@ -764,7 +764,7 @@
         "repo": "pbakaus/impeccable",
         "sourceUrl": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "skillFolderHash": "2f9b493f007d6357458f2e2ad4883382326297ea"
+        "skillFolderHash": "cfefceef654fea78fa0ea9c1f9451a5c852de681"
       },
       "tags": [],
       "dismissed": false,
