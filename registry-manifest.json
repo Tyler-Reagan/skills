@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "exportedAt": "2026-05-28T21:33:36.722Z",
-  "sourceBankVersion": "1.14.0",
+  "exportedAt": "2026-05-29T01:47:20.052Z",
+  "sourceBankVersion": "1.15.0",
   "skills": [
     {
       "name": "404-page-generator",
@@ -90,7 +90,7 @@
     },
     {
       "name": "building-glamorous-tuis",
-      "description": "Build terminal UIs with Charmbracelet (Bubble Tea, Lip Gloss, Gum). Use when: Go TUI, shell prompts/spinners, \"make CLI prettier\", adaptive layouts, async rendering, focus state machines, sparklines, heatmaps, kanban boards, SSH apps.",
+      "description": ">-",
       "source": "user",
       "bucket": "personal",
       "origin": {
@@ -450,7 +450,7 @@
     },
     {
       "name": "gh-cli",
-      "description": "GitHub CLI (gh) comprehensive reference for repositories, issues, pull requests, Actions, projects, releases, gists, codespaces, organizations, extensions, and all GitHub operations from the command line.",
+      "description": "Comprehensive GitHub CLI (gh) reference covering repos, issues, PRs, Actions, releases, projects, codespaces, and API access. Use when the user asks how to use gh, needs the syntax for a gh command, wants to automate GitHub operations from the terminal, or asks about gh pr, gh issue, gh run, gh api, or gh repo subcommands.",
       "source": "user",
       "bucket": "personal",
       "origin": {
@@ -482,14 +482,14 @@
     },
     {
       "name": "gitlab-ci-inspector",
-      "description": "Inspect GitLab CI/CD job results, fetch job logs, and diagnose pipeline failures. Use when the user shares a GitLab job URL, pipeline URL, asks about CI/CD job output, wants to check why a pipeline failed, or needs to review build/deploy logs.",
+      "description": "Fetches and diagnoses GitLab CI/CD job logs using glab CLI or the REST API. Use when the user shares a gitlab.com job or pipeline URL, asks \"why did my pipeline fail\", \"what does this CI job say\", or \"check the build logs\" — accepts job URLs, pipeline URLs, or project + job name pairs.",
       "source": "user",
       "bucket": "personal",
       "origin": {
         "kind": "github",
-        "repo": "Tyler-Reagan/skills-bank",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills-bank.git",
-        "skillPath": "skills/gitlab-ci-inspector/SKILL.md"
+        "repo": "Tyler-Reagan/skills",
+        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
@@ -521,14 +521,14 @@
     },
     {
       "name": "gitlab-mr-writing",
-      "description": "Author GitLab merge request descriptions and technical reviewer guides for large-scale engineering changes. Use when the user asks to write an MR description, merge request body, PR description, technical reviewer summary, or reviewer guide — especially for refactors, architecture changes, or multi-package merges.",
+      "description": "Writes calibrated GitLab merge request descriptions and optional technical reviewer guides. Use when the user says \"write my MR description\", \"draft the merge request body\", \"help me document this change\", or asks for a technical reviewer summary — especially for architecture changes, cross-package refactors, or MRs that are too large to read linearly.",
       "source": "user",
       "bucket": "personal",
       "origin": {
         "kind": "github",
-        "repo": "Tyler-Reagan/skills-bank",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills-bank.git",
-        "skillPath": "skills/gitlab-mr-writing/SKILL.md"
+        "repo": "Tyler-Reagan/skills",
+        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
@@ -662,11 +662,9 @@
         "repo": "pbakaus/impeccable",
         "sourceUrl": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "skillFolderHash": "7f7907531aecd30a9b5e1b79bf27d46301aff121"
+        "skillFolderHash": "2f9b493f007d6357458f2e2ad4883382326297ea"
       },
-      "tags": [
-        "UI"
-      ],
+      "tags": [],
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": []
@@ -829,14 +827,14 @@
     },
     {
       "name": "pretty-mermaid",
-      "description": "Render beautiful Mermaid diagrams as SVG or ASCII art using the beautiful-mermaid library. Supports 15+ themes, 5 diagram types (flowchart, sequence, state, class, ER), and ultra-fast rendering. Use this skill when: rendering a mermaid diagram or processing .mmd files; creating a flowchart, sequence, state, class, or ER diagram; applying a theme or beautifying a diagram; batch processing multiple diagrams; producing ASCII / terminal-friendly diagrams; or visualizing architecture, workflows, or data models.",
+      "description": "Renders Mermaid diagrams to styled SVG or ASCII art using beautiful-mermaid, with 15 themes and batch support. Use when the user wants to render a .mmd file, asks to \"create a flowchart / sequence diagram / ER diagram / state diagram\", wants to \"apply a theme\" or \"beautify a diagram\", needs a terminal-friendly ASCII version of a Mermaid chart, or wants to batch-render multiple diagrams at once.",
       "source": "user",
       "bucket": "personal",
       "origin": {
         "kind": "github",
-        "repo": "Tyler-Reagan/skills-bank",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills-bank.git",
-        "skillPath": "skills/pretty-mermaid/SKILL.md"
+        "repo": "Tyler-Reagan/skills",
+        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "skillPath": "skills/tools/pretty-mermaid/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
@@ -1045,14 +1043,14 @@
     },
     {
       "name": "terraform-plan-summary",
-      "description": "Parses noisy Terraform or GitLab CI job logs and produces a concise impact summary (add/change/destroy counts, per-resource actions, grouped repetitive changes, key attribute diffs, warnings). Use when summarizing terraform plan output, CI plan jobs, long job logs, or when the user asks what a plan would change.",
+      "description": "Parses Terraform plan output or GitLab CI job logs into a concise infrastructure impact summary. Use when the user pastes a terraform plan, shares a CI job log with plan output, asks \"what would this change\", \"summarize the plan\", or \"what gets destroyed\" — strips GitLab runner noise and ANSI escapes automatically.",
       "source": "user",
       "bucket": "personal",
       "origin": {
         "kind": "github",
-        "repo": "Tyler-Reagan/skills-bank",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills-bank.git",
-        "skillPath": "skills/terraform-plan-summary/SKILL.md"
+        "repo": "Tyler-Reagan/skills",
+        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
@@ -1127,11 +1125,7 @@
         "skillPath": "skills/deprecated/ubiquitous-language/SKILL.md",
         "skillFolderHash": "483fe10b01bed81b7eba7ee26df3f1bef9540c88"
       },
-      "tags": [
-        "ddd",
-        "glossary",
-        "documentation"
-      ],
+      "tags": [],
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": []
