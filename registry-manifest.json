@@ -540,9 +540,9 @@
       "bucket": "personal",
       "origin": {
         "kind": "github",
-        "repo": "Tyler-Reagan/skills-bank",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills-bank.git",
-        "skillPath": "skills/gitlab-ci-inspector/SKILL.md"
+        "repo": "Tyler-Reagan/skills",
+        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
@@ -573,9 +573,9 @@
       "bucket": "personal",
       "origin": {
         "kind": "github",
-        "repo": "Tyler-Reagan/skills-bank",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills-bank.git",
-        "skillPath": "skills/gitlab-mr-writing/SKILL.md"
+        "repo": "Tyler-Reagan/skills",
+        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
@@ -859,9 +859,9 @@
       "bucket": "personal",
       "origin": {
         "kind": "github",
-        "repo": "Tyler-Reagan/skills-bank",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills-bank.git",
-        "skillPath": "skills/pretty-mermaid/SKILL.md"
+        "repo": "Tyler-Reagan/skills",
+        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "skillPath": "skills/tools/pretty-mermaid/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
@@ -1098,9 +1098,9 @@
       "bucket": "personal",
       "origin": {
         "kind": "github",
-        "repo": "Tyler-Reagan/skills-bank",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills-bank.git",
-        "skillPath": "skills/terraform-plan-summary/SKILL.md"
+        "repo": "Tyler-Reagan/skills",
+        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
