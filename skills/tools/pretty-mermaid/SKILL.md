@@ -463,10 +463,10 @@ node scripts/render.mjs \
 Error: Cannot find module 'beautiful-mermaid'
 ```
 
-**Note:** This should auto-install on first run. If it fails:
+**Note:** This should auto-install on first run (using `pnpm` when available, falling back to `npm`). If it fails:
 
 ```bash
-cd /path/to/pretty-mermaid-skill && npm install
+cd /path/to/pretty-mermaid-skill && pnpm install   # or: npm install
 ```
 
 ### Invalid Mermaid Syntax
