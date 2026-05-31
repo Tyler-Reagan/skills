@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "exportedAt": "2026-05-29T16:33:51.349Z",
+  "exportedAt": "2026-05-31T00:53:21.216Z",
   "sourceBankVersion": "1.16.0",
   "skills": [
     {
@@ -122,6 +122,8 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
+        "cursor",
+        "codex",
         "agents"
       ]
     },
@@ -278,7 +280,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -314,6 +318,9 @@
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": [
+        "claude",
+        "cursor",
+        "codex",
         "agents"
       ]
     },
@@ -459,7 +466,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -479,7 +488,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -522,7 +533,11 @@
       "source": "user",
       "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "kind": "github",
+        "repo": "github/awesome-copilot",
+        "sourceUrl": "https://github.com/github/awesome-copilot.git",
+        "skillPath": "skills/gh-cli/SKILL.md",
+        "skillFolderHash": "437437f7f20bcdbbdb3081cf164435a388c0a39a"
       },
       "tags": [],
       "dismissed": false,
@@ -562,6 +577,9 @@
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": [
+        "claude",
+        "cursor",
+        "codex",
         "agents"
       ]
     },
@@ -591,14 +609,17 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
+        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md",
+        "skillFolderHash": "4df70b4bade0e65727ab6cb3d7c7c0b584578867"
       },
       "tags": [],
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -618,7 +639,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -630,14 +653,17 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
+        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md",
+        "skillFolderHash": "c628129120a474236e686142e46ccf9de703d035"
       },
       "tags": [],
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -657,7 +683,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -677,7 +705,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -697,7 +727,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -717,6 +749,8 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
+        "cursor",
+        "codex",
         "agents"
       ]
     },
@@ -764,7 +798,7 @@
         "repo": "pbakaus/impeccable",
         "sourceUrl": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "skillFolderHash": "cfefceef654fea78fa0ea9c1f9451a5c852de681"
+        "skillFolderHash": "6cb8c637f757ba5b580c1d5398309ba80f350dbc"
       },
       "tags": [],
       "dismissed": false,
@@ -856,7 +890,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -936,7 +972,8 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/tools/pretty-mermaid/SKILL.md"
+        "skillPath": "skills/tools/pretty-mermaid/SKILL.md",
+        "skillFolderHash": "e4a958d3f7b985e798e04ccefb98b49f28119702"
       },
       "tags": [],
       "dismissed": false,
@@ -1051,7 +1088,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -1157,7 +1196,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     },
     {
@@ -1186,7 +1227,8 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
+        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md",
+        "skillFolderHash": "4a634af565de54fde65630f67c4756ef5a5b9545"
       },
       "tags": [],
       "dismissed": false,
@@ -1284,6 +1326,7 @@
       "lastInstalledOn": [
         "claude",
         "cursor",
+        "codex",
         "agents"
       ]
     },
@@ -1387,10 +1430,7 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "agents"
-      ]
+      "lastInstalledOn": []
     },
     {
       "name": "zmk-config",
@@ -1487,7 +1527,9 @@
       "hidden": false,
       "lastInstalledOn": [
         "claude",
-        "cursor"
+        "cursor",
+        "codex",
+        "agents"
       ]
     }
   ],
