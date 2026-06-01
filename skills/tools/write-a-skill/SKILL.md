@@ -1,78 +1,67 @@
 ---
 name: write-a-skill
-description: Creates a new skill for this repo following project conventions — full metadata schema, category layout, plugin.json registration, Anti-Patterns section. Use when the user says "write a skill", "create a skill", "new skill", "add a skill", or wants to author a new capability in this skills repo.
+description: Authors a new Claude Code skill that loads cleanly into whatever skills repo or collection you're working in — discovering that repo's layout, frontmatter, and registration instead of assuming them. Use when the user says "write a skill", "create a skill", "new skill", "add a skill", or wants to author a new agent capability.
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.0.0"
+  version: "2.0.0"
   domain: developer-workflow
   triggers: write a skill, create a skill, new skill, add a skill, build a skill
   role: scaffolding
   scope: implementation
   output-format: markdown
-  related-skills:
+  related-skills: find-skills
 ---
 
 # Write a Skill
 
-## Quick start
+Author a new skill that loads cleanly into Claude Code. The craft below is universal; the repo-specific details — where skills live, what frontmatter is required, how skills get registered — you **discover from the target repo**, never assume.
 
-Describe the capability you want to add. This skill walks through requirements, drafts the full SKILL.md using project conventions, registers it in `plugin.json`, and runs the quality checklist before handing off.
+## Step 1 — Gather requirements
 
-## Step 1: Gather requirements
+- **What it does** — one sentence.
+- **Triggers** — the exact phrases a user would type to invoke it.
+- **Split?** — will it need reference tables, examples, or scripts in separate files?
 
-Ask the user — or explore the codebase to answer — before drafting:
+If a question can be answered by reading the codebase, read it instead of asking.
 
-- **What does it do?** One sentence.
-- **What exact phrases trigger it?** What would a user naturally type?
-- **Category?** `keyboard`, `infrastructure`, or `tools`
-- **Role?** `specialist | scaffolding | diagnostic | formatting | reference`
-- **Related skills?** Any existing skills that overlap or should be cross-referenced?
-- **Split needed?** Scripts, reference tables, or examples that belong in separate files?
-- **ZMK skill?** Which domain terms does it own vs. defer to sibling skills?
+## Step 2 — Check for overlap
 
-## Step 2: Check for overlap
+Search existing skills — and `npx skills find` for the wider ecosystem — before creating. If something close exists, decide deliberately: extend it, or carve a clear scope boundary. Don't ship a near-duplicate.
 
-Search existing skills for similar capabilities before creating. If overlap exists, decide: extend the existing skill or create a new one with a clear scope boundary. For ZMK skills, consult the ownership rules in `CLAUDE.md` before adding any behavior that might duplicate a sibling skill.
+## Step 3 — Learn THIS repo's conventions
 
-## Step 3: Draft
+Skills collections differ. Inspect a sibling skill and any `CLAUDE.md` / `README.md` rather than assuming:
 
-Create `skills/<category>/<skill-name>/SKILL.md`. See [REFERENCE.md](REFERENCE.md) for the full frontmatter schema and description format.
+- **Layout** — where skills live (`skills/<category>/<name>/`, flat, etc.). Mirror a neighbor.
+- **Frontmatter** — `name` and `description` are effectively universal; everything else (a `metadata` block, `version`, `license`) is per-repo. Copy what neighbors carry, exactly.
+- **Registration** — most repos declare skills in a manifest (`plugin.json`, `registry-manifest.json`, `index.json`, …). Find how siblings are listed and match it. An unregistered skill never loads.
+- **Validation** — note any `validate` / `build` / `lint` step the repo runs on skills; you'll run it in Step 5.
 
-Every SKILL.md must include:
+## Step 4 — Write it
 
-- **Quick start** — one concrete example of what using the skill looks like
-- **Workflow or process** — the core of the skill; what it instructs Claude to do
-- **Anti-Patterns / DO NOT** — at least one explicit DO NOT
-- **Domain Language** — ZMK skills only; list owned terms, defer the rest to sibling skills
+**Description first — it is the entire discoverability surface** (the only thing Claude sees when deciding whether to load the skill):
 
-Split to `REFERENCE.md` when SKILL.md exceeds 100 lines. Keep cross-references one level deep.
+> `<What it does, one sentence>. Use when the user <says/asks/shares> "<exact phrase>", "<exact phrase>", or <describes the scenario>.`
 
-## Step 4: Register in plugin.json
+Quote literal phrases; cover adjacent requests; third person; a trigger, not a summary. See [REFERENCE.md](REFERENCE.md) for good/bad examples.
 
-Add the new path to `.claude-plugin/plugin.json` in alphabetical order within its category group. Unregistered skills are not loaded.
+**Body** — keep it lean: a workflow Claude can follow, not a reference dump. Lead with what to do, put the process at the core, include at least one explicit **DO NOT**. Split deep tables / examples / scripts into sibling files once SKILL.md passes ~100 lines; keep cross-references one level deep.
 
-## Step 5: Quality checklist
+## Step 5 — Register, validate, verify
 
-- [ ] `description` has specific quoted trigger phrases ("Use when user says...")
-- [ ] `description` is under 1024 characters
-- [ ] All metadata fields present: `author`, `version`, `domain`, `triggers`, `role`, `scope`, `output-format`, `related-skills`
-- [ ] SKILL.md under 100 lines, or split into supporting files
-- [ ] `Domain Language` section present (ZMK skills only)
-- [ ] `Anti-Patterns` / DO NOT section present
-- [ ] Per-phase checklists included (multi-step workflow skills only)
-- [ ] `related-skills` populated with any skills the user should consider loading alongside this one
-- [ ] No time-sensitive content without an explicit "as of <date>" callout
-- [ ] No content duplicated from an existing skill — define terms once, reference the owning skill
+- Register the skill where this repo registers skills (Step 3).
+- Run the repo's validation/build step, if it has one.
+- Confirm it loads and the triggers fire.
 
-## Anti-Patterns
+## Anti-patterns
 
-**DO NOT** use the two-field frontmatter from the upstream write-a-skill — this repo requires the full metadata block.
+**DO NOT** assume another repo's conventions — categories, required frontmatter, and the registration mechanism are all per-repo. Inspect a sibling first.
 
-**DO NOT** skip plugin.json registration — a skill that isn't listed is never loaded.
+**DO NOT** write a description that states capability without trigger phrases — Claude can't decide when to load it.
 
-**DO NOT** write a skill that is a reference dump — every skill needs a workflow or process at its core. Reference material supports the core; it is not the core.
+**DO NOT** ship a skill that is a pure reference dump — every skill needs a workflow or task at its core.
 
-**DO NOT** duplicate domain language between skills — define a term once in the skill that owns it.
+**DO NOT** skip registration — an unlisted skill never loads.
 
-**DO NOT** produce the skill without running the quality checklist in Step 5.
+**DO NOT** leave floating version / URL claims without an "as of <date>" — they rot.

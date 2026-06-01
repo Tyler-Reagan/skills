@@ -1,85 +1,54 @@
 # Write a Skill — Reference
 
-## Full frontmatter schema
+Deeper craft notes. The specifics of *your* target repo (required frontmatter, categories, registration) come from inspecting a sibling skill — these are general patterns, not mandates.
 
-Every SKILL.md must open with this block:
+## Description craft
 
-```yaml
----
-name: skill-name # kebab-case, matches directory name
-description: <see below> # critical — the skill's entire discoverability
-license: MIT
-metadata:
-  author: uraniborglabs@gmail.com
-  version: "1.0.0" # semver; increment on meaningful changes
-  domain: <domain> # e.g. keyboard-firmware, infrastructure, developer-workflow
-  triggers: comma, separated, trigger, phrases
-  role: specialist | scaffolding | diagnostic | formatting | reference
-  scope: implementation | troubleshooting | formatting | documentation
-  output-format: code | text | markdown
-  related-skills: other-skill, another-skill
----
-```
-
-All eight `metadata` fields are required. A skill without `version` will not be updated deliberately.
-
-## Description format
-
-The description is the only thing Claude sees when deciding whether to load a skill. It must answer:
-
-1. What capability does this skill provide? (one sentence)
-2. When should it trigger? (specific natural language phrases in quotes)
+The description is the only thing Claude sees when deciding whether to load a skill. It must answer two things: what the skill does, and exactly when to trigger it.
 
 **Pattern:**
 
 ```
-<What it does>. Use when the user <says/asks/shares> "<exact phrase>", "<exact phrase>", or <describes scenario>.
+<What it does, one sentence>. Use when the user <says/asks/shares> "<exact phrase>", "<exact phrase>", or <describes scenario>.
 ```
 
-**Good:**
+**Good** — concrete capability, quoted triggers, edge cases covered:
 
 ```
-Diagnoses and resolves common ZMK firmware failures across five categories. Use when the user reports a build error, "board not found", "KeyError qualifiers", keyboard not pairing, or ZMK Studio not connecting.
+Diagnoses and resolves common CI pipeline failures. Use when the user shares a failing job URL, asks "why did my pipeline fail", "what does this CI error mean", or pastes a red build log.
 ```
 
-**Bad:**
+**Bad** — capability with no triggers; Claude can't decide when to load it:
 
 ```
-Helps with ZMK keyboard problems.
+Helps with CI problems.
 ```
 
-Rules:
+Rules: max ~1024 characters, third person, quote phrases a user would actually type, cover adjacent requests, don't restate the body.
 
-- Max 1024 characters
-- Third person
-- Quote exact natural language phrases the user would actually type
-- Cover edge cases — what adjacent requests should also load this skill?
-- Do not summarize the skill body — the description is a trigger, not a synopsis
+## Frontmatter
 
-## Skill directory layout
+`name` (kebab-case, matches the directory) and `description` are near-universal. Beyond those, copy whatever the repo's other skills carry — common optional fields include:
 
-```
-skill-name/
-├── SKILL.md              # Main instructions (required)
-├── REFERENCE.md          # Long reference tables or API docs (if SKILL.md > 100 lines)
-├── EXAMPLES.md           # Annotated examples (if needed)
-├── supporting/           # Deep-dive docs
-│   └── topic.md
-├── references/           # Data files (keycodes, boards, themes)
-│   └── table.md
-└── scripts/              # Utility scripts for deterministic operations
-    └── helper.py
-```
+- `version` — semver; many tools won't update a skill that lacks one.
+- `license`
+- a `metadata` block — e.g. `author`, `domain`, `triggers`, `role`, `scope`, `output-format`, `related-skills`.
 
-Split into separate files when SKILL.md exceeds 100 lines or when content has distinct audiences. Keep cross-references one level deep — don't chain `See X → See Y → See Z`.
+Match the neighbors exactly; a frontmatter shape the repo's validator rejects won't publish.
 
-## When to add scripts
+## Common role / scope values
 
-Add a utility script when the operation is deterministic, the same code would be generated repeatedly across sessions, or errors need explicit handling. Scripts save tokens and improve reliability.
+If the repo uses a `metadata` block, these are conventional values — adapt to what siblings use:
 
-## Role and scope values
+| Field   | Common values |
+| ------- | ------------- |
+| `role`  | `specialist` (domain expert) · `scaffolding` (generates starter structure) · `diagnostic` (investigates problems) · `formatting` (transforms/renders output) · `reference` (lookup tables / API docs) |
+| `scope` | `implementation` · `troubleshooting` · `formatting` · `documentation` |
 
-| Field   | Allowed values                                                                                                                                                                                                                        |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `role`  | `specialist` — domain expert; `scaffolding` — generates starter code or structure; `diagnostic` — investigates and identifies problems; `formatting` — transforms or renders output; `reference` — provides lookup tables or API docs |
-| `scope` | `implementation` — writes or modifies code; `troubleshooting` — diagnoses and fixes; `formatting` — stylistic transformation; `documentation` — writes prose or docs                                                                  |
+## When to add a script
+
+Add a utility script when the operation is deterministic, the same code would be regenerated every session, or errors need explicit handling. Scripts save tokens and improve reliability over re-deriving logic in prose each time.
+
+## Splitting files
+
+Keep SKILL.md the workflow entry point. Push long reference tables to `REFERENCE.md`, annotated examples to `EXAMPLES.md`, data files to `references/`, and deterministic helpers to `scripts/`. Split once SKILL.md passes ~100 lines or when content has distinct audiences (quick workflow vs. deep reference). Keep cross-references one level deep — don't chain `See X → See Y → See Z`.

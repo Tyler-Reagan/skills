@@ -50,7 +50,8 @@ Skills for the full lifecycle of a ZMK keyboard project.
 | [`pretty-mermaid`](skills/tools/pretty-mermaid/SKILL.md) | `render mermaid`, `flowchart`, `sequence diagram`, `ER diagram`, `apply diagram theme` | Renders Mermaid diagrams to SVG or ASCII art with 15 themes and batch support |
 | [`eureka`](skills/tools/eureka/SKILL.md) | `shower thought`, `pivot idea`, `brainstorm`, `what if we`, `I'm thinking about`, `eureka` | Turns a raw idea into a structured outline — interviews you one question at a time, challenges assumptions, and surfaces a risk annotation |
 | [`scatterbrain`](skills/tools/scatterbrain/SKILL.md) | `scatterbrain`, `lost the thread`, `drifted`, `what was I doing`, `set anchor`, `focus recovery` | Focus-recovery skill — anchors the current thread or recovers it after a tangent, classifying the drift as productive or derailing |
-| [`write-a-skill`](skills/tools/write-a-skill/SKILL.md) | `write a skill`, `create a skill`, `new skill`, `add a skill`, `build a skill` | Scaffolds a new skill for this repo — gathers requirements, drafts full SKILL.md with metadata, registers in `plugin.json`, runs quality checklist |
+| [`write-a-skill`](skills/tools/write-a-skill/SKILL.md) | `write a skill`, `create a skill`, `new skill`, `add a skill`, `build a skill` | Authors a new skill in any skills repo — discovers the repo's layout, frontmatter, and registration rather than assuming them; description-first, lean workflow |
+| [`audit-memories`](skills/tools/audit-memories/SKILL.md) | `audit my memories`, `clean up memory`, `prune stale memories`, `consolidate memories`, `memory hygiene` | Audits a project's `~/.claude` memory files — classifies each keep/prune/merge/fix, verifies claims against the live repo, proposes a review-first consolidation plan before changing anything |
 
 ---
 

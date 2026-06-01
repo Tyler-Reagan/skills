@@ -12,6 +12,7 @@
     "./skills/keyboard/zmk-keymap",
     "./skills/keyboard/zmk-lvgl-migrate",
     "./skills/keyboard/zmk-new-config",
+    "./skills/tools/audit-memories",
     "./skills/tools/eureka",
     "./skills/tools/gh-cli",
     "./skills/tools/pretty-mermaid",
