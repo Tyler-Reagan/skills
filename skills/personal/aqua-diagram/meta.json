@@ -1,0 +1,4 @@
+{
+  "name": "aqua-diagram",
+  "description": "Iterate on an existing Mermaid, SVG, or architecture diagram using the Planisphere MCP (planisphere.dev/mcp). Aquarius lifts the diagram into a semantic IR, lets you refine meaning cheaply, then lowers back to the user's original format. Use when the user has a diagram they want to improve, extend, or render via Planisphere."
+}
