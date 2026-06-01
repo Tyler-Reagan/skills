@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "exportedAt": "2026-06-01T03:32:03.559Z",
+  "exportedAt": "2026-06-01T19:19:34.683Z",
   "sourceBankVersion": "1.16.0",
   "skills": [
     {
@@ -70,21 +70,6 @@
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": []
-    },
-    {
-      "name": "aqua-diagram",
-      "description": ">-",
-      "source": "user",
-      "bucket": "personal",
-      "origin": {
-        "kind": "none"
-      },
-      "tags": [],
-      "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude"
-      ]
     },
     {
       "name": "brand-visual-generator",
@@ -548,11 +533,7 @@
       "source": "user",
       "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "github/awesome-copilot",
-        "sourceUrl": "https://github.com/github/awesome-copilot.git",
-        "skillPath": "skills/gh-cli/SKILL.md",
-        "skillFolderHash": "437437f7f20bcdbbdb3081cf164435a388c0a39a"
+        "kind": "none"
       },
       "tags": [],
       "dismissed": false,
@@ -787,6 +768,19 @@
       "lastInstalledOn": []
     },
     {
+      "name": "homebrew-cli-release",
+      "description": "Directs the end-to-end process of shipping a self-contained compiled CLI as a `brew install`-able command. The build half is GoReleaser for Go (and GoReleaser's prebuilt builder or a sibling tool like cargo-dist for Rust/Zig/etc.); the Homebrew half — tap, release token, cask, quarantine, license — is language-agnostic. Use when the user says \"distribute this on homebrew\", \"make my CLI installable\", \"brew install my tool\", \"set up a homebrew tap\", \"release my Go CLI\", \"use goreleaser\", \"invoke it via command instead of go run / cargo run\", or wants prebuilt binaries on a GitHub Release with an auto-updated Homebrew formula/cask. Covers version-injection wiring, the homebrew_casks-vs-deprecated-brews choice, personal-tap-vs-homebrew-core, the cross-repo release token, macOS Gatekeeper quarantine handling, the license gate, and cutting plus verifying the first tagged release.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false,
+      "lastInstalledOn": []
+    },
+    {
       "name": "homepage-generator",
       "description": "When the user wants to create, optimize, or audit the main site homepage (primary entry page). Also use when the user mentions \"homepage,\" \"main page,\" \"home page,\" \"hero section,\" \"above the fold,\" \"home page design,\" \"homepage conversion,\" or \"homepage structure.\" Not for paid campaign or ad landing pages—use landing-page-generator. For sitewide page planning, use website-structure.",
       "source": "user",
@@ -953,6 +947,27 @@
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": []
+    },
+    {
+      "name": "portfolio-case-study-writer",
+      "description": "Transform resume bullets into detailed portfolio case studies",
+      "source": "curated",
+      "bucket": "vendored",
+      "origin": {
+        "kind": "github",
+        "repo": "paramchoudhary/resumeskills",
+        "skillPath": "skills/portfolio-case-study-writer/SKILL.md",
+        "skillFolderHash": "06f5a7097ebfb13cd3e5c74cedf3432f3c612ad3"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false,
+      "lastInstalledOn": [
+        "claude",
+        "cursor",
+        "codex",
+        "agents"
+      ]
     },
     {
       "name": "pr-description",
@@ -1197,33 +1212,12 @@
         "repo": "shadcn/ui",
         "sourceUrl": "https://github.com/shadcn/ui.git",
         "skillPath": "skills/shadcn/SKILL.md",
-        "skillFolderHash": "a8404703769866faf15bee897c9ae6e252ac2d35"
+        "skillFolderHash": "34db419996afc09836f01062606316f2728884c4"
       },
       "tags": [],
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": []
-    },
-    {
-      "name": "soultrace",
-      "description": "Take a personality assessment via the SoulTrace API. Use when the user wants to take a personality test, discover their psychological archetype, understand their personality traits, or get a color-based personality profile. The API uses a 5-color psychological model (White=structure, Blue=understanding, Black=agency, Red=intensity, Green=connection) with Bayesian adaptive question selection to classify users into one of 25 archetypes. Triggers on: personality test, personality assessment, what's my personality, take a quiz, archetype test, color personality, soultrace.",
-      "source": "curated",
-      "bucket": "vendored",
-      "origin": {
-        "kind": "github",
-        "repo": "soultrace-ai/soultrace-skill",
-        "skillPath": "skills/soultrace/SKILL.md",
-        "skillFolderHash": "8e36f5a02579a973067fe5c1a662a8be4a1f55b6"
-      },
-      "tags": [],
-      "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
     },
     {
       "name": "specs-code-cleanup",
@@ -1463,7 +1457,7 @@
     },
     {
       "name": "write-a-skill",
-      "description": "Creates a new skill for this repo following project conventions — full metadata schema, category layout, plugin.json registration, Anti-Patterns section. Use when the user says \"write a skill\", \"create a skill\", \"new skill\", \"add a skill\", or wants to author a new capability in this skills repo.",
+      "description": "Create new agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, or build a new skill.",
       "source": "user",
       "bucket": "personal",
       "origin": {
@@ -1493,7 +1487,7 @@
     },
     {
       "name": "zmk-debug",
-      "description": "Diagnoses and resolves common ZMK firmware failures across five categories: build errors, flash failures, split pairing issues, display problems, and ZMK Studio connection failures. Use when the user reports a build error, CI failure, \\\"board not found\\\", \\\"KeyError qualifiers\\\", keyboard not pairing, display blank or not compiling, or ZMK Studio not connecting.",
+      "description": "Diagnoses and resolves common ZMK firmware failures across five categories: build errors, flash failures, split pairing issues, display problems, and ZMK Studio connection failures. Use when the user reports a build error, CI failure, \"board not found\", \"KeyError qualifiers\", keyboard not pairing, display blank or not compiling, or ZMK Studio not connecting.",
       "source": "user",
       "bucket": "personal",
       "origin": {
