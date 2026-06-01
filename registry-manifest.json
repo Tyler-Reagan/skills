@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "exportedAt": "2026-05-31T00:53:21.216Z",
+  "exportedAt": "2026-06-01T03:32:03.559Z",
   "sourceBankVersion": "1.16.0",
   "skills": [
     {
@@ -70,6 +70,21 @@
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": []
+    },
+    {
+      "name": "aqua-diagram",
+      "description": ">-",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false,
+      "lastInstalledOn": [
+        "claude"
+      ]
     },
     {
       "name": "brand-visual-generator",
@@ -803,7 +818,12 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [
+        "claude",
+        "cursor",
+        "codex",
+        "agents"
+      ]
     },
     {
       "name": "landing-page-generator",
@@ -871,7 +891,12 @@
       "tags": [],
       "dismissed": false,
       "hidden": false,
-      "lastInstalledOn": []
+      "lastInstalledOn": [
+        "claude",
+        "cursor",
+        "codex",
+        "agents"
+      ]
     },
     {
       "name": "naming-analyzer",
@@ -1178,6 +1203,27 @@
       "dismissed": false,
       "hidden": false,
       "lastInstalledOn": []
+    },
+    {
+      "name": "soultrace",
+      "description": "Take a personality assessment via the SoulTrace API. Use when the user wants to take a personality test, discover their psychological archetype, understand their personality traits, or get a color-based personality profile. The API uses a 5-color psychological model (White=structure, Blue=understanding, Black=agency, Red=intensity, Green=connection) with Bayesian adaptive question selection to classify users into one of 25 archetypes. Triggers on: personality test, personality assessment, what's my personality, take a quiz, archetype test, color personality, soultrace.",
+      "source": "curated",
+      "bucket": "vendored",
+      "origin": {
+        "kind": "github",
+        "repo": "soultrace-ai/soultrace-skill",
+        "skillPath": "skills/soultrace/SKILL.md",
+        "skillFolderHash": "8e36f5a02579a973067fe5c1a662a8be4a1f55b6"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false,
+      "lastInstalledOn": [
+        "claude",
+        "cursor",
+        "codex",
+        "agents"
+      ]
     },
     {
       "name": "specs-code-cleanup",
