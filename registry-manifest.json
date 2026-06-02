@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 3,
-  "exportedAt": "2026-06-01T03:32:03.559Z",
-  "sourceBankVersion": "1.16.0",
+  "schemaVersion": 4,
+  "sourceBankVersion": "1.17.0",
+  "registryRoot": "Tyler-Reagan/skills",
   "skills": [
     {
       "name": "404-page-generator",
@@ -17,8 +17,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "add-app-to-server",
@@ -34,8 +33,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "api-page-generator",
@@ -51,8 +49,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "apple-appstore-reviewer",
@@ -68,12 +65,11 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
-      "name": "aqua-diagram",
-      "description": ">-",
+      "name": "audit-memories",
+      "description": "Audits a project's Claude Code memory files — classifies each entry keep/prune/merge/fix, verifies project and reference claims against the live repo, finds redundancy and dangling [[links]], and proposes a review-first consolidation plan before changing anything. Use when the user says \"audit my memories\", \"clean up memory\", \"prune stale memories\", \"consolidate memories\", \"are my memories stale\", or wants memory hygiene over the ~/.claude memory files.",
       "source": "user",
       "bucket": "personal",
       "origin": {
@@ -81,10 +77,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude"
-      ]
+      "hidden": false
     },
     {
       "name": "brand-visual-generator",
@@ -100,8 +93,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "branding",
@@ -117,8 +109,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "building-glamorous-tuis",
@@ -134,13 +125,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "carousel",
@@ -156,8 +141,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "caveman",
@@ -173,8 +157,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "competitor-research",
@@ -190,8 +173,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "content-optimization",
@@ -207,8 +189,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "content-strategy",
@@ -224,8 +205,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "convert-web-app",
@@ -241,8 +221,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "core-web-vitals",
@@ -258,8 +237,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "create-mcp-app",
@@ -275,8 +253,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "create-readme",
@@ -292,13 +269,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "d3-viz",
@@ -314,8 +285,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "diagnose",
@@ -331,13 +301,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "docs-page-generator",
@@ -353,13 +317,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "domain-name-brainstormer",
@@ -375,8 +333,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "electron",
@@ -392,8 +349,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "embedded-systems",
@@ -409,8 +365,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "eureka",
@@ -422,13 +377,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "favicon-generator",
@@ -444,8 +393,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "file-name-wizard",
@@ -461,8 +409,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "find-skills",
@@ -478,13 +425,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "fix-knip-unused-exports",
@@ -500,13 +441,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "footer-generator",
@@ -522,8 +457,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "frontend-design",
@@ -539,8 +473,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "gh-cli",
@@ -548,16 +481,11 @@
       "source": "user",
       "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "github/awesome-copilot",
-        "sourceUrl": "https://github.com/github/awesome-copilot.git",
-        "skillPath": "skills/gh-cli/SKILL.md",
-        "skillFolderHash": "437437f7f20bcdbbdb3081cf164435a388c0a39a"
+        "kind": "none"
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "git-commit",
@@ -573,8 +501,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "github-actions-docs",
@@ -590,13 +517,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "github-issues",
@@ -612,8 +533,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "gitlab-ci-inspector",
@@ -624,18 +544,11 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md",
-        "skillFolderHash": "4df70b4bade0e65727ab6cb3d7c7c0b584578867"
+        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "gitlab-ci-patterns",
@@ -651,13 +564,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "gitlab-mr-writing",
@@ -668,18 +575,11 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md",
-        "skillFolderHash": "c628129120a474236e686142e46ccf9de703d035"
+        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "golang-testing",
@@ -695,13 +595,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "grill-me",
@@ -717,13 +611,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "grill-with-docs",
@@ -739,13 +627,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "handoff",
@@ -761,13 +643,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "hero-generator",
@@ -783,8 +659,19 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
+    },
+    {
+      "name": "homebrew-cli-release",
+      "description": "Directs the end-to-end process of shipping a self-contained compiled CLI as a `brew install`-able command. The build half is GoReleaser for Go (and GoReleaser's prebuilt builder or a sibling tool like cargo-dist for Rust/Zig/etc.); the Homebrew half — tap, release token, cask, quarantine, license — is language-agnostic. Use when the user says \"distribute this on homebrew\", \"make my CLI installable\", \"brew install my tool\", \"set up a homebrew tap\", \"release my Go CLI\", \"use goreleaser\", \"invoke it via command instead of go run / cargo run\", or wants prebuilt binaries on a GitHub Release with an auto-updated Homebrew formula/cask. Covers version-injection wiring, the homebrew_casks-vs-deprecated-brews choice, personal-tap-vs-homebrew-core, the cross-repo release token, macOS Gatekeeper quarantine handling, the license gate, and cutting plus verifying the first tagged release.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false
     },
     {
       "name": "homepage-generator",
@@ -800,8 +687,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "impeccable",
@@ -817,13 +703,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "landing-page-generator",
@@ -839,8 +719,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "logo-generator",
@@ -856,8 +735,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "mcp-builder",
@@ -873,8 +751,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "mermaid-diagrams",
@@ -890,13 +767,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "naming-analyzer",
@@ -912,13 +783,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "next-best-practices",
@@ -934,8 +799,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "obsidian-cli",
@@ -951,8 +815,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "pr-description",
@@ -968,8 +831,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "prd-development",
@@ -985,8 +847,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "pretty-mermaid",
@@ -1002,13 +863,19 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
+    },
+    {
+      "name": "pretty-qmk-keymap",
+      "description": "Generates visual keymap diagrams embedded as comments in QMK keymap.c files. Two styles are supported — the overlay style (//╷ alignment markers, binding columns align with diagram cells) and the decorative block-comment style (human-readable, Totem/hand-drawn aesthetic). Use when asked to \"add a keymap diagram\", \"draw the layout\", \"make the keymap readable\", or \"add ascii art above the layers\".",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false
     },
     {
       "name": "pretty-zmk-keymap",
@@ -1020,8 +887,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "problem-statement",
@@ -1037,8 +903,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "product-name",
@@ -1054,8 +919,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "python-packaging",
@@ -1071,8 +935,55 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
+    },
+    {
+      "name": "qmk-config",
+      "description": "QMK project configuration specialist for keyboard.json, rules.mk, config.h, and Vial setup. Use when editing keyboard hardware definitions, enabling features, configuring split keyboard wiring, setting up Vial/VIA, or working with the user config repo + QMK source tree sync pattern.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false
+    },
+    {
+      "name": "qmk-debug",
+      "description": "Diagnoses and resolves common QMK/Vial firmware failures across four categories — build errors, flash failures, split keyboard issues, and Vial problems. Use when the user reports a compile error, a key not working after flashing, split halves not communicating, Vial not connecting, or wrong keys firing.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false
+    },
+    {
+      "name": "qmk-keymap",
+      "description": "QMK keymap specialist covering keymap.c authoring — basic/shifted keycodes, modifier wrappers, MT/LT hold-tap, tap-dance, combos, one-shot keys, macros, and tap-hold configuration. Use when editing keymap.c, asking about MT or LT behavior, home-row mods, tap dance, combos, SEND_STRING macros, or which keycodes to use for shifted symbols.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false
+    },
+    {
+      "name": "qmk-new-config",
+      "description": "Scaffolds a new QMK keyboard keymap by generating keymap.c, config.h, rules.mk, and (optionally) a Vial setup from answers to five questions about hardware and features. Use when the user wants to start a new QMK keymap, set up Vial for the first time, or create a personal keymap for an existing keyboard.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "tags": [],
+      "dismissed": false,
+      "hidden": false
     },
     {
       "name": "react-components",
@@ -1088,13 +999,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "react-state-management",
@@ -1110,13 +1015,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "release-review",
@@ -1132,8 +1031,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "roadmap-planning",
@@ -1149,8 +1047,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "scatterbrain",
@@ -1162,13 +1059,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "seo-strategy",
@@ -1184,8 +1075,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "shadcn",
@@ -1197,12 +1087,11 @@
         "repo": "shadcn/ui",
         "sourceUrl": "https://github.com/shadcn/ui.git",
         "skillPath": "skills/shadcn/SKILL.md",
-        "skillFolderHash": "a8404703769866faf15bee897c9ae6e252ac2d35"
+        "skillFolderHash": "34db419996afc09836f01062606316f2728884c4"
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "soultrace",
@@ -1217,13 +1106,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "specs-code-cleanup",
@@ -1239,13 +1122,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "terraform-module-library",
@@ -1261,8 +1138,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "terraform-plan-summary",
@@ -1273,13 +1149,11 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md",
-        "skillFolderHash": "4a634af565de54fde65630f67c4756ef5a5b9545"
+        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "terraform-test",
@@ -1295,8 +1169,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "theme-factory",
@@ -1312,8 +1185,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "typescript-react-reviewer",
@@ -1329,13 +1201,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "ubiquitous-language",
@@ -1351,8 +1217,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "ui-ux-pro-max",
@@ -1368,13 +1233,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "user-personas",
@@ -1390,8 +1249,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "user-story",
@@ -1407,8 +1265,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "user-story-mapping",
@@ -1424,8 +1281,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "vite",
@@ -1441,8 +1297,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "web-design-guidelines",
@@ -1458,12 +1313,11 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "write-a-skill",
-      "description": "Creates a new skill for this repo following project conventions — full metadata schema, category layout, plugin.json registration, Anti-Patterns section. Use when the user says \"write a skill\", \"create a skill\", \"new skill\", \"add a skill\", or wants to author a new capability in this skills repo.",
+      "description": "Authors a new Claude Code skill that loads cleanly into whatever skills repo or collection you're working in — discovering that repo's layout, frontmatter, and registration instead of assuming them. Use when the user says \"write a skill\", \"create a skill\", \"new skill\", \"add a skill\", or wants to author a new agent capability.",
       "source": "user",
       "bucket": "personal",
       "origin": {
@@ -1475,8 +1329,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "zmk-config",
@@ -1488,12 +1341,11 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "zmk-debug",
-      "description": "Diagnoses and resolves common ZMK firmware failures across five categories: build errors, flash failures, split pairing issues, display problems, and ZMK Studio connection failures. Use when the user reports a build error, CI failure, \\\"board not found\\\", \\\"KeyError qualifiers\\\", keyboard not pairing, display blank or not compiling, or ZMK Studio not connecting.",
+      "description": "Diagnoses and resolves common ZMK firmware failures across five categories: build errors, flash failures, split pairing issues, display problems, and ZMK Studio connection failures. Use when the user reports a build error, CI failure, \"board not found\", \"KeyError qualifiers\", keyboard not pairing, display blank or not compiling, or ZMK Studio not connecting.",
       "source": "user",
       "bucket": "personal",
       "origin": {
@@ -1501,8 +1353,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "zmk-display",
@@ -1514,8 +1365,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "zmk-keymap",
@@ -1527,8 +1377,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "zmk-lvgl-migrate",
@@ -1540,8 +1389,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "zmk-new-config",
@@ -1553,8 +1401,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "zoom-out",
@@ -1570,14 +1417,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     }
-  ],
-  "registryRoot": "Tyler-Reagan/skills"
+  ]
 }
