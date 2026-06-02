@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 4,
-  "sourceBankVersion": "1.17.0",
+  "schemaVersion": 5,
+  "sourceBankVersion": "1.18.0",
   "registryRoot": "Tyler-Reagan/skills",
   "skills": [
     {
@@ -578,7 +578,8 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
+        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md",
+        "skillFolderHash": "4df70b4bade0e65727ab6cb3d7c7c0b584578867"
       },
       "category": "backend",
       "tags": [
@@ -614,7 +615,8 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
+        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md",
+        "skillFolderHash": "c628129120a474236e686142e46ccf9de703d035"
       },
       "category": "writing",
       "tags": [
@@ -721,18 +723,6 @@
         "github",
         "design-system"
       ]
-    },
-    {
-      "name": "homebrew-cli-release",
-      "description": "Directs the end-to-end process of shipping a self-contained compiled CLI as a `brew install`-able command. The build half is GoReleaser for Go (and GoReleaser's prebuilt builder or a sibling tool like cargo-dist for Rust/Zig/etc.); the Homebrew half — tap, release token, cask, quarantine, license — is language-agnostic. Use when the user says \"distribute this on homebrew\", \"make my CLI installable\", \"brew install my tool\", \"set up a homebrew tap\", \"release my Go CLI\", \"use goreleaser\", \"invoke it via command instead of go run / cargo run\", or wants prebuilt binaries on a GitHub Release with an auto-updated Homebrew formula/cask. Covers version-injection wiring, the homebrew_casks-vs-deprecated-brews choice, personal-tap-vs-homebrew-core, the cross-repo release token, macOS Gatekeeper quarantine handling, the license gate, and cutting plus verifying the first tagged release.",
-      "source": "user",
-      "bucket": "personal",
-      "origin": {
-        "kind": "none"
-      },
-      "tags": [],
-      "dismissed": false,
-      "hidden": false
     },
     {
       "name": "homepage-generator",
@@ -1266,7 +1256,8 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
+        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md",
+        "skillFolderHash": "4a634af565de54fde65630f67c4756ef5a5b9545"
       },
       "category": "backend",
       "tags": [
