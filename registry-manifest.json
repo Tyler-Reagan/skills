@@ -481,7 +481,11 @@
       "source": "user",
       "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "kind": "github",
+        "repo": "github/awesome-copilot",
+        "sourceUrl": "https://github.com/github/awesome-copilot.git",
+        "skillPath": "skills/gh-cli/SKILL.md",
+        "skillFolderHash": "437437f7f20bcdbbdb3081cf164435a388c0a39a"
       },
       "tags": [],
       "dismissed": false,
@@ -683,8 +687,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": []
+      "hidden": false
     },
     {
       "name": "homepage-generator",
@@ -712,7 +715,7 @@
         "repo": "pbakaus/impeccable",
         "sourceUrl": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "skillFolderHash": "6cb8c637f757ba5b580c1d5398309ba80f350dbc"
+        "skillFolderHash": "4e99189d23c3096b159d6eb22712c39af3b4883a"
       },
       "tags": [],
       "dismissed": false,
@@ -843,13 +846,7 @@
       },
       "tags": [],
       "dismissed": false,
-      "hidden": false,
-      "lastInstalledOn": [
-        "claude",
-        "cursor",
-        "codex",
-        "agents"
-      ]
+      "hidden": false
     },
     {
       "name": "pr-description",
