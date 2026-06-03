@@ -7,7 +7,6 @@ General-purpose developer tooling skills not tied to a specific infrastructure o
 | Skill | Role | Use when |
 |---|---|---|
 | [`eureka`](eureka/SKILL.md) | Specialist | Turning a raw shower thought or pivot idea into a structured outline for Grill-Me |
-| [`gh-cli`](gh-cli/SKILL.md) | Reference | Any `gh` command — repos, issues, PRs, Actions, releases, API access |
 | [`pretty-mermaid`](pretty-mermaid/SKILL.md) | Tool | Rendering Mermaid diagrams to styled SVG or ASCII art |
 | [`scatterbrain`](scatterbrain/SKILL.md) | Diagnostic | Focus recovery when tangential rabbit holes have buried the original plan |
 | [`write-a-skill`](write-a-skill/SKILL.md) | Scaffolding | Authoring a new skill following project conventions (metadata schema, plugin.json, Anti-Patterns) |
