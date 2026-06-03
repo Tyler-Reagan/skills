@@ -4,13 +4,13 @@ description: Turns a raw shower thought or pivot idea into a structured outline 
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.0.0"
+  version: "1.1.0"
   domain: developer-workflow
   triggers: shower thought, pivot idea, brainstorm, rough concept, what if we, I'm thinking about, eureka, new direction
   role: specialist
   scope: implementation
   output-format: markdown
-  related-skills: grill-me
+  related-skills: grill-me, workflow-fit
 ---
 
 # Eureka
@@ -70,6 +70,18 @@ After the interview, produce:
 ```
 
 The outline is a clean input for a subsequent planning or stress-testing session.
+
+## Gotchas
+
+**User affirms every challenge without engaging.** "Yes, exactly!" to each pushback means they're not actually processing it. Reflect it back harder: "You just agreed with my critique — does that mean the original framing was wrong, or are you dismissing the challenge?"
+
+**User gives a title instead of a proposition.** "Better UX for checkout" is not a proposition. The sentence must contain what changes, for whom, and why now. If it doesn't, it can't be stress-tested.
+
+**First step is research, not action.** "Read about X" or "talk to some users" is not a validating first step. Push for the smallest action that produces *evidence*: a prototype, a five-question survey sent to three real people, a script that checks feasibility.
+
+**User can't name what the idea replaces or disrupts.** This almost always means the scope hasn't been thought through. An idea with no disruption surface is either incremental (and should be named as such) or the user hasn't found the real cost yet. Surface it before moving on.
+
+**User can't name a single uncertain assumption.** If everything "seems solid," they're not thinking critically. Every real idea has at least one load-bearing assumption that could be wrong. Ask: "What's the one thing that, if false, kills this entirely?"
 
 ## Anti-patterns
 
