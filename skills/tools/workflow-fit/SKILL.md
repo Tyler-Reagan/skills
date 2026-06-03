@@ -4,7 +4,7 @@ description: Rates how well each of six multi-agent workflow patterns fits a giv
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.1.0"
+  version: "1.2.0"
   domain: developer-workflow
   triggers: which workflow pattern, rate the workflow patterns, pick a workflow pattern for this, how should we orchestrate this, what pattern fits this task, choose an orchestration pattern, ultracode pattern selection
   role: specialist
@@ -67,6 +67,16 @@ Then state the **RECOMMENDED COMPOSITE**: which patterns chain, in what order, w
 **Token budget:** If the composite is expensive (fanout + adversarial verify + loop), suggest the user set a budget before running: prompt with "use Xk tokens" or set `budget.total` in the workflow script.
 
 Close by offering to run it.
+
+## Gotchas
+
+**Conflating Fanout-And-Synthesize with Generate-And-Filter.** Fanout splits a *known* task across *known* dimensions — you already know what you're parallelizing. Generate-And-Filter produces *new surface* when you don't know what you'll find. They look similar ("parallel agents") but score very differently against the same task. Ask: "Do I know the items already, or am I discovering them?"
+
+**Scoring Loop-Until-Done highly as a standalone pattern.** Its only value is the stop condition — the moment a round surfaces nothing new. An empty Loop with no inner pattern is just a while(true). It should almost always show up as an outer harness wrapping Fanout/Verify, not as a top-level recommendation.
+
+**Recommending Tournament when the task decomposes cleanly.** Tournament is for competing *whole* attempts at a single goal. If the work breaks into parallel independent pieces (each agent handles a different file, dimension, or item), Fanout is right. The confusion: both use parallel agents. The distinction: Fanout *divides* the work; Tournament *duplicates* it.
+
+**Treating task complexity as sufficient justification for a workflow.** A complex task with no agentic laziness, self-preferential bias, or goal drift risk is still better handled by the default harness. Step 0 exists for this reason — answer it, don't skip it.
 
 ## Anti-patterns
 
