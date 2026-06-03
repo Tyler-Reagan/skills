@@ -4,7 +4,7 @@ description: Focus-recovery skill for when tangential drill-downs have buried th
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.0.0"
+  version: "1.1.0"
   domain: developer-workflow
   triggers: scatterbrain, lost the thread, drifted, what was I doing, forgot where I was, set anchor, breadcrumb, focus recovery
   role: diagnostic
@@ -89,6 +89,18 @@ Here's where you were. Want to return?
 Wait for the user's confirmation before resuming the original plan.
 
 ---
+
+## Gotchas
+
+**Session opened without a stated goal.** Anchor mode needs a goal to snapshot. If the user's intent is fuzzy ("just working through some things"), ask them to state what they're trying to accomplish before setting the anchor — otherwise the anchor is useless for recovery.
+
+**Multiple anchors set in one session.** Use the most recent one. Earlier anchors are superseded; don't average them or try to reconcile them.
+
+**Very short session (< ~8 turns).** If there's barely any conversation history, there's likely no meaningful drift. Name the current topic in a sentence rather than running the full recovery flow.
+
+**The tangent solved the original problem.** If the "derail" produced the answer, the verdict is Productive + resolved — don't push a return to the original thread. Note what was found and confirm the goal is now met.
+
+**Drift point is genuinely ambiguous.** Some sessions drift gradually with no single turning point. In that case, name the range ("between turns 12–18 the conversation shifted from X to Y") rather than forcing a precise moment.
 
 ## Anti-patterns
 
