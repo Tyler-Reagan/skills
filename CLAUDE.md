@@ -4,6 +4,8 @@ This is a [Claude Code skills](https://skills.sh) collection. Skills are loaded 
 
 **The `description` field is the only thing Claude sees when deciding whether to load a skill.** Everything else in SKILL.md is only visible after the skill is loaded. Write descriptions accordingly.
 
+**Skills are folders, not just markdown files.** The entire directory — scripts, data, assets, config, hooks — is context engineering. A skill that is only a SKILL.md is leaving most of its potential on the table.
+
 ---
 
 ## Repository Layout
@@ -35,15 +37,20 @@ skill-name/
 ├── SKILL.md              # Main instructions (required)
 ├── REFERENCE.md          # Long reference tables or API docs (if SKILL.md > 100 lines)
 ├── EXAMPLES.md           # Annotated examples (if needed)
+├── config.json           # User setup state — written on first run, read on subsequent runs
 ├── supporting/           # Deep-dive docs (philosophy, test patterns, etc.)
 │   └── topic.md
 ├── references/           # Data files (keycodes, boards, shields, themes)
 │   └── table.md
-└── scripts/              # Utility scripts for deterministic operations
+├── assets/               # Templates, fixtures, and static files Claude copies/fills in
+│   └── template.md
+└── scripts/              # Deterministic helper scripts — let Claude compose, not reconstruct
     └── helper.py
 ```
 
 Split into separate files when SKILL.md exceeds 100 lines or when content has distinct audiences (quick workflow vs. deep reference). Keep cross-references one level deep — don't chain `See X → See Y → See Z`.
+
+**Progressive disclosure:** Tell Claude what files exist in the skill directory and when each is relevant. Claude will read them at the right moment rather than loading everything upfront. A `stuck-jobs.md` that SKILL.md references is only read when handling a stuck job.
 
 ---
 
@@ -107,6 +114,78 @@ Rules:
 
 ---
 
+## Content Principles
+
+These apply to every skill in this repo. They are the difference between a skill that adds value and one that adds context without adding value.
+
+### Non-obvious content only
+
+Claude already knows how to code and can read the codebase. **Do not restate what Claude would do by default.** Every line of a skill should push Claude out of its normal way of thinking — internal conventions, counterintuitive constraints, things you'd only know from real experience with this domain.
+
+Ask: *"Would Claude get this right without the skill?"* If yes, cut it.
+
+### Gotchas section — the highest-signal content
+
+The Gotchas section is the most valuable part of any skill. Build it from real failure points. Be specific — name the field, the table, the behavior, the exception. Vague gotchas are noise.
+
+**Good:** *"The `subscriptions` table is append-only. The row you want has the highest `version`, not the most recent `created_at`."*
+
+**Bad:** *"Be careful with database queries."*
+
+Start with at least one concrete gotcha. Return to update it every time Claude hits a new edge case.
+
+### Give Claude flexibility — don't railroad
+
+Instructions that are too specific remove Claude's judgment and fail on variations the author didn't anticipate. Provide the knowledge and constraints Claude needs; let it decide the approach. A skill that prescribes every sub-step is brittle.
+
+---
+
+## Skill Categories
+
+Every skill fits cleanly into one of nine categories. Skills that straddle several confuse the agent. Identify the category first — it determines which folder patterns apply.
+
+| # | Category | Core job | Key patterns |
+|---|---|---|---|
+| 1 | **Library / API reference** | Correct usage of a lib, CLI, or SDK | Reference snippets, Gotchas, edge cases |
+| 2 | **Product verification** | Test/verify that code works | Scripts + Playwright/tmux drivers, programmatic assertions |
+| 3 | **Data fetching / analysis** | Connect to data and monitoring stacks | Credential handling, dashboard IDs, query patterns |
+| 4 | **Business process / automation** | Automate a repetitive workflow | Persistent data, `config.json` for setup |
+| 5 | **Code scaffolding / templates** | Generate framework boilerplate | Template files in `assets/`, composable scripts |
+| 6 | **Code quality / review** | Enforce code style and review | Deterministic scripts, hooks for CI integration |
+| 7 | **CI/CD and deployment** | Fetch, push, deploy | Cross-skill references, rollback logic, hooks |
+| 8 | **Runbook** | Symptom → investigation → structured report | Symptom-to-tool mapping, multi-tool query patterns |
+| 9 | **Infrastructure operations** | Routine maintenance with guardrails | On-demand hooks to block destructive commands |
+
+---
+
+## Folder Patterns
+
+Use these patterns when the skill warrants them. They are not required in every skill — pick what fits the category.
+
+### Setup pattern (for skills needing user configuration)
+
+Store setup state in `config.json` in the skill directory. On first run: if `config.json` is absent, use `AskUserQuestion` to collect values, then write them. On subsequent runs: read silently. This gives the skill a self-configuring initialization path.
+
+### Persistent data (for skills that benefit from memory across runs)
+
+Store state in `${CLAUDE_PLUGIN_DATA}` — a stable, skill-scoped directory. Simple state: append-only `history.log` or `results.json`. Complex state: SQLite. On each invocation, Claude reads history first and can tell what changed since the last run.
+
+### Scripts as composable building blocks
+
+Pre-written scripts let Claude spend turns on composition rather than reconstructing boilerplate. Add a script when the operation is deterministic, the same code would be regenerated every session, or the operation needs explicit error handling. Tell Claude what each script does and when to invoke it.
+
+### On-demand hooks (for sensitive or opinionated operations)
+
+Skills can register hooks that activate only for the skill's session — not as always-on global hooks. Use for guards you want sometimes but not always:
+
+- Block `rm -rf`, `DROP TABLE`, force-push for prod-touching skills
+- Restrict writes to a specific directory during a debugging skill
+- Log every tool call for skills requiring an audit trail
+
+For triage skills that read untrusted content: reader agents produce structured summaries only (no writes, no API calls); actor agents receive only the summary, never the raw content.
+
+---
+
 ## Domain Language — Cross-Skill Terms
 
 These terms are used consistently across all ZMK skills. Never substitute synonyms.
@@ -129,16 +208,32 @@ When writing a new ZMK skill, include a `## Domain Language` section at the top 
 
 Before committing a new or updated skill:
 
+**Content**
+- [ ] Skill category identified; folder patterns appropriate to that category applied
+- [ ] Every line pushes Claude out of its default behavior — no obvious content
+- [ ] Gotchas section present with at least one concrete, specific gotcha (named field/table/behavior)
+- [ ] Instructions give Claude flexibility — no railroaded step-by-step scripts
+- [ ] No duplicate content — if something is in zmk-config, don't repeat it in zmk-keymap
+
+**Discoverability**
 - [ ] `description` includes specific quoted trigger phrases ("Use when user says...")
 - [ ] `description` is under 1024 characters
 - [ ] `version` field present and correct semver
+- [ ] `related-skills` metadata lists all skills the user should consider loading alongside
+
+**Structure**
 - [ ] SKILL.md is under 100 lines (or split into supporting files)
+- [ ] Progressive disclosure: SKILL.md tells Claude what other files exist and when to read them
+- [ ] `config.json` pattern used if skill needs user configuration
+- [ ] Persistent data pattern used if skill runs repeatedly and benefits from memory
+- [ ] Scripts present for any deterministic boilerplate Claude would otherwise reconstruct
+- [ ] On-demand hook considered for any skill involving sensitive or destructive operations
+
+**Domain**
 - [ ] `## Domain Language` present for any ZMK skill
 - [ ] `## Anti-Patterns` / DO NOT section present for any workflow or process skill
 - [ ] Per-phase checklists present for any multi-step workflow skill
-- [ ] `related-skills` metadata lists all skills the user should consider loading alongside this one
 - [ ] No time-sensitive content (URLs, version numbers) without explicit "as of <date>" callouts
-- [ ] No duplicate content — if something is in zmk-config, don't repeat it in zmk-keymap
 
 ---
 
@@ -146,13 +241,23 @@ Before committing a new or updated skill:
 
 **DO NOT** write a description that describes capability without triggers — Claude cannot use it to decide when to load the skill.
 
+**DO NOT** restate what Claude already knows — if Claude would get it right without the skill, cut it.
+
+**DO NOT** omit a Gotchas section — it is the highest-signal content in any skill.
+
+**DO NOT** railroad Claude with overly specific step-by-step instructions — give knowledge and constraints, let Claude decide the approach.
+
 **DO NOT** write all reference content into SKILL.md — keep SKILL.md as the workflow/process entry point and push deep tables to `references/` or `REFERENCE.md`.
+
+**DO NOT** store user setup config in the skill instructions — use `config.json` with an AskUserQuestion initialization flow.
 
 **DO NOT** duplicate domain language between skills — define a term once in the skill that owns it, reference the owning skill in `related-skills`.
 
 **DO NOT** use floating version references ("the latest version", "current main") without a date — version state changes; pin claims to dates.
 
 **DO NOT** write a skill that is purely a reference dump — every skill should have a workflow, a process, or a generation task at its core. Reference material supports that core; it is not the core itself.
+
+**DO NOT** let a skill's agents read untrusted public content and take high-privilege actions in the same context — use the quarantine pattern (reader agents produce summaries; actor agents receive only summaries).
 
 ---
 
