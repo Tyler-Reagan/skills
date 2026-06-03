@@ -4,13 +4,13 @@ description: Audits a project's Claude Code memory files — classifies each ent
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.0.0"
+  version: "1.1.0"
   domain: developer-workflow
   triggers: audit memories, audit my memories, clean up memory, prune memories, prune stale memories, consolidate memories, memory hygiene, are my memories stale
   role: diagnostic
   scope: troubleshooting
   output-format: markdown
-  related-skills:
+  related-skills: write-a-skill
 ---
 
 # Audit Memories
@@ -60,6 +60,18 @@ On approval, apply:
 - **Prune** → move the file to the macOS Trash (`~/.Trash`), never `rm`; then delete its `MEMORY.md` index line.
 - **Merge** → write the consolidated entry with zero fact loss, Trash the merged-away files, update the index and any inbound `[[links]]`.
 - **Fix** → edit in place.
+
+## Gotchas
+
+**Filename is snake_case but the `name:` slug is kebab-case.** Links resolve by `name:` field, not by filename. `user_role.md` with `name: user-role` is correct. Don't flag a link as dangling just because the filename doesn't match — check the `name:` field first.
+
+**`MEMORY.md` index points to files deleted with `rm` rather than Trashed.** The index will have orphaned lines with no corresponding file. These are FIX verdicts on the index, not PRUNE verdicts — the memory may not actually exist anymore.
+
+**Reference memory points to an auth-gated target (dashboard, internal ticket, Slack thread).** Can't verify externally. Default to KEEP with a note: "target requires auth — could not verify, treating as intact."
+
+**`all` scope includes encoded paths that don't resolve to directories.** Some projects may have been deleted or moved. Skip unresolvable paths silently and report which ones were skipped at the end of the audit.
+
+**Merging loses a nuance that appeared trivial.** Consolidation must be lossless. If two entries cover the same topic but with different `type:` values (e.g., one is `feedback`, one is `project`), either keep them separate or surface the conflict rather than silently picking one type.
 
 ## Anti-patterns
 
