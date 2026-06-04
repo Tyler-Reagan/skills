@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "sourceBankVersion": "1.18.0",
+  "sourceBankVersion": "1.19.0",
   "registryRoot": "Tyler-Reagan/skills",
   "skills": [
     {
@@ -15,7 +15,7 @@
         "skillPath": "skills/pages/utility/404/SKILL.md",
         "skillFolderHash": "2d2d535f88cb68f992c7dcaa96ffb86d874fd03d"
       },
-      "category": "design",
+      "category": null,
       "tags": []
     },
     {
@@ -30,11 +30,8 @@
         "skillPath": "plugins/mcp-apps/skills/add-app-to-server/SKILL.md",
         "skillFolderHash": "cce8d7d0ab939d9a02e3567df97d21f8f513eef2"
       },
-      "category": "frontend",
-      "tags": [
-        "mcp",
-        "ui"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "api-page-generator",
@@ -48,11 +45,8 @@
         "skillPath": "skills/pages/content/api/SKILL.md",
         "skillFolderHash": "dff6934e57704f134aa9bb6245e57939d7778e2c"
       },
-      "category": "writing",
-      "tags": [
-        "docs",
-        "api"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "apple-appstore-reviewer",
@@ -66,7 +60,7 @@
         "skillPath": "skills/apple-appstore-reviewer/SKILL.md",
         "skillFolderHash": "0fded17e5b9bd5515a0c8849b2d8be10162311b0"
       },
-      "category": "security",
+      "category": null,
       "tags": []
     },
     {
@@ -79,10 +73,8 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/audit-memories/SKILL.md"
       },
-      "category": "ai-tooling",
-      "tags": [
-        "review"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "brand-visual-generator",
@@ -96,11 +88,8 @@
         "skillPath": "skills/components/branding/brand-visual/SKILL.md",
         "skillFolderHash": "bc1f137b698e026b5b21f8092aec540981343b6b"
       },
-      "category": "frontend",
-      "tags": [
-        "design-system",
-        "branding"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "branding",
@@ -114,10 +103,8 @@
         "skillPath": "skills/strategies/brand/branding/SKILL.md",
         "skillFolderHash": "a224ec7902808cbd4af59a7a1b1876069990a414"
       },
-      "category": "frontend",
-      "tags": [
-        "branding"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "building-glamorous-tuis",
@@ -146,7 +133,7 @@
         "skillPath": "skills/components/layout/carousel/SKILL.md",
         "skillFolderHash": "4aec61b2179237ec30bb03ca7fd30766d2673297"
       },
-      "category": "frontend",
+      "category": null,
       "tags": []
     },
     {
@@ -176,10 +163,8 @@
         "skillPath": "skills/seo/content/competitor-research/SKILL.md",
         "skillFolderHash": "3f1c2c0a756b124397ba61a7c80b863495794d1e"
       },
-      "category": "writing",
-      "tags": [
-        "seo"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "content-optimization",
@@ -193,10 +178,8 @@
         "skillPath": "skills/seo/content/content-optimization/SKILL.md",
         "skillFolderHash": "d331bd9e6cb0017a54d4642dd70573aa1def6a2f"
       },
-      "category": "writing",
-      "tags": [
-        "seo"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "content-strategy",
@@ -210,10 +193,8 @@
         "skillPath": "skills/content-strategy/SKILL.md",
         "skillFolderHash": "8a2387b41d046b1b5a72a346103120b3c28e8bf5"
       },
-      "category": "writing",
-      "tags": [
-        "seo"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "convert-web-app",
@@ -227,11 +208,8 @@
         "skillPath": "plugins/mcp-apps/skills/convert-web-app/SKILL.md",
         "skillFolderHash": "1878b683a535492a90e26cfc2943fd21aea28380"
       },
-      "category": "frontend",
-      "tags": [
-        "mcp",
-        "ui"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "core-web-vitals",
@@ -245,7 +223,7 @@
         "skillPath": "skills/core-web-vitals/SKILL.md",
         "skillFolderHash": "041da568684b2b15ccb8789253dd2df29c8de433"
       },
-      "category": "frontend",
+      "category": null,
       "tags": []
     },
     {
@@ -260,11 +238,8 @@
         "skillPath": "plugins/mcp-apps/skills/create-mcp-app/SKILL.md",
         "skillFolderHash": "989d5b5a7f8b30e76f554a799f39e9350944e55b"
       },
-      "category": "frontend",
-      "tags": [
-        "mcp",
-        "ui"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "create-readme",
@@ -278,10 +253,8 @@
         "skillPath": "skills/create-readme/SKILL.md",
         "skillFolderHash": "f65537a3461b663121fe195697979c17a8004ea5"
       },
-      "category": "writing",
-      "tags": [
-        "docs"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "d3-viz",
@@ -295,12 +268,8 @@
         "skillPath": "cli-tool/components/skills/creative-design/claude-d3js-skill/SKILL.md",
         "skillFolderHash": "ac6ef90f2fc5edb2ed2e5a575f336087dc88dc37"
       },
-      "category": "frontend",
-      "tags": [
-        "react",
-        "vue",
-        "svelte"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "diagnose",
@@ -314,10 +283,8 @@
         "skillPath": "skills/engineering/diagnose/SKILL.md",
         "skillFolderHash": "43d464d0e9d1049b9d525975c0f7367ab7e01a5f"
       },
-      "category": "testing",
-      "tags": [
-        "testing"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "docs-page-generator",
@@ -331,11 +298,8 @@
         "skillPath": "skills/pages/content/docs/SKILL.md",
         "skillFolderHash": "c1dd50e708285ddc3eb8d491d9549ce5351740d9"
       },
-      "category": "writing",
-      "tags": [
-        "docs",
-        "api"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "domain-name-brainstormer",
@@ -349,7 +313,7 @@
         "skillPath": "domain-name-brainstormer/SKILL.md",
         "skillFolderHash": "ee97909251c1e45f7babc118fbf66467314d4e46"
       },
-      "category": "design",
+      "category": null,
       "tags": []
     },
     {
@@ -364,10 +328,8 @@
         "skillPath": "skills/electron-skills/electron/SKILL.md",
         "skillFolderHash": "2b889701cf0fba3fb968fbeaaf5dfb243a2c6a8e"
       },
-      "category": "frontend",
-      "tags": [
-        "electron"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "embedded-systems",
@@ -381,7 +343,7 @@
         "skillPath": "skills/embedded-systems/SKILL.md",
         "skillFolderHash": "a9dc525a5959c5a1d1db09266b4a69544073f354"
       },
-      "category": "hardware",
+      "category": null,
       "tags": []
     },
     {
@@ -394,10 +356,8 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/eureka/SKILL.md"
       },
-      "category": "testing",
-      "tags": [
-        "testing"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "favicon-generator",
@@ -411,10 +371,8 @@
         "skillPath": "skills/components/branding/favicon/SKILL.md",
         "skillFolderHash": "31207a5280b4fe3c54341c607a4bb597acc81b32"
       },
-      "category": "design",
-      "tags": [
-        "branding"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "file-name-wizard",
@@ -428,10 +386,8 @@
         "skillPath": "skills/file-name-wizard/SKILL.md",
         "skillFolderHash": "c6ec36b9a386be1e41229e3d8372e3aba1a50d06"
       },
-      "category": "writing",
-      "tags": [
-        "naming"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "find-skills",
@@ -445,7 +401,7 @@
         "skillPath": "skills/find-skills/SKILL.md",
         "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d"
       },
-      "category": "ai-tooling",
+      "category": null,
       "tags": []
     },
     {
@@ -475,10 +431,8 @@
         "skillPath": "skills/components/navigation/footer/SKILL.md",
         "skillFolderHash": "f82d109938336bcd6f10d4aea1453cf81770b517"
       },
-      "category": "design",
-      "tags": [
-        "seo"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "frontend-design",
@@ -492,31 +446,8 @@
         "skillPath": "skills/frontend-design/SKILL.md",
         "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8"
       },
-      "category": "frontend",
-      "tags": [
-        "react",
-        "css",
-        "ui"
-      ]
-    },
-    {
-      "name": "gh-cli",
-      "description": "Comprehensive GitHub CLI (gh) reference covering repos, issues, PRs, Actions, releases, projects, codespaces, and API access. Use when the user asks how to use gh, needs the syntax for a gh command, wants to automate GitHub operations from the terminal, or asks about gh pr, gh issue, gh run, gh api, or gh repo subcommands.",
-      "source": "user",
-      "bucket": "vendored",
-      "origin": {
-        "kind": "github",
-        "repo": "github/awesome-copilot",
-        "sourceUrl": "https://github.com/github/awesome-copilot.git",
-        "skillPath": "skills/gh-cli/SKILL.md",
-        "skillFolderHash": "437437f7f20bcdbbdb3081cf164435a388c0a39a"
-      },
-      "category": "dx",
-      "tags": [
-        "cli",
-        "github",
-        "api"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "git-commit",
@@ -530,7 +461,7 @@
         "skillPath": "skills/git-commit/SKILL.md",
         "skillFolderHash": "883a6a7466f55a9cd9f22cf1cce2d9333fc9b998"
       },
-      "category": "git",
+      "category": null,
       "tags": []
     },
     {
@@ -545,11 +476,8 @@
         "skillPath": "skills/github-actions-docs/SKILL.md",
         "skillFolderHash": "518c85da555f91c346813aa5bb3cc62f9db8bfb3"
       },
-      "category": "writing",
-      "tags": [
-        "github",
-        "docs"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "github-issues",
@@ -563,11 +491,8 @@
         "skillPath": "skills/github-issues/SKILL.md",
         "skillFolderHash": "95fb5bd16c2cecb7c14c58d7e902a91daae2ec5e"
       },
-      "category": "ai-tooling",
-      "tags": [
-        "mcp",
-        "github"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "gitlab-ci-inspector",
@@ -579,14 +504,10 @@
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
         "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md",
-        "skillFolderHash": "4df70b4bade0e65727ab6cb3d7c7c0b584578867"
+        "skillFolderHash": "b6a9566d7144d2650b3be4c1f716dd4ec34f70c5"
       },
-      "category": "backend",
-      "tags": [
-        "cli",
-        "gitlab",
-        "api"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "gitlab-ci-patterns",
@@ -600,11 +521,8 @@
         "skillPath": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
         "skillFolderHash": "d43fb980bb5ac5d3caaae257e5e1235c4da7495a"
       },
-      "category": "infrastructure",
-      "tags": [
-        "gitlab",
-        "testing"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "gitlab-mr-writing",
@@ -616,12 +534,10 @@
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
         "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md",
-        "skillFolderHash": "c628129120a474236e686142e46ccf9de703d035"
+        "skillFolderHash": "31c9b7dfe3653ce088df0551edff0f01e5097e81"
       },
-      "category": "writing",
-      "tags": [
-        "gitlab"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "golang-testing",
@@ -635,11 +551,8 @@
         "skillPath": "skills/golang-testing/SKILL.md",
         "skillFolderHash": "7fad33a9354adc951ae015d008c7c6478f3f1c1b"
       },
-      "category": "testing",
-      "tags": [
-        "golang",
-        "testing"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "grill-me",
@@ -653,10 +566,8 @@
         "skillPath": "skills/productivity/grill-me/SKILL.md",
         "skillFolderHash": "2a1ad17028306ebe45f0e49703fa28b9b2e7f499"
       },
-      "category": "testing",
-      "tags": [
-        "testing"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "grill-with-docs",
@@ -670,11 +581,8 @@
         "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
         "skillFolderHash": "2c3a4e48571bfe42203ed7b49cae85f31ef4b6f2"
       },
-      "category": "backend",
-      "tags": [
-        "docs",
-        "testing"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "handoff",
@@ -688,7 +596,7 @@
         "skillPath": "skills/productivity/handoff/SKILL.md",
         "skillFolderHash": "7bbb60d64c911617cee7f71b2ba9e24364faa14e"
       },
-      "category": "ai-tooling",
+      "category": null,
       "tags": []
     },
     {
@@ -703,7 +611,7 @@
         "skillPath": "skills/components/branding/hero/SKILL.md",
         "skillFolderHash": "2da6451fa744283bf6ddae2877d9f13cd85898f9"
       },
-      "category": "frontend",
+      "category": null,
       "tags": []
     },
     {
@@ -716,13 +624,8 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/homebrew-cli-release/SKILL.md"
       },
-      "category": "dx",
-      "tags": [
-        "rust",
-        "cli",
-        "github",
-        "design-system"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "homepage-generator",
@@ -736,7 +639,7 @@
         "skillPath": "skills/pages/brand/home/SKILL.md",
         "skillFolderHash": "144700d86efae7c328bae5a6a7959a0562087f47"
       },
-      "category": "design",
+      "category": null,
       "tags": []
     },
     {
@@ -751,11 +654,8 @@
         "skillPath": ".agents/skills/impeccable/SKILL.md",
         "skillFolderHash": "7e268ebe41c4a8ba1e6bccc00674d1ac53f71785"
       },
-      "category": "frontend",
-      "tags": [
-        "ui",
-        "review"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "landing-page-generator",
@@ -769,7 +669,7 @@
         "skillPath": "skills/pages/marketing/landing-page/SKILL.md",
         "skillFolderHash": "887329b70b63b04301498b4a7b5599f9998cbe1e"
       },
-      "category": "frontend",
+      "category": null,
       "tags": []
     },
     {
@@ -784,10 +684,8 @@
         "skillPath": "skills/components/branding/logo/SKILL.md",
         "skillFolderHash": "a0d7ed2abce314ff776d0f2f09b4faa5d551a885"
       },
-      "category": "design",
-      "tags": [
-        "branding"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "mcp-builder",
@@ -801,13 +699,8 @@
         "skillPath": "skills/mcp-builder/SKILL.md",
         "skillFolderHash": "b866bcfb57b780c10b587c7b543e871a91661ce0"
       },
-      "category": "backend",
-      "tags": [
-        "typescript",
-        "python",
-        "node",
-        "mcp"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "mermaid-diagrams",
@@ -821,11 +714,8 @@
         "skillPath": "skills/mermaid-diagrams/SKILL.md",
         "skillFolderHash": "1b7a962715838d762fe4b34701d797d1d57496cd"
       },
-      "category": "backend",
-      "tags": [
-        "api",
-        "diagrams"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "naming-analyzer",
@@ -840,9 +730,7 @@
         "skillFolderHash": "6717b98252ff6423dccbd77dc652dead434552bb"
       },
       "category": null,
-      "tags": [
-        "naming"
-      ]
+      "tags": []
     },
     {
       "name": "next-best-practices",
@@ -856,10 +744,8 @@
         "skillPath": "skills/next-best-practices/SKILL.md",
         "skillFolderHash": "a236d702277c5364cf6f540712a8dddb46e79a46"
       },
-      "category": "frontend",
-      "tags": [
-        "seo"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "obsidian-cli",
@@ -873,11 +759,8 @@
         "skillPath": "skills/obsidian-cli/SKILL.md",
         "skillFolderHash": "96254a554e480359de7b685571876f2e7f9ba57d"
       },
-      "category": "writing",
-      "tags": [
-        "cli",
-        "design-system"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "portfolio-case-study-writer",
@@ -905,10 +788,8 @@
         "skillPath": ".claude/skills/pr-description/SKILL.md",
         "skillFolderHash": "e053a82eedd03e2e6be477f74625c0d2f7b25d94"
       },
-      "category": "git",
-      "tags": [
-        "github"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "prd-development",
@@ -922,7 +803,7 @@
         "skillPath": "skills/prd-development/SKILL.md",
         "skillFolderHash": "9326f146f3fb8d85eafe52499928321c7edb9fac"
       },
-      "category": "product",
+      "category": null,
       "tags": []
     },
     {
@@ -935,14 +816,10 @@
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
         "skillPath": "skills/tools/pretty-mermaid/SKILL.md",
-        "skillFolderHash": "e4a958d3f7b985e798e04ccefb98b49f28119702"
+        "skillFolderHash": "5f53bb8a316cdbde825993c1dc6f25b0bf8cd36d"
       },
-      "category": "design",
-      "tags": [
-        "cli",
-        "diagrams",
-        "design-system"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "pretty-qmk-keymap",
@@ -954,10 +831,8 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/pretty-qmk-keymap/SKILL.md"
       },
-      "category": "frontend",
-      "tags": [
-        "diagrams"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "pretty-zmk-keymap",
@@ -969,10 +844,8 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/pretty-zmk-keymap/SKILL.md"
       },
-      "category": "frontend",
-      "tags": [
-        "diagrams"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "problem-statement",
@@ -986,7 +859,7 @@
         "skillPath": "skills/problem-statement/SKILL.md",
         "skillFolderHash": "1de9dad18374bbffccd35cfd7ef2edc41515ea89"
       },
-      "category": "product",
+      "category": null,
       "tags": []
     },
     {
@@ -1001,11 +874,8 @@
         "skillPath": "pm-marketing-growth/skills/product-name/SKILL.md",
         "skillFolderHash": "8256ccfd21f516f21457391d52c9d4177f90741b"
       },
-      "category": "product",
-      "tags": [
-        "naming",
-        "branding"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "python-packaging",
@@ -1019,11 +889,8 @@
         "skillPath": "plugins/python-development/skills/python-packaging/SKILL.md",
         "skillFolderHash": "ac5339a832fdbbd20ce7a04b5e9bb0ffcc82b297"
       },
-      "category": "dx",
-      "tags": [
-        "python",
-        "cli"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "qmk-config",
@@ -1035,7 +902,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/qmk-config/SKILL.md"
       },
-      "category": "hardware",
+      "category": null,
       "tags": []
     },
     {
@@ -1048,7 +915,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/qmk-debug/SKILL.md"
       },
-      "category": "hardware",
+      "category": null,
       "tags": []
     },
     {
@@ -1061,7 +928,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/qmk-keymap/SKILL.md"
       },
-      "category": "hardware",
+      "category": null,
       "tags": []
     },
     {
@@ -1074,7 +941,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/qmk-new-config/SKILL.md"
       },
-      "category": "hardware",
+      "category": null,
       "tags": []
     },
     {
@@ -1089,12 +956,8 @@
         "skillPath": "skills/noise/react_components/SKILL.md",
         "skillFolderHash": "fbdbab0c2bf0ace0652ab602a4011cef7d5b07f8"
       },
-      "category": "frontend",
-      "tags": [
-        "react",
-        "typescript",
-        "ui"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "react-state-management",
@@ -1108,11 +971,8 @@
         "skillPath": "plugins/frontend-mobile-development/skills/react-state-management/SKILL.md",
         "skillFolderHash": "01345515dfb8530d0813cfff2c73e36c6b23fea3"
       },
-      "category": "frontend",
-      "tags": [
-        "react",
-        "sql"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "release-review",
@@ -1126,10 +986,8 @@
         "skillPath": "skills/release-review/SKILL.md",
         "skillFolderHash": "f13ba425930879f7b96fbbfa82b37c5b49c1f28d"
       },
-      "category": "testing",
-      "tags": [
-        "review"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "roadmap-planning",
@@ -1143,7 +1001,7 @@
         "skillPath": "skills/roadmap-planning/SKILL.md",
         "skillFolderHash": "19863acb42422fbc0e69a71de239eccbebc73160"
       },
-      "category": "product",
+      "category": null,
       "tags": []
     },
     {
@@ -1156,7 +1014,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/scatterbrain/SKILL.md"
       },
-      "category": "backend",
+      "category": null,
       "tags": []
     },
     {
@@ -1171,10 +1029,8 @@
         "skillPath": "skills/strategies/structure/seo/SKILL.md",
         "skillFolderHash": "85a77b7462a89ac5ca576a38c41b5e9f9b938d62"
       },
-      "category": "writing",
-      "tags": [
-        "seo"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "shadcn",
@@ -1188,12 +1044,21 @@
         "skillPath": "skills/shadcn/SKILL.md",
         "skillFolderHash": "34db419996afc09836f01062606316f2728884c4"
       },
-      "category": "frontend",
-      "tags": [
-        "docs",
-        "ui",
-        "design-system"
-      ]
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "sleek-design-mobile-apps",
+      "description": "Use when the user wants to design a mobile app, create screens, build UI, or interact with their Sleek projects. Covers high-level requests (\"design an app that does X\") and specific ones (\"list my projects\", \"create a new project\", \"screenshot that screen\").",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "github",
+        "repo": "Tyler-Reagan/skills",
+        "skillPath": "skills/personal/sleek-design-mobile-apps/SKILL.md"
+      },
+      "category": null,
+      "tags": []
     },
     {
       "name": "soultrace",
@@ -1206,11 +1071,8 @@
         "skillPath": "skills/soultrace/SKILL.md",
         "skillFolderHash": "8e36f5a02579a973067fe5c1a662a8be4a1f55b6"
       },
-      "category": "testing",
-      "tags": [
-        "api",
-        "testing"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "specs-code-cleanup",
@@ -1224,11 +1086,8 @@
         "skillPath": "plugins/developer-kit-specs/skills/specs-code-cleanup/SKILL.md",
         "skillFolderHash": "db79f4b6544747835c3322b6edf75af62723855f"
       },
-      "category": "writing",
-      "tags": [
-        "review",
-        "refactor"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "terraform-module-library",
@@ -1242,10 +1101,8 @@
         "skillPath": "plugins/cloud-infrastructure/skills/terraform-module-library/SKILL.md",
         "skillFolderHash": "06e4f4e3295990a5829735db832044925a85e222"
       },
-      "category": "infrastructure",
-      "tags": [
-        "terraform"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "terraform-plan-summary",
@@ -1257,13 +1114,10 @@
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
         "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md",
-        "skillFolderHash": "4a634af565de54fde65630f67c4756ef5a5b9545"
+        "skillFolderHash": "9d3a8e3344386c6de71402dc1842d6397736450f"
       },
-      "category": "backend",
-      "tags": [
-        "terraform",
-        "gitlab"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "terraform-test",
@@ -1277,11 +1131,8 @@
         "skillPath": "terraform/code-generation/skills/terraform-test/SKILL.md",
         "skillFolderHash": "e24dc7d3c72d1208736b329434667d43c7bfcfa4"
       },
-      "category": "infrastructure",
-      "tags": [
-        "terraform",
-        "testing"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "theme-factory",
@@ -1295,11 +1146,8 @@
         "skillPath": "skills/theme-factory/SKILL.md",
         "skillFolderHash": "e05534d132fb1b21f9917840874758e30f0a9b1a"
       },
-      "category": "frontend",
-      "tags": [
-        "docs",
-        "design-system"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "typescript-react-reviewer",
@@ -1313,12 +1161,8 @@
         "skillPath": "review-tool/skills/typescript-react-reviewer/SKILL.md",
         "skillFolderHash": "c42f66f381de0fa465b7e2dbc52e8e8f5ecca495"
       },
-      "category": "frontend",
-      "tags": [
-        "react",
-        "typescript",
-        "review"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "ubiquitous-language",
@@ -1347,19 +1191,8 @@
         "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
         "skillFolderHash": "75e1acaafe8b08e59d4b86fc253ac7873aff6bba"
       },
-      "category": "frontend",
-      "tags": [
-        "react",
-        "vue",
-        "svelte",
-        "css",
-        "flutter",
-        "mcp",
-        "ui",
-        "review",
-        "refactor",
-        "design-system"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "user-personas",
@@ -1373,7 +1206,7 @@
         "skillPath": "pm-market-research/skills/user-personas/SKILL.md",
         "skillFolderHash": "58bbb0463cd8360fbda860d388146a4cfb6b4b4c"
       },
-      "category": "product",
+      "category": null,
       "tags": []
     },
     {
@@ -1388,7 +1221,7 @@
         "skillPath": "skills/user-story/SKILL.md",
         "skillFolderHash": "b8e53307616bb30fc18fffdc6c1eac7621453653"
       },
-      "category": "product",
+      "category": null,
       "tags": []
     },
     {
@@ -1403,7 +1236,7 @@
         "skillPath": "skills/user-story-mapping/SKILL.md",
         "skillFolderHash": "5d68cc49920b104e6a052e99d0e6c5e5e849a54e"
       },
-      "category": "product",
+      "category": null,
       "tags": []
     },
     {
@@ -1418,11 +1251,8 @@
         "skillPath": "skills/vite/SKILL.md",
         "skillFolderHash": "3c0dc60ce4ffc34fca02aaa7eb21130ae48c8dff"
       },
-      "category": "frontend",
-      "tags": [
-        "vite",
-        "api"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "web-design-guidelines",
@@ -1436,15 +1266,25 @@
         "skillPath": "skills/web-design-guidelines/SKILL.md",
         "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89"
       },
-      "category": "frontend",
-      "tags": [
-        "ui",
-        "review"
-      ]
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "workflow-fit",
+      "description": "Rates how well each of six multi-agent workflow patterns fits a given task (0-10 with grounded reasons) and recommends a composite orchestration. Use when the user asks \"which workflow pattern\", \"rate the workflow patterns\", \"pick a workflow pattern for this\", \"how should we orchestrate this\", \"what pattern fits this task\", wants to choose between classify/fanout/verify/generate/tournament/loop before spawning agents, or says \"ultracode\" and wants to choose the right harness first.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "github",
+        "repo": "Tyler-Reagan/skills",
+        "skillPath": "skills/personal/workflow-fit/SKILL.md"
+      },
+      "category": null,
+      "tags": []
     },
     {
       "name": "write-a-skill",
-      "description": "Authors a new Claude Code skill that loads cleanly into whatever skills repo or collection you're working in — discovering that repo's layout, frontmatter, and registration instead of assuming them. Use when the user says \"write a skill\", \"create a skill\", \"new skill\", \"add a skill\", or wants to author a new agent capability.",
+      "description": "Authors or updates a Claude Code skill that loads cleanly into whatever skills repo or collection you're working in — discovering that repo's layout, frontmatter, and registration instead of assuming them. Use when the user says \"write a skill\", \"create a skill\", \"new skill\", \"add a skill\", \"update a skill\", or wants to author a new agent capability.",
       "source": "user",
       "bucket": "vendored",
       "origin": {
@@ -1454,7 +1294,7 @@
         "skillPath": "skills/productivity/write-a-skill/SKILL.md",
         "skillFolderHash": "2f252b35aa238879afc5a230ac30343708dee0b3"
       },
-      "category": "frontend",
+      "category": null,
       "tags": []
     },
     {
@@ -1467,7 +1307,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/zmk-config/SKILL.md"
       },
-      "category": "infrastructure",
+      "category": null,
       "tags": []
     },
     {
@@ -1480,7 +1320,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/zmk-debug/SKILL.md"
       },
-      "category": "infrastructure",
+      "category": null,
       "tags": []
     },
     {
@@ -1493,7 +1333,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/zmk-display/SKILL.md"
       },
-      "category": "writing",
+      "category": null,
       "tags": []
     },
     {
@@ -1506,7 +1346,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/zmk-keymap/SKILL.md"
       },
-      "category": "hardware",
+      "category": null,
       "tags": []
     },
     {
@@ -1519,10 +1359,8 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/zmk-lvgl-migrate/SKILL.md"
       },
-      "category": "hardware",
-      "tags": [
-        "api"
-      ]
+      "category": null,
+      "tags": []
     },
     {
       "name": "zmk-new-config",
@@ -1534,7 +1372,7 @@
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/zmk-new-config/SKILL.md"
       },
-      "category": "hardware",
+      "category": null,
       "tags": []
     },
     {
@@ -1549,7 +1387,7 @@
         "skillPath": "skills/engineering/zoom-out/SKILL.md",
         "skillFolderHash": "6ecebabdea814d12888f56a611da7bf182b5fb26"
       },
-      "category": "ai-tooling",
+      "category": null,
       "tags": []
     }
   ]
