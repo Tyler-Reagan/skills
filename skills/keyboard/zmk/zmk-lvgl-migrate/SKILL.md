@@ -4,7 +4,7 @@ description: Migrates ZMK nice!view display modules from LVGL v8 (ZMK v0.3 / Zep
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.0.0"
+  version: "1.1.0"
   domain: keyboard-firmware
   triggers: lvgl migrate, v8 to v9, port display, lv_canvas_draw undeclared, LV_IMG_CF undeclared, zmk main display
   role: specialist
@@ -62,6 +62,16 @@ The core change: every `lv_canvas_draw_*` call is gone. Replacement is a layer c
 | `lv_canvas_transform` undeclared           | Rotation API changed (step 10)                     |
 | `lv_draw_img_dsc_t` undeclared             | Draw image type renamed (steps 7–8)                |
 | Black screen / no render                   | Missing bg_color/bg_opa on screen widget (step 11) |
+
+## Gotchas
+
+**Migration comments in source are frequently wrong.** Statements like `// lv_canvas_draw_rect doesn't exist in LVGL v8+` are often backwards — `lv_canvas_draw_rect` existed in v8 and was *removed* in v9. Always determine the LVGL generation from actual API call signatures, not developer comments.
+
+**`lv_canvas_draw_*` removal is total.** There is no partial compatibility layer in v9. Every single canvas draw call in every widget file needs wrapping — there is no "mostly working" intermediate state.
+
+**`build.yaml` board format must change too (step 3).** It is easy to focus on the C code changes and skip the board identifier migration. A flat board name (`nice_nano_v2`) with ZMK main will fail the build with "board not found" — it is a separate, required step.
+
+**nice-view-gem commit `522bbf49` is the canonical reference.** When an API change is ambiguous, diff against the actual "Update for Zephyr v4.1" commit in `M165437/nice-view-gem` (Jan 25 2026). It is the ground truth for how each v8 → v9 change should look.
 
 ## References
 
