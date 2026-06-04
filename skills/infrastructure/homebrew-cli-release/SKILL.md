@@ -4,13 +4,13 @@ description: Directs the end-to-end process of shipping a self-contained compile
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.0.0"
+  version: "1.1.0"
   domain: developer-workflow
   triggers: distribute on homebrew, brew install my CLI, homebrew tap, goreleaser, release my Go CLI, make my tool installable, invoke via command not go run, publish prebuilt binaries
   role: scaffolding
   scope: implementation
   output-format: markdown
-  related-skills: gh-cli
+  related-skills: gitlab-ci-inspector
 ---
 
 # Ship a compiled CLI to Homebrew (GoReleaser)
