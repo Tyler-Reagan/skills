@@ -18,9 +18,11 @@
     "./skills/keyboard/qmk/qmk-keymap",
     "./skills/keyboard/qmk/qmk-new-config",
     "./skills/tools/audit-memories",
+    "./skills/tools/doc-taxonomy-cleanup",
     "./skills/tools/eureka",
     "./skills/tools/pretty-mermaid",
     "./skills/tools/scatterbrain",
+    "./skills/tools/workflow-fit",
     "./skills/tools/write-a-skill"
   ]
 }
