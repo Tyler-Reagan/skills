@@ -4,7 +4,7 @@ description: Parses Terraform plan output or GitLab CI job logs into a concise i
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.0.0"
+  version: "1.1.0"
   domain: infrastructure
   triggers: terraform plan, CI plan job, what would this change, summarize the plan, what gets destroyed, plan output
   role: specialist
@@ -13,127 +13,71 @@ metadata:
   related-skills: gitlab-ci-inspector
 ---
 
-# Terraform plan summary
+# Terraform Plan Summary
 
-## When invoked
+Produce a **short, scannable summary** of infrastructure impact from a Terraform plan log. Not a replay of refresh noise — only what changes.
 
-Read the full log the user provides (or the attached file). Produce a **short, scannable summary** of infrastructure impact—not a replay of refresh noise.
+## Step 1 — Normalize the log
 
-## Step 1: Normalize the log
+1. Strip GitLab runner prefixes: lines often start with an ISO timestamp + stream code + space (`2026-04-01T16:50:55Z 01O `). Remove everything up to and including the trailing space.
+2. Strip ANSI escape sequences: remove `\x1b[...m` patterns (or literal `[0m`, `[32m`, etc.).
+3. **Ignore entirely** (not plan content): `Refreshing state...`, `Reading...`, `Read complete after`, `terraform init`, provider downloads, module init, backend messages, Docker/yum/git submodule output.
 
-1. **Strip GitLab runner prefixes** (optional but recommended): lines often look like  
-   `2026-04-01T16:50:55.916324Z 01O ` followed by Terraform text. Remove the ISO timestamp + stream code + space so Terraform lines start at column 0.
-2. **Strip ANSI escape sequences**: remove `\x1b[...m` (or literal `[0m`, `[32m`, etc. as they appear in saved logs).
-3. **Ignore** (do not summarize as plan changes):
-   - `Refreshing state...`, `Reading...`, `Read complete after`
-   - `terraform init`, provider download, module init, backend messages
-   - Docker/yum/git submodule/section_start noise
-   - Shell echoes except use them as **section headers** (see below)
+For a quick one-liner to pre-clean before pasting, see [REFERENCE.md](REFERENCE.md#machine-assisted-parsing).
 
-## Step 2: Detect multiple plans in one job
+## Step 2 — Detect multiple plans in one job
 
-CI jobs may run several `terraform plan` invocations sequentially. Treat each block separately.
+CI jobs often run several `terraform plan` invocations sequentially. Treat each block as a separate subsection. Use the most recent preceding `echo "..."` or distinctive script line as the subsection label (e.g. `Terraform plan for dev deployment`, `Auth0 tenant terraform plan`).
 
-**Section labels**: use the most recent preceding `echo "..."` or distinctive script line (e.g. `Terraform plan for dev deployment`, `Auth0 tenant terraform plan`, `Lambda terraform plan`, `kubernetes terraform plan`, `deploy apps to dev-blue`) as the subsection title.
+## Step 3 — Extract resource-level actions
 
-For each subsection, capture:
-
-- Outcome: **`No changes.`** / **equivalent** _or_ the **`Plan: X to add, Y to change, Z to destroy.`** line (exact counts).
-- Whether **`terraform plan`** failed (`Error:` / non-zero would appear in log).
-
-## Step 3: Extract resource-level actions
-
-Terraform announces each changed resource with a line matching this pattern (after normalization):
-
-```text
+Match lines (after normalization):
+```
   # <address> will be created
   # <address> will be destroyed
   # <address> will be updated in-place
   # <address> must be replaced
 ```
 
-Parse `<address>` (e.g. `module.apps["runs-server"].kubernetes_deployment_v1.app`, `aws_iam_policy.example`).
+| Phrase | Label |
+|---|---|
+| will be created | add |
+| will be destroyed | destroy |
+| will be updated in-place | change (in-place) |
+| must be replaced | replace (destroy + create) |
 
-**Classify**:
+## Step 4 — Group repetitive resources
 
-| Phrase                   | User-facing label          |
-| ------------------------ | -------------------------- |
-| will be created          | add                        |
-| will be destroyed        | destroy                    |
-| will be updated in-place | change (in-place)          |
-| must be replaced         | replace (destroy + create) |
+If many addresses share the same resource type and change kind, state the count and pattern once, list at most 3 examples, then `… and N more similar`. **Never group destroys or replacements** — list those explicitly regardless of count.
 
-## Step 4: Group repetitive resources
+## Step 5 — Attribute changes (when user needs depth)
 
-If many addresses share the same **resource type and change kind** (e.g. dozens of `module.platform_cloud.auth0_client.*` all "updated in-place"):
+Pull `~ attribute = … ->` lines showing before/after. Prefer: `image`, `version`, `cidr`, `policy`, `arn`, `name`, `replicas`, `enabled`. For identical changes across many resources, state once: "All N deployments: image `old` → `new`".
 
-- State the **count** and **pattern** once.
-- List **at most 3** example addresses, then `… and N more similar`.
+## Step 6 — Warnings and errors
 
-Do **not** group resources that differ in action (create vs update) or that are high-risk (destroy, replace)—list those explicitly or in a short bullet list.
+Summarize `Warning:` blocks (count + first line + resource if shown). Call out `Error:` / `╷` diagnostic blocks with the primary message — do not omit failures.
 
-## Step 5: High-signal attribute changes (optional depth)
+Keep the final output **under ~40 lines** unless the user asks for full resource enumeration. Use the output template in [REFERENCE.md](REFERENCE.md#output-template).
 
-When the user needs "what actually changes" beyond addresses:
+## Gotchas
 
-- Under each resource (or grouped family), pull lines that show **`~ attribute =` … `->`** (before/after).
-- Prefer: `image`, `version`, `cidr`, `policy`, `arn`, `name`, `replicas`, `enabled`, `tags`, `lifecycle`, `ingress`, `rule`—skip blocks that are only `unchanged attributes hidden`.
-- For **identical** changes across many resources (e.g. same container image tag bump), state **once**: "All N deployments: image `old` → `new`".
+**`must be replaced` is a destroy + create, not just a change.** It counts as both a deletion and a creation — list it under replacements, never lump it with in-place changes. Replacements can cause downtime and dependency failures that ordinary changes cannot.
 
-## Step 6: Warnings and errors
+**`No changes` doesn't mean no warnings.** A plan can output `No changes. Your infrastructure matches the configuration.` and still contain a `Warning:` block. Always scan for warnings even when the resource change count is zero.
 
-- Summarize **`Warning:`** blocks (count + first line + resource/file if shown).
-- Call out **`Error:`** / **`╷`** diagnostic blocks with the **primary** message; do not omit failures.
+**Multiple plans in one job can be hard to delimit without echo headers.** If echo labels are absent, look for the `Initializing the backend...` / `Initializing provider plugins...` boundary as a subsection divider.
 
-## Output template
-
-Use this structure (omit empty sections):
-
-```markdown
-## Terraform plan summary
-
-### <Section label> (from CI echo or working directory context)
-
-- **Plan**: X add, Y change, Z destroy — _or_ **No changes.**
-- **Adds** (count): …
-- **Changes** (count): … grouped …
-- **Destroys / replaces** (count): …
-- **Notable attribute updates**: …
-- **Warnings**: …
-- **Errors**: …
-
-### <Next section>
-
-…
-```
-
-## Platform example (multi-stack plan job)
-
-A typical CI job runs plans for several stacks in sequence: `terraform/aws/dev`, `terraform/auth0/dev-tenant`, `terraform/lambda/dev`, then `terraform/apps/dev-blue` or `dev-green` depending on a deploy-color variable. Expect **up to four** subsections; one path may be skipped per run.
-
-## Machine-assisted parsing (optional)
-
-If the user wants a local one-shot filter before pasting:
-
-```bash
-# Strip common GitLab prefix and ANSI (requires perl)
-perl -pe 's/^\d{4}-\d{2}-\d{2}T\S+\s+\S+\s+//; s/\e\[[0-9;]*m//g' job.log > cleaned.log
-```
-
-Then `rg 'will be (created|destroyed|updated in-place)|must be replaced|^Plan:|No changes\\.' cleaned.log`
-
----
-
-Keep the final summary **under ~40 lines** unless the user asks for full resource enumeration.
+**GitLab runner prefix format varies by runner version.** The `01O` stream code or similar may differ across runner configurations. Use a lenient regex that anchors on the ISO timestamp pattern rather than the exact stream code suffix.
 
 ## Anti-Patterns
 
-**DO NOT** include refresh noise (`Refreshing state...`, `Reading...`, `Read complete after`, provider init) — this is not plan content.
+**DO NOT** include refresh noise (`Refreshing state...`, `Reading...`, provider init) — not plan content.
 
-**DO NOT** group destroys or replacements with ordinary changes — always list them explicitly and fully, regardless of count.
+**DO NOT** group destroys or replacements — always list them explicitly and fully.
 
-**DO NOT** exceed ~40 lines in the output unless the user explicitly asks for full resource enumeration.
+**DO NOT** exceed ~40 lines unless the user asks for full enumeration.
 
-**DO NOT** describe what configuration was written — describe what infrastructure will change. Delta, not intent.
+**DO NOT** describe configuration intent — describe what infrastructure will change. Delta, not intent.
 
-**DO NOT** omit section labels when a job runs multiple plans — always head each subsection with its CI echo label so the user can locate it in the original log.
+**DO NOT** omit section labels when a job runs multiple plans — head each subsection with its CI echo label.
