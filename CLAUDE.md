@@ -19,7 +19,10 @@ skills/
 └── skills/
     ├── keyboard/
     │   ├── README.md         # Category overview and load-order guidance
-    │   └── <skill-name>/
+    │   ├── zmk/              # ZMK firmware skills
+    │   │   └── <skill-name>/
+    │   └── qmk/              # QMK firmware skills
+    │       └── <skill-name>/
     ├── infrastructure/
     │   ├── README.md
     │   └── <skill-name>/
@@ -267,8 +270,9 @@ The ZMK skills form a cohesive subsystem. When editing any of them:
 
 - **Version state** is owned by `zmk-config` — do not re-derive it in `zmk-keymap` or `zmk-display`. Reference the zmk-config skill's Version State section instead.
 - **LVGL compatibility** is owned by `zmk-display` — do not add LVGL version tables to `zmk-config`.
+- **LVGL v8 → v9 migration** is owned by `zmk-lvgl-migrate` — do not add migration steps to `zmk-display`; cross-reference instead.
 - **Keymap behavior syntax** is owned by `zmk-keymap` — do not document behavior bindings in `zmk-config`.
 - **Scaffold workflow** is owned by `zmk-new-config` — it is the entry point for new projects.
 - **Failure diagnosis** is owned by `zmk-debug` — do not add troubleshooting flows inside the other skills; add cross-references instead.
 
-The canonical load order for an existing project: `zmk-config` (version detection) → `zmk-keymap` + `zmk-display` (edit). For a new project: `zmk-new-config` → the rest. For failures: `zmk-debug`.
+The canonical load order for an existing project: `zmk-config` (version detection) → `zmk-keymap` + `zmk-display` (edit). For a new project: `zmk-new-config` → the rest. For failures: `zmk-debug`. For LVGL migration: `zmk-lvgl-migrate`.

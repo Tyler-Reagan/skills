@@ -56,6 +56,7 @@ ZMK skills share version awareness across ZMK v0.3 and ZMK main (Zephyr 4.1).
 
 - **Version state detection** → `zmk-config`
 - **LVGL compatibility** → `zmk-display`
+- **LVGL v8 → v9 migration** → `zmk-lvgl-migrate`
 - **Behavior syntax** → `zmk-keymap`
 - **Project scaffolding** → `zmk-new-config`
 - **Failure diagnosis** → `zmk-debug`

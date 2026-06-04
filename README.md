@@ -8,7 +8,7 @@ A curated collection of [Claude Code skills](https://skills.sh) built around dee
 |---|---|---|
 | [`keyboard/`](skills/keyboard/README.md) | 12 | ZMK and QMK firmware — scaffold, keymap, config, display, debug, diagrams, LVGL migration |
 | [`infrastructure/`](skills/infrastructure/README.md) | 4 | GitLab CI/CD, MR writing, Terraform plan analysis, Homebrew CLI release |
-| [`tools/`](skills/tools/README.md) | 5 | Mermaid diagrams, idea development, focus recovery, skill authoring, memory auditing |
+| [`tools/`](skills/tools/README.md) | 6 | Mermaid diagrams, idea development, focus recovery, skill authoring, memory auditing, workflow-pattern selection |
 
 ---
 
@@ -62,8 +62,9 @@ Skills for the full lifecycle of ZMK and QMK keyboard projects, organized under 
 | [`pretty-mermaid`](skills/tools/pretty-mermaid/SKILL.md) | `render mermaid`, `flowchart`, `sequence diagram`, `ER diagram`, `apply diagram theme` | Renders Mermaid diagrams to SVG or ASCII art with 15 themes and batch support |
 | [`eureka`](skills/tools/eureka/SKILL.md) | `shower thought`, `pivot idea`, `brainstorm`, `what if we`, `I'm thinking about`, `eureka` | Turns a raw idea into a structured outline — interviews you one question at a time, challenges assumptions, and surfaces a risk annotation |
 | [`scatterbrain`](skills/tools/scatterbrain/SKILL.md) | `scatterbrain`, `lost the thread`, `drifted`, `what was I doing`, `set anchor`, `focus recovery` | Focus-recovery skill — anchors the current thread or recovers it after a tangent, classifying the drift as productive or derailing |
-| [`write-a-skill`](skills/tools/write-a-skill/SKILL.md) | `write a skill`, `create a skill`, `new skill`, `add a skill`, `build a skill` | Authors a new skill in any skills repo — discovers the repo's layout, frontmatter, and registration rather than assuming them; description-first, lean workflow |
+| [`write-a-skill`](skills/tools/write-a-skill/SKILL.md) | `write a skill`, `create a skill`, `new skill`, `add a skill`, `update a skill` | Authors or updates a skill — discovers repo conventions, enforces Gotchas/folder/hooks/persistent-data patterns per the Anthropic skill blog |
 | [`audit-memories`](skills/tools/audit-memories/SKILL.md) | `audit my memories`, `clean up memory`, `prune stale memories`, `consolidate memories`, `memory hygiene` | Audits a project's `~/.claude` memory files — classifies each keep/prune/merge/fix, verifies claims against the live repo, proposes a review-first consolidation plan before changing anything |
+| [`workflow-fit`](skills/tools/workflow-fit/SKILL.md) | `which workflow pattern`, `rate the workflow patterns`, `pick a workflow pattern for this`, `how should we orchestrate this`, `what pattern fits this task` | Rates six multi-agent workflow patterns (classify / fanout / verify / generate / tournament / loop) 0-10 against a task characterization and recommends a composite orchestration |
 
 ---
 
@@ -86,7 +87,7 @@ Invoke by name in a Claude Code session, or describe what you need in natural la
 /gitlab-ci-inspector  /gitlab-mr-writing  /homebrew-cli-release
 /terraform-plan-summary
 /pretty-mermaid       /eureka             /scatterbrain
-/write-a-skill        /audit-memories
+/write-a-skill        /audit-memories     /workflow-fit
 ```
 
 ## License
