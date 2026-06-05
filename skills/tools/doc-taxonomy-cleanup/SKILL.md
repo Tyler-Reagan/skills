@@ -42,7 +42,7 @@ Each chunk pauses for user approval. Each completion gets a "what this enables" 
 
 - **No DELETE without explicit user sign-off** in the table-iteration phase. The skill never deletes unilaterally.
 - **No `decisions/` rewrite without code grep.** Every path the rewrite cites is grepped/read in the current tree first. Sub-agent characterizations are not trusted as ground truth.
-- **Archives are verbatim.** Moves into `archive/` are `git mv` only — no content changes. The archive is a faithful graveyard, not a curated one.
+- **Archives are verbatim in content, not structure.** Moves into `archive/` are `git mv` only — file contents are not edited. Directory *organization* inside `archive/` is fair game: nest archived files by theme (`archive/<theme>/<file>.md`) when a cluster has a clear shared subject. The "no curation" rule applies to text, not topology.
 - **Dilution test before upsert.** Before appending to `architecture.md` or `troubleshooting.md`, ask "is this tight enough to live in a load-bearing doc, or does it dilute it?" If dilutive, archive the source instead.
 - **Same-slot evolution → edit in place. Slot transition or frame change → delete + rewrite.** A plan promoted to a decision record is a rewrite, not an edit; editing in place tempts preservation of stale plan-form scaffolding.
 - **Verification status disclosed.** Phase 2 output names which HIGH-risk rows got code-anchored and which did not.
@@ -69,6 +69,8 @@ Each chunk pauses for user approval. Each completion gets a "what this enables" 
 **Don't impose the default taxonomy on repos with established conventions.** If the repo already uses `docs/adr/` for decisions, Phase 0 binds `decisions/` → `docs/adr/` via the catalog, and Chunk 3 rewrites use ADR/MADR format instead of the bundled template. The 8-slot default is a *default*, not a forced layout.
 
 **Single-file discipline for `architecture.md` and `troubleshooting.md`.** These stay single files until a section grows heavy enough to warrant decomposition. The discipline is what keeps them load-bearing — splitting prematurely creates orientation problems and dilutes the "go here for current state" signal.
+
+**Duplicate-storage pattern (monolithic + decomposed).** When the same content exists in both a single large file and a decomposed directory of section files, **prefer the decomposed form**. The decomposed version is easier to read, deep-link to, and grep, and is almost always the later improvement on the monolithic predecessor. `ARCHIVE` or `DELETE` the monolithic; keep (and archive, if archiving the whole cluster) the decomposed. The same preference applies inside `archive/` — keep the decomposed subdir; drop the monolithic file.
 
 ## Anti-patterns
 
