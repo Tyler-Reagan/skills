@@ -12,12 +12,12 @@ These are **defaults**. Phase 0 maps them to the repo's existing conventions via
 | 2 | `docs/plans/archive/` | Stale/dropped/superseded plans, verbatim moves | low (explicitly historical) |
 | 3 | `docs/decisions/` | Foundational decisions still reflected in code | **high** (presumed current) |
 | 4 | `docs/decisions/archive/` | Abandoned decisions whose *rationale-for-not-doing-it* is itself load-bearing (deliberately small — likely-re-proposed approaches like CRIU/ECS-removal-style) | low |
-| 5 | `docs/architecture.md` | Top-level single file, current-state system reference; decompose only when a section warrants | **high** |
+| 5 | `docs/architecture.md` (+ optional `docs/architecture/`) | Top-level single file, current-state system reference. When a sub-domain outgrows the apex, decompose into a state-of-code `docs/architecture/` dir (present tense, no chronology, diagram-led, re-verified on edit) rather than bloating the apex | **high** |
 | 6 | `docs/troubleshooting.md` | Top-level single file, operational guide; evolves as old issues collapse under fixes | **high** |
 | 7 | Top-level setup docs (`cursor-setup.md`, `claude-setup.md`, `deployment.md`) | User-facing setup; only group into `docs/setup/` if volume justifies it | medium |
 | 8 | Per-directory `README.md` | Local orientation for `docs/`, `plans/`, `decisions/`, plus any subdir whose substantive content survives cleanup | **high if present** (orientation lies are toxic) |
 
-**Single-file discipline** applies to slots 5 and 6: stay single until decomposition is warranted by section weight, not by anticipated growth.
+**Single-file discipline** applies to slots 5 and 6: stay single until decomposition is warranted by section weight, not by anticipated growth. When slot 5 does decompose, the sub-domain docs follow the state-of-code contract (present tense, no chronology, diagram-led with clarifying notes over long prose, every cited path re-verified on edit) and each carries a closing pointer block to its decision record(s) and archived source plan(s).
 
 ## Verdict vocabulary
 
@@ -25,7 +25,7 @@ These are **defaults**. Phase 0 maps them to the repo's existing conventions via
 |---|---|
 | `KEEP` | Leave in current location, possibly edit-in-place tightening |
 | `MOVE` | Same content, different location (e.g. reorganize to a subdir) |
-| `PROMOTE` | Rewrite into `decisions/` in code-grounded form; delete original |
+| `PROMOTE` | Rewrite in code-grounded form into `decisions/` (the why), a state-of-code `architecture/` doc (the how-now), or **both** (two-sided: substance split, cross-pointers, no duplication); delete original |
 | `ARCHIVE` | `git mv` to `plans/archive/` or `decisions/archive/`, verbatim |
 | `DELETE` | One-shot complete; commit history is the artifact |
 | `DISTILL` | Extract the generalizable kernel into `troubleshooting.md` or `architecture.md`; delete original |
@@ -37,11 +37,11 @@ These are **defaults**. Phase 0 maps them to the repo's existing conventions via
 | Transition | Trigger |
 |---|---|
 | `plans/` → `decisions/` (PROMOTE) | Shipped + load-bearing for understanding current code |
+| `plans/` → `architecture/<subdomain>.md` + `decisions/` (PROMOTE, two-sided) | Shipped + load-bearing on both axes: current behavior → state-of-code doc; pivotal choices/rejected alternatives → slim decision record. Cross-pointers; substance never duplicated |
 | `plans/` → `plans/archive/` (ARCHIVE) | Stale/dropped/superseded but worth preserving as historical artifact |
 | `plans/` → *(DELETE)* | One-shot complete (deploy checklist, migration runbook); commit history is the artifact |
 | `decisions/` → *(DELETE)* | Fully superseded; the replacement decision-record carries forward any continuity needed |
 | `decisions/` → `decisions/archive/` (ARCHIVE) | Abandoned approach where the rationale-for-not-doing-it is itself load-bearing (likely re-proposal) |
-| postmortem → `troubleshooting.md` (DISTILL) | Recurring pattern still relevant; highly selective; original deleted after distillation |
 | anywhere → `architecture.md` (DISTILL) | Current-state high-level content; highly selective; original archived or deleted |
 | anywhere → `troubleshooting.md` (DISTILL) | Operational content; highly selective; original archived or deleted |
 | both-frames doc → split (SPLIT) | Decision content + operational content in one doc → split into `decisions/` and `troubleshooting.md` |

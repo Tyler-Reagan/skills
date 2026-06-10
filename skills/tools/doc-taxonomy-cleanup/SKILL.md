@@ -32,7 +32,7 @@ Triage a poisoned documentation tree into a taxonomy that keeps load-bearing doc
 **5. Execute per chunk.** Five-chunk default ordering, adjust if a chunk is empty:
 1. Discovery outcomes — directories created, READMEs written (just `docs/`, `plans/`, `decisions/`)
 2. Deletes + archives + `git mv`s — mechanical, verbatim moves
-3. `decisions/` rewrites — code-grounded, one substantial rewrite per chunk if multiple
+3. `decisions/` + state-of-code `architecture/` rewrites — code-grounded, one substantial rewrite per chunk if multiple
 4. `architecture.md` + `troubleshooting.md` upserts — highly selective; apply the dilution test
 5. Code-reference repointing across the repo
 
@@ -41,7 +41,7 @@ Each chunk pauses for user approval. Each completion gets a "what this enables" 
 ## Stop rules
 
 - **No DELETE without explicit user sign-off** in the table-iteration phase. The skill never deletes unilaterally.
-- **No `decisions/` rewrite without code grep.** Every path the rewrite cites is grepped/read in the current tree first. Sub-agent characterizations are not trusted as ground truth.
+- **No `decisions/` or state-of-code `architecture/` rewrite without code grep.** Every path the rewrite cites is grepped/read in the current tree first. Sub-agent characterizations are not trusted as ground truth.
 - **Archives are verbatim in content, not structure.** Moves into `archive/` are `git mv` only — file contents are not edited. Directory *organization* inside `archive/` is fair game: nest archived files by theme (`archive/<theme>/<file>.md`) when a cluster has a clear shared subject. The "no curation" rule applies to text, not topology.
 - **Dilution test before upsert.** Before appending to `architecture.md` or `troubleshooting.md`, ask "is this tight enough to live in a load-bearing doc, or does it dilute it?" If dilutive, archive the source instead.
 - **Same-slot evolution → edit in place. Slot transition or frame change → delete + rewrite.** A plan promoted to a decision record is a rewrite, not an edit; editing in place tempts preservation of stale plan-form scaffolding.
@@ -64,7 +64,9 @@ Each chunk pauses for user approval. Each completion gets a "what this enables" 
 
 **Archives are graveyards, not curated content.** Resist the urge to tidy up archived docs as you move them. `git mv` verbatim. Editing archived content destroys the historical signal — the whole point of the archive is "this is what we said *then*."
 
-**Postmortems are explicitly historical, not stale.** A dated incident record (`2026-06-02-sandbox-kernel-oom.md`) is load-bearing in a different way than a current-state doc. Don't treat them as candidates for `ARCHIVE` reflexively. Only `DISTILL` when a pattern recurs and a generalizable kernel can move into `troubleshooting.md`; otherwise leave alone, or delete clean if entirely subsumed.
+**The decisions/architecture split is two different kinds of truth.** When the apex architecture file can't hold a sub-domain at depth, bind a state-of-code directory (e.g. `docs/architecture/` beside the apex file) rather than bloating the apex or stuffing current-state content into `decisions/`. The break: `decisions/` is the *transcript of truth* — dated records of pivotal choices (why, what was rejected, status; append-mostly) — while a state-of-code doc is *present tense* (how it works now, no chronology, re-verified against code on edit). A shipped plan can promote **two-sided**: current behavior → a state-of-code doc, pivotal choices → a slim decision record, with cross-pointers between them and substance never duplicated.
+
+**State-of-code rewrites are diagram-led.** Bullets over prose paragraphs; a mermaid diagram with clarifying notes beats long prose for any non-trivial flow. Validate every diagram against a strict renderer before committing — common breakers: semicolons inside message text, `{}`/`[]` inside participant aliases.
 
 **Don't impose the default taxonomy on repos with established conventions.** If the repo already uses `docs/adr/` for decisions, Phase 0 binds `decisions/` → `docs/adr/` via the catalog, and Chunk 3 rewrites use ADR/MADR format instead of the bundled template. The 8-slot default is a *default*, not a forced layout.
 

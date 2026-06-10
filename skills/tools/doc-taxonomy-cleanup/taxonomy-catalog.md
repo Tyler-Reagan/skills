@@ -6,7 +6,7 @@ Map the repo's existing doc conventions to the default 8-slot taxonomy in [REFER
 
 Run these checks before proposing a binding:
 
-- `ls docs/ docs/decisions docs/adr docs/rfc docs/plans docs/proposals docs/runbooks docs/troubleshooting docs/postmortems 2>/dev/null` — what's already there
+- `ls docs/ docs/decisions docs/adr docs/rfc docs/plans docs/proposals docs/runbooks docs/troubleshooting docs/architecture 2>/dev/null` — what's already there
 - `find . -maxdepth 4 -name 'adr-*.md' -o -name 'ADR-*.md' -o -name '0001-*.md'` — ADR-style numbered filenames
 - `find . -maxdepth 4 -name 'rfc-*.md' -o -name 'RFC-*.md'` — RFC-style
 - `find . -maxdepth 4 -name 'architecture.md' -o -name 'ARCHITECTURE.md' -o -name 'CONTEXT.md'` — current-state references
@@ -69,11 +69,11 @@ Run these checks before proposing a binding:
 
 **Maps to:** slot 6 (`troubleshooting.md`). **Single-file discipline applies** — if the existing directory has a small number of files, consider collapsing into a single `troubleshooting.md`. If the existing surface is already decomposed by section and load-bearing in that shape (many files, each substantial), leave as-is and bind slot 6 to the directory rather than a single file.
 
-### `docs/postmortems/`
+### `docs/architecture/` (state-of-code sub-domain docs)
 
-**Detection:** directory with dated incident records (e.g. `2026-06-02-sandbox-kernel-oom.md`).
+**Detection:** a directory of current-state sub-domain docs beside (or instead of) an apex architecture file.
 
-**Maps to:** does not persist long-term. Distill recurring patterns into slot 6; delete the directory once empty. **Exception:** if the repo has a documented postmortem policy (e.g. compliance, audit trail), respect that — the directory may need to persist for reasons orthogonal to context-poisoning.
+**Maps to:** slot 5's decomposed form. The contract that keeps it load-bearing: present tense, no chronology or status emojis, diagram-led (mermaid + clarifying notes over long prose), every cited path re-verified on edit, and a closing pointer block to the sub-domain's decision record(s) and archived source plan(s). Distinct from slot 3 by *kind of truth*: `decisions/` is the transcript (why, what was rejected, dated), `architecture/` is the present (how it works now). Two-sided PROMOTE targets both.
 
 ### `CONTEXT.md` / `ARCHITECTURE.md` / `docs/architecture.md`
 
