@@ -1,10 +1,10 @@
 ---
 name: doc-formatting
-description: Formats a documentation file to its type's contract — architecture (state-of-code, present-tense, diagram-led, code-verified citations), decision (transcript-of-truth record, dated, append-mostly), or plan (active work doc, status-dated, verification-anchored). Use when the user says "format this doc", "apply doc conventions", "make this read like an architecture doc", "harden this decision record", "normalize this plan", "doc-level hardening", or has just placed docs via a taxonomy cleanup and wants their contents brought up to standard.
+description: Formats a documentation file to its type's contract — architecture (state-of-code, present-tense, diagram-led, code-verified citations), decision (transcript-of-truth record, dated, append-mostly), plan (active work doc, status-dated, verification-anchored), or apex (top-level entry doc — orientation, tables-first, routing to depth). Use when the user says "format this doc", "apply doc conventions", "make this read like an architecture doc", "harden this decision record", "normalize this plan", "doc-level hardening", or has just placed docs via a taxonomy cleanup and wants their contents brought up to standard.
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.0.0"
+  version: "1.1.0"
   domain: developer-workflow
   triggers: format this doc, apply doc conventions, architecture doc style, decision record format, normalize this plan, doc-level hardening
   role: formatting
@@ -15,7 +15,7 @@ metadata:
 
 # Doc Formatting
 
-Format an existing documentation file to the contract of its **type**. v1 supports three types: **architecture**, **decision**, **plan**. Sister skill to `doc-taxonomy-cleanup` — that skill decides *where* a doc lives; this one decides *what it looks like* once it's there. Neither requires the other.
+Format an existing documentation file to the contract of its **type**: **architecture**, **decision**, **plan**, **apex** (top-level entry docs — both dir-fronting and standalone topical). Sister skill to `doc-taxonomy-cleanup` — that skill decides *where* a doc lives; this one decides *what it looks like* once it's there. Neither requires the other.
 
 ## Workflow
 
@@ -23,7 +23,7 @@ Format an existing documentation file to the contract of its **type**. v1 suppor
 2. **Load the type spec** from `types/<type>.md` — the contract, section order, style rules, and a review checklist. Read only the spec for the type at hand.
 3. **Reformat, don't re-decide.** Formatting changes structure, register, and presentation — it does not change verdicts, move files, or alter substance. If the content reveals the doc is in the wrong slot or telling lies, surface that and stop; re-triage is the sister skill's job.
 4. **Verify what the contract demands.** Architecture docs: grep every cited path/symbol in the current tree. Decision/plan docs: verify only what the edit touches.
-5. **Validate and finish.** Render every mermaid block through a strict renderer (the `pretty-mermaid` skill if available, else `mermaid.live`-grade strictness by hand-check); run the repo's markdown formatter (prettier or equivalent) as the **last** step.
+5. **Validate and finish.** Render every mermaid block through **stock** mermaid (`npx -y @mermaid-js/mermaid-cli` or mermaid.live) — not a lenient styling renderer (see the mermaid gotcha); run the repo's markdown formatter (prettier or equivalent) as the **last** step.
 
 ## Type contracts at a glance
 
@@ -32,12 +32,13 @@ Format an existing documentation file to the contract of its **type**. v1 suppor
 | architecture | state of code | present, no chronology | **forbidden** (a status line on a state doc is a smell) | `## How it works` centerpiece; elsewhere discretionary | [types/architecture.md](types/architecture.md) |
 | decision | transcript of truth | past + dated | required (`✅/🟡` + date) | optional; only for the decided shape | [types/decision.md](types/decision.md) |
 | plan | active work | future/imperative | required, refreshed per commit | encouraged for proposed flows | [types/plan.md](types/plan.md) |
+| apex | state of code, whole-concern | present, no chronology | **forbidden** | multiple centerpieces allowed; tables first | [types/apex.md](types/apex.md) |
 
 Skeletons to copy from: [assets/](assets/) (one template per type).
 
 ## Gotchas
 
-**Stock mermaid is stricter than your renderer.** Semicolons inside message text act as statement terminators; `{}` and `[]` inside participant aliases break parsing. A diagram that renders in a lenient tool can still break on the doc host. Validate every block through a strict renderer before committing.
+**Stock mermaid is stricter than your renderer — validate with stock, not a styling tool.** Known breakers: semicolons inside message text (statement terminators); `{}` / `[]` inside participant aliases; `<br/>` in `stateDiagram-v2` transition labels (fine in flowchart/sequence labels); leading-arrow-only edges (`A <-- B`). Styling renderers (e.g. beautiful-mermaid) are *lenient* and will pass all of these — validation must run through stock `@mermaid-js/mermaid-cli` (`npx mmdc`) or mermaid.live, matching what the doc host runs.
 
 **The formatter fights you mid-edit.** Prettier (and kin) rewrites table alignment and emphasis markers (`*` → `_`). Run it once at the end, not between edits — otherwise your Edit old_strings stop matching.
 
