@@ -8,7 +8,7 @@ A curated collection of [Claude Code skills](https://skills.sh) built around dee
 |---|---|---|
 | [`keyboard/`](skills/keyboard/README.md) | 12 | ZMK and QMK firmware — scaffold, keymap, config, display, debug, diagrams, LVGL migration |
 | [`infrastructure/`](skills/infrastructure/README.md) | 4 | GitLab CI/CD, MR writing, Terraform plan analysis, Homebrew CLI release |
-| [`tools/`](skills/tools/README.md) | 6 | Mermaid diagrams, idea development, focus recovery, skill authoring, memory auditing, workflow-pattern selection |
+| [`tools/`](skills/tools/README.md) | 8 | Mermaid diagrams, idea development, focus recovery, skill authoring, memory auditing, workflow-pattern selection |
 
 ---
 
@@ -65,6 +65,8 @@ Skills for the full lifecycle of ZMK and QMK keyboard projects, organized under 
 | [`write-a-skill`](skills/tools/write-a-skill/SKILL.md) | `write a skill`, `create a skill`, `new skill`, `add a skill`, `update a skill` | Authors or updates a skill — discovers repo conventions, enforces Gotchas/folder/hooks/persistent-data patterns per the Anthropic skill blog |
 | [`audit-memories`](skills/tools/audit-memories/SKILL.md) | `audit my memories`, `clean up memory`, `prune stale memories`, `consolidate memories`, `memory hygiene` | Audits a project's `~/.claude` memory files — classifies each keep/prune/merge/fix, verifies claims against the live repo, proposes a review-first consolidation plan before changing anything |
 | [`workflow-fit`](skills/tools/workflow-fit/SKILL.md) | `which workflow pattern`, `rate the workflow patterns`, `pick a workflow pattern for this`, `how should we orchestrate this`, `what pattern fits this task` | Rates six multi-agent workflow patterns (classify / fanout / verify / generate / tournament / loop) 0-10 against a task characterization and recommends a composite orchestration |
+| [`doc-taxonomy-cleanup`](skills/tools/doc-taxonomy-cleanup/SKILL.md) | `clean up stale docs`, `audit my docs`, `doc cleanup`, `establish doc taxonomy`, `docs are poisoning context` | Triages a poisoned doc tree into plans/decisions/architecture/archive/delete, rewriting promoted docs code-grounded |
+| [`doc-formatting`](skills/tools/doc-formatting/SKILL.md) | `format this doc`, `apply doc conventions`, `architecture doc style`, `decision record format`, `normalize this plan` | Formats a doc to its type's contract — architecture (state-of-code, diagram-led), decision (transcript-of-truth), plan (active work); sister skill to doc-taxonomy-cleanup |
 
 ---
 
