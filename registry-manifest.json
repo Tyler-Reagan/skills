@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "sourceBankVersion": "1.19.0",
+  "sourceBankVersion": "1.21.0",
   "registryRoot": "Tyler-Reagan/skills",
   "skills": [
     {
@@ -108,7 +108,7 @@
     },
     {
       "name": "building-glamorous-tuis",
-      "description": ">-",
+      "description": "Build terminal UIs with Charmbracelet (Bubble Tea, Lip Gloss, Gum). Use when: Go TUI, shell prompts/spinners, \"make CLI prettier\", adaptive layouts, async rendering, focus state machines, sparklines, heatmaps, kanban boards, SSH apps.",
       "source": "user",
       "bucket": "vendored",
       "origin": {
@@ -138,7 +138,7 @@
     },
     {
       "name": "caveman",
-      "description": ">",
+      "description": "Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, and pleasantries while keeping full technical accuracy. Use when user says \"caveman mode\", \"talk like caveman\", \"use caveman\", \"less tokens\", \"be brief\", or invokes /caveman.",
       "source": "user",
       "bucket": "vendored",
       "origin": {
@@ -287,6 +287,32 @@
       "tags": []
     },
     {
+      "name": "doc-formatting",
+      "description": "Formats a documentation file to its type's contract — architecture (state-of-code, present-tense, diagram-led, code-verified citations), decision (transcript-of-truth record, dated, append-mostly), plan (active work doc, status-dated, verification-anchored), or apex (top-level entry doc — orientation, tables-first, routing to depth). Use when the user says \"format this doc\", \"apply doc conventions\", \"make this read like an architecture doc\", \"harden this decision record\", \"normalize this plan\", \"doc-level hardening\", or has just placed docs via a taxonomy cleanup and wants their contents brought up to standard.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "github",
+        "repo": "Tyler-Reagan/skills",
+        "skillPath": "skills/personal/doc-formatting/SKILL.md"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "doc-taxonomy-cleanup",
+      "description": "Cleans up a poisoned documentation tree by discovering the repo's actual doc surface, triaging every file into a plans / decisions / archive / delete taxonomy, rewriting promoted docs as code-grounded decision records, and distilling stale content into a single load-bearing troubleshooting.md. Adapts to whatever convention the repo already uses (ADR, MADR, RFC, decisions/) instead of imposing defaults. Use when the user says \"clean up stale docs\", \"audit my docs\", \"prune docs\", \"doc cleanup\", \"stale documentation\", \"consolidate docs\", \"establish doc taxonomy\", \"differentiate plans from decisions\", or \"docs are poisoning context\".",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "github",
+        "repo": "Tyler-Reagan/skills",
+        "skillPath": "skills/personal/doc-taxonomy-cleanup/SKILL.md"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
       "name": "docs-page-generator",
       "description": "When the user wants to create, optimize, or structure a documentation site. Also use when the user mentions \"docs,\" \"documentation site,\" \"docs subdomain,\" \"docs.yourdomain.com,\" \"help center,\" \"knowledge base,\" \"Getting Started,\" \"API Reference,\" \"user guides,\" or \"tutorials.\" For API marketing landing, use api-page-generator.",
       "source": "user",
@@ -312,21 +338,6 @@
         "sourceUrl": "https://github.com/composiohq/awesome-claude-skills.git",
         "skillPath": "domain-name-brainstormer/SKILL.md",
         "skillFolderHash": "ee97909251c1e45f7babc118fbf66467314d4e46"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "electron",
-      "description": "Build cross-platform desktop applications with Electron, covering main/renderer process architecture, IPC communication, BrowserWindow management, menus, tray icons, packaging, and security best practices. Use when the user asks about Electron, needs to create desktop applications, implement Electron features, or build cross-platform desktop apps.",
-      "source": "user",
-      "bucket": "vendored",
-      "origin": {
-        "kind": "github",
-        "repo": "teachingai/full-stack-skills",
-        "sourceUrl": "https://github.com/teachingai/full-stack-skills.git",
-        "skillPath": "skills/electron-skills/electron/SKILL.md",
-        "skillFolderHash": "2b889701cf0fba3fb968fbeaaf5dfb243a2c6a8e"
       },
       "category": null,
       "tags": []
@@ -406,7 +417,7 @@
     },
     {
       "name": "fix-knip-unused-exports",
-      "description": "|",
+      "description": "Fix knip \"Unused exports\" violations. Handles all violation categories: test-only exports\n(extract to new file), dead barrel re-exports (remove from index.ts), and internally-only-used\nexports (un-export).\nUse when `npm run knip` reports unused exports.",
       "source": "user",
       "bucket": "vendored",
       "origin": {
@@ -436,7 +447,7 @@
     },
     {
       "name": "frontend-design",
-      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
       "source": "user",
       "bucket": "vendored",
       "origin": {
@@ -444,7 +455,7 @@
         "repo": "anthropics/skills",
         "sourceUrl": "https://github.com/anthropics/skills.git",
         "skillPath": "skills/frontend-design/SKILL.md",
-        "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8"
+        "skillFolderHash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296"
       },
       "category": null,
       "tags": []
@@ -503,8 +514,7 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md",
-        "skillFolderHash": "b6a9566d7144d2650b3be4c1f716dd4ec34f70c5"
+        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
       },
       "category": null,
       "tags": []
@@ -533,8 +543,7 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md",
-        "skillFolderHash": "31c9b7dfe3653ce088df0551edff0f01e5097e81"
+        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
       },
       "category": null,
       "tags": []
@@ -652,7 +661,7 @@
         "repo": "pbakaus/impeccable",
         "sourceUrl": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "skillFolderHash": "7e268ebe41c4a8ba1e6bccc00674d1ac53f71785"
+        "skillFolderHash": "b8f5ff07669681920b944fc1b7e8b0c3bbb09884"
       },
       "category": null,
       "tags": []
@@ -765,7 +774,7 @@
     {
       "name": "portfolio-case-study-writer",
       "description": "Transform resume bullets into detailed portfolio case studies",
-      "source": "curated",
+      "source": "vendored",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -815,8 +824,7 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/tools/pretty-mermaid/SKILL.md",
-        "skillFolderHash": "5f53bb8a316cdbde825993c1dc6f25b0bf8cd36d"
+        "skillPath": "skills/tools/pretty-mermaid/SKILL.md"
       },
       "category": null,
       "tags": []
@@ -830,6 +838,19 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/personal/pretty-qmk-keymap/SKILL.md"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "pretty-writeup",
+      "description": "Renders an existing markdown document into a self-contained, single-file styled HTML \"writeup\" in a fixed house design system (dark default, light preset). Use when the user says \"make an HTML writeup\", \"format this as an HTML report\", \"turn this doc into a styled page\", \"pretty HTML version of this\", \"stylize this markdown\", \"HTML report from this doc\", or wants a shareable styled HTML artifact built from a markdown source.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "github",
+        "repo": "Tyler-Reagan/skills",
+        "skillPath": "skills/personal/pretty-writeup/SKILL.md"
       },
       "category": null,
       "tags": []
@@ -1042,7 +1063,7 @@
         "repo": "shadcn/ui",
         "sourceUrl": "https://github.com/shadcn/ui.git",
         "skillPath": "skills/shadcn/SKILL.md",
-        "skillFolderHash": "34db419996afc09836f01062606316f2728884c4"
+        "skillFolderHash": "53547268e4c90c0dd7981e098e1ea4a89393575a"
       },
       "category": null,
       "tags": []
@@ -1065,7 +1086,7 @@
     {
       "name": "soultrace",
       "description": "Take a personality assessment via the SoulTrace API. Use when the user wants to take a personality test, discover their psychological archetype, understand their personality traits, or get a color-based personality profile. The API uses a 5-color psychological model (White=structure, Blue=understanding, Black=agency, Red=intensity, Green=connection) with Bayesian adaptive question selection to classify users into one of 25 archetypes. Triggers on: personality test, personality assessment, what's my personality, take a quiz, archetype test, color personality, soultrace.",
-      "source": "curated",
+      "source": "vendored",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1115,8 +1136,7 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md",
-        "skillFolderHash": "9d3a8e3344386c6de71402dc1842d6397736450f"
+        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
       },
       "category": null,
       "tags": []
