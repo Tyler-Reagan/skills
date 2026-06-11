@@ -22,6 +22,7 @@
     "./skills/tools/doc-taxonomy-cleanup",
     "./skills/tools/eureka",
     "./skills/tools/pretty-mermaid",
+    "./skills/tools/pretty-writeup",
     "./skills/tools/scatterbrain",
     "./skills/tools/workflow-fit",
     "./skills/tools/write-a-skill"

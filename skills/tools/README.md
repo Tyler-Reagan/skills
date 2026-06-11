@@ -8,6 +8,7 @@ General-purpose developer tooling skills not tied to a specific infrastructure o
 |---|---|---|
 | [`eureka`](eureka/SKILL.md) | Specialist | Turning a raw shower thought or pivot idea into a structured outline for Grill-Me |
 | [`pretty-mermaid`](pretty-mermaid/SKILL.md) | Formatting | Rendering Mermaid diagrams to styled SVG or ASCII art |
+| [`pretty-writeup`](pretty-writeup/SKILL.md) | Formatting | Rendering an existing markdown doc into a self-contained, styled single-file HTML writeup (dark default, light preset) |
 | [`scatterbrain`](scatterbrain/SKILL.md) | Diagnostic | Focus recovery when tangential rabbit holes have buried the original plan |
 | [`audit-memories`](audit-memories/SKILL.md) | Diagnostic | Auditing `~/.claude` memory files — classify, verify against live repo, consolidate with approval |
 | [`doc-formatting`](doc-formatting/SKILL.md) | Formatting | Formatting a doc to its type's contract — architecture (state-of-code, diagram-led), decision (transcript-of-truth record), plan (active work doc) |
