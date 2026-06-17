@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session memory resize — presentation demo</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --border:#30363d; --border2:#3d444d;
+    --fg:#c9d1d9; --muted:#8b949e; --faint:#6e7681;
+    --accent:#58a6ff; --accent-bg:#0f1d2e; --accent-line:#1f3a5f;
+    --green:#3fb950; --green-bg:#0f1f14; --green-line:#1f3d28;
+    --amber:#d29922; --violet:#bc8cff; --violet-bg:#1a1229; --violet-line:#3d2a5c;
+    --red:#f85149; --amber-bg:#231c0f; --amber-line:#3d3115;
+    --radius:8px; --radius-lg:10px;
+    --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    --text-base:17px; --text-sm:14px; --text-xs:12px; --text-lg:19px; --text-xl:22px;
+    --h1-size:30px; --line-height:1.62;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:var(--text-base)/var(--line-height) var(--font-sans);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:32px 24px 80px}
+  h1{font-size:var(--h1-size);font-weight:700;margin:0 0 5px;letter-spacing:-.01em;line-height:1.18}
+  h1 .accent{color:var(--accent)}
+  .sub{color:var(--muted);margin:0 0 14px;font-size:var(--text-base);max-width:720px}
+  h2{font-size:var(--text-xl);font-weight:700;margin:0 0 18px;padding:0;border-bottom:none;letter-spacing:-.01em}
+  .masthead{margin:0 0 28px}
+  .masthead-kicker{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin:0}
+  .tag{font-family:var(--font-mono);font-size:var(--text-xs);border:1px solid var(--border2);border-radius:999px;padding:3px 11px;color:var(--muted);background:var(--panel)}
+  .tag.on{border-color:var(--accent-line);color:var(--accent);background:var(--accent-bg)}
+  .tag.g{border-color:var(--green-line);color:var(--green);background:var(--green-bg)}
+  .block{--block-accent:var(--accent);--block-tag-bg:var(--accent-bg);--block-tag-line:var(--accent-line);
+    position:relative;margin:32px 0;padding:26px 30px 30px;border-radius:14px;border:1px solid var(--border);
+    background:linear-gradient(160deg,color-mix(in srgb,var(--block-accent) 6%,var(--panel)) 0%,var(--panel) 55%,var(--bg) 100%);overflow:hidden}
+  .block::after{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--block-accent);border-radius:14px 0 0 14px}
+  .block-now{--block-accent:var(--green);--block-tag-bg:var(--green-bg);--block-tag-line:var(--green-line)}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+  .fact{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);padding:15px 17px}
+  .fact.accent{background:var(--accent-bg);border-color:var(--accent-line)}
+  .fact.disk{background:var(--green-bg);border-color:var(--green-line)}
+  .fact.mem{background:var(--amber-bg);border-color:var(--amber-line)}
+  .fact-label{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:7px}
+  .fact.accent .fact-label{color:var(--accent)}
+  .fact.disk .fact-label{color:var(--green)}
+  .fact.mem .fact-label{color:var(--amber)}
+  .fact-punch{margin:0;font-size:var(--text-lg);font-weight:600;line-height:1.35}
+  .fact-detail{margin:5px 0 0;font-size:var(--text-sm);color:var(--muted)}
+  .points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:4px 0 8px}
+  .point{--point-color:var(--block-accent);display:flex;gap:12px;padding:15px 17px;border-radius:var(--radius-lg);
+    border:1px solid var(--border);border-left:3px solid var(--point-color);background:color-mix(in srgb,var(--point-color) 4%,var(--bg))}
+  .point-marker{flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--point-color)}
+  .point-head{margin:0 0 5px;font-weight:600;line-height:1.35}
+  .point-copy{margin:0;font-size:var(--text-sm);color:var(--muted);line-height:1.55}
+  .bridge{margin:20px 0 0;padding:15px 19px;border-radius:var(--radius-lg);border:1px solid var(--block-tag-line);
+    border-left:4px solid var(--block-accent);background:var(--block-tag-bg)}
+  .bridge-label{display:block;font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:.06em;text-transform:uppercase;
+    color:var(--block-accent);margin-bottom:7px}
+  .bridge-punch{margin:0;font-size:var(--text-lg);font-weight:600;line-height:1.35}
+  figure{margin:18px 0}
+  .diagram{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px;
+    box-shadow:0 1px 0 color-mix(in srgb,var(--block-accent) 25%,transparent),0 10px 32px rgba(0,0,0,.2)}
+  .diagram svg{display:block;width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:var(--text-sm);margin:10px auto 0;text-align:center;max-width:640px;
+    padding:9px 16px;border-radius:999px;border:1px solid var(--border);
+    background:color-mix(in srgb,var(--block-accent) 5%,var(--panel))}
+  footer{margin-top:40px;padding:18px 20px;font-size:var(--text-sm);color:var(--muted);background:var(--panel);
+    border-radius:var(--radius-lg);border:1px solid var(--border)}
+  footer .footer-line{margin:0;line-height:1.5}
+  footer .footer-line+.footer-line{margin-top:7px}
+  footer .footer-faint{color:var(--faint);font-size:var(--text-xs)}
+  @media (max-width:820px){.facts,.points{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Synthetic brief-register example: one valid shape, not a required slot checklist.
+       In real use, confirm substrate first and omit any component the critical path does not earn. -->
+
+  <header class="masthead">
+    <p class="masthead-kicker">Decision brief</p>
+    <h1>Scaling session memory: <span class="accent">what exists and where we are headed</span></h1>
+    <p class="sub">How a sandbox gets more memory — synthetic demo of the brief register. Fictional product; invented flow.</p>
+    <div class="tags">
+      <span class="tag on">memory scaling</span>
+      <span class="tag g">bounded at 32 GB</span>
+    </div>
+  </header>
+
+  <section class="block block-today">
+    <h2>How session memory works today</h2>
+    <figure class="diagram">
+      <svg viewBox="0 0 640 120" width="100%" role="img" aria-label="Session is a VM with fixed memory; saved files persist; resize needs a new machine.">
+        <rect x="20" y="30" width="180" height="60" rx="8" fill="#0f1d2e" stroke="#1f3a5f"/>
+        <text x="110" y="55" text-anchor="middle" fill="#c9d1d9" font-size="14" font-weight="600">Virtual machine</text>
+        <text x="110" y="74" text-anchor="middle" fill="#8b949e" font-size="12">memory fixed at startup</text>
+        <path d="M210,60 L280,60" stroke="#58a6ff" stroke-width="2" marker-end="url(#a)"/>
+        <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#58a6ff"/></marker></defs>
+        <rect x="290" y="30" width="160" height="60" rx="8" fill="#0f1f14" stroke="#1f3d28"/>
+        <text x="370" y="64" text-anchor="middle" fill="#3fb950" font-size="14" font-weight="600">Saved files persist</text>
+        <rect x="470" y="30" width="150" height="60" rx="8" fill="#0f1d2e" stroke="#1f3a5f"/>
+        <text x="545" y="64" text-anchor="middle" fill="#58a6ff" font-size="14" font-weight="600">New size = new machine</text>
+      </svg>
+      <figcaption>Fixed at startup. Saved files survive. Live memory does not.</figcaption>
+    </figure>
+    <div class="facts">
+      <div class="fact accent">
+        <div class="fact-label">Constraint</div>
+        <p class="fact-punch">Memory is fixed at startup.</p>
+        <p class="fact-detail">New size → new machine.</p>
+      </div>
+      <div class="fact disk">
+        <div class="fact-label">On-disk data</div>
+        <p class="fact-punch">Saved files survive restart.</p>
+        <p class="fact-detail">Persist to durable storage.</p>
+      </div>
+      <div class="fact mem">
+        <div class="fact-label">In-memory data</div>
+        <p class="fact-punch">Live work does not.</p>
+        <p class="fact-detail">Lost when the machine restarts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block block-now">
+    <h2>Direction now</h2>
+    <div class="points">
+      <article class="point">
+        <span class="point-marker" aria-hidden="true"></span>
+        <div>
+          <p class="point-head">Resize on demand.</p>
+          <p class="point-copy">Trigger when a shortfall is anticipated — not up front.</p>
+        </div>
+      </article>
+      <article class="point">
+        <span class="point-marker" aria-hidden="true"></span>
+        <div>
+          <p class="point-head">Restart, not live grow.</p>
+          <p class="point-copy">Memory cannot expand in place; restart larger.</p>
+        </div>
+      </article>
+      <article class="point">
+        <span class="point-marker" aria-hidden="true"></span>
+        <div>
+          <p class="point-head">Replay is deterministic.</p>
+          <p class="point-copy">Saved steps and inputs live in durable storage.</p>
+        </div>
+      </article>
+      <article class="point">
+        <span class="point-marker" aria-hidden="true"></span>
+        <div>
+          <p class="point-head">Built on prior work.</p>
+          <p class="point-copy">Reuse sizing and scheduling; add resize tool and replay.</p>
+        </div>
+      </article>
+    </div>
+    <div class="bridge">
+      <span class="bridge-label">Big picture</span>
+      <p class="bridge-punch">Anticipate shortfall → restart larger → replay back — on the same foundation.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-line">Synthetic demo · <span class="mono">assets/examples/presentation-demo.html</span></p>
+    <p class="footer-line footer-faint">Fictional content — illustrates the brief register only.</p>
+  </footer>
+
+</div>
+</body>
+</html>
