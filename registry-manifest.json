@@ -1,12 +1,12 @@
 {
   "schemaVersion": 5,
-  "sourceBankVersion": "1.22.2",
+  "sourceBankVersion": "1.23.0",
   "registryRoot": "Tyler-Reagan/skills",
   "skills": [
     {
       "name": "404-page-generator",
       "description": "When the user wants to create, optimize, or audit 404 error pages. Also use when the user mentions \"404 page,\" \"404 error,\" \"error page,\" \"page not found,\" \"broken link page,\" \"404 design,\" \"custom 404,\" \"404 redirect,\" \"404 page UX,\" or \"404 recovery.\" For sitewide page planning, use website-structure.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -21,7 +21,7 @@
     {
       "name": "add-app-to-server",
       "description": "This skill should be used when the user asks to \"add an app to my MCP server\", \"add UI to my MCP server\", \"add a view to my MCP tool\", \"enrich MCP tools with UI\", \"add interactive UI to existing server\", \"add MCP Apps to my server\", or needs to add interactive UI capabilities to an existing MCP server that already has tools. Provides guidance for analyzing existing tools and adding MCP Apps UI resources.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -36,7 +36,7 @@
     {
       "name": "api-page-generator",
       "description": "When the user wants to create, optimize, or audit the API introduction/overview page. Also use when the user mentions \"API page,\" \"API landing page,\" \"/api page,\" \"API overview,\" \"developer landing,\" \"API marketing,\" or \"API for developers.\" Note: API documentation (endpoint reference) lives in docs; use docs-page-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -51,7 +51,7 @@
     {
       "name": "apple-appstore-reviewer",
       "description": "Serves as a reviewer of the codebase with instructions on looking for Apple App Store optimizations or rejection reasons.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -77,9 +77,31 @@
       "tags": []
     },
     {
+      "name": "aws-bedrock-agentcore-skill",
+      "description": "Authoritative, source-cited playbook for designing, configuring, deploying, and troubleshooting production-grade AI agents on AWS using the Strands Agents SDK, Amazon Bedrock (Converse API, Guardrails, Knowledge Bases), and Amazon Bedrock AgentCore (Runtime, Memory, Gateway, Identity, built-in Browser/Code Interpreter tools), with Terraform-first IaC and CloudWatch/OpenTelemetry observability. Use this skill WHENEVER the user wants to build, architect, configure, deploy, secure, monitor, or debug an AI agent on AWS - even if they don't name the specific service. Trigger on: \"build an agent on Bedrock\", \"Strands agent\", \"AgentCore\", \"deploy my agent to AWS\", \"RAG with Bedrock Knowledge Bases\", \"multi-agent system on AWS\", \"which model / inference profile should I use\", \"agent memory\", \"MCP gateway\", \"agent guardrails\", \"Bedrock IAM for an agent\", \"agent observability on CloudWatch\", \"agent throttling / cost on Bedrock\", \"Terraform for Bedrock\", or any request to pick an agent pattern (chatbot, tool-using agent, RAG, multi-agent, serverless production agent) and wire it up with official AWS best practices. Also trigger when the user pastes agent code that imports boto3 bedrock-runtime, bedrock-agentcore, or strands and asks to improve, productionize, or debug it. Prefer this skill over a generic answer because AWS agent APIs have many version-specific gotchas (Converse vs InvokeModel, 5x token burndown, region-resolution order, ARM64 runtime contract, async long-term memory) that generic knowledge gets wrong, and because every recommendation here is traceable to an official AWS source the agent can re-open.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "aws-strands-agents-agentcore",
+      "description": "Use when working with AWS Strands Agents SDK or Amazon Bedrock AgentCore platform for building AI agents. Provides architecture guidance, implementation patterns, deployment strategies, observability, quality evaluations, multi-agent orchestration, and MCP server integration.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
       "name": "brand-visual-generator",
       "description": "When the user wants to define, audit, or apply visual identity (typography, colors, spacing, design tokens, frontend aesthetics). Also use when the user mentions \"brand style guide,\" \"visual identity,\" \"design system,\" \"typography,\" \"color palette,\" \"brand guidelines,\" \"AI brand aesthetics,\" \"brand colors,\" \"font choices,\" \"spacing system,\" \"design tokens,\" \"motion,\" \"distinctive design,\" \"frontend aesthetics,\" \"PowerPoint theme,\" \"Google Slides brand,\" or \"slide master colors.\" For brand story, positioning, and voice, use branding.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -94,7 +116,7 @@
     {
       "name": "branding",
       "description": "When the user wants to define, audit, or apply brand strategy—purpose, values, positioning, storytelling, voice, narrative (not only visuals). Also use when the user mentions \"brand strategy,\" \"brand story,\" \"brand storytelling,\" \"brand voice,\" \"brand identity,\" \"brand guidelines,\" \"brand purpose,\" \"brand values,\" \"origin story,\" \"brand narrative,\" \"brand personality,\" \"brand archetype,\" \"slide deck branding,\" \"PPT brand colors,\" or \"document style guide.\" For typography, colors, design tokens, and frontend visuals, use brand-visual-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -109,7 +131,7 @@
     {
       "name": "building-glamorous-tuis",
       "description": "Build terminal UIs with Charmbracelet (Bubble Tea, Lip Gloss, Gum). Use when: Go TUI, shell prompts/spinners, \"make CLI prettier\", adaptive layouts, async rendering, focus state machines, sparklines, heatmaps, kanban boards, SSH apps.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -124,7 +146,7 @@
     {
       "name": "carousel",
       "description": "When the user wants to design, optimize, or audit carousel/slider layouts for content display. Also use when the user mentions \"carousel,\" \"slider,\" \"carousel layout,\" \"testimonial carousel,\" \"gallery carousel,\" \"quote carousel,\" \"image slider,\" or \"carousel accessibility.\" For hero-area patterns, use hero-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -137,24 +159,9 @@
       "tags": []
     },
     {
-      "name": "caveman",
-      "description": "Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, and pleasantries while keeping full technical accuracy. Use when user says \"caveman mode\", \"talk like caveman\", \"use caveman\", \"less tokens\", \"be brief\", or invokes /caveman.",
-      "source": "vendored",
-      "bucket": "vendored",
-      "origin": {
-        "kind": "github",
-        "repo": "mattpocock/skills",
-        "sourceUrl": "https://github.com/mattpocock/skills.git",
-        "skillPath": "skills/productivity/caveman/SKILL.md",
-        "skillFolderHash": "17972a1bdbf5909b9dbdc435ad348f0bf45f8664"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "competitor-research",
       "description": "When the user wants to analyze competitors for SEO, content, backlinks, or positioning. Also use when the user mentions \"competitor analysis,\" \"competitor research,\" \"competitor keywords,\" \"competitor backlinks,\" \"link gap,\" \"content gap,\" \"competitor content,\" \"competitive analysis,\" or \"competitor comparison.\" For content roadmap, use content-strategy.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -169,7 +176,7 @@
     {
       "name": "content-optimization",
       "description": "When the user wants to optimize content for SEO—word count, H2 keywords, keyword density, multimedia, tables, lists. Also use when the user mentions \"content length,\" \"word count,\" \"keyword stuffing,\" \"H2 keywords,\" \"keyword density,\" \"tables,\" \"bullet points,\" or \"content structure.\" For keywords, use keyword-research.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -184,7 +191,7 @@
     {
       "name": "content-strategy",
       "description": "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also use when the user mentions \"content strategy,\" \"what should I write about,\" \"content ideas,\" \"blog strategy,\" \"topic clusters,\" \"content planning,\" \"editorial calendar,\" \"content marketing,\" \"content roadmap,\" \"what content should I create,\" \"blog topics,\" \"content pillars,\" or \"I don't know what to write.\" Use this whenever someone needs help deciding what content to produce, not just writing it. For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit. For social media content specifically, see social.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -199,7 +206,7 @@
     {
       "name": "convert-web-app",
       "description": "This skill should be used when the user asks to \"add MCP App support to my web app\", \"turn my web app into a hybrid MCP App\", \"make my web page work as an MCP App too\", \"wrap my existing UI as an MCP App\", \"convert iframe embed to MCP App\", \"turn my SPA into an MCP App\", or needs to add MCP App support to an existing web application while keeping it working standalone. Provides guidance for analyzing existing web apps and creating a hybrid web + MCP App with server-side tool and resource registration.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -229,7 +236,7 @@
     {
       "name": "create-mcp-app",
       "description": "This skill should be used when the user asks to \"create an MCP App\", \"add a UI to an MCP tool\", \"build an interactive MCP View\", \"scaffold an MCP App\", or needs guidance on MCP Apps SDK patterns, UI-resource registration, MCP App lifecycle, or host integration. Provides comprehensive guidance for building MCP Apps with interactive UIs.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -244,7 +251,7 @@
     {
       "name": "create-readme",
       "description": "Create a README.md file for the project",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -259,7 +266,7 @@
     {
       "name": "d3-viz",
       "description": "Creating interactive data visualisations using d3.js. This skill should be used when creating custom charts, graphs, network diagrams, geographic visualisations, or any complex SVG-based data visualisation that requires fine-grained control over visual elements, transitions, or interactions. Use this for bespoke visualisations beyond standard charting libraries, whether in React, Vue, Svelte, vanilla JavaScript, or any other environment.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -272,16 +279,15 @@
       "tags": []
     },
     {
-      "name": "diagnose",
-      "description": "Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → minimise → hypothesise → instrument → fix → regression-test. Use when user says \"diagnose this\" / \"debug this\", reports a bug, says something is broken/throwing/failing, or describes a performance regression.",
-      "source": "vendored",
+      "name": "diagnosing-bugs",
+      "description": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow.",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
         "repo": "mattpocock/skills",
-        "sourceUrl": "https://github.com/mattpocock/skills.git",
-        "skillPath": "skills/engineering/diagnose/SKILL.md",
-        "skillFolderHash": "43d464d0e9d1049b9d525975c0f7367ab7e01a5f"
+        "skillPath": "skills/engineering/diagnosing-bugs/SKILL.md",
+        "skillFolderHash": "0ecacff09e31245c34727abe7cb7cff71f615a35"
       },
       "category": null,
       "tags": []
@@ -315,7 +321,7 @@
     {
       "name": "docs-page-generator",
       "description": "When the user wants to create, optimize, or structure a documentation site. Also use when the user mentions \"docs,\" \"documentation site,\" \"docs subdomain,\" \"docs.yourdomain.com,\" \"help center,\" \"knowledge base,\" \"Getting Started,\" \"API Reference,\" \"user guides,\" or \"tutorials.\" For API marketing landing, use api-page-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -330,7 +336,7 @@
     {
       "name": "domain-name-brainstormer",
       "description": "Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -343,24 +349,9 @@
       "tags": []
     },
     {
-      "name": "electron",
-      "description": "Build cross-platform desktop applications with Electron, covering main/renderer process architecture, IPC communication, BrowserWindow management, menus, tray icons, packaging, and security best practices. Use when the user asks about Electron, needs to create desktop applications, implement Electron features, or build cross-platform desktop apps.",
-      "source": "vendored",
-      "bucket": "vendored",
-      "origin": {
-        "kind": "github",
-        "repo": "teachingai/full-stack-skills",
-        "sourceUrl": "https://github.com/teachingai/full-stack-skills.git",
-        "skillPath": "skills/electron-skills/electron/SKILL.md",
-        "skillFolderHash": "2b889701cf0fba3fb968fbeaaf5dfb243a2c6a8e"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "embedded-systems",
       "description": "Use when developing firmware for microcontrollers, implementing RTOS applications, or optimizing power consumption. Invoke for STM32, ESP32, FreeRTOS, bare-metal, power optimization, real-time systems, configure peripherals, write interrupt handlers, implement DMA transfers, debug timing issues.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -388,7 +379,7 @@
     {
       "name": "favicon-generator",
       "description": "When the user wants to implement, optimize, or audit favicon and app icons. Also use when the user mentions \"favicon,\" \"app icon,\" \"browser icon,\" \"touch icon,\" \"PWA icon,\" \"favicon sizes,\" \"apple-touch-icon,\" \"favicon.ico,\" \"site icon,\" or \"tab icon.\" For visual system, use brand-visual-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -403,7 +394,7 @@
     {
       "name": "file-name-wizard",
       "description": "Audit all filename and naming conventions in the codebase against CLAUDE.md standards and common patterns. Use when user asks to check naming conventions, audit filenames, find naming inconsistencies, or validate file naming patterns.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -425,7 +416,7 @@
         "repo": "vercel-labs/skills",
         "sourceUrl": "https://github.com/vercel-labs/skills.git",
         "skillPath": "skills/find-skills/SKILL.md",
-        "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d"
+        "skillFolderHash": "eb6a23305aea6e340d14b9de3766e721f9f4861b"
       },
       "category": null,
       "tags": []
@@ -433,7 +424,7 @@
     {
       "name": "fix-knip-unused-exports",
       "description": "Fix knip \"Unused exports\" violations. Handles all violation categories: test-only exports\n(extract to new file), dead barrel re-exports (remove from index.ts), and internally-only-used\nexports (un-export).\nUse when `npm run knip` reports unused exports.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -448,7 +439,7 @@
     {
       "name": "footer-generator",
       "description": "When the user wants to design, optimize, or audit website footers. Also use when the user mentions \"footer,\" \"page footer,\" \"site footer,\" \"footer links,\" \"footer navigation,\" \"footer SEO,\" \"footer design,\" \"footer CTA,\" \"multi-column footer,\" or \"footer sitemap.\" For main nav, use navigation-menu-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -463,7 +454,7 @@
     {
       "name": "frontend-design",
       "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -478,7 +469,7 @@
     {
       "name": "git-commit",
       "description": "Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use when user asks to commit changes, create a git commit, or mentions \"/commit\". Supports: (1) Auto-detecting type and scope from changes, (2) Generating conventional commit messages from diff, (3) Interactive commit with optional type/scope/description overrides, (4) Intelligent file staging for logical grouping",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -493,7 +484,7 @@
     {
       "name": "github-actions-docs",
       "description": "Use when users ask how to write, explain, customize, migrate, secure, or troubleshoot GitHub Actions workflows, workflow syntax, triggers, matrices, runners, reusable workflows, artifacts, caching, secrets, OIDC, deployments, custom actions, or Actions Runner Controller, especially when they need official GitHub documentation, exact links, or docs-grounded YAML guidance.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -508,7 +499,7 @@
     {
       "name": "github-issues",
       "description": "Create, update, and manage GitHub issues using MCP tools. Use this skill when users want to create bug reports, feature requests, or task issues, update existing issues, add labels/assignees/milestones, set issue fields (dates, priority, custom fields), set issue types, manage issue workflows, link issues, add dependencies, or track blocked-by/blocking relationships. Triggers on requests like \"create an issue\", \"file a bug\", \"request a feature\", \"update issue X\", \"set the priority\", \"set the start date\", \"link issues\", \"add dependency\", \"blocked by\", \"blocking\", or any GitHub issue management task.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -529,8 +520,7 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md",
-        "skillFolderHash": "b6a9566d7144d2650b3be4c1f716dd4ec34f70c5"
+        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
       },
       "category": null,
       "tags": []
@@ -538,7 +528,7 @@
     {
       "name": "gitlab-ci-patterns",
       "description": "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalable automation. Use when implementing GitLab CI/CD, optimizing pipeline performance, or setting up automated testing and deployment.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -559,8 +549,7 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md",
-        "skillFolderHash": "31c9b7dfe3653ce088df0551edff0f01e5097e81"
+        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
       },
       "category": null,
       "tags": []
@@ -568,7 +557,7 @@
     {
       "name": "golang-testing",
       "description": "Go testing patterns including table-driven tests, subtests, benchmarks, fuzzing, and test coverage. Follows TDD methodology with idiomatic Go practices.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -583,7 +572,7 @@
     {
       "name": "grill-me",
       "description": "A relentless interview to sharpen a plan or design.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -598,7 +587,7 @@
     {
       "name": "grill-with-docs",
       "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -613,7 +602,7 @@
     {
       "name": "handoff",
       "description": "Compact the current conversation into a handoff document for another agent to pick up.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -628,7 +617,7 @@
     {
       "name": "hero-generator",
       "description": "When the user wants to design, optimize, or audit hero sections (above-the-fold main visual area). Also use when the user mentions \"hero,\" \"hero section,\" \"hero area,\" \"above the fold,\" \"above the fold content,\" \"landing hero,\" \"main banner,\" \"banner section,\" \"first fold,\" \"hero section design,\" \"hero conversion,\" \"split layout hero,\" \"centered hero,\" or \"hero alignment.\" For homepage, use homepage-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -656,7 +645,7 @@
     {
       "name": "homepage-generator",
       "description": "When the user wants to create, optimize, or audit the main site homepage (primary entry page). Also use when the user mentions \"homepage,\" \"main page,\" \"home page,\" \"hero section,\" \"above the fold,\" \"home page design,\" \"homepage conversion,\" or \"homepage structure.\" Not for paid campaign or ad landing pages—use landing-page-generator. For sitewide page planning, use website-structure.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -671,14 +660,28 @@
     {
       "name": "impeccable",
       "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
         "repo": "pbakaus/impeccable",
         "sourceUrl": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "skillFolderHash": "511c4acd310ff064ee65c6d04d96cebeca34578f"
+        "skillFolderHash": "ee0fbf2481ea1466953819325b66b85f7c79ed8d"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "kubernetes-specialist",
+      "description": "Use when deploying or managing Kubernetes workloads. Invoke to create deployment manifests, configure pod security policies, set up service accounts, define network isolation rules, debug pod crashes, analyze resource limits, inspect container logs, or right-size workloads. Use for Helm charts, RBAC policies, NetworkPolicies, storage configuration, performance optimization, GitOps pipelines, and multi-cluster management.",
+      "source": "vendored",
+      "bucket": "vendored",
+      "origin": {
+        "kind": "github",
+        "repo": "Jeffallan/claude-skills",
+        "skillPath": "skills/kubernetes-specialist/SKILL.md",
+        "skillFolderHash": "1fd237eca6b32f079d575ee6e441669c77f0f226"
       },
       "category": null,
       "tags": []
@@ -686,7 +689,7 @@
     {
       "name": "landing-page-generator",
       "description": "When the user wants to create, optimize, or audit campaign landing pages for paid ads, email, or other traffic. Also use when the user mentions \"landing page,\" \"PPC landing page,\" \"SEM landing page,\" \"conversion page,\" \"campaign page,\" \"lead capture page,\" \"landing page optimization,\" \"LP conversion,\" \"single-page funnel,\" or \"squeeze page.\" Not for the main site homepage; use homepage-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -701,7 +704,7 @@
     {
       "name": "logo-generator",
       "description": "When the user wants to optimize logo placement, linking, or branding on a website. Also use when the user mentions \"logo,\" \"brand logo,\" \"header logo,\" \"logo placement,\" \"AI logo design,\" \"logo link,\" \"logo alt text,\" \"logo sizing,\" \"favicon logo,\" or \"logo usage.\" For full brand visuals, use brand-visual-generator.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -716,7 +719,7 @@
     {
       "name": "mcp-builder",
       "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -731,7 +734,7 @@
     {
       "name": "mermaid-diagrams",
       "description": "Comprehensive guide for creating software diagrams using Mermaid syntax. Use when users need to create, visualize, or document software through diagrams including class diagrams (domain modeling, object-oriented design), sequence diagrams (application flows, API interactions, code execution), flowcharts (processes, algorithms, user journeys), entity relationship diagrams (database schemas), C4 architecture diagrams (system context, containers, components), state diagrams, git graphs, pie charts, gantt charts, or any other diagram type. Triggers include requests to \"diagram\", \"visualize\", \"model\", \"map out\", \"show the flow\", or when explaining system architecture, database design, code structure, or user/application flows.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -746,7 +749,7 @@
     {
       "name": "naming-analyzer",
       "description": "Suggest better variable, function, and class names based on context and conventions.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -759,16 +762,15 @@
       "tags": []
     },
     {
-      "name": "next-best-practices",
-      "description": "Next.js best practices - file conventions, RSC boundaries, data patterns, async APIs, metadata, error handling, route handlers, image/font optimization, bundling",
-      "source": "vendored",
+      "name": "next-dev-loop",
+      "description": "Verify Next.js runtime behavior after editing app code. Use this skill to confirm a change actually works in a running app — not just that it compiles or type-checks. Combines /_next/mcp (Next.js's view) with agent-browser (the browser's view). Requires a running `next dev`.",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
-        "repo": "vercel-labs/next-skills",
-        "sourceUrl": "https://github.com/vercel-labs/next-skills.git",
-        "skillPath": "skills/next-best-practices/SKILL.md",
-        "skillFolderHash": "a236d702277c5364cf6f540712a8dddb46e79a46"
+        "repo": "vercel/next.js",
+        "skillPath": "skills/next-dev-loop/SKILL.md",
+        "skillFolderHash": "a06a3789f7a99248257670e614ece4c7cd62ab12"
       },
       "category": null,
       "tags": []
@@ -776,7 +778,7 @@
     {
       "name": "obsidian-cli",
       "description": "Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme development with commands to reload plugins, run JavaScript, capture errors, take screenshots, and inspect the DOM. Use when the user asks to interact with their Obsidian vault, manage notes, search vault content, perform vault operations from the command line, or develop and debug Obsidian plugins and themes.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -805,7 +807,7 @@
     {
       "name": "pr-description",
       "description": "Update a GitHub PR description with a summary of changes",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -820,7 +822,7 @@
     {
       "name": "prd-development",
       "description": "Build a structured PRD that connects problem, users, solution, and success criteria. Use when turning discovery notes into an engineering-ready document for a major initiative.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -841,8 +843,7 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/tools/pretty-mermaid/SKILL.md",
-        "skillFolderHash": "5f53bb8a316cdbde825993c1dc6f25b0bf8cd36d"
+        "skillPath": "skills/tools/pretty-mermaid/SKILL.md"
       },
       "category": null,
       "tags": []
@@ -862,7 +863,7 @@
     },
     {
       "name": "pretty-writeup",
-      "description": "Renders an existing markdown document into a self-contained, single-file styled HTML \"writeup\" in a fixed house design system (dark default, light preset). Use when the user says \"make an HTML writeup\", \"format this as an HTML report\", \"turn this doc into a styled page\", \"pretty HTML version of this\", \"stylize this markdown\", \"HTML report from this doc\", or wants a shareable styled HTML artifact built from a markdown source.",
+      "description": "Distills a topic, document, notes, or conversation into a self-contained styled HTML brief using the house template kit. Use when the user says \"make an HTML writeup\", \"format this as an HTML report\", \"turn this doc into a styled page\", \"pretty HTML version\", \"stylize this markdown\", \"HTML report from this doc\", \"presentation brief\", \"one-pager for leadership\", or asks for a shareable HTML artifact from a communicated topic.",
       "source": "user",
       "bucket": "personal",
       "origin": {
@@ -889,7 +890,7 @@
     {
       "name": "problem-statement",
       "description": "Write a user-centered problem statement with who is blocked, what they are trying to do, why it matters, and how it feels. Use when framing discovery, prioritization, or a PRD.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -904,7 +905,7 @@
     {
       "name": "product-name",
       "description": "Brainstorm 5 unique, memorable product names with rationale aligned to brand values and target audience. Use when naming a new product, rebranding, or exploring product name ideas.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -919,7 +920,7 @@
     {
       "name": "python-packaging",
       "description": "Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python libraries, creating CLI tools, or distributing Python code.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -986,7 +987,7 @@
     {
       "name": "react-components",
       "description": "Modern React component patterns with hooks and TypeScript",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1001,7 +1002,7 @@
     {
       "name": "react-state-management",
       "description": "Master modern React state management with Redux Toolkit, Zustand, Jotai, and React Query. Use when setting up global state, managing server state, or choosing between state management solutions.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1016,7 +1017,7 @@
     {
       "name": "release-review",
       "description": "Senior developer-level release review for macOS/iOS apps. Identifies security, privacy, UX, and distribution issues with actionable fixes. Use when preparing an app for release, want a critical review, or before App Store submission.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1031,7 +1032,7 @@
     {
       "name": "roadmap-planning",
       "description": "Plan a strategic roadmap across prioritization, epic definition, stakeholder alignment, and sequencing. Use when turning strategy into a release plan that teams can execute.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1059,7 +1060,7 @@
     {
       "name": "seo-strategy",
       "description": "When the user wants to plan SEO strategy, prioritize SEO work, or understand the SEO workflow. Also use when the user mentions \"SEO strategy,\" \"SEO plan,\" \"SEO roadmap,\" \"SEO priority,\" \"SEO audit,\" \"SEO workflow,\" \"where to start SEO,\" \"SEO approach,\" \"organic growth strategy,\" \"why SEO,\" \"SEO value,\" or \"search strategy.\" For technical/crawl audit execution, use seo-audit. For keyword research, use keyword-research. For AI search visibility, use generative-engine-optimization.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1074,7 +1075,7 @@
     {
       "name": "shadcn",
       "description": "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", or \"switch to --preset\".",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1089,7 +1090,7 @@
     {
       "name": "sleek-design-mobile-apps",
       "description": "Use when the user wants to design a mobile app, create screens, build UI, or interact with their Sleek projects. Covers high-level requests (\"design an app that does X\") and specific ones (\"list my projects\", \"create a new project\", \"screenshot that screen\").",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1118,7 +1119,7 @@
     {
       "name": "specs-code-cleanup",
       "description": "Provides final code cleanup after task review approval. Removes debug logs, temporary comments, dead code, optimizes imports, and improves readability. Use when asked to clean up code, polish, finalize, tidy up, remove technical debt, or prepare code for completion after review. Not for refactoring logic or fixing bugs—focused solely on cosmetic and hygiene cleanup.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1133,7 +1134,7 @@
     {
       "name": "terraform-module-library",
       "description": "Build reusable Terraform modules for AWS, Azure, GCP, and OCI infrastructure following infrastructure-as-code best practices. Use when creating infrastructure modules, standardizing cloud provisioning, or implementing reusable IaC components.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1154,8 +1155,7 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md",
-        "skillFolderHash": "9d3a8e3344386c6de71402dc1842d6397736450f"
+        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
       },
       "category": null,
       "tags": []
@@ -1163,7 +1163,7 @@
     {
       "name": "terraform-test",
       "description": "Comprehensive guide for writing and running Terraform tests. Use when creating test files (.tftest.hcl), writing test scenarios with run blocks, validating infrastructure behavior with assertions, mocking providers and data sources, testing module outputs and resource configurations, or troubleshooting Terraform test syntax and execution.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1178,7 +1178,7 @@
     {
       "name": "theme-factory",
       "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1193,7 +1193,7 @@
     {
       "name": "typescript-react-reviewer",
       "description": "Expert code reviewer for TypeScript + React 19 applications. Use when reviewing React code, identifying anti-patterns, evaluating state management, or assessing code maintainability. Triggers: code review requests, PR reviews, React architecture evaluation, identifying code smells, TypeScript type safety checks, useEffect abuse detection, state management review.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1208,7 +1208,7 @@
     {
       "name": "ubiquitous-language",
       "description": "Extract a DDD-style ubiquitous language glossary from the current conversation, flagging ambiguities and proposing canonical terms. Saves to UBIQUITOUS_LANGUAGE.md. Use when user wants to define domain terms, build a glossary, harden terminology, create a ubiquitous language, or mentions \"domain model\" or \"DDD\".",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1223,14 +1223,14 @@
     {
       "name": "ui-ux-pro-max",
       "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
         "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
         "sourceUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
         "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-        "skillFolderHash": "75e1acaafe8b08e59d4b86fc253ac7873aff6bba"
+        "skillFolderHash": "11aeea42e2c5cae6f68f809db6b663dbed062105"
       },
       "category": null,
       "tags": []
@@ -1238,7 +1238,7 @@
     {
       "name": "user-personas",
       "description": "Create refined user personas from research data — 3 personas with JTBD, pains, gains, and unexpected insights. Use when building personas from survey data, creating user profiles from research, or segmenting users for product decisions.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1253,7 +1253,7 @@
     {
       "name": "user-story",
       "description": "Create user stories with Mike Cohn format and Gherkin acceptance criteria. Use when turning user needs into development-ready work with clear outcomes and testable conditions.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1268,7 +1268,7 @@
     {
       "name": "user-story-mapping",
       "description": "Create a user story map that lays out activities, steps, tasks, and release slices. Use when planning a workflow, backlog, or MVP around the user journey.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1283,7 +1283,7 @@
     {
       "name": "vite",
       "description": "Vite build tool configuration, plugin API, SSR, and Vite 8 Rolldown migration. Use when working with Vite projects, vite.config.ts, Vite plugins, or building libraries/SSR apps with Vite.",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1298,7 +1298,7 @@
     {
       "name": "web-design-guidelines",
       "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
-      "source": "vendored",
+      "source": "user",
       "bucket": "vendored",
       "origin": {
         "kind": "github",
@@ -1410,21 +1410,6 @@
         "kind": "github",
         "repo": "Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/zmk/zmk-new-config/SKILL.md"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "zoom-out",
-      "description": "Tell the agent to zoom out and give broader context or a higher-level perspective. Use when you're unfamiliar with a section of code or need to understand how it fits into the bigger picture.",
-      "source": "vendored",
-      "bucket": "vendored",
-      "origin": {
-        "kind": "github",
-        "repo": "mattpocock/skills",
-        "sourceUrl": "https://github.com/mattpocock/skills.git",
-        "skillPath": "skills/engineering/zoom-out/SKILL.md",
-        "skillFolderHash": "6ecebabdea814d12888f56a611da7bf182b5fb26"
       },
       "category": null,
       "tags": []
