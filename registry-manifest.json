@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "sourceBankVersion": "1.23.0",
+  "sourceBankVersion": "1.25.0",
   "registryRoot": "Tyler-Reagan/skills",
   "skills": [
     {
@@ -154,6 +154,17 @@
         "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/components/layout/carousel/SKILL.md",
         "skillFolderHash": "4aec61b2179237ec30bb03ca7fd30766d2673297"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "codebase-design",
+      "description": "Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
       },
       "category": null,
       "tags": []
@@ -329,6 +340,17 @@
         "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/pages/content/docs/SKILL.md",
         "skillFolderHash": "c1dd50e708285ddc3eb8d491d9549ce5351740d9"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "domain-modeling",
+      "description": "Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
       },
       "category": null,
       "tags": []
@@ -600,6 +622,17 @@
       "tags": []
     },
     {
+      "name": "grilling",
+      "description": "Interview the user relentlessly about a plan or design. Use when the user wants to stress-test a plan before building, or uses any 'grill' trigger phrases.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
       "name": "handoff",
       "description": "Compact the current conversation into a handoff document for another agent to pick up.",
       "source": "user",
@@ -667,7 +700,22 @@
         "repo": "pbakaus/impeccable",
         "sourceUrl": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "skillFolderHash": "ee0fbf2481ea1466953819325b66b85f7c79ed8d"
+        "skillFolderHash": "2e7b84ab4a9ccd5e78f8bcc812042b2461229be2"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
+      "source": "user",
+      "bucket": "vendored",
+      "origin": {
+        "kind": "github",
+        "repo": "mattpocock/skills",
+        "sourceUrl": "https://github.com/mattpocock/skills.git",
+        "skillPath": "skills/engineering/improve-codebase-architecture/SKILL.md",
+        "skillFolderHash": "e5beae48471adf87c513b5cbcb0ca347467546da"
       },
       "category": null,
       "tags": []
@@ -770,7 +818,7 @@
         "kind": "github",
         "repo": "vercel/next.js",
         "skillPath": "skills/next-dev-loop/SKILL.md",
-        "skillFolderHash": "a06a3789f7a99248257670e614ece4c7cd62ab12"
+        "skillFolderHash": "1ce097aa3daa2a9b5a7f1b93ccdc5b1f00876b9f"
       },
       "category": null,
       "tags": []
@@ -829,7 +877,7 @@
         "repo": "deanpeters/product-manager-skills",
         "sourceUrl": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/prd-development/SKILL.md",
-        "skillFolderHash": "9326f146f3fb8d85eafe52499928321c7edb9fac"
+        "skillFolderHash": "6e84622528c1771c05bd0fce4bc936a58026e456"
       },
       "category": null,
       "tags": []
@@ -913,6 +961,17 @@
         "sourceUrl": "https://github.com/phuryn/pm-skills.git",
         "skillPath": "pm-marketing-growth/skills/product-name/SKILL.md",
         "skillFolderHash": "8256ccfd21f516f21457391d52c9d4177f90741b"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "prototype",
+      "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
       },
       "category": null,
       "tags": []
@@ -1074,7 +1133,7 @@
     },
     {
       "name": "shadcn",
-      "description": "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", or \"switch to --preset\".",
+      "description": "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI, including chat interfaces. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", or \"switch to --preset\".",
       "source": "user",
       "bucket": "vendored",
       "origin": {
@@ -1082,7 +1141,7 @@
         "repo": "shadcn/ui",
         "sourceUrl": "https://github.com/shadcn/ui.git",
         "skillPath": "skills/shadcn/SKILL.md",
-        "skillFolderHash": "53547268e4c90c0dd7981e098e1ea4a89393575a"
+        "skillFolderHash": "962eb7ef77f17e0bce530153d4fec2136c5fa061"
       },
       "category": null,
       "tags": []
@@ -1191,6 +1250,17 @@
       "tags": []
     },
     {
+      "name": "to-issues",
+      "description": "Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices.",
+      "source": "user",
+      "bucket": "personal",
+      "origin": {
+        "kind": "none"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
       "name": "typescript-react-reviewer",
       "description": "Expert code reviewer for TypeScript + React 19 applications. Use when reviewing React code, identifying anti-patterns, evaluating state management, or assessing code maintainability. Triggers: code review requests, PR reviews, React architecture evaluation, identifying code smells, TypeScript type safety checks, useEffect abuse detection, state management review.",
       "source": "user",
@@ -1230,7 +1300,7 @@
         "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
         "sourceUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
         "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-        "skillFolderHash": "11aeea42e2c5cae6f68f809db6b663dbed062105"
+        "skillFolderHash": "37bb3804d0aeac9f08c0408d791b7abbb6ff8bdc"
       },
       "category": null,
       "tags": []
