@@ -9,7 +9,9 @@
         "hash": "2d2d535f88cb68f992c7dcaa96ffb86d874fd03d"
       },
       "category": null,
-      "tags": []
+      "tags": [
+        "test"
+      ]
     },
     {
       "name": "add-app-to-server",
@@ -45,23 +47,8 @@
       "name": "audit-memories",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/audit-memories/SKILL.md"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "aws-bedrock-agentcore-skill",
-      "origin": {
-        "url": null
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "aws-strands-agents-agentcore",
-      "origin": {
-        "url": null
+        "skillPath": "skills/tools/audit-memories/SKILL.md",
+        "hash": "bdc20dfd594ad0ed3cca225dfdd2f4407ce99d14"
       },
       "category": null,
       "tags": []
@@ -102,14 +89,6 @@
         "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/components/layout/carousel/SKILL.md",
         "hash": "4aec61b2179237ec30bb03ca7fd30766d2673297"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "codebase-design",
-      "origin": {
-        "url": null
       },
       "category": null,
       "tags": []
@@ -208,7 +187,8 @@
       "name": "doc-formatting",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/doc-formatting/SKILL.md"
+        "skillPath": "skills/tools/doc-formatting/SKILL.md",
+        "hash": "d63a96dc1b48cb367f40303d3fb1fdd082a08d1b"
       },
       "category": null,
       "tags": []
@@ -217,7 +197,8 @@
       "name": "doc-taxonomy-cleanup",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/doc-taxonomy-cleanup/SKILL.md"
+        "skillPath": "skills/tools/doc-taxonomy-cleanup/SKILL.md",
+        "hash": "9264200a1b853f30886aa0f104d377f0417291b4"
       },
       "category": null,
       "tags": []
@@ -228,14 +209,6 @@
         "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/pages/content/docs/SKILL.md",
         "hash": "c1dd50e708285ddc3eb8d491d9549ce5351740d9"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "domain-modeling",
-      "origin": {
-        "url": null
       },
       "category": null,
       "tags": []
@@ -264,7 +237,8 @@
       "name": "eureka",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/eureka/SKILL.md"
+        "skillPath": "skills/tools/eureka/SKILL.md",
+        "hash": "6e211cd681f6dd11e929c5601534179ff6ac3df8"
       },
       "category": null,
       "tags": []
@@ -363,7 +337,8 @@
       "name": "gitlab-ci-inspector",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
+        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md",
+        "hash": "429472efa6e930e8949a1768bd4de6b153c83ea1"
       },
       "category": null,
       "tags": []
@@ -382,7 +357,8 @@
       "name": "gitlab-mr-writing",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
+        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md",
+        "hash": "e4658c15fe7e9db1a5a9350bb7f476c2de2cd47c"
       },
       "category": null,
       "tags": []
@@ -418,14 +394,6 @@
       "tags": []
     },
     {
-      "name": "grilling",
-      "origin": {
-        "url": null
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "handoff",
       "origin": {
         "url": "https://github.com/mattpocock/skills.git",
@@ -449,7 +417,8 @@
       "name": "homebrew-cli-release",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/infrastructure/homebrew-cli-release/SKILL.md"
+        "skillPath": "skills/infrastructure/homebrew-cli-release/SKILL.md",
+        "hash": "a681a9bc92567130880bd3bbaf0b3c4c4a33e391"
       },
       "category": null,
       "tags": []
@@ -469,7 +438,7 @@
       "origin": {
         "url": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "hash": "2e7b84ab4a9ccd5e78f8bcc812042b2461229be2"
+        "hash": "fbe0f1b1ef0218e575c1243fa91060ed792e3187"
       },
       "category": null,
       "tags": []
@@ -589,7 +558,7 @@
       "origin": {
         "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/prd-development/SKILL.md",
-        "hash": "6e84622528c1771c05bd0fce4bc936a58026e456"
+        "hash": "41abcc5cbccbfca5a71c3d5a5f737bc3afd478c7"
       },
       "category": null,
       "tags": []
@@ -598,7 +567,8 @@
       "name": "pretty-mermaid",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/tools/pretty-mermaid/SKILL.md"
+        "skillPath": "skills/tools/pretty-mermaid/SKILL.md",
+        "hash": "2dece151767e192581a5625d1b7cb66368a060ad"
       },
       "category": null,
       "tags": []
@@ -607,7 +577,8 @@
       "name": "pretty-qmk-keymap",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/qmk/pretty-qmk-keymap/SKILL.md"
+        "skillPath": "skills/keyboard/qmk/pretty-qmk-keymap/SKILL.md",
+        "hash": "d976cb557233a7e1ffe1529bfbcfb514083b3a30"
       },
       "category": null,
       "tags": []
@@ -616,7 +587,8 @@
       "name": "pretty-writeup",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/pretty-writeup/SKILL.md"
+        "skillPath": "skills/tools/pretty-writeup/SKILL.md",
+        "hash": "6cb65d92657e800799d091c442a18abee281846a"
       },
       "category": null,
       "tags": []
@@ -625,7 +597,8 @@
       "name": "pretty-zmk-keymap",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/zmk/pretty-zmk-keymap/SKILL.md"
+        "skillPath": "skills/keyboard/zmk/pretty-zmk-keymap/SKILL.md",
+        "hash": "bcf76f875b15a7bca034eefcf6700317c46841a5"
       },
       "category": null,
       "tags": []
@@ -635,7 +608,7 @@
       "origin": {
         "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/problem-statement/SKILL.md",
-        "hash": "1de9dad18374bbffccd35cfd7ef2edc41515ea89"
+        "hash": "b18f921596340d282c85fef840361996534de3a2"
       },
       "category": null,
       "tags": []
@@ -646,14 +619,6 @@
         "url": "https://github.com/phuryn/pm-skills.git",
         "skillPath": "pm-marketing-growth/skills/product-name/SKILL.md",
         "hash": "8256ccfd21f516f21457391d52c9d4177f90741b"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "prototype",
-      "origin": {
-        "url": null
       },
       "category": null,
       "tags": []
@@ -672,7 +637,8 @@
       "name": "qmk-config",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/qmk/qmk-config/SKILL.md"
+        "skillPath": "skills/keyboard/qmk/qmk-config/SKILL.md",
+        "hash": "860daf275e0a8da16dd2e4bba3f7f01e894ebc3f"
       },
       "category": null,
       "tags": []
@@ -681,7 +647,8 @@
       "name": "qmk-debug",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/qmk/qmk-debug/SKILL.md"
+        "skillPath": "skills/keyboard/qmk/qmk-debug/SKILL.md",
+        "hash": "c60a644a67c0821bb4c12d26643d07c07f2e126c"
       },
       "category": null,
       "tags": []
@@ -690,7 +657,8 @@
       "name": "qmk-keymap",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/qmk/qmk-keymap/SKILL.md"
+        "skillPath": "skills/keyboard/qmk/qmk-keymap/SKILL.md",
+        "hash": "8a46a0f1368aeec2e47478e6eff2d4493e225022"
       },
       "category": null,
       "tags": []
@@ -699,7 +667,8 @@
       "name": "qmk-new-config",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/qmk/qmk-new-config/SKILL.md"
+        "skillPath": "skills/keyboard/qmk/qmk-new-config/SKILL.md",
+        "hash": "702af856697991c31a3a53fbdbce4de174f522df"
       },
       "category": null,
       "tags": []
@@ -739,7 +708,7 @@
       "origin": {
         "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/roadmap-planning/SKILL.md",
-        "hash": "19863acb42422fbc0e69a71de239eccbebc73160"
+        "hash": "14bb77268dacb74b2b2db10dea50b8a4ff6ae873"
       },
       "category": null,
       "tags": []
@@ -748,7 +717,8 @@
       "name": "scatterbrain",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/scatterbrain/SKILL.md"
+        "skillPath": "skills/tools/scatterbrain/SKILL.md",
+        "hash": "95e80eb7d1c3812616ecba83f19d526f65a9684c"
       },
       "category": null,
       "tags": []
@@ -778,7 +748,7 @@
       "origin": {
         "url": "https://github.com/sleekdotdesign/agent-skills.git",
         "skillPath": "skills/design-mobile-apps/SKILL.md",
-        "hash": "1b6f3d348cd05ff467f4ec7a723ad60aefb306a8"
+        "hash": "04b394201edf20234ddcf449a75e173dd7e0b953"
       },
       "category": null,
       "tags": []
@@ -817,7 +787,8 @@
       "name": "terraform-plan-summary",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
+        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md",
+        "hash": "35f40f7304f5324e653f78b3155946bec3d4fee6"
       },
       "category": null,
       "tags": []
@@ -838,14 +809,6 @@
         "url": "https://github.com/anthropics/skills.git",
         "skillPath": "skills/theme-factory/SKILL.md",
         "hash": "e05534d132fb1b21f9917840874758e30f0a9b1a"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "to-issues",
-      "origin": {
-        "url": null
       },
       "category": null,
       "tags": []
@@ -895,7 +858,7 @@
       "origin": {
         "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/user-story/SKILL.md",
-        "hash": "b8e53307616bb30fc18fffdc6c1eac7621453653"
+        "hash": "eaf0ad4fb2ad0f27102eaaa35b632d2c417aec95"
       },
       "category": null,
       "tags": []
@@ -905,7 +868,7 @@
       "origin": {
         "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/user-story-mapping/SKILL.md",
-        "hash": "5d68cc49920b104e6a052e99d0e6c5e5e849a54e"
+        "hash": "85521980b3570ac07e4e8c91637abc85519db61c"
       },
       "category": null,
       "tags": []
@@ -934,7 +897,8 @@
       "name": "workflow-fit",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/workflow-fit/SKILL.md"
+        "skillPath": "skills/tools/workflow-fit/SKILL.md",
+        "hash": "ba8e31c2aefe62f4275af2f7188007c368afaf75"
       },
       "category": null,
       "tags": []
@@ -943,7 +907,8 @@
       "name": "write-a-skill",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/write-a-skill/SKILL.md"
+        "skillPath": "skills/tools/write-a-skill/SKILL.md",
+        "hash": "dd6f33274d083f2e33aa8f7e2755a561d7666b58"
       },
       "category": null,
       "tags": []
@@ -952,7 +917,8 @@
       "name": "zmk-config",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/zmk/zmk-config/SKILL.md"
+        "skillPath": "skills/keyboard/zmk/zmk-config/SKILL.md",
+        "hash": "ee56b17884c52e5f763cf825106603be6d29742a"
       },
       "category": null,
       "tags": []
@@ -961,7 +927,8 @@
       "name": "zmk-debug",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/zmk/zmk-debug/SKILL.md"
+        "skillPath": "skills/keyboard/zmk/zmk-debug/SKILL.md",
+        "hash": "eca0ffbef687a85dbd07a0dc581127c22bb98a31"
       },
       "category": null,
       "tags": []
@@ -970,7 +937,8 @@
       "name": "zmk-display",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/zmk/zmk-display/SKILL.md"
+        "skillPath": "skills/keyboard/zmk/zmk-display/SKILL.md",
+        "hash": "a71e158cd5e53907526b576127af7f39e4459846"
       },
       "category": null,
       "tags": []
@@ -979,7 +947,8 @@
       "name": "zmk-keymap",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/zmk/zmk-keymap/SKILL.md"
+        "skillPath": "skills/keyboard/zmk/zmk-keymap/SKILL.md",
+        "hash": "f251318002a7edefc3b2c69c6a65f872f825fbd6"
       },
       "category": null,
       "tags": []
@@ -988,7 +957,8 @@
       "name": "zmk-lvgl-migrate",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/zmk/zmk-lvgl-migrate/SKILL.md"
+        "skillPath": "skills/keyboard/zmk/zmk-lvgl-migrate/SKILL.md",
+        "hash": "6c182f3b441791a36f96ec19067254d74dc17e7e"
       },
       "category": null,
       "tags": []
@@ -997,7 +967,8 @@
       "name": "zmk-new-config",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/keyboard/zmk/zmk-new-config/SKILL.md"
+        "skillPath": "skills/keyboard/zmk/zmk-new-config/SKILL.md",
+        "hash": "9a1de616d8b215e811a161e5a990a7da6bd24f81"
       },
       "category": null,
       "tags": []
