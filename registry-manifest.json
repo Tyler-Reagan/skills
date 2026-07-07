@@ -1,76 +1,50 @@
 {
-  "schemaVersion": 5,
-  "sourceBankVersion": "1.25.0",
-  "registryRoot": "Tyler-Reagan/skills",
+  "schemaVersion": 6,
   "skills": [
     {
       "name": "404-page-generator",
-      "description": "When the user wants to create, optimize, or audit 404 error pages. Also use when the user mentions \"404 page,\" \"404 error,\" \"error page,\" \"page not found,\" \"broken link page,\" \"404 design,\" \"custom 404,\" \"404 redirect,\" \"404 page UX,\" or \"404 recovery.\" For sitewide page planning, use website-structure.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/pages/utility/404/SKILL.md",
-        "skillFolderHash": "2d2d535f88cb68f992c7dcaa96ffb86d874fd03d"
+        "hash": "2d2d535f88cb68f992c7dcaa96ffb86d874fd03d"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "add-app-to-server",
-      "description": "This skill should be used when the user asks to \"add an app to my MCP server\", \"add UI to my MCP server\", \"add a view to my MCP tool\", \"enrich MCP tools with UI\", \"add interactive UI to existing server\", \"add MCP Apps to my server\", or needs to add interactive UI capabilities to an existing MCP server that already has tools. Provides guidance for analyzing existing tools and adding MCP Apps UI resources.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "modelcontextprotocol/ext-apps",
-        "sourceUrl": "https://github.com/modelcontextprotocol/ext-apps.git",
+        "url": "https://github.com/modelcontextprotocol/ext-apps.git",
         "skillPath": "plugins/mcp-apps/skills/add-app-to-server/SKILL.md",
-        "skillFolderHash": "cce8d7d0ab939d9a02e3567df97d21f8f513eef2"
+        "hash": "cce8d7d0ab939d9a02e3567df97d21f8f513eef2"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "api-page-generator",
-      "description": "When the user wants to create, optimize, or audit the API introduction/overview page. Also use when the user mentions \"API page,\" \"API landing page,\" \"/api page,\" \"API overview,\" \"developer landing,\" \"API marketing,\" or \"API for developers.\" Note: API documentation (endpoint reference) lives in docs; use docs-page-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/pages/content/api/SKILL.md",
-        "skillFolderHash": "dff6934e57704f134aa9bb6245e57939d7778e2c"
+        "hash": "dff6934e57704f134aa9bb6245e57939d7778e2c"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "apple-appstore-reviewer",
-      "description": "Serves as a reviewer of the codebase with instructions on looking for Apple App Store optimizations or rejection reasons.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "github/awesome-copilot",
-        "sourceUrl": "https://github.com/github/awesome-copilot.git",
+        "url": "https://github.com/github/awesome-copilot.git",
         "skillPath": "skills/apple-appstore-reviewer/SKILL.md",
-        "skillFolderHash": "0fded17e5b9bd5515a0c8849b2d8be10162311b0"
+        "hash": "0fded17e5b9bd5515a0c8849b2d8be10162311b0"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "audit-memories",
-      "description": "Audits a project's Claude Code memory files — classifies each entry keep/prune/merge/fix, verifies project and reference claims against the live repo, finds redundancy and dangling [[links]], and proposes a review-first consolidation plan before changing anything. Use when the user says \"audit my memories\", \"clean up memory\", \"prune stale memories\", \"consolidate memories\", \"are my memories stale\", or wants memory hygiene over the ~/.claude memory files.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/audit-memories/SKILL.md"
       },
       "category": null,
@@ -78,239 +52,162 @@
     },
     {
       "name": "aws-bedrock-agentcore-skill",
-      "description": "Authoritative, source-cited playbook for designing, configuring, deploying, and troubleshooting production-grade AI agents on AWS using the Strands Agents SDK, Amazon Bedrock (Converse API, Guardrails, Knowledge Bases), and Amazon Bedrock AgentCore (Runtime, Memory, Gateway, Identity, built-in Browser/Code Interpreter tools), with Terraform-first IaC and CloudWatch/OpenTelemetry observability. Use this skill WHENEVER the user wants to build, architect, configure, deploy, secure, monitor, or debug an AI agent on AWS - even if they don't name the specific service. Trigger on: \"build an agent on Bedrock\", \"Strands agent\", \"AgentCore\", \"deploy my agent to AWS\", \"RAG with Bedrock Knowledge Bases\", \"multi-agent system on AWS\", \"which model / inference profile should I use\", \"agent memory\", \"MCP gateway\", \"agent guardrails\", \"Bedrock IAM for an agent\", \"agent observability on CloudWatch\", \"agent throttling / cost on Bedrock\", \"Terraform for Bedrock\", or any request to pick an agent pattern (chatbot, tool-using agent, RAG, multi-agent, serverless production agent) and wire it up with official AWS best practices. Also trigger when the user pastes agent code that imports boto3 bedrock-runtime, bedrock-agentcore, or strands and asks to improve, productionize, or debug it. Prefer this skill over a generic answer because AWS agent APIs have many version-specific gotchas (Converse vs InvokeModel, 5x token burndown, region-resolution order, ARM64 runtime contract, async long-term memory) that generic knowledge gets wrong, and because every recommendation here is traceable to an official AWS source the agent can re-open.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "url": null
       },
       "category": null,
       "tags": []
     },
     {
       "name": "aws-strands-agents-agentcore",
-      "description": "Use when working with AWS Strands Agents SDK or Amazon Bedrock AgentCore platform for building AI agents. Provides architecture guidance, implementation patterns, deployment strategies, observability, quality evaluations, multi-agent orchestration, and MCP server integration.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "url": null
       },
       "category": null,
       "tags": []
     },
     {
       "name": "brand-visual-generator",
-      "description": "When the user wants to define, audit, or apply visual identity (typography, colors, spacing, design tokens, frontend aesthetics). Also use when the user mentions \"brand style guide,\" \"visual identity,\" \"design system,\" \"typography,\" \"color palette,\" \"brand guidelines,\" \"AI brand aesthetics,\" \"brand colors,\" \"font choices,\" \"spacing system,\" \"design tokens,\" \"motion,\" \"distinctive design,\" \"frontend aesthetics,\" \"PowerPoint theme,\" \"Google Slides brand,\" or \"slide master colors.\" For brand story, positioning, and voice, use branding.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/components/branding/brand-visual/SKILL.md",
-        "skillFolderHash": "bc1f137b698e026b5b21f8092aec540981343b6b"
+        "hash": "bc1f137b698e026b5b21f8092aec540981343b6b"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "branding",
-      "description": "When the user wants to define, audit, or apply brand strategy—purpose, values, positioning, storytelling, voice, narrative (not only visuals). Also use when the user mentions \"brand strategy,\" \"brand story,\" \"brand storytelling,\" \"brand voice,\" \"brand identity,\" \"brand guidelines,\" \"brand purpose,\" \"brand values,\" \"origin story,\" \"brand narrative,\" \"brand personality,\" \"brand archetype,\" \"slide deck branding,\" \"PPT brand colors,\" or \"document style guide.\" For typography, colors, design tokens, and frontend visuals, use brand-visual-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/strategies/brand/branding/SKILL.md",
-        "skillFolderHash": "a224ec7902808cbd4af59a7a1b1876069990a414"
+        "hash": "a224ec7902808cbd4af59a7a1b1876069990a414"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "building-glamorous-tuis",
-      "description": "Build terminal UIs with Charmbracelet (Bubble Tea, Lip Gloss, Gum). Use when: Go TUI, shell prompts/spinners, \"make CLI prettier\", adaptive layouts, async rendering, focus state machines, sparklines, heatmaps, kanban boards, SSH apps.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "dicklesworthstone/meta_skill",
-        "sourceUrl": "https://github.com/dicklesworthstone/meta_skill.git",
+        "url": "https://github.com/dicklesworthstone/meta_skill.git",
         "skillPath": "skills/building-glamorous-tuis/SKILL.md",
-        "skillFolderHash": "412ac8cc0dadb7c9b4896875dd50209625f959e2"
+        "hash": "412ac8cc0dadb7c9b4896875dd50209625f959e2"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "carousel",
-      "description": "When the user wants to design, optimize, or audit carousel/slider layouts for content display. Also use when the user mentions \"carousel,\" \"slider,\" \"carousel layout,\" \"testimonial carousel,\" \"gallery carousel,\" \"quote carousel,\" \"image slider,\" or \"carousel accessibility.\" For hero-area patterns, use hero-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/components/layout/carousel/SKILL.md",
-        "skillFolderHash": "4aec61b2179237ec30bb03ca7fd30766d2673297"
+        "hash": "4aec61b2179237ec30bb03ca7fd30766d2673297"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "codebase-design",
-      "description": "Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "url": null
       },
       "category": null,
       "tags": []
     },
     {
       "name": "competitor-research",
-      "description": "When the user wants to analyze competitors for SEO, content, backlinks, or positioning. Also use when the user mentions \"competitor analysis,\" \"competitor research,\" \"competitor keywords,\" \"competitor backlinks,\" \"link gap,\" \"content gap,\" \"competitor content,\" \"competitive analysis,\" or \"competitor comparison.\" For content roadmap, use content-strategy.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/seo/content/competitor-research/SKILL.md",
-        "skillFolderHash": "3f1c2c0a756b124397ba61a7c80b863495794d1e"
+        "hash": "3f1c2c0a756b124397ba61a7c80b863495794d1e"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "content-optimization",
-      "description": "When the user wants to optimize content for SEO—word count, H2 keywords, keyword density, multimedia, tables, lists. Also use when the user mentions \"content length,\" \"word count,\" \"keyword stuffing,\" \"H2 keywords,\" \"keyword density,\" \"tables,\" \"bullet points,\" or \"content structure.\" For keywords, use keyword-research.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/seo/content/content-optimization/SKILL.md",
-        "skillFolderHash": "d331bd9e6cb0017a54d4642dd70573aa1def6a2f"
+        "hash": "d331bd9e6cb0017a54d4642dd70573aa1def6a2f"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "content-strategy",
-      "description": "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also use when the user mentions \"content strategy,\" \"what should I write about,\" \"content ideas,\" \"blog strategy,\" \"topic clusters,\" \"content planning,\" \"editorial calendar,\" \"content marketing,\" \"content roadmap,\" \"what content should I create,\" \"blog topics,\" \"content pillars,\" or \"I don't know what to write.\" Use this whenever someone needs help deciding what content to produce, not just writing it. For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit. For social media content specifically, see social.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "coreyhaines31/marketingskills",
-        "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+        "url": "https://github.com/coreyhaines31/marketingskills.git",
         "skillPath": "skills/content-strategy/SKILL.md",
-        "skillFolderHash": "8a2387b41d046b1b5a72a346103120b3c28e8bf5"
+        "hash": "8a2387b41d046b1b5a72a346103120b3c28e8bf5"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "convert-web-app",
-      "description": "This skill should be used when the user asks to \"add MCP App support to my web app\", \"turn my web app into a hybrid MCP App\", \"make my web page work as an MCP App too\", \"wrap my existing UI as an MCP App\", \"convert iframe embed to MCP App\", \"turn my SPA into an MCP App\", or needs to add MCP App support to an existing web application while keeping it working standalone. Provides guidance for analyzing existing web apps and creating a hybrid web + MCP App with server-side tool and resource registration.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "modelcontextprotocol/ext-apps",
-        "sourceUrl": "https://github.com/modelcontextprotocol/ext-apps.git",
+        "url": "https://github.com/modelcontextprotocol/ext-apps.git",
         "skillPath": "plugins/mcp-apps/skills/convert-web-app/SKILL.md",
-        "skillFolderHash": "1878b683a535492a90e26cfc2943fd21aea28380"
+        "hash": "1878b683a535492a90e26cfc2943fd21aea28380"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "core-web-vitals",
-      "description": "Optimize Core Web Vitals (LCP, INP, CLS) for better page experience and search ranking. Use when asked to \"improve Core Web Vitals\", \"fix LCP\", \"reduce CLS\", \"optimize INP\", \"page experience optimization\", or \"fix layout shifts\".",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "addyosmani/web-quality-skills",
-        "sourceUrl": "https://github.com/addyosmani/web-quality-skills.git",
+        "url": "https://github.com/addyosmani/web-quality-skills.git",
         "skillPath": "skills/core-web-vitals/SKILL.md",
-        "skillFolderHash": "041da568684b2b15ccb8789253dd2df29c8de433"
+        "hash": "041da568684b2b15ccb8789253dd2df29c8de433"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "create-mcp-app",
-      "description": "This skill should be used when the user asks to \"create an MCP App\", \"add a UI to an MCP tool\", \"build an interactive MCP View\", \"scaffold an MCP App\", or needs guidance on MCP Apps SDK patterns, UI-resource registration, MCP App lifecycle, or host integration. Provides comprehensive guidance for building MCP Apps with interactive UIs.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "modelcontextprotocol/ext-apps",
-        "sourceUrl": "https://github.com/modelcontextprotocol/ext-apps.git",
+        "url": "https://github.com/modelcontextprotocol/ext-apps.git",
         "skillPath": "plugins/mcp-apps/skills/create-mcp-app/SKILL.md",
-        "skillFolderHash": "989d5b5a7f8b30e76f554a799f39e9350944e55b"
+        "hash": "989d5b5a7f8b30e76f554a799f39e9350944e55b"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "create-readme",
-      "description": "Create a README.md file for the project",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "github/awesome-copilot",
-        "sourceUrl": "https://github.com/github/awesome-copilot.git",
+        "url": "https://github.com/github/awesome-copilot.git",
         "skillPath": "skills/create-readme/SKILL.md",
-        "skillFolderHash": "f65537a3461b663121fe195697979c17a8004ea5"
+        "hash": "f65537a3461b663121fe195697979c17a8004ea5"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "d3-viz",
-      "description": "Creating interactive data visualisations using d3.js. This skill should be used when creating custom charts, graphs, network diagrams, geographic visualisations, or any complex SVG-based data visualisation that requires fine-grained control over visual elements, transitions, or interactions. Use this for bespoke visualisations beyond standard charting libraries, whether in React, Vue, Svelte, vanilla JavaScript, or any other environment.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "davila7/claude-code-templates",
-        "sourceUrl": "https://github.com/davila7/claude-code-templates.git",
+        "url": "https://github.com/davila7/claude-code-templates.git",
         "skillPath": "cli-tool/components/skills/creative-design/claude-d3js-skill/SKILL.md",
-        "skillFolderHash": "ac6ef90f2fc5edb2ed2e5a575f336087dc88dc37"
+        "hash": "ac6ef90f2fc5edb2ed2e5a575f336087dc88dc37"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "diagnosing-bugs",
-      "description": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/diagnosing-bugs/SKILL.md",
-        "skillFolderHash": "0ecacff09e31245c34727abe7cb7cff71f615a35"
+        "hash": "0ecacff09e31245c34727abe7cb7cff71f615a35"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "doc-formatting",
-      "description": "Formats a documentation file to its type's contract — architecture (state-of-code, present-tense, diagram-led, code-verified citations), decision (transcript-of-truth record, dated, append-mostly), plan (active work doc, status-dated, verification-anchored), or apex (top-level entry doc — orientation, tables-first, routing to depth). Use when the user says \"format this doc\", \"apply doc conventions\", \"make this read like an architecture doc\", \"harden this decision record\", \"normalize this plan\", \"doc-level hardening\", or has just placed docs via a taxonomy cleanup and wants their contents brought up to standard.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/doc-formatting/SKILL.md"
       },
       "category": null,
@@ -318,12 +215,8 @@
     },
     {
       "name": "doc-taxonomy-cleanup",
-      "description": "Cleans up a poisoned documentation tree by discovering the repo's actual doc surface, triaging every file into a plans / decisions / archive / delete taxonomy, rewriting promoted docs as code-grounded decision records, and distilling stale content into a single load-bearing troubleshooting.md. Adapts to whatever convention the repo already uses (ADR, MADR, RFC, decisions/) instead of imposing defaults. Use when the user says \"clean up stale docs\", \"audit my docs\", \"prune docs\", \"doc cleanup\", \"stale documentation\", \"consolidate docs\", \"establish doc taxonomy\", \"differentiate plans from decisions\", or \"docs are poisoning context\".",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/doc-taxonomy-cleanup/SKILL.md"
       },
       "category": null,
@@ -331,68 +224,46 @@
     },
     {
       "name": "docs-page-generator",
-      "description": "When the user wants to create, optimize, or structure a documentation site. Also use when the user mentions \"docs,\" \"documentation site,\" \"docs subdomain,\" \"docs.yourdomain.com,\" \"help center,\" \"knowledge base,\" \"Getting Started,\" \"API Reference,\" \"user guides,\" or \"tutorials.\" For API marketing landing, use api-page-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/pages/content/docs/SKILL.md",
-        "skillFolderHash": "c1dd50e708285ddc3eb8d491d9549ce5351740d9"
+        "hash": "c1dd50e708285ddc3eb8d491d9549ce5351740d9"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "domain-modeling",
-      "description": "Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "url": null
       },
       "category": null,
       "tags": []
     },
     {
       "name": "domain-name-brainstormer",
-      "description": "Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "composiohq/awesome-claude-skills",
-        "sourceUrl": "https://github.com/composiohq/awesome-claude-skills.git",
+        "url": "https://github.com/composiohq/awesome-claude-skills.git",
         "skillPath": "domain-name-brainstormer/SKILL.md",
-        "skillFolderHash": "ee97909251c1e45f7babc118fbf66467314d4e46"
+        "hash": "ee97909251c1e45f7babc118fbf66467314d4e46"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "embedded-systems",
-      "description": "Use when developing firmware for microcontrollers, implementing RTOS applications, or optimizing power consumption. Invoke for STM32, ESP32, FreeRTOS, bare-metal, power optimization, real-time systems, configure peripherals, write interrupt handlers, implement DMA transfers, debug timing issues.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "jeffallan/claude-skills",
-        "sourceUrl": "https://github.com/jeffallan/claude-skills.git",
+        "url": "https://github.com/jeffallan/claude-skills.git",
         "skillPath": "skills/embedded-systems/SKILL.md",
-        "skillFolderHash": "a9dc525a5959c5a1d1db09266b4a69544073f354"
+        "hash": "a9dc525a5959c5a1d1db09266b4a69544073f354"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "eureka",
-      "description": "Turns a raw shower thought or pivot idea into a structured outline ready for Grill-Me. Use when the user says \"eureka\", has a loose idea they want to develop (\"I'm thinking about...\", \"what if we...\", \"we should drop X and become Y\"), wants to brainstorm a pivot or new direction, or wants to pressure-test a rough concept before committing to a plan. Challenges the idea — pushes on why, what breaks, and what's gained — rather than just expanding it.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/eureka/SKILL.md"
       },
       "category": null,
@@ -400,148 +271,98 @@
     },
     {
       "name": "favicon-generator",
-      "description": "When the user wants to implement, optimize, or audit favicon and app icons. Also use when the user mentions \"favicon,\" \"app icon,\" \"browser icon,\" \"touch icon,\" \"PWA icon,\" \"favicon sizes,\" \"apple-touch-icon,\" \"favicon.ico,\" \"site icon,\" or \"tab icon.\" For visual system, use brand-visual-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/components/branding/favicon/SKILL.md",
-        "skillFolderHash": "31207a5280b4fe3c54341c607a4bb597acc81b32"
+        "hash": "31207a5280b4fe3c54341c607a4bb597acc81b32"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "file-name-wizard",
-      "description": "Audit all filename and naming conventions in the codebase against CLAUDE.md standards and common patterns. Use when user asks to check naming conventions, audit filenames, find naming inconsistencies, or validate file naming patterns.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "Cygnusfear/claude-stuff",
-        "sourceUrl": "https://github.com/Cygnusfear/claude-stuff.git",
+        "url": "https://github.com/Cygnusfear/claude-stuff.git",
         "skillPath": "skills/file-name-wizard/SKILL.md",
-        "skillFolderHash": "c6ec36b9a386be1e41229e3d8372e3aba1a50d06"
+        "hash": "c6ec36b9a386be1e41229e3d8372e3aba1a50d06"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "find-skills",
-      "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill.",
-      "source": "curated",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "vercel-labs/skills",
-        "sourceUrl": "https://github.com/vercel-labs/skills.git",
+        "url": "https://github.com/vercel-labs/skills.git",
         "skillPath": "skills/find-skills/SKILL.md",
-        "skillFolderHash": "eb6a23305aea6e340d14b9de3766e721f9f4861b"
+        "hash": "eb6a23305aea6e340d14b9de3766e721f9f4861b"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "fix-knip-unused-exports",
-      "description": "Fix knip \"Unused exports\" violations. Handles all violation categories: test-only exports\n(extract to new file), dead barrel re-exports (remove from index.ts), and internally-only-used\nexports (un-export).\nUse when `npm run knip` reports unused exports.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "factory-ai/factory-plugins",
-        "sourceUrl": "https://github.com/factory-ai/factory-plugins.git",
+        "url": "https://github.com/factory-ai/factory-plugins.git",
         "skillPath": "plugins/typescript/skills/fix-knip-unused-exports/SKILL.md",
-        "skillFolderHash": "ef5f03e6e3f64c21865482cb02767b1a96f0ce27"
+        "hash": "ef5f03e6e3f64c21865482cb02767b1a96f0ce27"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "footer-generator",
-      "description": "When the user wants to design, optimize, or audit website footers. Also use when the user mentions \"footer,\" \"page footer,\" \"site footer,\" \"footer links,\" \"footer navigation,\" \"footer SEO,\" \"footer design,\" \"footer CTA,\" \"multi-column footer,\" or \"footer sitemap.\" For main nav, use navigation-menu-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/components/navigation/footer/SKILL.md",
-        "skillFolderHash": "f82d109938336bcd6f10d4aea1453cf81770b517"
+        "hash": "f82d109938336bcd6f10d4aea1453cf81770b517"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "frontend-design",
-      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "anthropics/skills",
-        "sourceUrl": "https://github.com/anthropics/skills.git",
+        "url": "https://github.com/anthropics/skills.git",
         "skillPath": "skills/frontend-design/SKILL.md",
-        "skillFolderHash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296"
+        "hash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "git-commit",
-      "description": "Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use when user asks to commit changes, create a git commit, or mentions \"/commit\". Supports: (1) Auto-detecting type and scope from changes, (2) Generating conventional commit messages from diff, (3) Interactive commit with optional type/scope/description overrides, (4) Intelligent file staging for logical grouping",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "github/awesome-copilot",
-        "sourceUrl": "https://github.com/github/awesome-copilot.git",
+        "url": "https://github.com/github/awesome-copilot.git",
         "skillPath": "skills/git-commit/SKILL.md",
-        "skillFolderHash": "883a6a7466f55a9cd9f22cf1cce2d9333fc9b998"
+        "hash": "883a6a7466f55a9cd9f22cf1cce2d9333fc9b998"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "github-actions-docs",
-      "description": "Use when users ask how to write, explain, customize, migrate, secure, or troubleshoot GitHub Actions workflows, workflow syntax, triggers, matrices, runners, reusable workflows, artifacts, caching, secrets, OIDC, deployments, custom actions, or Actions Runner Controller, especially when they need official GitHub documentation, exact links, or docs-grounded YAML guidance.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "xixu-me/skills",
-        "sourceUrl": "https://github.com/xixu-me/skills.git",
+        "url": "https://github.com/xixu-me/skills.git",
         "skillPath": "skills/github-actions-docs/SKILL.md",
-        "skillFolderHash": "518c85da555f91c346813aa5bb3cc62f9db8bfb3"
+        "hash": "518c85da555f91c346813aa5bb3cc62f9db8bfb3"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "github-issues",
-      "description": "Create, update, and manage GitHub issues using MCP tools. Use this skill when users want to create bug reports, feature requests, or task issues, update existing issues, add labels/assignees/milestones, set issue fields (dates, priority, custom fields), set issue types, manage issue workflows, link issues, add dependencies, or track blocked-by/blocking relationships. Triggers on requests like \"create an issue\", \"file a bug\", \"request a feature\", \"update issue X\", \"set the priority\", \"set the start date\", \"link issues\", \"add dependency\", \"blocked by\", \"blocking\", or any GitHub issue management task.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "github/awesome-copilot",
-        "sourceUrl": "https://github.com/github/awesome-copilot.git",
+        "url": "https://github.com/github/awesome-copilot.git",
         "skillPath": "skills/github-issues/SKILL.md",
-        "skillFolderHash": "95fb5bd16c2cecb7c14c58d7e902a91daae2ec5e"
+        "hash": "95fb5bd16c2cecb7c14c58d7e902a91daae2ec5e"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "gitlab-ci-inspector",
-      "description": "Fetches and diagnoses GitLab CI/CD job logs using glab CLI or the REST API. Use when the user shares a gitlab.com job or pipeline URL, asks \"why did my pipeline fail\", \"what does this CI job say\", or \"check the build logs\" — accepts job URLs, pipeline URLs, or project + job name pairs.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "url": "https://github.com/Tyler-Reagan/skills.git",
         "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
       },
       "category": null,
@@ -549,28 +370,18 @@
     },
     {
       "name": "gitlab-ci-patterns",
-      "description": "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalable automation. Use when implementing GitLab CI/CD, optimizing pipeline performance, or setting up automated testing and deployment.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "wshobson/agents",
-        "sourceUrl": "https://github.com/wshobson/agents.git",
+        "url": "https://github.com/wshobson/agents.git",
         "skillPath": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
-        "skillFolderHash": "d43fb980bb5ac5d3caaae257e5e1235c4da7495a"
+        "hash": "d43fb980bb5ac5d3caaae257e5e1235c4da7495a"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "gitlab-mr-writing",
-      "description": "Writes calibrated GitLab merge request descriptions and optional technical reviewer guides. Use when the user says \"write my MR description\", \"draft the merge request body\", \"help me document this change\", or asks for a technical reviewer summary — especially for architecture changes, cross-package refactors, or MRs that are too large to read linearly.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "url": "https://github.com/Tyler-Reagan/skills.git",
         "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
       },
       "category": null,
@@ -578,98 +389,66 @@
     },
     {
       "name": "golang-testing",
-      "description": "Go testing patterns including table-driven tests, subtests, benchmarks, fuzzing, and test coverage. Follows TDD methodology with idiomatic Go practices.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "affaan-m/everything-claude-code",
-        "sourceUrl": "https://github.com/affaan-m/everything-claude-code.git",
+        "url": "https://github.com/affaan-m/everything-claude-code.git",
         "skillPath": "skills/golang-testing/SKILL.md",
-        "skillFolderHash": "5932338d17a842d1981c99b9df9cb4bb9d87fb73"
+        "hash": "5932338d17a842d1981c99b9df9cb4bb9d87fb73"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "grill-me",
-      "description": "A relentless interview to sharpen a plan or design.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "mattpocock/skills",
-        "sourceUrl": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills.git",
         "skillPath": "skills/productivity/grill-me/SKILL.md",
-        "skillFolderHash": "8320e7b87f7b208f50ce165b1dd43d1e93c8e801"
+        "hash": "8320e7b87f7b208f50ce165b1dd43d1e93c8e801"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "grill-with-docs",
-      "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "mattpocock/skills",
-        "sourceUrl": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills.git",
         "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
-        "skillFolderHash": "21adba95de7d93065d9fec725ddf37f871e01d05"
+        "hash": "21adba95de7d93065d9fec725ddf37f871e01d05"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "grilling",
-      "description": "Interview the user relentlessly about a plan or design. Use when the user wants to stress-test a plan before building, or uses any 'grill' trigger phrases.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "url": null
       },
       "category": null,
       "tags": []
     },
     {
       "name": "handoff",
-      "description": "Compact the current conversation into a handoff document for another agent to pick up.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "mattpocock/skills",
-        "sourceUrl": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills.git",
         "skillPath": "skills/productivity/handoff/SKILL.md",
-        "skillFolderHash": "aa82ffd61d7a3bda110060b4e24ec782b983cb8d"
+        "hash": "aa82ffd61d7a3bda110060b4e24ec782b983cb8d"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "hero-generator",
-      "description": "When the user wants to design, optimize, or audit hero sections (above-the-fold main visual area). Also use when the user mentions \"hero,\" \"hero section,\" \"hero area,\" \"above the fold,\" \"above the fold content,\" \"landing hero,\" \"main banner,\" \"banner section,\" \"first fold,\" \"hero section design,\" \"hero conversion,\" \"split layout hero,\" \"centered hero,\" or \"hero alignment.\" For homepage, use homepage-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/components/branding/hero/SKILL.md",
-        "skillFolderHash": "2da6451fa744283bf6ddae2877d9f13cd85898f9"
+        "hash": "2da6451fa744283bf6ddae2877d9f13cd85898f9"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "homebrew-cli-release",
-      "description": "Directs the end-to-end process of shipping a self-contained compiled CLI as a `brew install`-able command. The build half is GoReleaser for Go (and GoReleaser's prebuilt builder or a sibling tool like cargo-dist for Rust/Zig/etc.); the Homebrew half — tap, release token, cask, quarantine, license — is language-agnostic. Use when the user says \"distribute this on homebrew\", \"make my CLI installable\", \"brew install my tool\", \"set up a homebrew tap\", \"release my Go CLI\", \"use goreleaser\", \"invoke it via command instead of go run / cargo run\", or wants prebuilt binaries on a GitHub Release with an auto-updated Homebrew formula/cask. Covers version-injection wiring, the homebrew_casks-vs-deprecated-brews choice, personal-tap-vs-homebrew-core, the cross-repo release token, macOS Gatekeeper quarantine handling, the license gate, and cutting plus verifying the first tagged release.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/infrastructure/homebrew-cli-release/SKILL.md"
       },
       "category": null,
@@ -677,220 +456,148 @@
     },
     {
       "name": "homepage-generator",
-      "description": "When the user wants to create, optimize, or audit the main site homepage (primary entry page). Also use when the user mentions \"homepage,\" \"main page,\" \"home page,\" \"hero section,\" \"above the fold,\" \"home page design,\" \"homepage conversion,\" or \"homepage structure.\" Not for paid campaign or ad landing pages—use landing-page-generator. For sitewide page planning, use website-structure.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/pages/brand/home/SKILL.md",
-        "skillFolderHash": "144700d86efae7c328bae5a6a7959a0562087f47"
+        "hash": "144700d86efae7c328bae5a6a7959a0562087f47"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "impeccable",
-      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "pbakaus/impeccable",
-        "sourceUrl": "https://github.com/pbakaus/impeccable.git",
+        "url": "https://github.com/pbakaus/impeccable.git",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "skillFolderHash": "2e7b84ab4a9ccd5e78f8bcc812042b2461229be2"
+        "hash": "2e7b84ab4a9ccd5e78f8bcc812042b2461229be2"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "improve-codebase-architecture",
-      "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "mattpocock/skills",
-        "sourceUrl": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills.git",
         "skillPath": "skills/engineering/improve-codebase-architecture/SKILL.md",
-        "skillFolderHash": "e5beae48471adf87c513b5cbcb0ca347467546da"
+        "hash": "e5beae48471adf87c513b5cbcb0ca347467546da"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "kubernetes-specialist",
-      "description": "Use when deploying or managing Kubernetes workloads. Invoke to create deployment manifests, configure pod security policies, set up service accounts, define network isolation rules, debug pod crashes, analyze resource limits, inspect container logs, or right-size workloads. Use for Helm charts, RBAC policies, NetworkPolicies, storage configuration, performance optimization, GitOps pipelines, and multi-cluster management.",
-      "source": "vendored",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "Jeffallan/claude-skills",
+        "url": "https://github.com/Jeffallan/claude-skills",
         "skillPath": "skills/kubernetes-specialist/SKILL.md",
-        "skillFolderHash": "1fd237eca6b32f079d575ee6e441669c77f0f226"
+        "hash": "1fd237eca6b32f079d575ee6e441669c77f0f226"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "landing-page-generator",
-      "description": "When the user wants to create, optimize, or audit campaign landing pages for paid ads, email, or other traffic. Also use when the user mentions \"landing page,\" \"PPC landing page,\" \"SEM landing page,\" \"conversion page,\" \"campaign page,\" \"lead capture page,\" \"landing page optimization,\" \"LP conversion,\" \"single-page funnel,\" or \"squeeze page.\" Not for the main site homepage; use homepage-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/pages/marketing/landing-page/SKILL.md",
-        "skillFolderHash": "887329b70b63b04301498b4a7b5599f9998cbe1e"
+        "hash": "887329b70b63b04301498b4a7b5599f9998cbe1e"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "logo-generator",
-      "description": "When the user wants to optimize logo placement, linking, or branding on a website. Also use when the user mentions \"logo,\" \"brand logo,\" \"header logo,\" \"logo placement,\" \"AI logo design,\" \"logo link,\" \"logo alt text,\" \"logo sizing,\" \"favicon logo,\" or \"logo usage.\" For full brand visuals, use brand-visual-generator.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/components/branding/logo/SKILL.md",
-        "skillFolderHash": "a0d7ed2abce314ff776d0f2f09b4faa5d551a885"
+        "hash": "a0d7ed2abce314ff776d0f2f09b4faa5d551a885"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "mcp-builder",
-      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "anthropics/skills",
-        "sourceUrl": "https://github.com/anthropics/skills.git",
+        "url": "https://github.com/anthropics/skills.git",
         "skillPath": "skills/mcp-builder/SKILL.md",
-        "skillFolderHash": "b866bcfb57b780c10b587c7b543e871a91661ce0"
+        "hash": "b866bcfb57b780c10b587c7b543e871a91661ce0"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "mermaid-diagrams",
-      "description": "Comprehensive guide for creating software diagrams using Mermaid syntax. Use when users need to create, visualize, or document software through diagrams including class diagrams (domain modeling, object-oriented design), sequence diagrams (application flows, API interactions, code execution), flowcharts (processes, algorithms, user journeys), entity relationship diagrams (database schemas), C4 architecture diagrams (system context, containers, components), state diagrams, git graphs, pie charts, gantt charts, or any other diagram type. Triggers include requests to \"diagram\", \"visualize\", \"model\", \"map out\", \"show the flow\", or when explaining system architecture, database design, code structure, or user/application flows.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "softaworks/agent-toolkit",
-        "sourceUrl": "https://github.com/softaworks/agent-toolkit.git",
+        "url": "https://github.com/softaworks/agent-toolkit.git",
         "skillPath": "skills/mermaid-diagrams/SKILL.md",
-        "skillFolderHash": "1b7a962715838d762fe4b34701d797d1d57496cd"
+        "hash": "1b7a962715838d762fe4b34701d797d1d57496cd"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "naming-analyzer",
-      "description": "Suggest better variable, function, and class names based on context and conventions.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "softaworks/agent-toolkit",
-        "sourceUrl": "https://github.com/softaworks/agent-toolkit.git",
+        "url": "https://github.com/softaworks/agent-toolkit.git",
         "skillPath": "skills/naming-analyzer/SKILL.md",
-        "skillFolderHash": "6717b98252ff6423dccbd77dc652dead434552bb"
+        "hash": "6717b98252ff6423dccbd77dc652dead434552bb"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "next-dev-loop",
-      "description": "Verify Next.js runtime behavior after editing app code. Use this skill to confirm a change actually works in a running app — not just that it compiles or type-checks. Combines /_next/mcp (Next.js's view) with agent-browser (the browser's view). Requires a running `next dev`.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "vercel/next.js",
+        "url": "https://github.com/vercel/next.js",
         "skillPath": "skills/next-dev-loop/SKILL.md",
-        "skillFolderHash": "1ce097aa3daa2a9b5a7f1b93ccdc5b1f00876b9f"
+        "hash": "1ce097aa3daa2a9b5a7f1b93ccdc5b1f00876b9f"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "obsidian-cli",
-      "description": "Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme development with commands to reload plugins, run JavaScript, capture errors, take screenshots, and inspect the DOM. Use when the user asks to interact with their Obsidian vault, manage notes, search vault content, perform vault operations from the command line, or develop and debug Obsidian plugins and themes.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kepano/obsidian-skills",
-        "sourceUrl": "https://github.com/kepano/obsidian-skills.git",
+        "url": "https://github.com/kepano/obsidian-skills.git",
         "skillPath": "skills/obsidian-cli/SKILL.md",
-        "skillFolderHash": "96254a554e480359de7b685571876f2e7f9ba57d"
+        "hash": "96254a554e480359de7b685571876f2e7f9ba57d"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "portfolio-case-study-writer",
-      "description": "Transform resume bullets into detailed portfolio case studies",
-      "source": "vendored",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "paramchoudhary/resumeskills",
+        "url": "https://github.com/paramchoudhary/resumeskills",
         "skillPath": "skills/portfolio-case-study-writer/SKILL.md",
-        "skillFolderHash": "06f5a7097ebfb13cd3e5c74cedf3432f3c612ad3"
+        "hash": "06f5a7097ebfb13cd3e5c74cedf3432f3c612ad3"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "pr-description",
-      "description": "Update a GitHub PR description with a summary of changes",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "pipecat-ai/pipecat",
-        "sourceUrl": "https://github.com/pipecat-ai/pipecat.git",
+        "url": "https://github.com/pipecat-ai/pipecat.git",
         "skillPath": ".claude/skills/pr-description/SKILL.md",
-        "skillFolderHash": "e053a82eedd03e2e6be477f74625c0d2f7b25d94"
+        "hash": "e053a82eedd03e2e6be477f74625c0d2f7b25d94"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "prd-development",
-      "description": "Build a structured PRD that connects problem, users, solution, and success criteria. Use when turning discovery notes into an engineering-ready document for a major initiative.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "deanpeters/product-manager-skills",
-        "sourceUrl": "https://github.com/deanpeters/product-manager-skills.git",
+        "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/prd-development/SKILL.md",
-        "skillFolderHash": "6e84622528c1771c05bd0fce4bc936a58026e456"
+        "hash": "6e84622528c1771c05bd0fce4bc936a58026e456"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "pretty-mermaid",
-      "description": "Renders Mermaid diagrams to styled SVG or ASCII art using beautiful-mermaid, with 15 themes and batch support. Use when the user wants to render a .mmd file, asks to \"create a flowchart / sequence diagram / ER diagram / state diagram\", wants to \"apply a theme\" or \"beautify a diagram\", needs a terminal-friendly ASCII version of a Mermaid chart, or wants to batch-render multiple diagrams at once.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "url": "https://github.com/Tyler-Reagan/skills.git",
         "skillPath": "skills/tools/pretty-mermaid/SKILL.md"
       },
       "category": null,
@@ -898,12 +605,8 @@
     },
     {
       "name": "pretty-qmk-keymap",
-      "description": "Generates visual keymap diagrams embedded as comments in QMK keymap.c files. Two styles are supported — the overlay style (//╷ alignment markers, binding columns align with diagram cells) and the decorative block-comment style (human-readable, Totem/hand-drawn aesthetic). Use when asked to \"add a keymap diagram\", \"draw the layout\", \"make the keymap readable\", or \"add ascii art above the layers\".",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/qmk/pretty-qmk-keymap/SKILL.md"
       },
       "category": null,
@@ -911,12 +614,8 @@
     },
     {
       "name": "pretty-writeup",
-      "description": "Distills a topic, document, notes, or conversation into a self-contained styled HTML brief using the house template kit. Use when the user says \"make an HTML writeup\", \"format this as an HTML report\", \"turn this doc into a styled page\", \"pretty HTML version\", \"stylize this markdown\", \"HTML report from this doc\", \"presentation brief\", \"one-pager for leadership\", or asks for a shareable HTML artifact from a communicated topic.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/pretty-writeup/SKILL.md"
       },
       "category": null,
@@ -924,12 +623,8 @@
     },
     {
       "name": "pretty-zmk-keymap",
-      "description": "Generates box-drawing ASCII art keymap diagrams embedded as comments in ZMK .keymap files, aligned to each layer's bindings block. Use when the user asks to \"add a keymap diagram\", \"draw the layout\", \"make the keymap readable\", \"add ascii art above the layers\", or wants a visual representation of their key layout in the .keymap file itself.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/zmk/pretty-zmk-keymap/SKILL.md"
       },
       "category": null,
@@ -937,68 +632,46 @@
     },
     {
       "name": "problem-statement",
-      "description": "Write a user-centered problem statement with who is blocked, what they are trying to do, why it matters, and how it feels. Use when framing discovery, prioritization, or a PRD.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "deanpeters/product-manager-skills",
-        "sourceUrl": "https://github.com/deanpeters/product-manager-skills.git",
+        "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/problem-statement/SKILL.md",
-        "skillFolderHash": "1de9dad18374bbffccd35cfd7ef2edc41515ea89"
+        "hash": "1de9dad18374bbffccd35cfd7ef2edc41515ea89"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "product-name",
-      "description": "Brainstorm 5 unique, memorable product names with rationale aligned to brand values and target audience. Use when naming a new product, rebranding, or exploring product name ideas.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "phuryn/pm-skills",
-        "sourceUrl": "https://github.com/phuryn/pm-skills.git",
+        "url": "https://github.com/phuryn/pm-skills.git",
         "skillPath": "pm-marketing-growth/skills/product-name/SKILL.md",
-        "skillFolderHash": "8256ccfd21f516f21457391d52c9d4177f90741b"
+        "hash": "8256ccfd21f516f21457391d52c9d4177f90741b"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "prototype",
-      "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "url": null
       },
       "category": null,
       "tags": []
     },
     {
       "name": "python-packaging",
-      "description": "Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python libraries, creating CLI tools, or distributing Python code.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "wshobson/agents",
-        "sourceUrl": "https://github.com/wshobson/agents.git",
+        "url": "https://github.com/wshobson/agents.git",
         "skillPath": "plugins/python-development/skills/python-packaging/SKILL.md",
-        "skillFolderHash": "ac5339a832fdbbd20ce7a04b5e9bb0ffcc82b297"
+        "hash": "ac5339a832fdbbd20ce7a04b5e9bb0ffcc82b297"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "qmk-config",
-      "description": "QMK project configuration specialist for keyboard.json, rules.mk, config.h, and Vial setup. Use when editing keyboard hardware definitions, enabling features, configuring split keyboard wiring, setting up Vial/VIA, or working with the user config repo + QMK source tree sync pattern.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/qmk/qmk-config/SKILL.md"
       },
       "category": null,
@@ -1006,12 +679,8 @@
     },
     {
       "name": "qmk-debug",
-      "description": "Diagnoses and resolves common QMK/Vial firmware failures across four categories — build errors, flash failures, split keyboard issues, and Vial problems. Use when the user reports a compile error, a key not working after flashing, split halves not communicating, Vial not connecting, or wrong keys firing.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/qmk/qmk-debug/SKILL.md"
       },
       "category": null,
@@ -1019,12 +688,8 @@
     },
     {
       "name": "qmk-keymap",
-      "description": "QMK keymap specialist covering keymap.c authoring — basic/shifted keycodes, modifier wrappers, MT/LT hold-tap, tap-dance, combos, one-shot keys, macros, and tap-hold configuration. Use when editing keymap.c, asking about MT or LT behavior, home-row mods, tap dance, combos, SEND_STRING macros, or which keycodes to use for shifted symbols.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/qmk/qmk-keymap/SKILL.md"
       },
       "category": null,
@@ -1032,12 +697,8 @@
     },
     {
       "name": "qmk-new-config",
-      "description": "Scaffolds a new QMK keyboard keymap by generating keymap.c, config.h, rules.mk, and (optionally) a Vial setup from answers to five questions about hardware and features. Use when the user wants to start a new QMK keymap, set up Vial for the first time, or create a personal keymap for an existing keyboard.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/qmk/qmk-new-config/SKILL.md"
       },
       "category": null,
@@ -1045,72 +706,48 @@
     },
     {
       "name": "react-components",
-      "description": "Modern React component patterns with hooks and TypeScript",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "langchain-ai/skills-benchmarks",
-        "sourceUrl": "https://github.com/langchain-ai/skills-benchmarks.git",
+        "url": "https://github.com/langchain-ai/skills-benchmarks.git",
         "skillPath": "skills/noise/react_components/SKILL.md",
-        "skillFolderHash": "fbdbab0c2bf0ace0652ab602a4011cef7d5b07f8"
+        "hash": "fbdbab0c2bf0ace0652ab602a4011cef7d5b07f8"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "react-state-management",
-      "description": "Master modern React state management with Redux Toolkit, Zustand, Jotai, and React Query. Use when setting up global state, managing server state, or choosing between state management solutions.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "wshobson/agents",
-        "sourceUrl": "https://github.com/wshobson/agents.git",
+        "url": "https://github.com/wshobson/agents.git",
         "skillPath": "plugins/frontend-mobile-development/skills/react-state-management/SKILL.md",
-        "skillFolderHash": "01345515dfb8530d0813cfff2c73e36c6b23fea3"
+        "hash": "01345515dfb8530d0813cfff2c73e36c6b23fea3"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "release-review",
-      "description": "Senior developer-level release review for macOS/iOS apps. Identifies security, privacy, UX, and distribution issues with actionable fixes. Use when preparing an app for release, want a critical review, or before App Store submission.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "rshankras/claude-code-apple-skills",
-        "sourceUrl": "https://github.com/rshankras/claude-code-apple-skills.git",
+        "url": "https://github.com/rshankras/claude-code-apple-skills.git",
         "skillPath": "skills/release-review/SKILL.md",
-        "skillFolderHash": "f13ba425930879f7b96fbbfa82b37c5b49c1f28d"
+        "hash": "f13ba425930879f7b96fbbfa82b37c5b49c1f28d"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "roadmap-planning",
-      "description": "Plan a strategic roadmap across prioritization, epic definition, stakeholder alignment, and sequencing. Use when turning strategy into a release plan that teams can execute.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "deanpeters/product-manager-skills",
-        "sourceUrl": "https://github.com/deanpeters/product-manager-skills.git",
+        "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/roadmap-planning/SKILL.md",
-        "skillFolderHash": "19863acb42422fbc0e69a71de239eccbebc73160"
+        "hash": "19863acb42422fbc0e69a71de239eccbebc73160"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "scatterbrain",
-      "description": "Focus-recovery skill for when tangential drill-downs have buried the main conversational thread. Use when the user says \"scatterbrain\", wants to bookmark the current discussion so they can resurface after a tangent, realizes they've lost the thread of what was being discussed, or wants to identify where a session went sideways. Surfaces the drift point and classifies the tangent as productive or derailing before prompting a return to the main thread.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/scatterbrain/SKILL.md"
       },
       "category": null,
@@ -1118,102 +755,68 @@
     },
     {
       "name": "seo-strategy",
-      "description": "When the user wants to plan SEO strategy, prioritize SEO work, or understand the SEO workflow. Also use when the user mentions \"SEO strategy,\" \"SEO plan,\" \"SEO roadmap,\" \"SEO priority,\" \"SEO audit,\" \"SEO workflow,\" \"where to start SEO,\" \"SEO approach,\" \"organic growth strategy,\" \"why SEO,\" \"SEO value,\" or \"search strategy.\" For technical/crawl audit execution, use seo-audit. For keyword research, use keyword-research. For AI search visibility, use generative-engine-optimization.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "kostja94/marketing-skills",
-        "sourceUrl": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills.git",
         "skillPath": "skills/strategies/structure/seo/SKILL.md",
-        "skillFolderHash": "85a77b7462a89ac5ca576a38c41b5e9f9b938d62"
+        "hash": "85a77b7462a89ac5ca576a38c41b5e9f9b938d62"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "shadcn",
-      "description": "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI, including chat interfaces. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", or \"switch to --preset\".",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "shadcn/ui",
-        "sourceUrl": "https://github.com/shadcn/ui.git",
+        "url": "https://github.com/shadcn/ui.git",
         "skillPath": "skills/shadcn/SKILL.md",
-        "skillFolderHash": "962eb7ef77f17e0bce530153d4fec2136c5fa061"
+        "hash": "962eb7ef77f17e0bce530153d4fec2136c5fa061"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "sleek-design-mobile-apps",
-      "description": "Use when the user wants to design a mobile app, create screens, build UI, or interact with their Sleek projects. Covers high-level requests (\"design an app that does X\") and specific ones (\"list my projects\", \"create a new project\", \"screenshot that screen\").",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "sleekdotdesign/agent-skills",
-        "sourceUrl": "https://github.com/sleekdotdesign/agent-skills.git",
+        "url": "https://github.com/sleekdotdesign/agent-skills.git",
         "skillPath": "skills/design-mobile-apps/SKILL.md",
-        "skillFolderHash": "1b6f3d348cd05ff467f4ec7a723ad60aefb306a8"
+        "hash": "1b6f3d348cd05ff467f4ec7a723ad60aefb306a8"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "soultrace",
-      "description": "Take a personality assessment via the SoulTrace API. Use when the user wants to take a personality test, discover their psychological archetype, understand their personality traits, or get a color-based personality profile. The API uses a 5-color psychological model (White=structure, Blue=understanding, Black=agency, Red=intensity, Green=connection) with Bayesian adaptive question selection to classify users into one of 25 archetypes. Triggers on: personality test, personality assessment, what's my personality, take a quiz, archetype test, color personality, soultrace.",
-      "source": "vendored",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "soultrace-ai/soultrace-skill",
+        "url": "https://github.com/soultrace-ai/soultrace-skill",
         "skillPath": "skills/soultrace/SKILL.md",
-        "skillFolderHash": "8e36f5a02579a973067fe5c1a662a8be4a1f55b6"
+        "hash": "8e36f5a02579a973067fe5c1a662a8be4a1f55b6"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "specs-code-cleanup",
-      "description": "Provides final code cleanup after task review approval. Removes debug logs, temporary comments, dead code, optimizes imports, and improves readability. Use when asked to clean up code, polish, finalize, tidy up, remove technical debt, or prepare code for completion after review. Not for refactoring logic or fixing bugs—focused solely on cosmetic and hygiene cleanup.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "giuseppe-trisciuoglio/developer-kit",
-        "sourceUrl": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
         "skillPath": "plugins/developer-kit-specs/skills/specs-code-cleanup/SKILL.md",
-        "skillFolderHash": "db79f4b6544747835c3322b6edf75af62723855f"
+        "hash": "db79f4b6544747835c3322b6edf75af62723855f"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "terraform-module-library",
-      "description": "Build reusable Terraform modules for AWS, Azure, GCP, and OCI infrastructure following infrastructure-as-code best practices. Use when creating infrastructure modules, standardizing cloud provisioning, or implementing reusable IaC components.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "wshobson/agents",
-        "sourceUrl": "https://github.com/wshobson/agents.git",
+        "url": "https://github.com/wshobson/agents.git",
         "skillPath": "plugins/cloud-infrastructure/skills/terraform-module-library/SKILL.md",
-        "skillFolderHash": "06e4f4e3295990a5829735db832044925a85e222"
+        "hash": "06e4f4e3295990a5829735db832044925a85e222"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "terraform-plan-summary",
-      "description": "Parses Terraform plan output or GitLab CI job logs into a concise infrastructure impact summary. Use when the user pastes a terraform plan, shares a CI job log with plan output, asks \"what would this change\", \"summarize the plan\", or \"what gets destroyed\" — strips GitLab runner noise and ANSI escapes automatically.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
-        "sourceUrl": "https://github.com/Tyler-Reagan/skills.git",
+        "url": "https://github.com/Tyler-Reagan/skills.git",
         "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
       },
       "category": null,
@@ -1221,173 +824,116 @@
     },
     {
       "name": "terraform-test",
-      "description": "Comprehensive guide for writing and running Terraform tests. Use when creating test files (.tftest.hcl), writing test scenarios with run blocks, validating infrastructure behavior with assertions, mocking providers and data sources, testing module outputs and resource configurations, or troubleshooting Terraform test syntax and execution.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "hashicorp/agent-skills",
-        "sourceUrl": "https://github.com/hashicorp/agent-skills.git",
+        "url": "https://github.com/hashicorp/agent-skills.git",
         "skillPath": "terraform/code-generation/skills/terraform-test/SKILL.md",
-        "skillFolderHash": "e24dc7d3c72d1208736b329434667d43c7bfcfa4"
+        "hash": "e24dc7d3c72d1208736b329434667d43c7bfcfa4"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "theme-factory",
-      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "anthropics/skills",
-        "sourceUrl": "https://github.com/anthropics/skills.git",
+        "url": "https://github.com/anthropics/skills.git",
         "skillPath": "skills/theme-factory/SKILL.md",
-        "skillFolderHash": "e05534d132fb1b21f9917840874758e30f0a9b1a"
+        "hash": "e05534d132fb1b21f9917840874758e30f0a9b1a"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "to-issues",
-      "description": "Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "none"
+        "url": null
       },
       "category": null,
       "tags": []
     },
     {
       "name": "typescript-react-reviewer",
-      "description": "Expert code reviewer for TypeScript + React 19 applications. Use when reviewing React code, identifying anti-patterns, evaluating state management, or assessing code maintainability. Triggers: code review requests, PR reviews, React architecture evaluation, identifying code smells, TypeScript type safety checks, useEffect abuse detection, state management review.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "dotneet/claude-code-marketplace",
-        "sourceUrl": "https://github.com/dotneet/claude-code-marketplace.git",
+        "url": "https://github.com/dotneet/claude-code-marketplace.git",
         "skillPath": "review-tool/skills/typescript-react-reviewer/SKILL.md",
-        "skillFolderHash": "c42f66f381de0fa465b7e2dbc52e8e8f5ecca495"
+        "hash": "c42f66f381de0fa465b7e2dbc52e8e8f5ecca495"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "ubiquitous-language",
-      "description": "Extract a DDD-style ubiquitous language glossary from the current conversation, flagging ambiguities and proposing canonical terms. Saves to UBIQUITOUS_LANGUAGE.md. Use when user wants to define domain terms, build a glossary, harden terminology, create a ubiquitous language, or mentions \"domain model\" or \"DDD\".",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "mattpocock/skills",
-        "sourceUrl": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills.git",
         "skillPath": "skills/deprecated/ubiquitous-language/SKILL.md",
-        "skillFolderHash": "483fe10b01bed81b7eba7ee26df3f1bef9540c88"
+        "hash": "483fe10b01bed81b7eba7ee26df3f1bef9540c88"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "ui-ux-pro-max",
-      "description": "UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, and HTML/CSS). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, and check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, and mobile app. Elements: button, modal, navbar, sidebar, card, table, form, and chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, and flat design. Topics: color systems, accessibility, animation, layout, typography, font pairing, spacing, interaction states, shadow, and gradient. Integrations: shadcn/ui MCP for component search and examples.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
-        "sourceUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
         "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-        "skillFolderHash": "37bb3804d0aeac9f08c0408d791b7abbb6ff8bdc"
+        "hash": "37bb3804d0aeac9f08c0408d791b7abbb6ff8bdc"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "user-personas",
-      "description": "Create refined user personas from research data — 3 personas with JTBD, pains, gains, and unexpected insights. Use when building personas from survey data, creating user profiles from research, or segmenting users for product decisions.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "phuryn/pm-skills",
-        "sourceUrl": "https://github.com/phuryn/pm-skills.git",
+        "url": "https://github.com/phuryn/pm-skills.git",
         "skillPath": "pm-market-research/skills/user-personas/SKILL.md",
-        "skillFolderHash": "58bbb0463cd8360fbda860d388146a4cfb6b4b4c"
+        "hash": "58bbb0463cd8360fbda860d388146a4cfb6b4b4c"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "user-story",
-      "description": "Create user stories with Mike Cohn format and Gherkin acceptance criteria. Use when turning user needs into development-ready work with clear outcomes and testable conditions.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "deanpeters/product-manager-skills",
-        "sourceUrl": "https://github.com/deanpeters/product-manager-skills.git",
+        "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/user-story/SKILL.md",
-        "skillFolderHash": "b8e53307616bb30fc18fffdc6c1eac7621453653"
+        "hash": "b8e53307616bb30fc18fffdc6c1eac7621453653"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "user-story-mapping",
-      "description": "Create a user story map that lays out activities, steps, tasks, and release slices. Use when planning a workflow, backlog, or MVP around the user journey.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "deanpeters/product-manager-skills",
-        "sourceUrl": "https://github.com/deanpeters/product-manager-skills.git",
+        "url": "https://github.com/deanpeters/product-manager-skills.git",
         "skillPath": "skills/user-story-mapping/SKILL.md",
-        "skillFolderHash": "5d68cc49920b104e6a052e99d0e6c5e5e849a54e"
+        "hash": "5d68cc49920b104e6a052e99d0e6c5e5e849a54e"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "vite",
-      "description": "Vite build tool configuration, plugin API, SSR, and Vite 8 Rolldown migration. Use when working with Vite projects, vite.config.ts, Vite plugins, or building libraries/SSR apps with Vite.",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "antfu/skills",
-        "sourceUrl": "https://github.com/antfu/skills.git",
+        "url": "https://github.com/antfu/skills.git",
         "skillPath": "skills/vite/SKILL.md",
-        "skillFolderHash": "3c0dc60ce4ffc34fca02aaa7eb21130ae48c8dff"
+        "hash": "3c0dc60ce4ffc34fca02aaa7eb21130ae48c8dff"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "web-design-guidelines",
-      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
-      "source": "user",
-      "bucket": "vendored",
       "origin": {
-        "kind": "github",
-        "repo": "vercel-labs/agent-skills",
-        "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+        "url": "https://github.com/vercel-labs/agent-skills.git",
         "skillPath": "skills/web-design-guidelines/SKILL.md",
-        "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89"
+        "hash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89"
       },
       "category": null,
       "tags": []
     },
     {
       "name": "workflow-fit",
-      "description": "Rates how well each of six multi-agent workflow patterns fits a given task (0-10 with grounded reasons) and recommends a composite orchestration. Use when the user asks \"which workflow pattern\", \"rate the workflow patterns\", \"pick a workflow pattern for this\", \"how should we orchestrate this\", \"what pattern fits this task\", wants to choose between classify/fanout/verify/generate/tournament/loop before spawning agents, or says \"ultracode\" and wants to choose the right harness first.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/workflow-fit/SKILL.md"
       },
       "category": null,
@@ -1395,12 +941,8 @@
     },
     {
       "name": "write-a-skill",
-      "description": "Authors or updates a Claude Code skill that loads cleanly into whatever skills repo or collection you're working in — discovering that repo's layout, frontmatter, and registration instead of assuming them. Use when the user says \"write a skill\", \"create a skill\", \"new skill\", \"add a skill\", \"update a skill\", or wants to author a new agent capability.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/write-a-skill/SKILL.md"
       },
       "category": null,
@@ -1408,12 +950,8 @@
     },
     {
       "name": "zmk-config",
-      "description": "ZMK project configuration specialist for west.yml manifests, build.yaml CI targets, and Kconfig .conf files. Use when the user is setting up or editing a ZMK config repo, asks about module pinning, shield or board identifiers, build targets, ZMK Studio, split keyboard wiring, CONFIG_ZMK_ Kconfig options, or the UF2 flash workflow.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/zmk/zmk-config/SKILL.md"
       },
       "category": null,
@@ -1421,12 +959,8 @@
     },
     {
       "name": "zmk-debug",
-      "description": "Diagnoses and resolves common ZMK firmware failures across five categories: build errors, flash failures, split pairing issues, display problems, and ZMK Studio connection failures. Use when the user reports a build error, CI failure, \"board not found\", \"KeyError qualifiers\", keyboard not pairing, display blank or not compiling, or ZMK Studio not connecting.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/zmk/zmk-debug/SKILL.md"
       },
       "category": null,
@@ -1434,12 +968,8 @@
     },
     {
       "name": "zmk-display",
-      "description": "ZMK display subsystem specialist covering nice!view, SSD1306 OLED, IL0323 ePaper, and dongle screens. Use when the user asks about adding a display to a ZMK keyboard, writing a custom status screen, using LVGL widgets, integrating nice-view-gem or other display modules, or configuring CONFIG_ZMK_DISPLAY options.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/zmk/zmk-display/SKILL.md"
       },
       "category": null,
@@ -1447,12 +977,8 @@
     },
     {
       "name": "zmk-keymap",
-      "description": "ZMK keymap specialist covering the full behavior library across v0.3 and ZMK main. Use when the user is editing a .keymap file, asks about hold-tap flavors, tap-dance, mod-morph, combos, or macros, references &mt, &lt, &mo, &sk, &caps_word, or sensor bindings, or wants to know which header to include for mouse or Bluetooth behaviors.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/zmk/zmk-keymap/SKILL.md"
       },
       "category": null,
@@ -1460,12 +986,8 @@
     },
     {
       "name": "zmk-lvgl-migrate",
-      "description": "Migrates ZMK nice!view display modules from LVGL v8 (ZMK v0.3 / Zephyr 3.5) to LVGL v9 (ZMK main / Zephyr 4.1). Use when the user says \"port this display to ZMK main\", \"migrate from v8 to v9\", \"lv_canvas_draw_rect undeclared\", \"LV_IMG_CF_TRUE_COLOR undeclared\", or wants to use a community display module that only works on ZMK v0.3. Pairs with zmk-display (v8 API reference) and zmk-config (west.yml / build.yaml changes).",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/zmk/zmk-lvgl-migrate/SKILL.md"
       },
       "category": null,
@@ -1473,12 +995,8 @@
     },
     {
       "name": "zmk-new-config",
-      "description": "Scaffolds a new ZMK keyboard config repo by generating west.yml, build.yaml, and per-side .conf files from answers to six questions about hardware and features. Use when the user wants to start a new ZMK keyboard project, asks \"how do I set up a ZMK config repo\", \"create my zmk config\", or has a new keyboard and no existing config files.",
-      "source": "user",
-      "bucket": "personal",
       "origin": {
-        "kind": "github",
-        "repo": "Tyler-Reagan/skills",
+        "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/keyboard/zmk/zmk-new-config/SKILL.md"
       },
       "category": null,
