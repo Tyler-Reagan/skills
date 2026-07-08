@@ -42,6 +42,8 @@ Collect before matching: last 30+ lines of CI log, `west.yml` revision, `build.y
 
 **Step 4 (multiple BT profiles):** Use `&bt BT_SEL N` to select the slot, then `&bt BT_CLR` to clear it, then re-pair.
 
+**Step 5 (connects then instantly disconnects, only on one previously-working host):** Host OS rotated its BLE identity/pairing keys (OS update, long sleep, BT daemon restart) — the keyboard's bond for that host is now stale. If plain forget+re-pair (Step 1) doesn't stick, the host's "forget" often didn't fully clear its own BT cache; do a deeper host-side BT reset (e.g. macOS: Bluetooth menu bar icon, `Shift+Option` → Debug → "Reset the Bluetooth module"), then clear just that profile slot on the keyboard (Step 4). Host-driven — no keyboard-side config prevents recurrence.
+
 ---
 
 ## Phase 2D: Display Issues

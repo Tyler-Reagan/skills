@@ -41,6 +41,8 @@ See [REFERENCE.md](REFERENCE.md) for the full per-phase diagnostic tables.
 
 **Flashing the wrong side's UF2 produces no error.** Left and right halves produce separate artifacts. Flashing left firmware to the right half doesn't fail — the keyboard just doesn't work correctly. Verify artifact filenames before flashing.
 
+**"Connects then instantly disconnects" on one previously-working host is usually the host, not the keyboard.** The host silently rotated its BLE identity/pairing keys, leaving the keyboard's bond for that host stale — clear just that profile slot, don't reach for `settings_reset`. See Phase 2C Step 5.
+
 ## Anti-Patterns
 
 **DO NOT** diagnose without the full CI log — the headline error is almost always a cascade.
