@@ -4,7 +4,7 @@
     {
       "name": "404-page-generator",
       "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills",
         "skillPath": "skills/pages/utility/404/SKILL.md",
         "hash": "2d2d535f88cb68f992c7dcaa96ffb86d874fd03d"
       },
@@ -14,7 +14,7 @@
     {
       "name": "add-app-to-server",
       "origin": {
-        "url": "https://github.com/modelcontextprotocol/ext-apps.git",
+        "url": "https://github.com/modelcontextprotocol/ext-apps",
         "skillPath": "plugins/mcp-apps/skills/add-app-to-server/SKILL.md",
         "hash": "cce8d7d0ab939d9a02e3567df97d21f8f513eef2"
       },
@@ -24,21 +24,21 @@
     {
       "name": "api-page-generator",
       "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills",
         "skillPath": "skills/pages/content/api/SKILL.md",
         "hash": "dff6934e57704f134aa9bb6245e57939d7778e2c"
       },
-      "category": null,
+      "category": "engineering:code-scaffolding",
       "tags": []
     },
     {
       "name": "apple-appstore-reviewer",
       "origin": {
-        "url": "https://github.com/github/awesome-copilot.git",
+        "url": "https://github.com/github/awesome-copilot",
         "skillPath": "skills/apple-appstore-reviewer/SKILL.md",
         "hash": "0fded17e5b9bd5515a0c8849b2d8be10162311b0"
       },
-      "category": null,
+      "category": "engineering:code-review",
       "tags": []
     },
     {
@@ -51,25 +51,9 @@
       "tags": []
     },
     {
-      "name": "aws-bedrock-agentcore-skill",
-      "origin": {
-        "url": null
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "aws-strands-agents-agentcore",
-      "origin": {
-        "url": null
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "brand-visual-generator",
       "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills",
         "skillPath": "skills/components/branding/brand-visual/SKILL.md",
         "hash": "bc1f137b698e026b5b21f8092aec540981343b6b"
       },
@@ -77,19 +61,9 @@
       "tags": []
     },
     {
-      "name": "branding",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
-        "skillPath": "skills/strategies/brand/branding/SKILL.md",
-        "hash": "a224ec7902808cbd4af59a7a1b1876069990a414"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "building-glamorous-tuis",
       "origin": {
-        "url": "https://github.com/dicklesworthstone/meta_skill.git",
+        "url": "https://github.com/dicklesworthstone/meta_skill",
         "skillPath": "skills/building-glamorous-tuis/SKILL.md",
         "hash": "412ac8cc0dadb7c9b4896875dd50209625f959e2"
       },
@@ -97,79 +71,11 @@
       "tags": []
     },
     {
-      "name": "carousel",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
-        "skillPath": "skills/components/layout/carousel/SKILL.md",
-        "hash": "4aec61b2179237ec30bb03ca7fd30766d2673297"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "codebase-design",
       "origin": {
-        "url": null
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "competitor-research",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
-        "skillPath": "skills/seo/content/competitor-research/SKILL.md",
-        "hash": "3f1c2c0a756b124397ba61a7c80b863495794d1e"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "content-optimization",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
-        "skillPath": "skills/seo/content/content-optimization/SKILL.md",
-        "hash": "d331bd9e6cb0017a54d4642dd70573aa1def6a2f"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "content-strategy",
-      "origin": {
-        "url": "https://github.com/coreyhaines31/marketingskills.git",
-        "skillPath": "skills/content-strategy/SKILL.md",
-        "hash": "8a2387b41d046b1b5a72a346103120b3c28e8bf5"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "convert-web-app",
-      "origin": {
-        "url": "https://github.com/modelcontextprotocol/ext-apps.git",
-        "skillPath": "plugins/mcp-apps/skills/convert-web-app/SKILL.md",
-        "hash": "1878b683a535492a90e26cfc2943fd21aea28380"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "core-web-vitals",
-      "origin": {
-        "url": "https://github.com/addyosmani/web-quality-skills.git",
-        "skillPath": "skills/core-web-vitals/SKILL.md",
-        "hash": "041da568684b2b15ccb8789253dd2df29c8de433"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "create-mcp-app",
-      "origin": {
-        "url": "https://github.com/modelcontextprotocol/ext-apps.git",
-        "skillPath": "plugins/mcp-apps/skills/create-mcp-app/SKILL.md",
-        "hash": "989d5b5a7f8b30e76f554a799f39e9350944e55b"
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/codebase-design/SKILL.md",
+        "hash": "c5dfc023e5ae146a4ceb9c509024f6ffe13db4a3"
       },
       "category": null,
       "tags": []
@@ -177,19 +83,9 @@
     {
       "name": "create-readme",
       "origin": {
-        "url": "https://github.com/github/awesome-copilot.git",
+        "url": "https://github.com/github/awesome-copilot",
         "skillPath": "skills/create-readme/SKILL.md",
         "hash": "f65537a3461b663121fe195697979c17a8004ea5"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "d3-viz",
-      "origin": {
-        "url": "https://github.com/davila7/claude-code-templates.git",
-        "skillPath": "cli-tool/components/skills/creative-design/claude-d3js-skill/SKILL.md",
-        "hash": "ac6ef90f2fc5edb2ed2e5a575f336087dc88dc37"
       },
       "category": null,
       "tags": []
@@ -214,18 +110,9 @@
       "tags": []
     },
     {
-      "name": "doc-taxonomy-cleanup",
-      "origin": {
-        "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/doc-taxonomy-cleanup/SKILL.md"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "docs-page-generator",
       "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills",
         "skillPath": "skills/pages/content/docs/SKILL.md",
         "hash": "c1dd50e708285ddc3eb8d491d9549ce5351740d9"
       },
@@ -235,7 +122,9 @@
     {
       "name": "domain-modeling",
       "origin": {
-        "url": null
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/domain-modeling/SKILL.md",
+        "hash": "028a0e44b23909cbdd715aa00546d5c1c46ae4d6"
       },
       "category": null,
       "tags": []
@@ -243,7 +132,7 @@
     {
       "name": "domain-name-brainstormer",
       "origin": {
-        "url": "https://github.com/composiohq/awesome-claude-skills.git",
+        "url": "https://github.com/composiohq/awesome-claude-skills",
         "skillPath": "domain-name-brainstormer/SKILL.md",
         "hash": "ee97909251c1e45f7babc118fbf66467314d4e46"
       },
@@ -251,58 +140,9 @@
       "tags": []
     },
     {
-      "name": "embedded-systems",
-      "origin": {
-        "url": "https://github.com/jeffallan/claude-skills.git",
-        "skillPath": "skills/embedded-systems/SKILL.md",
-        "hash": "a9dc525a5959c5a1d1db09266b4a69544073f354"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "eureka",
-      "origin": {
-        "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/eureka/SKILL.md"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "favicon-generator",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
-        "skillPath": "skills/components/branding/favicon/SKILL.md",
-        "hash": "31207a5280b4fe3c54341c607a4bb597acc81b32"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "file-name-wizard",
-      "origin": {
-        "url": "https://github.com/Cygnusfear/claude-stuff.git",
-        "skillPath": "skills/file-name-wizard/SKILL.md",
-        "hash": "c6ec36b9a386be1e41229e3d8372e3aba1a50d06"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "find-skills",
-      "origin": {
-        "url": "https://github.com/vercel-labs/skills.git",
-        "skillPath": "skills/find-skills/SKILL.md",
-        "hash": "eb6a23305aea6e340d14b9de3766e721f9f4861b"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "fix-knip-unused-exports",
       "origin": {
-        "url": "https://github.com/factory-ai/factory-plugins.git",
+        "url": "https://github.com/factory-ai/factory-plugins",
         "skillPath": "plugins/typescript/skills/fix-knip-unused-exports/SKILL.md",
         "hash": "ef5f03e6e3f64c21865482cb02767b1a96f0ce27"
       },
@@ -310,39 +150,9 @@
       "tags": []
     },
     {
-      "name": "footer-generator",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
-        "skillPath": "skills/components/navigation/footer/SKILL.md",
-        "hash": "f82d109938336bcd6f10d4aea1453cf81770b517"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "frontend-design",
-      "origin": {
-        "url": "https://github.com/anthropics/skills.git",
-        "skillPath": "skills/frontend-design/SKILL.md",
-        "hash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "git-commit",
-      "origin": {
-        "url": "https://github.com/github/awesome-copilot.git",
-        "skillPath": "skills/git-commit/SKILL.md",
-        "hash": "883a6a7466f55a9cd9f22cf1cce2d9333fc9b998"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "github-actions-docs",
       "origin": {
-        "url": "https://github.com/xixu-me/skills.git",
+        "url": "https://github.com/xixu-me/skills",
         "skillPath": "skills/github-actions-docs/SKILL.md",
         "hash": "518c85da555f91c346813aa5bb3cc62f9db8bfb3"
       },
@@ -350,28 +160,9 @@
       "tags": []
     },
     {
-      "name": "github-issues",
-      "origin": {
-        "url": "https://github.com/github/awesome-copilot.git",
-        "skillPath": "skills/github-issues/SKILL.md",
-        "hash": "95fb5bd16c2cecb7c14c58d7e902a91daae2ec5e"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "gitlab-ci-inspector",
-      "origin": {
-        "url": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-ci-inspector/SKILL.md"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "gitlab-ci-patterns",
       "origin": {
-        "url": "https://github.com/wshobson/agents.git",
+        "url": "https://github.com/wshobson/agents",
         "skillPath": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
         "hash": "d43fb980bb5ac5d3caaae257e5e1235c4da7495a"
       },
@@ -379,28 +170,9 @@
       "tags": []
     },
     {
-      "name": "gitlab-mr-writing",
-      "origin": {
-        "url": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/gitlab-mr-writing/SKILL.md"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "golang-testing",
-      "origin": {
-        "url": "https://github.com/affaan-m/everything-claude-code.git",
-        "skillPath": "skills/golang-testing/SKILL.md",
-        "hash": "5932338d17a842d1981c99b9df9cb4bb9d87fb73"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "grill-me",
       "origin": {
-        "url": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/productivity/grill-me/SKILL.md",
         "hash": "8320e7b87f7b208f50ce165b1dd43d1e93c8e801"
       },
@@ -410,7 +182,7 @@
     {
       "name": "grill-with-docs",
       "origin": {
-        "url": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
         "hash": "21adba95de7d93065d9fec725ddf37f871e01d05"
       },
@@ -420,7 +192,9 @@
     {
       "name": "grilling",
       "origin": {
-        "url": null
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/productivity/grilling/SKILL.md",
+        "hash": "0ace40ac10f5c0b1534324e4e109ebfa831fb361"
       },
       "category": null,
       "tags": []
@@ -428,9 +202,9 @@
     {
       "name": "handoff",
       "origin": {
-        "url": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/productivity/handoff/SKILL.md",
-        "hash": "aa82ffd61d7a3bda110060b4e24ec782b983cb8d"
+        "hash": "3f7df8e717e41dfd6eacd03d47319a2e01248ffb"
       },
       "category": null,
       "tags": []
@@ -438,7 +212,7 @@
     {
       "name": "hero-generator",
       "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills",
         "skillPath": "skills/components/branding/hero/SKILL.md",
         "hash": "2da6451fa744283bf6ddae2877d9f13cd85898f9"
       },
@@ -457,7 +231,7 @@
     {
       "name": "homepage-generator",
       "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills",
         "skillPath": "skills/pages/brand/home/SKILL.md",
         "hash": "144700d86efae7c328bae5a6a7959a0562087f47"
       },
@@ -467,9 +241,9 @@
     {
       "name": "impeccable",
       "origin": {
-        "url": "https://github.com/pbakaus/impeccable.git",
+        "url": "https://github.com/pbakaus/impeccable",
         "skillPath": ".agents/skills/impeccable/SKILL.md",
-        "hash": "2e7b84ab4a9ccd5e78f8bcc812042b2461229be2"
+        "hash": "6ea3e5f6614e1f9df9c5bde834170bf51f3c09d6"
       },
       "category": null,
       "tags": []
@@ -477,7 +251,7 @@
     {
       "name": "improve-codebase-architecture",
       "origin": {
-        "url": "https://github.com/mattpocock/skills.git",
+        "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/improve-codebase-architecture/SKILL.md",
         "hash": "e5beae48471adf87c513b5cbcb0ca347467546da"
       },
@@ -497,7 +271,7 @@
     {
       "name": "landing-page-generator",
       "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
+        "url": "https://github.com/kostja94/marketing-skills",
         "skillPath": "skills/pages/marketing/landing-page/SKILL.md",
         "hash": "887329b70b63b04301498b4a7b5599f9998cbe1e"
       },
@@ -505,41 +279,11 @@
       "tags": []
     },
     {
-      "name": "logo-generator",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
-        "skillPath": "skills/components/branding/logo/SKILL.md",
-        "hash": "a0d7ed2abce314ff776d0f2f09b4faa5d551a885"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "mcp-builder",
-      "origin": {
-        "url": "https://github.com/anthropics/skills.git",
-        "skillPath": "skills/mcp-builder/SKILL.md",
-        "hash": "b866bcfb57b780c10b587c7b543e871a91661ce0"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "mermaid-diagrams",
       "origin": {
-        "url": "https://github.com/softaworks/agent-toolkit.git",
+        "url": "https://github.com/softaworks/agent-toolkit",
         "skillPath": "skills/mermaid-diagrams/SKILL.md",
         "hash": "1b7a962715838d762fe4b34701d797d1d57496cd"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "naming-analyzer",
-      "origin": {
-        "url": "https://github.com/softaworks/agent-toolkit.git",
-        "skillPath": "skills/naming-analyzer/SKILL.md",
-        "hash": "6717b98252ff6423dccbd77dc652dead434552bb"
       },
       "category": null,
       "tags": []
@@ -555,16 +299,6 @@
       "tags": []
     },
     {
-      "name": "obsidian-cli",
-      "origin": {
-        "url": "https://github.com/kepano/obsidian-skills.git",
-        "skillPath": "skills/obsidian-cli/SKILL.md",
-        "hash": "96254a554e480359de7b685571876f2e7f9ba57d"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "portfolio-case-study-writer",
       "origin": {
         "url": "https://github.com/paramchoudhary/resumeskills",
@@ -575,30 +309,11 @@
       "tags": []
     },
     {
-      "name": "pr-description",
-      "origin": {
-        "url": "https://github.com/pipecat-ai/pipecat.git",
-        "skillPath": ".claude/skills/pr-description/SKILL.md",
-        "hash": "e053a82eedd03e2e6be477f74625c0d2f7b25d94"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "prd-development",
-      "origin": {
-        "url": "https://github.com/deanpeters/product-manager-skills.git",
-        "skillPath": "skills/prd-development/SKILL.md",
-        "hash": "6e84622528c1771c05bd0fce4bc936a58026e456"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "pretty-mermaid",
       "origin": {
-        "url": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/tools/pretty-mermaid/SKILL.md"
+        "url": "https://github.com/Tyler-Reagan/skills",
+        "skillPath": "skills/tools/pretty-mermaid/SKILL.md",
+        "hash": "5f53bb8a316cdbde825993c1dc6f25b0bf8cd36d"
       },
       "category": null,
       "tags": []
@@ -631,39 +346,11 @@
       "tags": []
     },
     {
-      "name": "problem-statement",
-      "origin": {
-        "url": "https://github.com/deanpeters/product-manager-skills.git",
-        "skillPath": "skills/problem-statement/SKILL.md",
-        "hash": "1de9dad18374bbffccd35cfd7ef2edc41515ea89"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "product-name",
-      "origin": {
-        "url": "https://github.com/phuryn/pm-skills.git",
-        "skillPath": "pm-marketing-growth/skills/product-name/SKILL.md",
-        "hash": "8256ccfd21f516f21457391d52c9d4177f90741b"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "prototype",
       "origin": {
-        "url": null
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "python-packaging",
-      "origin": {
-        "url": "https://github.com/wshobson/agents.git",
-        "skillPath": "plugins/python-development/skills/python-packaging/SKILL.md",
-        "hash": "ac5339a832fdbbd20ce7a04b5e9bb0ffcc82b297"
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/prototype/SKILL.md",
+        "hash": "e50d76191bf197e3d947eb8c780c7009269ba589"
       },
       "category": null,
       "tags": []
@@ -707,7 +394,7 @@
     {
       "name": "react-components",
       "origin": {
-        "url": "https://github.com/langchain-ai/skills-benchmarks.git",
+        "url": "https://github.com/langchain-ai/skills-benchmarks",
         "skillPath": "skills/noise/react_components/SKILL.md",
         "hash": "fbdbab0c2bf0ace0652ab602a4011cef7d5b07f8"
       },
@@ -717,7 +404,7 @@
     {
       "name": "react-state-management",
       "origin": {
-        "url": "https://github.com/wshobson/agents.git",
+        "url": "https://github.com/wshobson/agents",
         "skillPath": "plugins/frontend-mobile-development/skills/react-state-management/SKILL.md",
         "hash": "01345515dfb8530d0813cfff2c73e36c6b23fea3"
       },
@@ -725,60 +412,11 @@
       "tags": []
     },
     {
-      "name": "release-review",
-      "origin": {
-        "url": "https://github.com/rshankras/claude-code-apple-skills.git",
-        "skillPath": "skills/release-review/SKILL.md",
-        "hash": "f13ba425930879f7b96fbbfa82b37c5b49c1f28d"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "roadmap-planning",
-      "origin": {
-        "url": "https://github.com/deanpeters/product-manager-skills.git",
-        "skillPath": "skills/roadmap-planning/SKILL.md",
-        "hash": "19863acb42422fbc0e69a71de239eccbebc73160"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "scatterbrain",
-      "origin": {
-        "url": "https://github.com/Tyler-Reagan/skills",
-        "skillPath": "skills/tools/scatterbrain/SKILL.md"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "seo-strategy",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills.git",
-        "skillPath": "skills/strategies/structure/seo/SKILL.md",
-        "hash": "85a77b7462a89ac5ca576a38c41b5e9f9b938d62"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "shadcn",
-      "origin": {
-        "url": "https://github.com/shadcn/ui.git",
-        "skillPath": "skills/shadcn/SKILL.md",
-        "hash": "962eb7ef77f17e0bce530153d4fec2136c5fa061"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "sleek-design-mobile-apps",
       "origin": {
-        "url": "https://github.com/sleekdotdesign/agent-skills.git",
+        "url": "https://github.com/sleekdotdesign/agent-skills",
         "skillPath": "skills/design-mobile-apps/SKILL.md",
-        "hash": "1b6f3d348cd05ff467f4ec7a723ad60aefb306a8"
+        "hash": "04b394201edf20234ddcf449a75e173dd7e0b953"
       },
       "category": null,
       "tags": []
@@ -794,118 +432,11 @@
       "tags": []
     },
     {
-      "name": "specs-code-cleanup",
-      "origin": {
-        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
-        "skillPath": "plugins/developer-kit-specs/skills/specs-code-cleanup/SKILL.md",
-        "hash": "db79f4b6544747835c3322b6edf75af62723855f"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "terraform-module-library",
-      "origin": {
-        "url": "https://github.com/wshobson/agents.git",
-        "skillPath": "plugins/cloud-infrastructure/skills/terraform-module-library/SKILL.md",
-        "hash": "06e4f4e3295990a5829735db832044925a85e222"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "terraform-plan-summary",
-      "origin": {
-        "url": "https://github.com/Tyler-Reagan/skills.git",
-        "skillPath": "skills/infrastructure/terraform-plan-summary/SKILL.md"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "terraform-test",
-      "origin": {
-        "url": "https://github.com/hashicorp/agent-skills.git",
-        "skillPath": "terraform/code-generation/skills/terraform-test/SKILL.md",
-        "hash": "e24dc7d3c72d1208736b329434667d43c7bfcfa4"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "theme-factory",
-      "origin": {
-        "url": "https://github.com/anthropics/skills.git",
-        "skillPath": "skills/theme-factory/SKILL.md",
-        "hash": "e05534d132fb1b21f9917840874758e30f0a9b1a"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "to-issues",
-      "origin": {
-        "url": null
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "typescript-react-reviewer",
-      "origin": {
-        "url": "https://github.com/dotneet/claude-code-marketplace.git",
-        "skillPath": "review-tool/skills/typescript-react-reviewer/SKILL.md",
-        "hash": "c42f66f381de0fa465b7e2dbc52e8e8f5ecca495"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "ubiquitous-language",
-      "origin": {
-        "url": "https://github.com/mattpocock/skills.git",
-        "skillPath": "skills/deprecated/ubiquitous-language/SKILL.md",
-        "hash": "483fe10b01bed81b7eba7ee26df3f1bef9540c88"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "ui-ux-pro-max",
       "origin": {
-        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
         "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-        "hash": "37bb3804d0aeac9f08c0408d791b7abbb6ff8bdc"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "user-personas",
-      "origin": {
-        "url": "https://github.com/phuryn/pm-skills.git",
-        "skillPath": "pm-market-research/skills/user-personas/SKILL.md",
-        "hash": "58bbb0463cd8360fbda860d388146a4cfb6b4b4c"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "user-story",
-      "origin": {
-        "url": "https://github.com/deanpeters/product-manager-skills.git",
-        "skillPath": "skills/user-story/SKILL.md",
-        "hash": "b8e53307616bb30fc18fffdc6c1eac7621453653"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "user-story-mapping",
-      "origin": {
-        "url": "https://github.com/deanpeters/product-manager-skills.git",
-        "skillPath": "skills/user-story-mapping/SKILL.md",
-        "hash": "5d68cc49920b104e6a052e99d0e6c5e5e849a54e"
+        "hash": "c2a6aa6b0d260877941fa016e3e8aa2dfaf55055"
       },
       "category": null,
       "tags": []
@@ -913,19 +444,9 @@
     {
       "name": "vite",
       "origin": {
-        "url": "https://github.com/antfu/skills.git",
+        "url": "https://github.com/antfu/skills",
         "skillPath": "skills/vite/SKILL.md",
         "hash": "3c0dc60ce4ffc34fca02aaa7eb21130ae48c8dff"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "web-design-guidelines",
-      "origin": {
-        "url": "https://github.com/vercel-labs/agent-skills.git",
-        "skillPath": "skills/web-design-guidelines/SKILL.md",
-        "hash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89"
       },
       "category": null,
       "tags": []
