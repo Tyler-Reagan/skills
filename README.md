@@ -44,28 +44,14 @@ Skills for the full lifecycle of ZMK and QMK keyboard projects, organized under 
 
 ---
 
-### infrastructure
-
-| Skill | Triggers | Description |
-|---|---|---|
-| [`gitlab-ci-inspector`](skills/infrastructure/gitlab-ci-inspector/SKILL.md) | GitLab job URL, pipeline URL, `why did this pipeline fail` | Fetches and diagnoses GitLab CI/CD job logs via `glab` CLI or REST API |
-| [`gitlab-mr-writing`](skills/infrastructure/gitlab-mr-writing/SKILL.md) | `write MR description`, `merge request body`, `technical reviewer guide` | Produces calibrated MR descriptions (Focused / Multi-theme / Architectural) and optional Technical Reviewer Guides |
-| [`homebrew-cli-release`](skills/infrastructure/homebrew-cli-release/SKILL.md) | `distribute on homebrew`, `brew install my CLI`, `homebrew tap`, `goreleaser`, `invoke via command not go run` | Ships a compiled CLI as a `brew install`-able command via GoReleaser + a personal tap — version injection, cask, cross-repo token, quarantine, license gate, first release |
-| [`terraform-plan-summary`](skills/infrastructure/terraform-plan-summary/SKILL.md) | `terraform plan`, `CI plan job`, `what would this plan change` | Parses noisy CI plan logs into a ≤40-line impact summary with grouped resource actions and attribute diffs |
-
----
-
 ### tools
 
 | Skill | Triggers | Description |
 |---|---|---|
 | [`pretty-mermaid`](skills/tools/pretty-mermaid/SKILL.md) | `render mermaid`, `flowchart`, `sequence diagram`, `ER diagram`, `apply diagram theme` | Renders Mermaid diagrams to SVG or ASCII art with 15 themes and batch support |
-| [`eureka`](skills/tools/eureka/SKILL.md) | `shower thought`, `pivot idea`, `brainstorm`, `what if we`, `I'm thinking about`, `eureka` | Turns a raw idea into a structured outline — interviews you one question at a time, challenges assumptions, and surfaces a risk annotation |
-| [`scatterbrain`](skills/tools/scatterbrain/SKILL.md) | `scatterbrain`, `lost the thread`, `drifted`, `what was I doing`, `set anchor`, `focus recovery` | Focus-recovery skill — anchors the current thread or recovers it after a tangent, classifying the drift as productive or derailing |
 | [`write-a-skill`](skills/tools/write-a-skill/SKILL.md) | `write a skill`, `create a skill`, `new skill`, `add a skill`, `update a skill` | Authors or updates a skill — discovers repo conventions, enforces Gotchas/folder/hooks/persistent-data patterns per the Anthropic skill blog |
 | [`audit-memories`](skills/tools/audit-memories/SKILL.md) | `audit my memories`, `clean up memory`, `prune stale memories`, `consolidate memories`, `memory hygiene` | Audits a project's `~/.claude` memory files — classifies each keep/prune/merge/fix, verifies claims against the live repo, proposes a review-first consolidation plan before changing anything |
 | [`workflow-fit`](skills/tools/workflow-fit/SKILL.md) | `which workflow pattern`, `rate the workflow patterns`, `pick a workflow pattern for this`, `how should we orchestrate this`, `what pattern fits this task` | Rates six multi-agent workflow patterns (classify / fanout / verify / generate / tournament / loop) 0-10 against a task characterization and recommends a composite orchestration |
-| [`doc-taxonomy-cleanup`](skills/tools/doc-taxonomy-cleanup/SKILL.md) | `clean up stale docs`, `audit my docs`, `doc cleanup`, `establish doc taxonomy`, `docs are poisoning context` | Triages a poisoned doc tree into plans/decisions/architecture/archive/delete, rewriting promoted docs code-grounded |
 | [`doc-formatting`](skills/tools/doc-formatting/SKILL.md) | `format this doc`, `apply doc conventions`, `architecture doc style`, `decision record format`, `normalize this plan` | Formats a doc to its type's contract — architecture (state-of-code, diagram-led), decision (transcript-of-truth), plan (active work); sister skill to doc-taxonomy-cleanup |
 
 ---
@@ -74,22 +60,6 @@ Skills for the full lifecycle of ZMK and QMK keyboard projects, organized under 
 
 ```sh
 skills install Tyler-Reagan/skills
-```
-
-## Usage
-
-Invoke by name in a Claude Code session, or describe what you need in natural language — Claude loads the matching skill automatically.
-
-```
-/zmk-new-config       /zmk-keymap         /zmk-config
-/zmk-display          /zmk-debug          /zmk-lvgl-migrate
-/pretty-zmk-keymap
-/qmk-new-config       /qmk-keymap         /qmk-config
-/qmk-debug            /pretty-qmk-keymap
-/gitlab-ci-inspector  /gitlab-mr-writing  /homebrew-cli-release
-/terraform-plan-summary
-/pretty-mermaid       /eureka             /scatterbrain
-/write-a-skill        /audit-memories     /workflow-fit
 ```
 
 ## License

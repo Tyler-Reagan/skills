@@ -1,10 +1,6 @@
 {
   "name": "tyler-reagan-skills",
   "skills": [
-    "./skills/infrastructure/gitlab-ci-inspector",
-    "./skills/infrastructure/gitlab-mr-writing",
-    "./skills/infrastructure/homebrew-cli-release",
-    "./skills/infrastructure/terraform-plan-summary",
     "./skills/keyboard/qmk/pretty-qmk-keymap",
     "./skills/keyboard/qmk/qmk-config",
     "./skills/keyboard/qmk/qmk-debug",
@@ -19,11 +15,8 @@
     "./skills/keyboard/zmk/zmk-new-config",
     "./skills/tools/audit-memories",
     "./skills/tools/doc-formatting",
-    "./skills/tools/doc-taxonomy-cleanup",
-    "./skills/tools/eureka",
     "./skills/tools/pretty-mermaid",
     "./skills/tools/pretty-writeup",
-    "./skills/tools/scatterbrain",
     "./skills/tools/workflow-fit",
     "./skills/tools/write-a-skill"
   ]
