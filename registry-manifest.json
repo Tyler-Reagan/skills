@@ -28,7 +28,7 @@
         "skillPath": "skills/pages/content/api/SKILL.md",
         "hash": "dff6934e57704f134aa9bb6245e57939d7778e2c"
       },
-      "category": "engineering:code-scaffolding",
+      "category": null,
       "tags": []
     },
     {
@@ -38,7 +38,17 @@
         "skillPath": "skills/apple-appstore-reviewer/SKILL.md",
         "hash": "0fded17e5b9bd5515a0c8849b2d8be10162311b0"
       },
-      "category": "engineering:code-review",
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "ask-matt",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/ask-matt/SKILL.md",
+        "hash": "c7d57789b230d6f88d26ca81ab9d03bad160171f"
+      },
+      "category": null,
       "tags": []
     },
     {
@@ -71,11 +81,21 @@
       "tags": []
     },
     {
+      "name": "code-review",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/code-review/SKILL.md",
+        "hash": "474a27d46efb1eff9724a29ae1edc9cd8a75d911"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
       "name": "codebase-design",
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/codebase-design/SKILL.md",
-        "hash": "c5dfc023e5ae146a4ceb9c509024f6ffe13db4a3"
+        "hash": "7347168e8de2de105e2e55f07ecb33d25fd56f44"
       },
       "category": null,
       "tags": []
@@ -95,7 +115,7 @@
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/diagnosing-bugs/SKILL.md",
-        "hash": "0ecacff09e31245c34727abe7cb7cff71f615a35"
+        "hash": "27bf00e3ccc53491e938e8b5602be39238ce68f3"
       },
       "category": null,
       "tags": []
@@ -124,7 +144,7 @@
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/domain-modeling/SKILL.md",
-        "hash": "028a0e44b23909cbdd715aa00546d5c1c46ae4d6"
+        "hash": "959e63161ff78b4b1cd553b2c0e09e0c68418e5f"
       },
       "category": null,
       "tags": []
@@ -174,7 +194,7 @@
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/productivity/grill-me/SKILL.md",
-        "hash": "8320e7b87f7b208f50ce165b1dd43d1e93c8e801"
+        "hash": "c817f6f36acd483294144694a935a76d3e3eb101"
       },
       "category": null,
       "tags": []
@@ -184,7 +204,7 @@
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
-        "hash": "21adba95de7d93065d9fec725ddf37f871e01d05"
+        "hash": "5fdcdeedf2d0c73b3ecb1da0a464dd885590f8d6"
       },
       "category": null,
       "tags": []
@@ -194,7 +214,7 @@
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/productivity/grilling/SKILL.md",
-        "hash": "0ace40ac10f5c0b1534324e4e109ebfa831fb361"
+        "hash": "10b0db61f9b3869243db8a1a0ee84f862139b94e"
       },
       "category": null,
       "tags": []
@@ -204,7 +224,7 @@
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/productivity/handoff/SKILL.md",
-        "hash": "3f7df8e717e41dfd6eacd03d47319a2e01248ffb"
+        "hash": "184d485ae68a2132893a94239b2b85d253e6152b"
       },
       "category": null,
       "tags": []
@@ -249,11 +269,21 @@
       "tags": []
     },
     {
+      "name": "implement",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/implement/SKILL.md",
+        "hash": "f07d230f645fc9ac390cf13a450bbff12ad791a3"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
       "name": "improve-codebase-architecture",
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/improve-codebase-architecture/SKILL.md",
-        "hash": "e5beae48471adf87c513b5cbcb0ca347467546da"
+        "hash": "bce229692e60dff3462e49bc5e774e83bef348e6"
       },
       "category": null,
       "tags": []
@@ -350,7 +380,7 @@
       "origin": {
         "url": "https://github.com/mattpocock/skills",
         "skillPath": "skills/engineering/prototype/SKILL.md",
-        "hash": "e50d76191bf197e3d947eb8c780c7009269ba589"
+        "hash": "dd3d782b69ccb67493fbe76b84149399da3c9fee"
       },
       "category": null,
       "tags": []
@@ -412,6 +442,26 @@
       "tags": []
     },
     {
+      "name": "research",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/research/SKILL.md",
+        "hash": "972a34cd8128b7952b7eb279b06715862db906a7"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+        "hash": "634cf9b010bca5701642aca736dce899822f08f7"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
       "name": "sleek-design-mobile-apps",
       "origin": {
         "url": "https://github.com/sleekdotdesign/agent-skills",
@@ -427,6 +477,56 @@
         "url": "https://github.com/soultrace-ai/soultrace-skill",
         "skillPath": "skills/soultrace/SKILL.md",
         "hash": "8e36f5a02579a973067fe5c1a662a8be4a1f55b6"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "tdd",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/tdd/SKILL.md",
+        "hash": "0a727bd358b855cbcc1c35cfff21ef31f9ffb8de"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "teach",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/productivity/teach/SKILL.md",
+        "hash": "15f8c86d39ef834e643d092733ca899b59049067"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "to-spec",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/to-spec/SKILL.md",
+        "hash": "bf698b96b5d8798d110d9872e32b9310728555b0"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "to-tickets",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/to-tickets/SKILL.md",
+        "hash": "5467d7a37ef365ed43ebe6eb466d6e952be881b8"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "triage",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/triage/SKILL.md",
+        "hash": "258364be8354f726bf4080077cd92d86d08c69eb"
       },
       "category": null,
       "tags": []
@@ -452,6 +552,16 @@
       "tags": []
     },
     {
+      "name": "wayfinder",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/engineering/wayfinder/SKILL.md",
+        "hash": "33ed747fb30668c0e7b61698af5268c25c0d75cb"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
       "name": "workflow-fit",
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
@@ -465,6 +575,16 @@
       "origin": {
         "url": "https://github.com/Tyler-Reagan/skills",
         "skillPath": "skills/tools/write-a-skill/SKILL.md"
+      },
+      "category": null,
+      "tags": []
+    },
+    {
+      "name": "writing-great-skills",
+      "origin": {
+        "url": "https://github.com/mattpocock/skills",
+        "skillPath": "skills/productivity/writing-great-skills/SKILL.md",
+        "hash": "81d36946d48842f90358d8af54e3cdcc141f8e01"
       },
       "category": null,
       "tags": []
