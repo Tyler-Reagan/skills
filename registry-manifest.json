@@ -2,26 +2,6 @@
   "schemaVersion": 6,
   "skills": [
     {
-      "name": "404-page-generator",
-      "origin": {
-        "url": "https://github.com/kostja94/marketing-skills",
-        "skillPath": "skills/pages/utility/404/SKILL.md",
-        "hash": "2d2d535f88cb68f992c7dcaa96ffb86d874fd03d"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
-      "name": "add-app-to-server",
-      "origin": {
-        "url": "https://github.com/modelcontextprotocol/ext-apps",
-        "skillPath": "plugins/mcp-apps/skills/add-app-to-server/SKILL.md",
-        "hash": "cce8d7d0ab939d9a02e3567df97d21f8f513eef2"
-      },
-      "category": null,
-      "tags": []
-    },
-    {
       "name": "api-page-generator",
       "origin": {
         "url": "https://github.com/kostja94/marketing-skills",
@@ -536,7 +516,7 @@
       "origin": {
         "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
         "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-        "hash": "c2a6aa6b0d260877941fa016e3e8aa2dfaf55055"
+        "hash": "e36b015761c3bd5e2b6977323db9b105b4cd8d5f"
       },
       "category": null,
       "tags": []
