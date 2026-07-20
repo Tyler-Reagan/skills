@@ -14,10 +14,14 @@
     "./skills/keyboard/zmk/zmk-lvgl-migrate",
     "./skills/keyboard/zmk/zmk-new-config",
     "./skills/tools/audit-memories",
-    "./skills/tools/doc-formatting",
     "./skills/tools/pretty-mermaid",
     "./skills/tools/pretty-writeup",
     "./skills/tools/workflow-fit",
-    "./skills/tools/write-a-skill"
+    "./skills/tools/write-a-skill",
+    "./skills/writing/doc-formatting",
+    "./skills/writing/portfolio-arcs-from-history",
+    "./skills/writing/portfolio-arcs-maintain",
+    "./skills/writing/portfolio-arcs-public-nuggets",
+    "./skills/writing/portfolio-swe-highlights"
   ]
 }
