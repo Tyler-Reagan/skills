@@ -10,7 +10,7 @@ The file name is the capability in **user-facing nouns** — descriptive enough 
 
 - **Present tense throughout.** No chronology, no phase history, no status emojis, no "recently/now supports" framing (it's all "now").
 - **Opens with `## At a glance`** — the orientation block (template below). No prose preamble.
-- **`## How it works` is the centerpiece** — the single most informative diagram(s) of the sub-domain (flow, topology, or composition — whichever carries the most understanding), with clarifying bullets beneath. The bullets anchor to step numbers / node names; they never re-narrate what the diagram already shows. A good clarifying bullet states what the diagram's *geometry implies but doesn't say* (e.g. which node is the pivot between two regimes, which branch is the rare one).
+- **`## How it works` is the centerpiece** — the single most informative diagram(s) of the sub-domain, drawn to the **scan path** bar below, with clarifying bullets beneath that name geometry (admit spine vs alternate branch, what was omitted) rather than re-narrating the picture.
 - **The centerpiece is self-sufficient.** When orientation-ish content (a taxonomy, a lane table) wants to precede the diagram, push the framing it provides into `## At a glance` instead and let the taxonomy section follow `## How it works` — the section order holds.
 - **Free-form per-concern `##` sections** carry the rest — doc-specific pedestrian names, bulleted, tables for taxonomies. Diagram use within them is case-by-case agent discretion; no placement rules.
 - **Bullets over paragraphs** everywhere. A paragraph over ~2 sentences is a diagram note, a list, or padding.
@@ -41,18 +41,31 @@ Bold topic + colon + definition; sub-bullets for heavy points; labels stay pedes
 
 `Owns` / `Does not own` are almost always 3+ item series with per-item pointers — the sub-bullet threshold (see SKILL.md) usually fires; taller beats wider. `What` and `Why` stay single-line.
 
-## Diagram styling (source-level only)
+## Scan path (diagrams)
 
-Stylization must survive any markdown preview — it lives in the diagram *source*, never in theme machinery:
+Teaching diagrams are a **scan path**: a readable story for the eye, not a complete schema and not a stylized artifact. Source Mermaid in the markdown is enough — no committed SVG, no theme/`%%{init}%%`, no pretty-mermaid pass unless the user asks for a render.
 
-- **No `%%{init}%%` theme directives** — partially overridden by doc hosts and they fight viewer dark/light modes.
-- **No committed rendered SVGs** — a checked-in render drifts from its source silently. Strict-renderer validation and on-demand export (e.g. the `pretty-mermaid` skill) are the renderer's two jobs.
-- The portable kit — apply each item **where the diagram form supports it**, skip where it doesn't:
-  - two-line labels — concept on line one, file/symbol anchor on line two (the diagram doubles as a code map);
-  - edge semantics carry meaning where the form has edge styles — e.g. solid = request/action, dashed = response/stream;
-  - CAPS for the one load-bearing phrase per edge/node;
-  - `autonumber` on sequence diagrams, so clarifying bullets can anchor to steps.
-- **The kit does not constrain diagram choice.** The centerpiece is whatever mermaid form carries the most understanding for this sub-domain — sequence, flowchart, state, ER, class, anything. Not every architecture has a numbered flow; clarifying bullets anchor to whatever the form offers (step numbers, node names, edge labels).
+Pick the figure's **job** first — many teaching centerpieces are **spatial**, not flow:
+
+- **Spatial / nesting** — containment and “what lives inside what” (process co-location, host → VMM → guest, Kernel inside ci-worker, disks vs mounts). Nested subgraphs and placement carry the meaning; do **not** flatten these into an admit-spine flowchart.
+- **Flow** — state machines and caller ops (admit → live → alternate exits). Use admit spine + alternate branches (below).
+
+Label rules (short domain nouns, no ellipsis) apply to **both**. Flow-only rules (admit spine numbering) apply only when the job is flow.
+
+### Story shape (flow figures)
+
+- **Admit spine** — draw the required path first (left-to-right or top-to-bottom): the edge that always happens (e.g. create/admit → live state).
+- **Alternate branches** — optional or choice exits fan from a pivot node. Never lay out optional ops as a left-to-right pipeline that implies they always run in order.
+- **Omit crowding edges** — reverse/busy/re-arm loops that cross the spine stay in clarifying bullets when drawing them overlaps or diagonalizes the figure.
+- Prefer **TB forks** when an LR layout forces edge crossings; prefer **LR spines** when the story is admit → live → one teardown chain.
+
+### Labels
+
+- **Short domain nouns** on nodes and edges — readable width; no ellipsis (`...` / `…`); no em-dash run-ons packing clauses into a box.
+- Wire names, RPC lists, and outcome mechanics live in **bullets under the figure**, not in labels.
+- Number edges (`1`, `2a` / `2b`) when bullets need anchors; bullets explain geometry (required vs alternate, what was omitted) — they do not re-narrate the picture.
+- Sequence diagrams may use `autonumber` and solid vs dashed for request vs response. CAPS on a single load-bearing edge phrase is optional, not mandatory.
+- **Code-map exception** — only when the figure's job is “find this in the tree,” a second label line may carry a file/symbol anchor; default figures stay domain-only.
 
 ## Section order
 
@@ -68,8 +81,9 @@ Stylization must survive any markdown preview — it lives in the diagram *sourc
 - [ ] File name = capability in user-facing nouns; passes the never-seen-the-code test
 - [ ] Opens with `## At a glance` in the template shape; labels pedestrian; bold+colon separators
 - [ ] Zero status lines, zero dates-as-status, zero chronology
-- [ ] `## How it works` present; bullets anchor to the diagram rather than re-narrating it
-- [ ] Every diagram validated through a strict renderer; no init directives; no committed renders
+- [ ] `## How it works` present; bullets explain geometry, not re-narration
+- [ ] Diagrams follow **scan path** for their job (spatial nesting vs flow spine); short domain labels; no ellipsis/em-dash stuffed boxes; wire detail under the figure
+- [ ] Every diagram stock-validated; no init directives; no committed renders
 - [ ] No paragraph over ~2 sentences outside diagram notes
 - [ ] Every cited path/symbol grepped this edit
 - [ ] Abbreviations glossed at first prose use; jargon replaced or (if load-bearing house vocabulary) kept deliberately

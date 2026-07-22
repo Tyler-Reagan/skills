@@ -16,20 +16,18 @@
 
 ## How it works
 
-```mermaid
-sequenceDiagram
-  autonumber
-  participant A as <actor><br/><file/route anchor>
-  participant B as <stage><br/><file anchor>
-  participant S as <store>
+Admit spine, then alternate branches (not a pipeline of optional ops). Short domain labels; wire/detail in bullets.
 
-  A->>B: <action — CAPS the load-bearing phrase><br/>(<file anchor>)
-  B-->>A: <response/stream>
-  B->>S: <write>
+```mermaid
+flowchart TB
+  Admit["Admit"] -->|"1"| Live["Live"]
+  Live -->|"2a path A"| A["Outcome A"]
+  Live -->|"2b path B"| B["Outcome B"]
 ```
 
-- <clarifying bullet anchored to a step number — never re-narrating the diagram>.
-- <second subtlety>.
+- **1** — required admit spine.
+- **2a / 2b** — alternate branches from Live (geometry, not re-narration).
+- Wire names and omitted edges (busy re-arm, etc.) — here, not in the figure.
 
 ## <Per-concern section — free-form, pedestrian name>
 

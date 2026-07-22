@@ -1,10 +1,10 @@
 ---
 name: doc-formatting
-description: Formats a documentation file to its type's contract — architecture (state-of-code, present-tense, diagram-led, code-verified citations), decision (transcript-of-truth record, dated, append-mostly), plan (active work doc, status-dated, verification-anchored), or apex (top-level entry doc — orientation, tables-first, routing to depth). Use when the user says "format this doc", "apply doc conventions", "make this read like an architecture doc", "harden this decision record", "normalize this plan", "doc-level hardening", or has just placed docs via a taxonomy cleanup and wants their contents brought up to standard.
+description: Formats a documentation file to its type's contract — architecture (state-of-code, present-tense, diagram-led scan path, code-verified citations), decision (transcript-of-truth record, dated, append-mostly), plan (active work doc, status-dated, verification-anchored), or apex (top-level entry doc — orientation, tables-first, routing to depth). Use when the user wants to format a doc, apply doc conventions, harden architecture teaching pages or diagrams for scan path, normalize a plan or decision record, or bring taxonomy-placed docs up to standard.
 license: MIT
 metadata:
   author: uraniborglabs@gmail.com
-  version: "1.1.0"
+  version: "1.2.2"
   domain: developer-workflow
   triggers: format this doc, apply doc conventions, architecture doc style, decision record format, normalize this plan, doc-level hardening
   role: formatting
@@ -29,7 +29,7 @@ Format an existing documentation file to the contract of its **type**: **archite
 
 | Type | Kind of truth | Tense | Status line | Diagrams | Full spec |
 |---|---|---|---|---|---|
-| architecture | state of code | present, no chronology | **forbidden** (a status line on a state doc is a smell) | `## How it works` centerpiece; elsewhere discretionary | [types/architecture.md](types/architecture.md) |
+| architecture | state of code | present, no chronology | **forbidden** (a status line on a state doc is a smell) | `## How it works` centerpiece; **scan path** bar in type spec | [types/architecture.md](types/architecture.md) |
 | decision | transcript of truth | past + dated | required (`✅/🟡` + date) | optional; only for the decided shape | [types/decision.md](types/decision.md) |
 | plan | active work | future/imperative | required, refreshed per commit | encouraged for proposed flows | [types/plan.md](types/plan.md) |
 | apex | state of code, whole-concern | present, no chronology | **forbidden** | multiple centerpieces allowed; tables first | [types/apex.md](types/apex.md) |
@@ -46,7 +46,7 @@ Skeletons to copy from: [assets/](assets/) (one template per type).
 
 **Sub-bullets over comma trains — taller beats wider.** Grammatical signals that a bullet is carrying a list: an itemized series, two-or-more semicolon-joined phrases, a colon-introduced enumeration, an em-dash whose appendage itself contains a list, or a parenthetical pile-up (each item dragging its own pointer/gloss/qualifier). Split into sub-bullets when the fragments are separable **and** at least one holds: ≥3 fragments, any fragment carries its own pointer/parenthetical/qualifier, or the line wraps past ~1.5 rendered lines. Below the threshold, stay inline — a single em-dash clarifier or one semicolon joining two short clauses is healthy rhythm, not a list. Agent discretion stands throughout.
 
-**Abbreviations get glossed; jargon gets replaced.** Any acronym/initialism/code gets a parenthetical definition at first prose use — definitions compound in value — *unless* it is instantly recognizable or a definition adds nothing (agent discretion; don't treat any example list as authoritative). Jargon words are different: prefer replacing them with a familiar word; only when the jargon is load-bearing for the doc — or is the system's own established vocabulary across code and sibling docs — keep it (and define it if imported, not if native). Diagram labels stay tight: when a term first appears inside a diagram, the gloss lands at its first prose use, not in the label.
+**Abbreviations get glossed; jargon gets replaced.** Gloss acronyms at first prose use unless instantly recognizable. Prefer familiar words over jargon unless the term is house vocabulary (define if imported). Diagram label width and story shape: architecture **scan path** in [types/architecture.md](types/architecture.md) — not restated here.
 
 **Type is determined by content shape, not filename.** A file in `plans/` whose every phase is checked off is a decision record or architecture doc wearing a plan's clothes — surface it, don't silently reformat it to a contract it no longer matches.
 
